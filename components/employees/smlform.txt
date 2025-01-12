@@ -1,0 +1,687 @@
+Smlouva 1
+          <div className="border-t border-slate-200 dark:border-slate-700 mb-8">
+            {/* Components */}
+            <div className="space-y-8 mt-8">
+              {/* My form */}
+              <div>
+                <h2 className="text-2xl text-slate-800 dark:text-slate-100 font-bold mb-6">
+                  Smlouvy
+                </h2>
+                <div className="grid gap-5 md:grid-cols-3">
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract1"
+                    >
+                      Smlouva č.1
+                    </label>
+                    <select
+                      id="contract1"
+                      className="form-select"
+                      name="contract1"
+                      defaultValue={value.contract1}
+                    >
+                      <option>NaN</option>
+                      <option>DPČ ARES GROUP s.r.o.</option>
+                      <option>DPP ARES GROUP s.r.o.</option>
+                      <option>HPP ARES GROUP s.r.o.</option>
+                      <option>DPP F s.r.o.</option>
+                      <option>DPČ F s.r.o.</option>
+                      <option>HPP F s.r.o.</option>
+                      <option>Faktura</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract1 && <span>{error.contract1}</span>}
+                    </div>
+                  </div>
+  
+                  {/* Start */}
+                  <div>
+                    <div className="flex items-center justify-between ">
+                      <label
+                        className="block text-sm font-medium mb-1"
+                        htmlFor="contract1Start"
+                      >
+                        Začátek platnosti
+                      </label>
+                    </div>
+  
+                    <ContractStartDatepicker
+                      datename="contract1Start"
+                      defaultValue={value.contract1Start}
+                      today
+                    />
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract1Start && (
+                        <span>{error.contract1Start}</span>
+                      )}
+                    </div>
+                  </div>
+  
+                  {/* End */}
+                  {/* Start */}
+                  <div>
+                    <div className="flex items-center justify-between ">
+                      <label
+                        className="block text-sm font-medium mb-1"
+                        htmlFor="contract1End"
+                      >
+                        Konec platnosti
+                      </label>
+                    </div>
+                    <ContractStartDatepicker
+                      datename="contract1End"
+                      defaultValue={value.contract1End}
+                      endofyear
+                    />
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract1End && <span>{error.contract1End}</span>}
+                    </div>
+                  </div>
+  
+                  {/* End */}
+  
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract1limit"
+                    >
+                      Limit
+                    </label>
+                    <select
+                      id="contract1limit"
+                      className="form-select"
+                      name="contract1limit"
+                      defaultValue={value.contract1limit}
+                    >
+                      <option>NaN</option>
+                      <option>do 4.000,-Kč</option>
+                      <option>do 4.500,-Kč</option>
+                      <option>do 10.000,-Kč</option>
+                      <option>bez limitu</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract1limit && (
+                        <span>{error.contract1limit}</span>
+                      )}
+                    </div>
+                  </div>
+  
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract1pay"
+                    >
+                      Výplata mzdy
+                    </label>
+                    <select
+                      id="contract1pay"
+                      className="form-select"
+                      name="contract1pay"
+                      defaultValue={value.contract1pay}
+                    >
+                      <option>NaN</option>
+                      <option>Účtem</option>
+                      <option>Hotově</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract1pay && <span>{error.contract1pay}</span>}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          {/* Smlouva 1 end*/}
+  
+          {/* Smlouva 2*/}
+          <div className="border-t border-slate-200 dark:border-slate-700 mb-8">
+            {/* Components */}
+            <div className="space-y-8 mt-8">
+              {/* My form */}
+              <div>
+                <div className="grid gap-5 md:grid-cols-3">
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract2"
+                    >
+                      Smlouva č.2
+                    </label>
+                    <select
+                      id="contract2"
+                      className="form-select"
+                      name="contract2"
+                      defaultValue={value.contract2}
+                    >
+                      <option>NaN</option>
+                      <option>DPP ARES GROUP s.r.o.</option>
+                      <option>DPČ ARES GROUP s.r.o.</option>
+                      <option>HPP ARES GROUP s.r.o.</option>
+                      <option>DPP F s.r.o.</option>
+                      <option>DPČ F s.r.o.</option>
+                      <option>HPP F s.r.o.</option>
+                      <option>Faktura</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract2 && <span>{error.contract2}</span>}
+                    </div>
+                  </div>
+  
+                  {/* Start */}
+                  <div>
+                    <div className="flex items-center justify-between ">
+                      <label
+                        className="block text-sm font-medium mb-1"
+                        htmlFor="contract2Start"
+                      >
+                        Začátek platnosti
+                      </label>
+                    </div>
+  
+                    <ContractStartDatepicker
+                      datename="contract2Start"
+                      defaultValue={value.contract2Start}
+                      today
+                    />
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract2Start && (
+                        <span>{error.contract2Start}</span>
+                      )}
+                    </div>
+                  </div>
+  
+                  {/* End */}
+                  {/* Start */}
+                  <div>
+                    <div className="flex items-center justify-between ">
+                      <label
+                        className="block text-sm font-medium mb-1"
+                        htmlFor="contract2End"
+                      >
+                        Konec platnosti
+                      </label>
+                    </div>
+  
+                    <ContractStartDatepicker
+                      datename="contract2End"
+                      endofyear
+                      defaultValue={value.contract2End}
+                    />
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract2End && <span>{error.contract2End}</span>}
+                    </div>
+                  </div>
+  
+                  {/* End */}
+  
+                  {/* Select */}
+  
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract2limit"
+                    >
+                      Limit
+                    </label>
+                    <select
+                      id="contract2limit"
+                      className="form-select"
+                      name="contract2limit"
+                      defaultValue={value.contract2limit}
+                    >
+                      <option>NaN</option>
+                      <option>do 10.000,-Kč</option>
+                      <option>do 4.000,-Kč</option>
+                      <option>do 4.001,-Kč</option>
+                      <option>bez limitu</option>
+                      <option>Faktura</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract2limit && (
+                        <span>{error.contract2limit}</span>
+                      )}
+                    </div>
+                  </div>
+  
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract2pay"
+                    >
+                      Výplata mzdy
+                    </label>
+                    <select
+                      id="contract2pay"
+                      className="form-select"
+                      name="contract2pay"
+                      defaultValue={value.contract2pay}
+                    >
+                      <option>NaN</option>
+                      <option>Účtem</option>
+                      <option>Hotově</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract2pay && <span>{error.contract2pay}</span>}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Smlouva 2 end*/}
+  
+          {/* Smlouva 3*/}
+          <div className="border-t border-slate-200 dark:border-slate-700 mb-8">
+            {/* Components */}
+            <div className="space-y-8 mt-8">
+              {/* My form */}
+              <div>
+                <div className="grid gap-5 md:grid-cols-3">
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract3"
+                    >
+                      Smlouva č.3
+                    </label>
+                    <select
+                      id="contract3"
+                      className="form-select"
+                      name="contract3"
+                      defaultValue={value.contract3}
+                    >
+                      <option>NaN</option>
+                      <option>DPČ F s.r.o.</option>
+                      <option>DPP F s.r.o.</option>
+                      <option>HPP F s.r.o.</option>
+                      <option>DPP ARES GROUP s.r.o.</option>
+                      <option>DPČ ARES GROUP s.r.o.</option>
+                      <option>HPP ARES GROUP s.r.o.</option>
+                      <option>Faktura</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract3 && <span>{error.contract3}</span>}
+                    </div>
+                  </div>
+  
+                  {/* Start */}
+                  <div>
+                    <div className="flex items-center justify-between ">
+                      <label
+                        className="block text-sm font-medium mb-1"
+                        htmlFor="contract3Start"
+                      >
+                        Začátek platnosti
+                      </label>
+                    </div>
+  
+                    <ContractStartDatepicker
+                      datename="contract3Start"
+                      defaultValue={value.contract3Start}
+                      today
+                    />
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract3Start && (
+                        <span>{error.contract3Start}</span>
+                      )}
+                    </div>
+                  </div>
+  
+                  {/* End */}
+                  {/* Start */}
+                  <div>
+                    <div className="flex items-center justify-between ">
+                      <label
+                        className="block text-sm font-medium mb-1"
+                        htmlFor="contract3End"
+                      >
+                        Konec platnosti
+                      </label>
+                    </div>
+  
+                    <ContractStartDatepicker
+                      datename="contract3End"
+                      endofyear
+                      defaultValue={value.contract3End}
+                    />
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract3End && <span>{error.contract3End}</span>}
+                    </div>
+                  </div>
+  
+                  {/* End */}
+  
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract3limit"
+                    >
+                      Limit
+                    </label>
+                    <select
+                      id="contract3limit"
+                      className="form-select"
+                      name="contract3limit"
+                      defaultValue={value.contract3limit}
+                    >
+                      <option>NaN</option>
+                      <option>do 4.000,-Kč</option>
+                      <option>do 4.001,-Kč</option>
+                      <option>do 10.000,-Kč</option>
+                      <option>bez limitu</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract3limit && (
+                        <span>{error.contract3limit}</span>
+                      )}
+                    </div>
+                  </div>
+  
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract3pay"
+                    >
+                      Výplata mzdy
+                    </label>
+                    <select
+                      id="contract3pay"
+                      className="form-select"
+                      name="contract3pay"
+                      defaultValue={value.contract3pay}
+                    >
+                      <option>NaN</option>
+                      <option>Účtem</option>
+                      <option>Hotově</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract3pay && <span>{error.contract3pay}</span>}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Smlouva 3 end*/}
+  
+          {/* Smlouva 4*/}
+          <div className="border-t border-slate-200 dark:border-slate-700 mb-8">
+            {/* Components */}
+            <div className="space-y-8 mt-8">
+              {/* My form */}
+              <div>
+                <div className="grid gap-5 md:grid-cols-3">
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract4"
+                    >
+                      Smlouva č.4
+                    </label>
+                    <select
+                      id="contract4"
+                      className="form-select"
+                      name="contract4"
+                      defaultValue={value.contract4}
+                    >
+                      <option>NaN</option>
+                      <option>DPP F s.r.o.</option>
+                      <option>DPČ F s.r.o.</option>
+                      <option>HPP F s.r.o.</option>
+                      <option>DPP ARES GROUP s.r.o.</option>
+                      <option>DPČ ARES GROUP s.r.o.</option>
+                      <option>HPP ARES GROUP s.r.o.</option>
+                      <option>Faktura</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract4 && <span>{error.contract4}</span>}
+                    </div>
+                  </div>
+  
+                  {/* Start */}
+                  <div>
+                    <div className="flex items-center justify-between ">
+                      <label
+                        className="block text-sm font-medium mb-1"
+                        htmlFor="contract4Start"
+                      >
+                        Začátek platnosti
+                      </label>
+                    </div>
+  
+                    <ContractStartDatepicker
+                      datename="contract4Start"
+                      defaultValue={value.contract4Start}
+                      today
+                    />
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract4Start && (
+                        <span>{error.contract4Start}</span>
+                      )}
+                    </div>
+                  </div>
+  
+                  {/* End */}
+                  {/* Start */}
+                  <div>
+                    <div className="flex items-center justify-between ">
+                      <label
+                        className="block text-sm font-medium mb-1"
+                        htmlFor="contract4End"
+                      >
+                        Konec platnosti
+                      </label>
+                    </div>
+  
+                    <ContractStartDatepicker
+                      datename="contract4End"
+                      endofyear
+                      defaultValue={value.contract4End}
+                    />
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract4End && <span>{error.contract4End}</span>}
+                    </div>
+                  </div>
+  
+                  {/* End */}
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract4limit"
+                    >
+                      Limit
+                    </label>
+                    <select
+                      id="contract4limit"
+                      className="form-select"
+                      name="contract4limit"
+                      defaultValue={value.contract4limit}
+                    >
+                      <option>NaN</option>
+                      <option>do 10.000,-Kč</option>
+                      <option>do 4.000,-Kč</option>
+                      <option>do 4.001,-Kč</option>
+                      <option>bez limitu</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract4limit && (
+                        <span>{error.contract4limit}</span>
+                      )}
+                    </div>
+                  </div>
+  
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract4pay"
+                    >
+                      Výplata mzdy
+                    </label>
+                    <select
+                      id="contract4pay"
+                      className="form-select"
+                      name="contract4pay"
+                      defaultValue={value.contract4pay}
+                    >
+                      <option>NaN</option>
+                      <option>Účtem</option>
+                      <option>Hotově</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract4pay && <span>{error.contract4pay}</span>}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Smlouva 4 end*/}
+          {/* Smlouva 5 start*/}
+          <div className="border-t border-slate-200 dark:border-slate-700 mb-8">
+            {/* Components */}
+            <div className="space-y-8 mt-8">
+              {/* My form */}
+              <div>
+                <div className="grid gap-5 md:grid-cols-3">
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract5"
+                    >
+                      Smlouva č.5
+                    </label>
+                    <select
+                      id="contract5"
+                      className="form-select"
+                      name="contract5"
+                      defaultValue={value.contract5}
+                    >
+                      <option>NaN</option>
+                      <option>DPP F s.r.o.</option>
+                      <option>DPČ F s.r.o.</option>
+                      <option>HPP F s.r.o.</option>
+                      <option>DPP ARES GROUP s.r.o.</option>
+                      <option>DPČ ARES GROUP s.r.o.</option>
+                      <option>HPP ARES GROUP s.r.o.</option>
+                      <option>Faktura</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract5 && <span>{error.contract5}</span>}
+                    </div>
+                  </div>
+  
+                  {/* Start */}
+                  <div>
+                    <div className="flex items-center justify-between ">
+                      <label
+                        className="block text-sm font-medium mb-1"
+                        htmlFor="contract5Start"
+                      >
+                        Začátek platnosti
+                      </label>
+                    </div>
+  
+                    <ContractStartDatepicker
+                      datename="contract5Start"
+                      defaultValue={value.contract5Start}
+                      today
+                    />
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract5Start && (
+                        <span>{error.contract5Start}</span>
+                      )}
+                    </div>
+                  </div>
+  
+                  {/* End */}
+                  {/* Start */}
+                  <div>
+                    <div className="flex items-center justify-between ">
+                      <label
+                        className="block text-sm font-medium mb-1"
+                        htmlFor="contract5End"
+                      >
+                        Konec platnosti
+                      </label>
+                    </div>
+  
+                    <ContractStartDatepicker
+                      datename="contract5End"
+                      endofyear
+                      defaultValue={value.contract5End}
+                    />
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract5End && <span>{error.contract5End}</span>}
+                    </div>
+                  </div>
+  
+                  {/* End */}
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract5limit"
+                    >
+                      Limit
+                    </label>
+                    <select
+                      id="contract5limit"
+                      className="form-select"
+                      name="contract5limit"
+                      defaultValue={value.contract5limit}
+                    >
+                      <option>NaN</option>
+                      <option>do 10.000,-Kč</option>
+                      <option>do 4.000,-Kč</option>
+                      <option>do 4.001,-Kč</option>
+                      <option>bez limitu</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract5limit && (
+                        <span>{error.contract5limit}</span>
+                      )}
+                    </div>
+                  </div>
+  
+                  {/* Select */}
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-1"
+                      htmlFor="contract5pay"
+                    >
+                      Výplata mzdy
+                    </label>
+                    <select
+                      id="contract5pay"
+                      className="form-select"
+                      name="contract5pay"
+                      defaultValue={value.contract5pay}
+                    >
+                      <option>NaN</option>
+                      <option>Účtem</option>
+                      <option>Hotově</option>
+                    </select>
+                    <div className="text-xs mt-1 text-rose-500">
+                      {error.contract5pay && <span>{error.contract5pay}</span>}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Smlouva 5 end*/}
+  

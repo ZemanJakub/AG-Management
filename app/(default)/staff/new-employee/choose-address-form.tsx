@@ -28,7 +28,7 @@ const ChooseAddressForm = React.forwardRef<HTMLFormElement, ChooseAddressFormPro
         </div>
         <form
           ref={ref}
-          className={cn("flex grid grid-cols-12 flex-col py-8", className)}
+          className={cn("grid grid-cols-12 py-8", className)}
           {...props}
         >
           <RadioGroup

@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 import { directus } from "@/app/lib/directus";
-import { updateItem } from "@directus/sdk";
+import { readItems, updateItem } from "@directus/sdk";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import paths from "@/components/employees/paths";
@@ -11,11 +11,36 @@ import { generateSchema } from "@/app/(default)/personalistika/zamestnanci/[id]/
 import { MyFormData } from "@/app/(default)/personalistika/zamestnanci/[id]/edit/drectus-form/components/types";
 import { fetchMyForm } from "@/db/queries/employees";
 
-export async function updatePersonalEmployeeDynamic(
+async function loadCustomFormStructure(): Promise<MyFormData> {
+  const dynamicformData = await fetchMyForm(
+    "6b63bbc0-b202-4016-adb2-3d4613131701"
+  );
+  const formData = dynamicformData[0] as unknown as MyFormData;
+
+  return {
+    id: formData.id,
+    name: formData.name,
+    elements: formData.elements.map((element: any) => ({
+      id: element.id,
+      key: element.key,
+      label: element.label,
+      type: element.type,
+      required: element.required,
+      choices: element.choices || [],
+      order: element.order,
+    })),
+  };
+}
+
+
+export async function updatePreferencesEmployeeDynamic(
   prevState: any,
   formData: FormData // FormData z Web API
-): Promise<TransformToFieldErrorsType<z.infer<ReturnType<typeof generateSchema>>>> {
-  let saved = "NaN";
+): Promise<{
+  errors: TransformToFieldErrorsType<z.infer<ReturnType<typeof generateSchema>>>;
+  savedId?: string; // Přidáno pro vrácení uloženého ID
+}> {
+  let savedId = "";
 
   // Načtení struktury formuláře přímo v serverové akci
   const customFormStructure: MyFormData = await loadCustomFormStructure();
@@ -38,7 +63,6 @@ export async function updatePersonalEmployeeDynamic(
   // Dynamicky vytvoří objekt s daty z formData
   const personalDataUpdate: Record<string, any> = {};
 
-  console.log(formData)
 
   customFormStructure.elements.forEach((element) => {
     let value = formData.get(element.key); // Hodnotu získáme z FormData (z Web API)
@@ -59,13 +83,13 @@ export async function updatePersonalEmployeeDynamic(
   });
 
   // Validace pomocí dynamického schématu
-  console.log(personalDataUpdate,"personalDataUpdate")
+
   const validationResult = schema.safeParse(personalDataUpdate);
 
   if (!validationResult.success) {
     console.log("validace neprošla");
     const errors = validationResult.error.flatten().fieldErrors;
-    return errors as TransformToFieldErrorsType<z.infer<typeof schema>>;
+    return { errors }
   }
 
   // Aktualizace dat na serveru
@@ -74,9 +98,20 @@ export async function updatePersonalEmployeeDynamic(
     console.log(id, "id");
     console.log(personalDataUpdate);
 
-    // const result = await directus.request(
-    //   updateItem("PersonalInformations", id, personalDataUpdate)
-    // );
+    const response = await directus.request(
+      readItems("PersonalInformations", {
+        filter: {
+          employeeId: id, 
+        },
+        fields: ["*", "elements.*"],
+      })
+    );
+    console.log("PersonalInformationsID",response[0].id, response)
+     const idToUpdate = response[0].id;
+    const result = await directus.request(
+      updateItem("PersonalInformations", idToUpdate, personalDataUpdate)
+    );
+    savedId = result.id;
     // revalidatePath(paths.employeeHome());
     // revalidatePath(paths.employeeDetailPath(result.employeeID));
     // revalidatePath(paths.editEmployeePath(result.employeeID));
@@ -88,29 +123,11 @@ export async function updatePersonalEmployeeDynamic(
   } catch (error) {
     console.error("Data se nepodařilo uložit", error);
     return {
-      uploadError: ["Data se nepodařilo uložit"],
-    } as TransformToFieldErrorsType<z.infer<typeof schema>>;
+      errors: {
+        uploadError: ["Data se nepodařilo uložit"],
+      },
+    };
   }
 
-  redirect(saved);
-}
-
-// Funkce, která načte strukturu formuláře a převede ji do požadovaného formátu
-async function loadCustomFormStructure(): Promise<MyFormData> {
-  const dynamicformData = await fetchMyForm("d0dc63e9-f8a7-457f-a17f-6583869b449b");
-  const formData = dynamicformData[0] as unknown as MyFormData;
-
-  return {
-    id: formData.id,
-    name: formData.name,
-    elements: formData.elements.map((element: any) => ({
-      id: element.id,
-      key: element.key,
-      label: element.label,
-      type: element.type,
-      required: element.required,
-      choices: element.choices || [],
-      order: element.order,
-    })),
-  };
+  return { errors: {}, savedId };
 }

@@ -32,7 +32,7 @@ const SignUpForm = React.forwardRef<HTMLFormElement, SignUpFormProps>(
         <form
           ref={ref}
           {...props}
-          className={cn("flex grid grid-cols-12 flex-col gap-4 py-8", className)}
+          className={cn("grid grid-cols-12 gap-4 py-8", className)}
         >
           <Input
             className="col-span-12  md:col-span-6"

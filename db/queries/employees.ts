@@ -17,11 +17,11 @@ import {
   readItems,
 } from "@directus/sdk";
 import { cache } from "react";
-
+import { Management } from "@/app/(default)/staff/new-employee/types";
 
 export const fetchMyForm = async (id: string) => {
   try {
-    console.log("form start")
+    console.log("form start");
     // Předpokládáme, že `directus.request` vrací Promise, takže přidáváme `await`
     const response = await directus.request(
       readItems("forms", {
@@ -40,14 +40,62 @@ export const fetchMyForm = async (id: string) => {
     throw new Error("Failed to fetch form data.");
   }
 };
+export const fetchEmployeeBasicInformations = async (id: string) => {
+  try {
+    console.log("form start");
+    // Předpokládáme, že `directus.request` vrací Promise, takže přidáváme `await`
+    const response = await directus.request(readItem("basicEmployeeData", id));
+    return response;
+  } catch (error) {
+    console.error("Error fetching form:", error);
+    // Můžete vrátit vlastní strukturu chybové odpovědi nebo znovu vyvolat chybu
+    throw new Error("Failed to fetch employee data.");
+  }
+};
 
+export const fetchEmployeePersonalInformations = async (id: string) => {
+  try {
+    const response = await directus.request(
+      readItems("PersonalInformations", {
+        filter: {
+          employeeId: id, // Pole, které odkazuje na `basicEmployeeData`
+        },
+      })
+    );
+    return response;
+  } catch (error) {
+    console.error("Error fetching form:", error);
+    // Můžete vrátit vlastní strukturu chybové odpovědi nebo znovu vyvolat chybu
+    throw new Error("Failed to fetch employee data.");
+  }
+};
+export const fetchNewEmployeeFormBasicInformations = async (
+  id: string
+): Promise<string | undefined> => {
+  try {
+    const result = await directus.request(readItem("Texts", id));
+    const newEmployeeFormBasicInformations = result.text as unknown as string;
+    return newEmployeeFormBasicInformations;
+  } catch (e) {
+    console.log("Texts not found");
+    return undefined;
+  }
+};
+
+export const fetchManagement = async () => {
+  try {
+    const response = await directus.request(readItems("Management"));
+    return response as unknown as Management[];
+  } catch (error) {
+    console.error("Error fetching management:", error);
+    throw new Error("Failed to fetch management data.");
+  }
+};
 
 export const fetchBasicEmployeeData = cache(
   async (id: string): Promise<EmployeeToDisplay | undefined> => {
     try {
-      const result = await directus.request(
-        readItem("employees", id)
-      );
+      const result = await directus.request(readItem("employees", id));
 
       const employeeData = result as EmployeeToDisplay;
       return employeeData;
@@ -57,7 +105,6 @@ export const fetchBasicEmployeeData = cache(
     }
   }
 );
-
 
 export const fetchPersonalEmployeeData = cache(
   async (id: string): Promise<InterviewInformations> => {

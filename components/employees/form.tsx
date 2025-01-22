@@ -1,14 +1,14 @@
 "use client";
 
-import Tooltip from "@/components/tooltip";
-import Datepicker from "@/components/bdatepicker";
-import * as actions from "@/actions";
 
-import Banner from "@/components/banner-nocross";
-import AddressInput from "@/components/adress-hepler";
-import FormButton from "@/components/common/form-button";
+import * as actions from "@/actions";
+import { Button, Tooltip } from "@nextui-org/react";
+
+
+
 import { useActionState, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import Datepicker from "../default-components/datepicker";
 
 const forminitvalue = {
   uploadError: "",
@@ -245,9 +245,7 @@ export default function NewEmployeeForm() {
                       </label>
                       <Tooltip
                         className="ml-2"
-                        bg="dark"
                         size="md"
-                        position="left"
                       >
                         <div className="text-sm text-slate-200">
                           V případě shody jmen se použije toto rozlišení.
@@ -280,9 +278,9 @@ export default function NewEmployeeForm() {
                       </label>
                       <Tooltip
                         className="ml-28 pl-1"
-                        bg="dark"
+                      
                         size="md"
-                        position="left"
+                      
                       >
                         <div className="text-sm text-slate-200">
                           Rok lze přímo editovat.
@@ -291,7 +289,6 @@ export default function NewEmployeeForm() {
                     </div>
                     <Datepicker
                       defaultValue={value.dateOfBirth}
-                      bdate
                       id="dateOfBirth"
                       
                     />
@@ -450,7 +447,7 @@ export default function NewEmployeeForm() {
                     >
                       Adresa
                     </label>
-                    <AddressInput id="adress" initAddress={value.adress} />
+                    <input id="adress"/>
                     <div className="text-xs mt-1 text-rose-500">
                       {state?.adress && <span>{state?.adress}</span>}
                     </div>
@@ -1134,7 +1131,7 @@ export default function NewEmployeeForm() {
         <div className="w-full flex items-center justify-center border-t border-b border-slate-200 dark:border-slate-700  mt-6 mb-6 pt-6 pb-6">
           {/* Save button start*/}
 
-          <FormButton>
+          <Button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6 fill-current opacity-50 shrink-0"
@@ -1151,7 +1148,7 @@ export default function NewEmployeeForm() {
               <path d="M14 4l0 4l-6 0l0 -4" />
             </svg>
             <span className="block ml-2">Uložit záznam</span>
-          </FormButton>
+          </Button>
 
           {/* Save button end*/}
         </div>

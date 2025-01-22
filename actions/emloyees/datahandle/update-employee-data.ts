@@ -82,44 +82,45 @@ export async function updateEmployeeData(
   // init error status for form end
 
   // parse date to corerct format
+  const monthNameToNumber = (monthName: string): number => {
+    // Převod názvu měsíce na malá písmena pro case-insensitive porovnání.
+    let lowerCaseMonth = monthName.toLowerCase();
+    // Pomocí switch převedeme název měsíce na jeho číslo.
+    switch (lowerCaseMonth) {
+      case "led":
+        return 0;
+      case "ún":
+        return 1;
+      case "bře":
+        return 2;
+      case "dub":
+        return 3;
+      case "kvě":
+        return 4;
+      case "čer":
+        return 5;
+      case "čvc":
+        return 6;
+      case "srp":
+        return 7;
+      case "zář":
+        return 8;
+      case "říj":
+        return 9;
+      case "lis":
+        return 10;
+      case "pro":
+        return 11;
+      default:
+        throw new Error("Neznámý název měsíce.");
+    }
+  };
+
   const parseDate = (datetoparse: string, field: string): Date | null => {
     const dateParts = datetoparse.split(",");
     // Příklad použití
     let currentDate = null;
     try {
-      function monthNameToNumber(monthName: string): number {
-        // Převod názvu měsíce na malá písmena pro case-insensitive porovnání.
-        let lowerCaseMonth = monthName.toLowerCase();
-        // Pomocí switch převedeme název měsíce na jeho číslo.
-        switch (lowerCaseMonth) {
-          case "led":
-            return 0;
-          case "ún":
-            return 1;
-          case "bře":
-            return 2;
-          case "dub":
-            return 3;
-          case "kvě":
-            return 4;
-          case "čer":
-            return 5;
-          case "čvc":
-            return 6;
-          case "srp":
-            return 7;
-          case "zář":
-            return 8;
-          case "říj":
-            return 9;
-          case "lis":
-            return 10;
-          case "pro":
-            return 11;
-          default:
-            throw new Error("Neznámý název měsíce.");
-        }
-      }
       const cisloMesice: number = monthNameToNumber(
         dateParts[1].toString().replace(/\s/g, "")
       );
@@ -200,9 +201,6 @@ export async function updateEmployeeData(
     interface ObjectWithId {
       id: string;
     }
-    function compareId(seznam: ObjectWithId[], hledaneId: string): boolean {
-      return seznam.every((objekt) => objekt.id === hledaneId);
-    }
     const compare = compareId(
       validationrequest as unknown as ObjectWithId[],
       id
@@ -221,6 +219,14 @@ export async function updateEmployeeData(
     } as TransformToFieldErrorsType<BasicEmployee>;
   }
   // data validation on server end
+
+  interface ObjectWithId {
+    id: string;
+  }
+
+  function compareId(seznam: ObjectWithId[], hledaneId: string): boolean {
+    return seznam.every((objekt) => objekt.id === hledaneId);
+  }
 
   // data update on server start
 

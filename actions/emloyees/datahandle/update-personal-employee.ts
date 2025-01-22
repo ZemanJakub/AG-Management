@@ -121,39 +121,6 @@ export async function updatePersonalEmployee(
     // Příklad použití
     let currentDate = null;
     try {
-      function monthNameToNumber(monthName: string): number {
-        // Převod názvu měsíce na malá písmena pro case-insensitive porovnání.
-        let lowerCaseMonth = monthName.toLowerCase();
-        // Pomocí switch převedeme název měsíce na jeho číslo.
-        switch (lowerCaseMonth) {
-          case "led":
-            return 0;
-          case "ún":
-            return 1;
-          case "bře":
-            return 2;
-          case "dub":
-            return 3;
-          case "kvě":
-            return 4;
-          case "čer":
-            return 5;
-          case "čvc":
-            return 6;
-          case "srp":
-            return 7;
-          case "zář":
-            return 8;
-          case "říj":
-            return 9;
-          case "lis":
-            return 10;
-          case "pro":
-            return 11;
-          default:
-            throw new Error("Neznámý název měsíce.");
-        }
-      }
       const cisloMesice: number = monthNameToNumber(
         dateParts[1].toString().replace(/\s/g, "")
       );
@@ -170,6 +137,40 @@ export async function updatePersonalEmployee(
       return null;
     }
   };
+
+  function monthNameToNumber(monthName: string): number {
+    // Převod názvu měsíce na malá písmena pro case-insensitive porovnání.
+    let lowerCaseMonth = monthName.toLowerCase();
+    // Pomocí switch převedeme název měsíce na jeho číslo.
+    switch (lowerCaseMonth) {
+      case "led":
+        return 0;
+      case "ún":
+        return 1;
+      case "bře":
+        return 2;
+      case "dub":
+        return 3;
+      case "kvě":
+        return 4;
+      case "čer":
+        return 5;
+      case "čvc":
+        return 6;
+      case "srp":
+        return 7;
+      case "zář":
+        return 8;
+      case "říj":
+        return 9;
+      case "lis":
+        return 10;
+      case "pro":
+        return 11;
+      default:
+        throw new Error("Neznámý název měsíce.");
+    }
+  }
 
 
 

@@ -117,6 +117,7 @@ module.exports = {
   darkMode: "class",
   plugins: [
     nextui(),
+    require('tailwind-scrollbar-hide'),
     require('@tailwindcss/forms'),
     // add custom variant for expanding sidebar
     plugin(({ addVariant, e }) => {

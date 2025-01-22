@@ -72,7 +72,7 @@ const ReviewAndPaymentForm = React.forwardRef<HTMLFormElement, ReviewAndPaymentF
         <div className="py-4 text-base leading-5 text-default-500">You are almost done 🎉</div>
         <form
           ref={ref}
-          className={cn("flex grid grid-cols-12 flex-col gap-4 py-8", className)}
+          className={cn("grid grid-cols-12 flex-col gap-4 py-8", className)}
           {...props}
         >
           <Tabs

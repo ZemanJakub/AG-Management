@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import {AvatarGroup, Avatar, Button} from "@nextui-org/react";
+import {AvatarGroup, Avatar, Button} from "@heroui/react";
 import {Icon} from "@iconify/react";
-import {cn} from "@nextui-org/react";
+import {cn} from "@heroui/react";
 
 export type SupportCardProps = React.HTMLAttributes<HTMLDivElement>;
 

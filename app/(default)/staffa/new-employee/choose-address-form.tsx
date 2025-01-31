@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import {Checkbox, Link, RadioGroup, Radio} from "@nextui-org/react";
-import {cn} from "@nextui-org/react";
+import {Checkbox, Link, RadioGroup, Radio} from "@heroui/react";
+import {cn} from "@heroui/react";
 
 export type ChooseAddressFormProps = React.HTMLAttributes<HTMLFormElement>;
 

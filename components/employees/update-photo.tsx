@@ -12,7 +12,7 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { toast } from "react-toastify";
 import ImageCropper from "@/components/helpers/ImageCropper";
 import PencilIcon from "@/components/my-icons/PencilIcon";

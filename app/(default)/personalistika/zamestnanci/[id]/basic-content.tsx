@@ -20,7 +20,7 @@ import {
   Divider,
   Link,
   Image as UIImage,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import PenIcon from "@/components/my-icons/pen-icon";
 
 interface BasicContentProps {

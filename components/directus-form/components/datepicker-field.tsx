@@ -59,6 +59,7 @@ const DatePickerField = ({
         id={element.key}
         defaultDate={myDate || ""} // Pokud je null, předáme prázdný řetězec
         onChange={handleChange} // Callback pro předání hodnoty
+        required={element.required}
       />
       {error && (
         <div className="text-xs mt-1 text-rose-500">

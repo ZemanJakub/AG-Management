@@ -1,6 +1,6 @@
 "use client";
 
-import type { Selection, SortDescriptor } from "@nextui-org/react";
+import type { Selection, SortDescriptor } from "@heroui/react";
 import type { ColumnsKey, StatusOptions, Users } from "./data";
 import type { Key } from "@react-types/shared";
 
@@ -28,11 +28,11 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-} from "@nextui-org/react";
-import { SearchIcon } from "@nextui-org/shared-icons";
+} from "@heroui/react";
+import { SearchIcon } from "@heroui/shared-icons";
 import React, { useMemo, useRef, useCallback, useState } from "react";
 import { Icon } from "@iconify/react";
-import { cn } from "@nextui-org/react";
+import { cn } from "@heroui/react";
 
 import { CopyText } from "./copy-text";
 import { EyeFilledIcon } from "./eye";
@@ -86,19 +86,15 @@ export default function HrTable() {
       let allStatus = statusFilter === "all";
       let allStartDate = startDateFilter === "all";
 
-      return (
-        (allWorkerType || workerTypeFilter === col.workerType.toLowerCase()) &&
-        (allStatus || statusFilter === col.status.toLowerCase()) &&
-        (allStartDate ||
-          new Date(
-            new Date().getTime() -
-              +(startDateFilter.match(/(\d+)(?=Days)/)?.[0] ?? 0) *
-                24 *
-                60 *
-                60 *
-                1000
-          ) <= new Date(col.startDate))
-      );
+      return ((allWorkerType || workerTypeFilter === col.workerType.toLowerCase()) &&
+      (allStatus || statusFilter === col.status.toLowerCase()) && (allStartDate || new Date(
+        new Date().getTime() -
+          +(startDateFilter.match(/(\d+)(?=Days)/)?.[0] ?? 0) *
+            24 *
+            60 *
+            60 *
+            1000
+      ) <= new Date(col.startDate)));
     },
     [startDateFilter, statusFilter, workerTypeFilter]
   );

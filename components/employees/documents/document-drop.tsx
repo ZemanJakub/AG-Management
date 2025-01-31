@@ -7,7 +7,7 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import PlusIcon from "@/components/my-icons/plus-icon";
 import { handleFileConvert } from "../../helpers/frontEndImageResize";
 import { toast } from "react-toastify";

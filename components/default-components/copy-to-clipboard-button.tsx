@@ -3,7 +3,7 @@
 import { useState } from "react";
 import CopySvg from "@/public/images/copy-to-clipborad.svg";
 import Image from "next/image";
-import { Tooltip } from "@nextui-org/react";
+import { Tooltip } from "@heroui/react";
 
 export default function 
 

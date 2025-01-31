@@ -1,7 +1,5 @@
-import React, { startTransition, useRef } from "react";
-import { useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import {
-  fetchEmployeeBasicInformations,
   fetchEmployeePersonalInformations,
   fetchMyForm,
 } from "@/db/queries/employees";
@@ -17,7 +15,7 @@ import EmailInputField from "./components/email-field";
 import Form from "next/form";
 import { startsWith } from "lodash";
 import AddressField from "./components/adress-field";
-import { Button, Spinner } from "@nextui-org/react";
+import { Button, Spinner } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { toast } from "react-toastify";
 import useSWR from "swr";
@@ -26,75 +24,26 @@ interface Props {
   nextStep: () => void;
   onBack: () => void;
   employyeeId?: string;
-  personalInformations?: Record<string, any> | null;
+  formId?: string;
 }
 
-const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
-  const [formValues, setFormValues] = useState<Record<string, any>>({}); // Hodnoty formuláře
-  const [formData, setFormData] = useState<MyFormData | null>(null);
+const NewEmployeePersonalForm = ({ nextStep, onBack, employyeeId, formId }: Props) => {
   const [state, action, isPending] = useActionState(
-    actions.updatePreferencesEmployeeDynamic,
+    actions.updatePersonalEmployeeDynamic,
     null
   );
   const formRef = useRef<HTMLFormElement>(null);
 
   const { data: employeeData, error: employeeError } = useSWR(
-    employyeeId,
+    employyeeId ? employyeeId : null, 
     fetchEmployeePersonalInformations
   );
 
   const { data: formStructure, error: formStructureError } = useSWR(
-    "6b63bbc0-b202-4016-adb2-3d4613131701",
+    formId ? formId : null, 
     fetchMyForm
   );
 
-  // Načtení struktury formuláře při prvním renderování
-  useEffect(() => {
-    if (
-      employeeData !== undefined &&
-      employeeData !== null &&
-      formStructure !== undefined &&
-      formStructure !== null
-    ) {
-      setFormData(formStructure[0] as MyFormData);
-
-      // Extrahujeme klíče z formStructure
-      const allowedKeys = formStructure[0].elements.map(
-        (element: any) => element.key
-      );
-
-      // Filtrování dat zaměstnance podle klíčů z formStructure
-      const filteredEmployeeData = Object.keys(employeeData[0])
-        .filter((key) => allowedKeys.includes(key))
-        .reduce((obj: Record<string, any>, key: string) => {
-          obj[key] = employeeData[0][key];
-          return obj;
-        }, {});
-
-      // Sloučení filtrováných dat s výchozími hodnotami
-      const initialValues = allowedKeys.reduce((values: any, key: string) => {
-        values[key] = filteredEmployeeData[key] || "";
-        return values;
-      }, {});
-
-      console.log("Filtered and merged values:", initialValues);
-      setFormValues(initialValues);
-    } else {
-      if (formStructure) {
-        const initialValues = formStructure[0].elements.reduce(
-          (values: any, element: any) => {
-            values[element.key] = ""; // Prázdné hodnoty
-            return values;
-          },
-          {} as Record<string, any>
-        );
-        setFormValues(initialValues);
-        console.log("Initialized empty formValues:", initialValues);
-      }
-    }
-  }, [employeeData, formStructure]);
-
-  // Načtení uložených dat po získání `savedId`  - pokud je k dispozici
   useEffect(() => {
     if (state?.savedId) {
       toast.dismiss();
@@ -105,15 +54,55 @@ const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
       });
       nextStep(); // Bezpečné volání mimo renderovací fázi
     }
-  }, [state?.savedId]);
+    if(state?.uploadError) {
+      toast.dismiss();
+      toast.error("Data se nepodařilo uložit...", {
+        autoClose: 8000,
+        hideProgressBar: true,
+        theme: "dark",
+      });
+    }
+  }, [state?.savedId, state?.uploadError]);
 
-  if (!formData) {
+  if (employeeError || formStructureError) {
+    toast.dismiss();
+    toast.error("Potřebná data se nepodařilo načís...", {
+      autoClose: 8000,
+      hideProgressBar: true,
+      theme: "dark",
+    });
+  }
+
+  if (!formStructure) {
     return <Spinner color="warning" label="Načítám formulář..." size="lg" />;
   }
 
+const formData = formStructure[0] as MyFormData;
+
+const allowedKeys = formData.elements.map((element: any) => element.key);
+
+
+const filteredEmployeeData = employeeData
+  ? Object.keys(employeeData)
+      .filter((key) => allowedKeys.includes(key))
+      .reduce((obj: Record<string, any>, key: string) => {
+        obj[key] = employeeData[key as keyof typeof employeeData]; // Bezpečný přístup
+        return obj;
+      }, {})
+  : {};
+
+
+
+const initialValues = allowedKeys.reduce((values: any, key: string) => {
+  values[key] = filteredEmployeeData[key] || ""; // Prázdné hodnoty pro nový záznam
+  return values;
+}, {});
+
+
+
   const sortedElements = formData.elements.sort((a, b) => a.order - b.order);
 
-  const background = "--nextui-background";
+  const background = "--heroui-background";
   const linearGradientBg = startsWith(background, "--")
     ? `hsl(var(${background}))`
     : background;
@@ -124,12 +113,21 @@ const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
     backgroundOrigin: "border-box",
     backgroundClip: "padding-box, border-box",
   };
+
+
+  
   return (
     <Form action={action} ref={formRef} className=" h-full">
       <input
         type="hidden"
         name="id"
-        value={state?.savedId || employyeeId || ""}
+        value={employyeeId}
+        aria-hidden={true}
+      />
+       <input
+        type="hidden"
+        name="formId"
+        value={formId}
         aria-hidden={true}
       />
       <input type="hidden" name="uploadError" value="" aria-hidden={true} />
@@ -146,7 +144,7 @@ const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
                     return (
                       <div key={element.id} className={colSpanClass}>
                         <InputField
-                          defaultValue={formValues[element.key]}
+                          defaultValue={initialValues[element.key]}
                           element={element}
                           error={state?.errors?.[element.key]}
                         />
@@ -159,7 +157,7 @@ const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
                         className={`${colSpanClass} w-full`}
                       >
                         <TextareaField
-                          defaultValue={formValues[element.key]}
+                          defaultValue={initialValues[element.key]}
                           element={element}
                           error={state?.errors?.[element.key]}
                         />
@@ -170,7 +168,7 @@ const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
                       <div key={element.id} className="w-full mb-5">
                         <SelectField
                           element={element}
-                          defaultValue={formValues[element.key]}
+                          defaultValue={initialValues[element.key]}
                           error={state?.errors?.[element.key]}
                         />
                       </div>
@@ -179,7 +177,7 @@ const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
                     return (
                       <div key={element.id} className={colSpanClass}>
                         <DatePickerField
-                          defaultValue={formValues[element.key]?.toString()}
+                          defaultValue={initialValues[element.key]?.toString()}
                           element={element}
                           error={state?.errors?.[element.key]}
                         />
@@ -190,7 +188,7 @@ const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
                       <div key={element.id} className={colSpanClass}>
                         <AddressField
                           element={element}
-                          defaultValue={formValues[element.key]?.toString()}
+                          defaultValue={initialValues[element.key]?.toString()}
                           error={state?.errors?.[element.key]}
                         />
                       </div>
@@ -199,7 +197,7 @@ const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
                     return (
                       <div key={element.id} className={colSpanClass}>
                         <NumberInput
-                          defaultValue={formValues[element.key]?.toString()}
+                          defaultValue={initialValues[element.key]?.toString()}
                           element={element}
                           error={state?.errors?.[element.key]}
                         />
@@ -209,7 +207,7 @@ const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
                     return (
                       <div key={element.id} className={colSpanClass}>
                         <EmailInputField
-                          defaultValue={formValues[element.key]?.toString()}
+                          defaultValue={initialValues[element.key]?.toString()}
                           element={element}
                           error={state?.errors?.[element.key]}
                         />
@@ -256,4 +254,4 @@ const PreferencesEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
   );
 };
 
-export default PreferencesEmployeeForm;
+export default NewEmployeePersonalForm;

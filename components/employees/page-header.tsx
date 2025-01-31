@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import ProfileBg from "@/public/images/profile-bg.jpg";
-import { Button, Link } from "@nextui-org/react";
+import { Button, Link } from "@heroui/react";
 import PenIcon from "@/components/my-icons/pen-icon";
 import { EmployeeToDisplay } from "@/app/lib/models";
 import TrashIcon from "@/components/my-icons/trash-icon";

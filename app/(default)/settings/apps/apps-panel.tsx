@@ -1,7 +1,7 @@
 "use client";
 import { useSubscription } from "@/app/subscription-context";
 import ShareIcon from "@/components/my-icons/share-icon";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 
 export default function AppsPanel() {
   const { handleInstallClick, isInstallable, isStandalone, isIOS } =

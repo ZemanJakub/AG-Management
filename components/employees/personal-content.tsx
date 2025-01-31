@@ -16,7 +16,7 @@ import {
   Divider,
   Link,
   Image as UIImage,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import PenIcon from "@/components/my-icons/pen-icon";
 import CopyToClipboardButton from "@/components/default-components/copy-to-clipboard-button";
 interface BasicContentProps {

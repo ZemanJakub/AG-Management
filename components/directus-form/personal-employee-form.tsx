@@ -16,7 +16,7 @@ import EmailInputField from "./components/email-field";
 import Form from "next/form";
 import { startsWith } from "lodash";
 import AddressField from "./components/adress-field";
-import { Button, Spinner } from "@nextui-org/react";
+import { Button, Spinner } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { toast } from "react-toastify";
 
@@ -96,7 +96,7 @@ const PersonalEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
 
   const sortedElements = formData.elements.sort((a, b) => a.order - b.order);
 
-  const background = "--nextui-background";
+  const background = "--heroui-background";
   const linearGradientBg = startsWith(background, "--")
     ? `hsl(var(${background}))`
     : background;

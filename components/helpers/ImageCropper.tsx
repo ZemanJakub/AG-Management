@@ -7,7 +7,7 @@ import ReactCrop, {
   makeAspectCrop,
 } from "react-image-crop";
 import setCanvasPreview from "@/components/helpers/setCanvasPreview";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { CameraIcon } from "@/components/my-icons/camera-icon";
 import { handleFileConvert } from "./frontEndImageResize";
 import { toast } from "react-toastify";
@@ -38,43 +38,148 @@ const ImageCropper: React.FC<UpdatePhotoInfoProps> = ({
   const [error, setError] = useState<string>("");
   const [isCroped, setIsCroped] = useState<boolean>(false);
 
+
+  const MAX_FILE_SIZE_MB = 5;
+  const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
+  const MAX_WIDTH = 4000;
+  const MAX_HEIGHT = 4000;
+  
   const onSelectFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     toast.info("Nahrávám fotografii.", {
       position: "top-right",
       autoClose: 8000,
       theme: "dark",
     });
+  
     const file = e.target.files?.[0];
     if (!file) return;
-
+  
+    // Převedeme HEIC/HEIF na JPEG nebo PNG (pokud je potřeba)
     const isHeicOrHeif =
       file.name.toLowerCase().endsWith(".heic") ||
       file.name.toLowerCase().endsWith(".heif");
-
-    const convertedFile = isHeicOrHeif ? await handleFileConvert(file) : file;
-
-    const reader = new FileReader(); 
-    reader.addEventListener("load", () => {
+  
+    let convertedFile: Blob | null = file;
+    if (isHeicOrHeif) {
+      const converted = await handleFileConvert(file);
+      convertedFile = Array.isArray(converted) ? converted[0] : converted; // Vyber první prvek, pokud je pole
+    }
+  
+    if (!convertedFile) {
+      setError("Nepodařilo se zpracovat soubor.");
+      return;
+    }
+  
+    const reader = new FileReader();
+    reader.onload = (event) => {
       const imageElement = new Image();
-      const imageUrl = reader.result?.toString() || "";
-      imageElement.src = imageUrl;
-
-      imageElement.addEventListener("load", (e: any) => {
-        if (error) setError("");
-        if (e.currentTarget) {
-          const { naturalWidth, naturalHeight } = e.currentTarget;
-          if (naturalWidth < MIN_DIMENSION || naturalHeight < MIN_DIMENSION) {
-            setError("Obrázek je příliš malý.");
-            setImgSrc("");
-          }
+      imageElement.src = event.target?.result as string;
+  
+      imageElement.onload = async () => {
+        let { width, height } = imageElement;
+  
+        // Pokud je obrázek větší než maximální rozměry, zmenšíme ho
+        if (width > MAX_WIDTH || height > MAX_HEIGHT) {
+          const scaleFactor = Math.min(MAX_WIDTH / width, MAX_HEIGHT / height);
+          width = Math.round(width * scaleFactor);
+          height = Math.round(height * scaleFactor);
         }
-      });
-
-      setImgSrc(imageUrl);
-    });
-
-    reader.readAsDataURL(convertedFile as Blob);
+  
+        // Vytvoření canvasu pro úpravu velikosti
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+  
+        if (!ctx) {
+          setError("Nepodařilo se vytvořit zmenšený obrázek.");
+          return;
+        }
+  
+        canvas.width = width;
+        canvas.height = height;
+  
+        ctx.drawImage(imageElement, 0, 0, width, height);
+  
+        // Funkce pro zmenšení kvality, pokud je obrázek příliš velký
+        const compressImage = async (canvas: HTMLCanvasElement, quality: number = 0.9): Promise<Blob> => {
+          return new Promise((resolve, reject) => {
+            canvas.toBlob(
+              (blob) => {
+                if (blob) {
+                  resolve(blob);
+                } else {
+                  reject(new Error("Chyba při převodu canvasu na Blob."));
+                }
+              },
+              "image/jpeg",
+              quality
+            );
+          });
+        };
+  
+        let quality = 0.9;
+        let blob = await compressImage(canvas, quality);
+  
+        // Snížení kvality, pokud je obrázek stále větší než 5MB
+        while (blob.size > MAX_FILE_SIZE_BYTES && quality > 0.3) {
+          quality -= 0.1;
+          blob = await compressImage(canvas, quality);
+        }
+  
+        // Převod Blob zpět na Base64 nebo File, podle toho, co potřebuješ
+        const newFile = new File([blob], "compressed_image.jpg", { type: "image/jpeg" });
+  
+        // Čtení nového souboru jako DataURL pro zobrazení v ImageCropperu
+        const newReader = new FileReader();
+        newReader.onload = () => {
+          setImgSrc(newReader.result as string);
+        };
+        newReader.readAsDataURL(newFile);
+      };
+    };
+  
+    reader.readAsDataURL(convertedFile);
   };
+  
+
+
+
+  // const onSelectFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   toast.info("Nahrávám fotografii.", {
+  //     position: "top-right",
+  //     autoClose: 8000,
+  //     theme: "dark",
+  //   });
+  //   const file = e.target.files?.[0];
+  //   if (!file) return;
+
+  //   const isHeicOrHeif =
+  //     file.name.toLowerCase().endsWith(".heic") ||
+  //     file.name.toLowerCase().endsWith(".heif");
+
+  //   const convertedFile = isHeicOrHeif ? await handleFileConvert(file) : file;
+
+  //   const reader = new FileReader(); 
+  //   reader.addEventListener("load", () => {
+  //     const imageElement = new Image();
+  //     const imageUrl = reader.result?.toString() || "";
+  //     imageElement.src = imageUrl;
+
+  //     imageElement.addEventListener("load", (e: any) => {
+  //       if (error) setError("");
+  //       if (e.currentTarget) {
+  //         const { naturalWidth, naturalHeight } = e.currentTarget;
+  //         if (naturalWidth < MIN_DIMENSION || naturalHeight < MIN_DIMENSION) {
+  //           setError("Obrázek je příliš malý.");
+  //           setImgSrc("");
+  //         }
+  //       }
+  //     });
+
+  //     setImgSrc(imageUrl);
+  //   });
+
+  //   reader.readAsDataURL(convertedFile as Blob);
+  // };
 
   const onImageLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     toast.dismiss();

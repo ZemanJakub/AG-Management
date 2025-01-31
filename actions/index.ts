@@ -4,11 +4,12 @@ export { updateEmployeeData } from "./emloyees/datahandle/update-employee-data";
 export {uploadPhoto} from "./emloyees/photos/upload-photo"
 export {updatePersonalEmployee} from "./emloyees/datahandle/update-personal-employee"
 export {uploadDocument} from "./emloyees/files/upload-document"
-export {updatePreferencesEmployeeDynamic} from "./emloyees/datahandle/update-preferences-employee-dynamic"
+export {updatePersonalEmployeeDynamic} from "./emloyees/datahandle/update-preferences-personal-dynamic"
 export {updateBasicEmployeeDynamic} from "./emloyees/datahandle/update-basic-employee-dynamic"
 export {subscribeUser, unsubscribeUser, sendNotification, checkSubscription} from "./subscriptions/actions"
 export {updateProfile} from "./users/actions"
 export {sendFeedback} from "./feedback/actions"
+export {updateNewEmployeeFeedback} from "./emloyees/datahandle/update-new-employee-feedback"
 
 
 // fetch personal data **************************************************************************************************************************************************

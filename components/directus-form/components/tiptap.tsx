@@ -6,7 +6,7 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import StarterKit from "@tiptap/starter-kit";
 import Document from "@tiptap/extension-document";
 import Heading from "@tiptap/extension-heading";

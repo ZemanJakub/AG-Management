@@ -5,7 +5,7 @@ import AuthHeader from "../auth-header";
 import AuthImage from "../auth-image";
 import { useActionState } from "react";
 import { login } from "@/actions/auth/actions";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { useFormStatus } from "react-dom";
 import CookieConsentModal from "./cookie-consent-modal ";
 

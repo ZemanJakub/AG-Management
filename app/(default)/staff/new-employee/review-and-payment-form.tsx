@@ -1,6 +1,6 @@
 "use client";
 
-import type {InputProps, SelectProps} from "@nextui-org/react";
+import type {InputProps, SelectProps} from "@heroui/react";
 
 import React from "react";
 import {
@@ -14,9 +14,9 @@ import {
   Link,
   Tabs,
   Tab,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import {Icon} from "@iconify/react";
-import {cn} from "@nextui-org/react";
+import {cn} from "@heroui/react";
 
 import countries, {type countryProp} from "./countries";
 import states from "./states";

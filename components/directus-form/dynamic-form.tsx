@@ -12,7 +12,7 @@ import EmailInputField from "./components/email-field";
 import Form from 'next/form'
 
 import AddressField from "./components/adress-field";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 
 interface FormComponentProps {
   formData: MyFormData;

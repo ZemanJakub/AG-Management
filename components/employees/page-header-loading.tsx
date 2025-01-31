@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import ProfileBg from "@/public/images/profile-bg.jpg";
-import { Skeleton } from "@nextui-org/react";
+import { Skeleton } from "@heroui/react";
 
 
 export default function PageHeaderLoading() {

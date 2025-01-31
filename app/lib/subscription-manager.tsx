@@ -6,8 +6,8 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-} from "@nextui-org/react";
-import { Button, Card, CardBody } from "@nextui-org/react";
+} from "@heroui/react";
+import { Button, Card, CardBody } from "@heroui/react";
 import { useState, useEffect } from "react";
 import { useSubscription } from "@/app/subscription-context";
 

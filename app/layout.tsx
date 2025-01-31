@@ -6,7 +6,7 @@ import Theme from './theme-provider'
 import AppProvider from './app-provider'
 import { SubscriptionProvider } from "./subscription-context";
 import ToastProvider from "./toast-provider";
-// import {NextUIProvider} from "@nextui-org/react";
+// import {HeroUIProvider} from "@heroui/react";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>{/* suppressHydrationWarning: https://github.com/vercel/next.js/issues/44343 */}
       <body className="font-inter antialiased bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400">
-      {/* <NextUIProvider> */}
+      {/* <HeroUIProvider> */}
       <SubscriptionProvider>
           <Theme>
             <ToastProvider>
@@ -34,7 +34,7 @@ export default function RootLayout({
             </ToastProvider>
           </Theme>
         </SubscriptionProvider>
-        {/* </NextUIProvider> */}
+        {/* </HeroUIProvider> */}
       </body>
     </html>
   )

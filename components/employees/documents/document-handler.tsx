@@ -14,7 +14,7 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import useSWR from "swr";
 import { fetchDocumentData } from "@/db/queries/employees";
 

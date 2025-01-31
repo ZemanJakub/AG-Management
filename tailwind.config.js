@@ -1,12 +1,12 @@
 const plugin = require('tailwindcss/plugin')
-const {nextui} = require("@nextui-org/react");
+const {heroui} = require("@heroui/react");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
   theme: {
@@ -116,7 +116,7 @@ module.exports = {
   },
   darkMode: "class",
   plugins: [
-    nextui(),
+    heroui(),
     require('tailwind-scrollbar-hide'),
     require('@tailwindcss/forms'),
     // add custom variant for expanding sidebar

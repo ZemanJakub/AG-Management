@@ -7,6 +7,8 @@ export interface FormElement {
     required: boolean;
     choices?: { label: string; value: string }[]; 
     order: number;
+    step?: number;
+    defaultValue?: string;
   }
   
   export interface MyFormData {

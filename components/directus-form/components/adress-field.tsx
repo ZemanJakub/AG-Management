@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import { FormElement } from "./types";
-import { Input, InputProps } from "@nextui-org/react";
+import { Input, InputProps } from "@heroui/react";
 
 interface AddressInputProps {
   element: FormElement;

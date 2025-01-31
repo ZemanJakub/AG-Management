@@ -7,25 +7,25 @@ import NewEmployeePersonalForm from "@/components/directus-form/new-employee-per
 interface Props {
   nextStep: () => void;
   onBack: () => void;
-  newEmployeeFormPreferencesHeading: string;
+  newEmployeeFormQualificationHeading: string;
   employyeeId?: string;
 }
 
-const PreferencesFormPage = React.forwardRef<HTMLFormElement, Props>(
+const QualificationFormPage = React.forwardRef<HTMLFormElement, Props>(
   (
-    { nextStep, newEmployeeFormPreferencesHeading, onBack, employyeeId, },
+    { nextStep, newEmployeeFormQualificationHeading, onBack, employyeeId, },
     ref
   ) => {
    
     return (
       <>
         <div className="text-3xl font-bold leading-9 text-default-foreground">
-          Preference 👋
+          Kvalifikace a praxe 👋
         </div>
         <div className="py-2 text-medium text-default-500">
           <div className="flex w-full justify-center gap-2 mt-6">
             <h2 className="text-large text-default-500 mb-8">
-              {newEmployeeFormPreferencesHeading}
+              {newEmployeeFormQualificationHeading}
             </h2>
           </div>
         </div>
@@ -33,13 +33,13 @@ const PreferencesFormPage = React.forwardRef<HTMLFormElement, Props>(
           nextStep={nextStep}
           onBack={onBack}
           employyeeId={employyeeId}
-          formId="d4c47ec3-3243-4ec5-8738-cb6b332dafc4"
+          formId="2ae36aef-f570-4df5-9941-e53123391c90"
         />
       </>
     );
   }
 );
 
-PreferencesFormPage.displayName = "PersonalForm";
+QualificationFormPage.displayName = "QualificationFormPage";
 
-export default PreferencesFormPage;
+export default QualificationFormPage;

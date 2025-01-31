@@ -1,6 +1,6 @@
 "use client";
 
-import { Textarea } from "@nextui-org/react";
+import { Textarea } from "@heroui/react";
 import React, { useEffect, useState } from "react";
 
 interface InformationsPolicyProps {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Calendar } from "@nextui-org/calendar";
+import { Calendar } from "@heroui/calendar";
 import { I18nProvider } from "@react-aria/i18n";
 import { parseDate, CalendarDate } from "@internationalized/date";
 

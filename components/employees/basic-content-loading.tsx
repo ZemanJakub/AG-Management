@@ -4,7 +4,7 @@ import Image from "next/image";
 import Icon02 from "@/public/images/icon-02.svg";
 import UserImage01 from "@/public/images/avatar-01.jpg";
 import UserImage03 from "@/public/images/avatar-03.jpg";
-import { Skeleton } from "@nextui-org/react";
+import { Skeleton } from "@heroui/react";
 
 
 

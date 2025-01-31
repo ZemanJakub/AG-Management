@@ -10,7 +10,7 @@ import ChooseAddressForm from "./choose-address-form";
 import ReviewAndPaymentForm from "./review-and-payment-form";
 import MultistepNavigationButtons from "./multistep-navigation-buttons";
 import InformationsPolicy from "./informations-policy";
-import { Checkbox } from "@nextui-org/react";
+import { Checkbox } from "@heroui/react";
 
 const variants = {
   enter: (direction: number) => ({

@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { useFormStatus } from "react-dom";
 import PendingLook from "@/components/pending-look";
 import {
   Modal,
@@ -13,82 +12,66 @@ import {
   Button,
   useDisclosure,
 } from "@heroui/react";
-import { toast } from "react-toastify";
 import ImageCropper from "@/components/helpers/ImageCropper";
 import PencilIcon from "@/components/my-icons/PencilIcon";
+import { Management } from "./types";
 
 interface UpdatePhotoInfoProps {
-  id: string;
-  firstName: string;
-  secondName: string;
   photo: string;
-}
-interface UploadHandlerInfoProps {
-  bigPhoto: string;
-  smallPhoto: string;
+  setUpdatedAvatarAction: (photo: string) => void;
+  management: Management[];
 }
 
-export default function UpdatePhoto({
-  id,
+export default function UpdatePhotoComponent({
   photo,
-  firstName,
-  secondName,
+  setUpdatedAvatarAction,
+  management,
 }: UpdatePhotoInfoProps) {
-  const info: UpdatePhotoInfoProps = {
-    id: id,
-    firstName: firstName,
-    secondName: secondName,
-    photo: `${process.env.NEXT_PUBLIC_DIRECTUS_URL}/assets/${photo}`,
-  };
-  
-  const { pending } = useFormStatus();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [picture, setPicture] = useState(
-  `${process.env.NEXT_PUBLIC_DIRECTUS_URL}/assets/${photo}`
+    `${process.env.NEXT_PUBLIC_DIRECTUS_URL}/assets/${photo}`
   );
-  const uploadHandler = async (data: UploadHandlerInfoProps) => {
-    toast.info("Nahrávám fotografii.", {
-      autoClose: 2000,
-      hideProgressBar: false,
-      theme: "dark",
-    });
 
-    // upravit z api na server action
-    onOpenChange();
-    const dataToSend = {
-      smallPhoto: data.smallPhoto,
-      bigPhoto: data.bigPhoto,
-      ...info,
-    };
-    const result = await fetch("/api/saveImage", {
-      method: "POST",
-      body: JSON.stringify({ dataToSend }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    toast.dismiss();
-    if (result.status === 200) {
-      setTimeout(() => {
-        toast.success("Fotografie uložena.", {
-          autoClose: 2000,
-          hideProgressBar: true,
-          theme: "dark",
-        });
-      }, 1000);
-      setPicture(data.smallPhoto);
-    } else {
-      const text = await result.text();
-      toast.warn(`${text}`, {
-        autoClose: 5000,
-        hideProgressBar: true,
-        theme: "dark",
-        });
-    }
+  const avatarToUpdate = (data: string) => {
+    setUpdatedAvatarAction(data);
+    setPicture(data);
   };
 
+  // Omezit pole management na maximálně 6 položek
+  const limitedManagement = management.slice(0, 8);
+
   return (
-    <div className="inline-flex -ml-1 -mt-1 mb-2 sm:mb-0">
+    <div className="relative inline-flex -ml-1 -mt-1 mb-2 sm:mb-0">
+      <div className="hidden lg:flex absolute inset-0 items-center justify-center">
+        {/* Kruh kolem hlavní fotografie */}
+        <div className="relative flex items-center justify-center rounded-full w-[400px] h-[400px]">
+          {limitedManagement.map((member, index) => (
+            <div
+              key={index}
+              className="absolute rounded-full overflow-hidden border-2 border-white"
+              style={{
+                transform: `rotate(${(360 / limitedManagement.length) * index}deg) translate(160px) rotate(-${(360 / limitedManagement.length) * index}deg)`,
+                width: "80px",
+                height: "80px",
+              }}
+            >
+              <div className="relative w-full h-full">
+                {/* Fotografie */}
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_DIRECTUS_URL}/assets/${member.avatar}`}
+                  alt={member.name}
+                  width={80}
+                  height={80}
+                  className="rounded-full"
+                />
+                {/* Překryv */}
+                <div className="absolute inset-0 bg-gray-800 opacity-60 rounded-full"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <form>
         <div className="flex flex-col items-center md:flex-row md:items-center relative">
           <div>
@@ -102,7 +85,7 @@ export default function UpdatePhoto({
                 title="Change photo"
                 onPress={onOpen}
               >
-                <PencilIcon className="text-slate-200"/>
+                <PencilIcon className="text-slate-200" />
               </Button>
               <div className="rounded-full border-2 border-[linear-gradient(135deg,var(--tw-gradient-stops))] from-violet-500/[0.8] dark:from-violet-500/[0.95] to-violet-500/[0.34] z-10">
                 <PendingLook className="w-32 h-32 flex items-center justify-center bg-white text-slate-200 dark:bg-slate-900 rounded-full z-20">
@@ -116,7 +99,7 @@ export default function UpdatePhoto({
                   />
                 </PendingLook>
                 <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-                  <ModalContent className="overflow-y-auto max-h-screen scrollbar-hide   bg-white dark:bg-slate-800 shadow-lg rounded-lg border border-slate-200 dark:border-slate-700">
+                  <ModalContent className="overflow-y-auto max-h-screen scrollbar-hide bg-white dark:bg-slate-800 shadow-lg rounded-lg border border-slate-200 dark:border-slate-700">
                     {(onClose) => (
                       <>
                         <ModalHeader className="flex flex-col gap-1">
@@ -124,8 +107,10 @@ export default function UpdatePhoto({
                         </ModalHeader>
                         <ModalBody>
                           <ImageCropper
-                            uploadHandler={uploadHandler}
-                            // info={info}
+                            uploadHandler={(data: string) => {
+                              avatarToUpdate(data);
+                              onClose();
+                            }}
                           />
                         </ModalBody>
                         <ModalFooter>
@@ -149,3 +134,4 @@ export default function UpdatePhoto({
     </div>
   );
 }
+

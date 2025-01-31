@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FormElement } from "./types";
-import { Input } from "@nextui-org/react";
+import { Input } from "@heroui/react";
 
 interface InputFieldProps {
   element: FormElement;
@@ -8,7 +8,7 @@ interface InputFieldProps {
   error?: string | any; // Chybová hláška
 }
 
-const InputField = ({ element, defaultValue = "", error }: InputFieldProps) => {
+const InputField = ({ element, defaultValue, error }: InputFieldProps) => {
   // Uchováváme hodnotu inputu pomocí useState
   const [inputValue, setInputValue] = useState(defaultValue);
 

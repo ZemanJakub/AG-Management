@@ -2,10 +2,14 @@
 
 import { z } from "zod";
 import { directus } from "@/app/lib/directus";
-import { createItem, readItems, updateItem } from "@directus/sdk";
-import { redirect } from "next/navigation";
-import { revalidatePath } from "next/cache";
-import paths from "@/components/employees/paths";
+import {
+  createFolder,
+  createItem,
+  readItem,
+  readItems,
+  updateFolder,
+  updateItem,
+} from "@directus/sdk";
 import { TransformToFieldErrorsType } from "@/components/utils/utils";
 import { generateSchema } from "@/app/(default)/personalistika/zamestnanci/[id]/edit/drectus-form/components/schema";
 import { MyFormData } from "@/app/(default)/personalistika/zamestnanci/[id]/edit/drectus-form/components/types";
@@ -76,9 +80,9 @@ import { fetchMyForm } from "@/db/queries/employees";
 //     const result = await directus.request(
 //       createItem("basicEmployeeData", personalDataUpdate)
 //     );
-  
+
 //     console.log(result);
- 
+
 //   } catch (error) {
 //     console.error("Data se nepodařilo uložit", error);
 //     return {
@@ -92,7 +96,7 @@ import { fetchMyForm } from "@/db/queries/employees";
 // Funkce, která načte strukturu formuláře a převede ji do požadovaného formátu
 async function loadCustomFormStructure(): Promise<MyFormData> {
   const dynamicformData = await fetchMyForm(
-    "0c149237-74b8-4a4c-b741-f473d13b2d4b"
+    "9f192b09-f334-42e9-b609-78a358223231"
   );
   const formData = dynamicformData[0] as unknown as MyFormData;
 
@@ -115,11 +119,14 @@ export async function updateBasicEmployeeDynamic(
   prevState: any,
   formData: FormData // FormData z Web API
 ): Promise<{
-  errors: TransformToFieldErrorsType<z.infer<ReturnType<typeof generateSchema>>>;
+  errors: TransformToFieldErrorsType<
+    z.infer<ReturnType<typeof generateSchema>>
+  >;
   savedId?: string; // Přidáno pro vrácení uloženého ID
+  uploadError?: string; // Přidáno pro vrácení chyby
 }> {
   let savedId: string | undefined;
-
+  console.log("start updateBasicEmployeeDynamic");
   // Načtení struktury formuláře přímo v serverové akci
   const customFormStructure: MyFormData = await loadCustomFormStructure();
 
@@ -163,19 +170,60 @@ export async function updateBasicEmployeeDynamic(
 
   if (!validationResult.success) {
     const errors = validationResult.error.flatten().fieldErrors;
+    console.log(errors, "validationResult");
+
     return { errors }; // Pokud validace selže, vrátíme pouze chyby
   }
 
   // Aktualizace dat na serveru
   try {
     const id = formData.get("id") as string;
-    
-    const result = await directus.request(
-      createItem("basicEmployeeData", personalDataUpdate)
-    );
 
-    // Předpokládáme, že `result` obsahuje ID uloženého záznamu
-    savedId = result.id;
+    if (!id || id === undefined || id === "undefined") {
+ 
+      const folderResult = await directus.request(
+        createFolder({
+          name: `${personalDataUpdate.firstName} ${personalDataUpdate.secondName}`,
+          parent: "e18f708b-ca9c-4a8a-87c1-b2f264cbce61",
+        })
+      );
+      console.log(folderResult, "folder result");
+
+      const result = await directus.request(
+        createItem("basicEmployeeData", {
+          ...personalDataUpdate,
+          folderId: folderResult.id,
+        })
+      );
+
+      if (result.id) {
+        console.log("novy zamestnanec ulozen", result.id);
+        savedId = result.id;
+        return { errors: {}, savedId };
+      } else {
+        return {
+          errors: {
+            uploadError: ["Data se nepodařilo uložit"],
+          },
+        };
+      }
+    }
+    if (id) {
+      const result = await directus.request(
+        updateItem("basicEmployeeData", id, personalDataUpdate)
+      );
+      if (result.id) {
+        console.log("novy zamestnanec upraven");
+        savedId = result.id;
+        return { errors: {}, savedId };
+      } else {
+        return {
+          errors: {
+            uploadError: ["Data se nepodařilo uložit"],
+          },
+        };
+      }
+    }
   } catch (error) {
     console.error("Data se nepodařilo uložit", error);
     return {

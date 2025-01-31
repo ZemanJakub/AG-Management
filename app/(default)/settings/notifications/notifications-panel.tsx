@@ -3,7 +3,7 @@
 import { sendNotification } from "@/actions";
 import { useSubscription } from "@/app/subscription-context";
 import { useEffect, useState } from "react";
-import { Button, Spinner, Switch } from "@nextui-org/react";
+import { Button, Spinner, Switch } from "@heroui/react";
 import { toast } from "react-toastify";
 
 export default function NotificationsPanel() {

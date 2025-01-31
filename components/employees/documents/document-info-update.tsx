@@ -10,8 +10,8 @@ import {
   Select,
   SelectItem,
   Input,
-} from "@nextui-org/react";
-import { DatePicker } from "@nextui-org/date-picker";
+} from "@heroui/react";
+import { DatePicker } from "@heroui/date-picker";
 import { parseDate } from "@internationalized/date";
 import { I18nProvider } from "@react-aria/i18n";
 import { today, getLocalTimeZone, endOfYear } from "@internationalized/date";
@@ -19,7 +19,7 @@ import { toast } from "react-toastify";
 import { z } from "zod";
 import { useFormik } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
-import { CalendarDate } from "@nextui-org/calendar";
+import { CalendarDate } from "@heroui/calendar";
 
 interface DocumentInfoUpdateProps {
   expiration?:boolean;

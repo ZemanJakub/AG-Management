@@ -8,7 +8,7 @@ import { fetchNotifcations } from '@/queries/notifications';
 import { directus } from '@/app/lib/directus';
 import { readItems } from '@directus/sdk';
 import { createSampleProcess } from '@/app/lib/create-process';
-import { Button } from '@nextui-org/react';
+import { Button } from "@heroui/react";
 
 interface DropdownNotificationsProps {
   align?: 'left' | 'right';

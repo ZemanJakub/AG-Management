@@ -1,6 +1,6 @@
 "use client";
 
-import { Spinner } from "@nextui-org/react";
+import { Spinner } from "@heroui/react";
 import { useFormStatus } from "react-dom";
 
 interface FormButtonProps {

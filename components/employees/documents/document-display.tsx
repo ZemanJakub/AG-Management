@@ -14,10 +14,10 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import Image from "next/image";
 import { useState } from "react";
-import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/react";
+import { Popover, PopoverTrigger, PopoverContent } from "@heroui/react";
 import { DocumentProps } from "@/app/lib/models";
 import CheckCircleIcon from "@/components/my-icons/check-circle-icon";
 import CircleIcon from "@/components/my-icons/circle-icon";

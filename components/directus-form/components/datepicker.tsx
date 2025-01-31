@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { I18nProvider } from "@react-aria/i18n";
 import { parseDate, CalendarDate } from "@internationalized/date";
-import { DatePicker } from "@nextui-org/react";
+import { DatePicker } from "@heroui/react";
 
 export default function Datepicker({
   align,
@@ -16,9 +16,10 @@ export default function Datepicker({
   required?: boolean;
   onChange?: (date: Date) => void;
 }) {
-  const [selectedDate, setSelectedDate] = useState<CalendarDate | null>(null);
+  const [selectedDate, setSelectedDate] = useState<CalendarDate | null>(defaultDate ? parseDate(defaultDate) : null);
 
   useEffect(() => {
+    if (!defaultDate) return;
     if (defaultDate) {
       const parsedDate = parseDate(defaultDate); // Převod na CalendarDate
       setSelectedDate(parsedDate);
@@ -41,17 +42,18 @@ export default function Datepicker({
   return (
     <I18nProvider locale="cs-CZ">
       <div
+      suppressHydrationWarning
         className={`relative w-full ${align === "right" ? "text-right" : ""}`}
       >
         <DatePicker
+
           variant="bordered"
-          //  classNames={{
-          //   inputWrapper: "bg-primary-200 dark:bg-primary-800",
-          //   input: "bg-primary-200 dark:bg-primary-800", // Barvy pro světlý a tmavý režim
-          // }}
           value={selectedDate}
           onChange={handleDateChange}
           aria-label={id}
+          showMonthAndYearPickers={true}
+          isDisabled={false}
+          isRequired={required ?? false} 
         />
       </div>
     </I18nProvider>

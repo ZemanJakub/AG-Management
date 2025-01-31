@@ -6,7 +6,7 @@ import AccountImage from "@/public/images/user-avatar-80.png";
 import { DataForSession } from "@/app/lib/models";
 import { updateProfile } from "@/actions";
 import Form from "next/form";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import DoubleCheckIcon from "@/components/my-icons/double-check-icon";
 import CrossIcon from "@/components/my-icons/cross-icon";
 import UpdatePhoto from "@/components/employees/update-photo";

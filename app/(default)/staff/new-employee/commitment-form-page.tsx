@@ -7,25 +7,25 @@ import NewEmployeePersonalForm from "@/components/directus-form/new-employee-per
 interface Props {
   nextStep: () => void;
   onBack: () => void;
-  newEmployeeFormPreferencesHeading: string;
+  newEmployeeFormCommitmentHeading: string;
   employyeeId?: string;
 }
 
-const PreferencesFormPage = React.forwardRef<HTMLFormElement, Props>(
+const CommitmentFormPage = React.forwardRef<HTMLFormElement, Props>(
   (
-    { nextStep, newEmployeeFormPreferencesHeading, onBack, employyeeId, },
+    { nextStep, newEmployeeFormCommitmentHeading, onBack, employyeeId, },
     ref
   ) => {
    
     return (
       <>
         <div className="text-3xl font-bold leading-9 text-default-foreground">
-          Preference 👋
+          Závazky 👋
         </div>
         <div className="py-2 text-medium text-default-500">
           <div className="flex w-full justify-center gap-2 mt-6">
             <h2 className="text-large text-default-500 mb-8">
-              {newEmployeeFormPreferencesHeading}
+              {newEmployeeFormCommitmentHeading}
             </h2>
           </div>
         </div>
@@ -33,13 +33,13 @@ const PreferencesFormPage = React.forwardRef<HTMLFormElement, Props>(
           nextStep={nextStep}
           onBack={onBack}
           employyeeId={employyeeId}
-          formId="d4c47ec3-3243-4ec5-8738-cb6b332dafc4"
+          formId="8882a599-b5c2-4065-b008-5ab50cadd97e"
         />
       </>
     );
   }
 );
 
-PreferencesFormPage.displayName = "PersonalForm";
+CommitmentFormPage.displayName = "CommitmentFormPage";
 
-export default PreferencesFormPage;
+export default CommitmentFormPage;

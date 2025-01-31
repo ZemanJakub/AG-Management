@@ -11,14 +11,10 @@ interface TextareaFieldProps {
 }
 
 const TextareaField = ({ element, defaultValue, error }: TextareaFieldProps) => {
-  const [textValue, setTextValue] = useState<string>(defaultValue);
-
-  const textHandler = (value: string) => {
-    setTextValue(value);
-  };
+  const [textValue, setTextValue] = useState<string>(defaultValue?.toString() || element.defaultValue || "");
 
   useEffect(() => {
-    setTextValue(defaultValue);
+    setTextValue(defaultValue?.toString() || element.defaultValue || ""); // Aktualizace hodnoty, pokud se změní defaultValue
   }, [defaultValue]);
 
   return (
@@ -29,15 +25,17 @@ const TextareaField = ({ element, defaultValue, error }: TextareaFieldProps) => 
       >
         {element.label}
       </label>
+      {/* Skrytý textarea má být řízený komponentou, proto používá atribut value */}
       <textarea
         name={element.key}
         id={element.key}
-        defaultValue={textValue} // Použití defaultValue
+        value={textValue}
+        onChange={(e) => setTextValue(e.target.value)} // Reaguje na změny
         className="hidden"
       />
       <Tiptap
         defaultValue={defaultValue}
-        onChange={textHandler}
+        onChange={(newText) => setTextValue(newText)} // Tiptap aktualizuje hodnotu
         name={element.key}
         id={element.key}
         placeholder="Poznámka…"
@@ -52,4 +50,3 @@ const TextareaField = ({ element, defaultValue, error }: TextareaFieldProps) => 
 };
 
 export default TextareaField;
-

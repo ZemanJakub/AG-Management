@@ -47,7 +47,7 @@ export const fetchEmployeeBasicInformations = async (id: string) => {
     const response = await directus.request(readItem("basicEmployeeData", id));
     return response;
   } catch (error) {
-    console.error("Error fetching form:", error);
+    console.error("Error fetching employee informations:", error);
     // Můžete vrátit vlastní strukturu chybové odpovědi nebo znovu vyvolat chybu
     throw new Error("Failed to fetch employee data.");
   }
@@ -62,7 +62,7 @@ export const fetchEmployeePersonalInformations = async (id: string) => {
         },
       })
     );
-    return response;
+    return response[0];
   } catch (error) {
     console.error("Error fetching form:", error);
     // Můžete vrátit vlastní strukturu chybové odpovědi nebo znovu vyvolat chybu

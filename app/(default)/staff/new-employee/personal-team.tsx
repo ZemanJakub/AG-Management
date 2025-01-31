@@ -2,7 +2,7 @@
 
 import type { TeamMember } from "./team-member-card";
 
-import { Spacer } from "@nextui-org/react";
+import { Spacer } from "@heroui/react";
 
 import TeamMemberCard from "./team-member-card";
 

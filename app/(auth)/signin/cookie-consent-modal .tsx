@@ -7,8 +7,8 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-} from "@nextui-org/modal";
-import { Button } from "@nextui-org/react";
+} from "@heroui/modal";
+import { Button } from "@heroui/react";
 import Link from "next/link";
 
 export default function CookieConsentModal() {

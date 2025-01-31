@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
-import { cn } from "@nextui-org/react";
+import { cn } from "@heroui/react";
 
 import SupportCard from "./support-card";
 import VerticalSteps from "./vertical-steps";
@@ -24,14 +24,14 @@ export type MultiStepSidebarProps = React.HTMLAttributes<HTMLDivElement> & {
 // Upravené barvy
 const stepperClasses = cn(
   // light
-  "[--step-color:hsl(var(--nextui-secondary-400))]",
-  "[--active-color:hsl(var(--nextui-secondary-400))]",
-  "[--inactive-border-color:hsl(var(--nextui-secondary-200))]",
-  "[--inactive-bar-color:hsl(var(--nextui-secondary-200))]",
-  "[--inactive-color:hsl(var(--nextui-secondary-300))]",
+  "[--step-color:hsl(var(--heroui-secondary-400))]",
+  "[--active-color:hsl(var(--heroui-secondary-400))]",
+  "[--inactive-border-color:hsl(var(--heroui-secondary-200))]",
+  "[--inactive-bar-color:hsl(var(--heroui-secondary-200))]",
+  "[--inactive-color:hsl(var(--heroui-secondary-300))]",
   // dark
   "dark:[--step-color:rgba(255,255,255,0.1)]",
-  "dark:[--active-color:hsl(var(--nextui-foreground-600))]",
+  "dark:[--active-color:hsl(var(--heroui-foreground-600))]",
   "dark:[--active-border-color:rgba(255,255,255,0.5)]",
   "dark:[--inactive-border-color:rgba(255,255,255,0.1)]",
   "dark:[--inactive-bar-color:rgba(255,255,255,0.1)]",
@@ -60,11 +60,11 @@ const MultiStepSidebar = React.forwardRef<
       <div
         ref={ref}
         // className={cn("flex h-[calc(100vh_-_1px)] w-full gap-x-2", className)}
-        className={cn("flex w-full gap-x-2", className)}
+        className={cn("flex w-full ", className)}
         {...props}
       >
         <div>
-          <div className="hidden h-full w-[344px] flex-shrink-0 flex-col items-start gap-y-8 mt-2 ml-7 rounded-md bg-gradient-to-b from-gray-200 via-gray-200 to-gray-200 px-8 py-6 shadow-small lg:flex dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 overflow-auto scrollbar-hidden">
+          <div className="hidden  w-[344px] flex-shrink-0 flex-col items-start gap-y-8 mt-2 ml-7 rounded-md bg-gradient-to-b from-gray-200 via-gray-200 to-gray-200 px-8 py-6 shadow-small lg:flex dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 overflow-auto scrollbar-hidden">
             <div>
               <div className="text-xl font-medium leading-7 text-secondary-800">
                 Registrace zájemce o zaměstnání ve společnosti ARES GROUP s.r.o.
@@ -194,7 +194,7 @@ const MultiStepSidebar = React.forwardRef<
           </div>
           <div className="h-full w-full p-4 ">
             {children}
-            <SupportCard className="mx-auto w-full max-w-[252px] lg:hidden" />
+            {/* <SupportCard className="mx-auto w-full max-w-[252px] lg:hidden" /> */}
           </div>
         </div>
       </div>

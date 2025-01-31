@@ -1,7 +1,7 @@
 "use client";
 import { sendFeedback } from "@/actions";
 import { DataForSession } from "@/app/lib/models";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import Form from "next/form";
 import { useActionState, useEffect, useState } from "react";
 import { toast } from "react-toastify";

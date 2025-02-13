@@ -4,7 +4,7 @@ import {
   fetchMyForm,
 } from "@/db/queries/employees";
 import { useActionState } from "react";
-import * as actions from "@/actions";
+import {personalEmployeeData} from "@/actions";
 import { MyFormData } from "./components/types";
 import InputField from "./components/input-field";
 import TextareaField from "./components/textarea-field";
@@ -29,7 +29,7 @@ interface Props {
 
 const NewEmployeePersonalForm = ({ nextStep, onBack, employyeeId, formId }: Props) => {
   const [state, action, isPending] = useActionState(
-    actions.updatePersonalEmployeeDynamic,
+    personalEmployeeData,
     null
   );
   const formRef = useRef<HTMLFormElement>(null);

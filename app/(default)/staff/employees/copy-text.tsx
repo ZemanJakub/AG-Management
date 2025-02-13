@@ -12,7 +12,7 @@ export interface CopyTextProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const CopyText = memo(
   forwardRef<HTMLDivElement, CopyTextProps>((props, forwardedRef) => {
-    const {className, textClassName, children, copyText = "Copy"} = props;
+    const {className, textClassName, children, copyText = "Kopírovat"} = props;
     const [copied, setCopied] = React.useState(false);
     const [copyTimeout, setCopyTimeout] = React.useState<ReturnType<typeof setTimeout> | null>(
       null,
@@ -35,10 +35,10 @@ export const CopyText = memo(
       );
     };
 
-    const content = useMemo(() => (copied ? "Copied" : copyText), [copied, copyText]);
+    const content = useMemo(() => (copied ? "Zkopírováno" : copyText), [copied, copyText]);
 
     return (
-      <div ref={forwardedRef} className={cn("flex items-center gap-3 text-default-500", className)}>
+      <div ref={forwardedRef} className={cn("flex items-center gap-3 ", className)}>
         <span className={textClassName}>{children}</span>
         <Tooltip className="text-foreground" content={content}>
           <Button

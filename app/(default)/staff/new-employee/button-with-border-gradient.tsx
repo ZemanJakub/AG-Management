@@ -6,8 +6,9 @@ import {Button} from "@heroui/react";
 import {startsWith} from "lodash";
 import Link from "next/link";
 
+
 export type ButtonWithBorderGradientProps = ButtonProps &
-  LinkProps & {
+  Partial<LinkProps> & {
     background?: string;
   };
 
@@ -15,6 +16,7 @@ export const ButtonWithBorderGradient = ({
   children,
   background = "--heroui-background",
   style: styleProp,
+  href,
   ...props
 }: ButtonWithBorderGradientProps) => {
   const linearGradientBg = startsWith(background, "--") ? `hsl(var(${background}))` : background;
@@ -29,13 +31,14 @@ export const ButtonWithBorderGradient = ({
   return (
     <Button
       as={Link}
-      href="#"
+      href={href ?? "#"}
       {...props}
       style={{
         ...style,
         ...styleProp,
       }}
       type="submit"
+      
     >
       {children}
     </Button>

@@ -2,14 +2,20 @@
 
 import { z } from "zod";
 import { directus } from "@/app/lib/directus";
-import { createItem, readItems, updateItem } from "@directus/sdk";
+import {
+  createFolder,
+  createItem,
+  updateItem,
+} from "@directus/sdk";
 import { TransformToFieldErrorsType } from "@/components/utils/utils";
 import { generateSchema } from "@/app/(default)/personalistika/zamestnanci/[id]/edit/drectus-form/components/schema";
 import { MyFormData } from "@/app/(default)/personalistika/zamestnanci/[id]/edit/drectus-form/components/types";
 import { fetchMyForm } from "@/db/queries/employees";
 
-async function loadCustomFormStructure(formId: string): Promise<MyFormData> {
-  const dynamicformData = await fetchMyForm(formId);
+async function loadCustomFormStructure(): Promise<MyFormData> {
+  const dynamicformData = await fetchMyForm(
+    "9f192b09-f334-42e9-b609-78a358223231"
+  );
   const formData = dynamicformData[0] as unknown as MyFormData;
 
   return {
@@ -27,8 +33,7 @@ async function loadCustomFormStructure(formId: string): Promise<MyFormData> {
   };
 }
 
-
-export async function updatePersonalEmployeeDynamic(
+export async function basicEmployeeData(
   prevState: any,
   formData: FormData // FormData z Web API
 ): Promise<{
@@ -38,12 +43,10 @@ export async function updatePersonalEmployeeDynamic(
   savedId?: string; // Přidáno pro vrácení uloženého ID
   uploadError?: string; // Přidáno pro vrácení chyby
 }> {
-  console.log(formData,"formData");
-  const id = formData.get("id") as string; // ID zaměstnance
-  let savedId = "";
-  const formId = formData.get("formId") as string;
+  let savedId: string | undefined;
+  console.log("start updateBasicEmployeeDynamic");
   // Načtení struktury formuláře přímo v serverové akci
-  const customFormStructure: MyFormData = await loadCustomFormStructure(formId);
+  const customFormStructure: MyFormData = await loadCustomFormStructure();
 
   // Dynamicky generované schéma na základě customFormStructure
   const schema = generateSchema(customFormStructure);
@@ -51,8 +54,6 @@ export async function updatePersonalEmployeeDynamic(
   // Pomocné funkce pro parsing
   const parseInteger = (incomingValue: FormDataEntryValue | null): number => {
     const number = Number(incomingValue || 0);
-    console.log("Number field incoming valur", incomingValue);
-    console.log("Number field value to save", number);
     return isNaN(number) ? 0 : number;
   };
 
@@ -66,16 +67,12 @@ export async function updatePersonalEmployeeDynamic(
 
   customFormStructure.elements.forEach((element) => {
     let value = formData.get(element.key); // Hodnotu získáme z FormData (z Web API)
-    console.log(element.key, element.type, value);
-    // Pokud je hodnota null, nastavíme ji na prázdný řetězec, aby validace proběhla správně
+
     if (value === null) {
       value = ""; // Výchozí hodnota pro všechna prázdná pole
     }
 
-    // Zpracování hodnoty podle typu pole
     if (element.type === "number") {
-      console.log("number find", element.key, value);
-
       personalDataUpdate[element.key] = parseInteger(value);
     } else if (element.type === "date") {
       personalDataUpdate[element.key] = value
@@ -87,63 +84,41 @@ export async function updatePersonalEmployeeDynamic(
   });
 
   // Validace pomocí dynamického schématu
-
   const validationResult = schema.safeParse(personalDataUpdate);
 
   if (!validationResult.success) {
-    console.log("validace neprošla");
     const errors = validationResult.error.flatten().fieldErrors;
-    return { errors };
+    console.log(errors, "validationResult");
+
+    return { errors }; // Pokud validace selže, vrátíme pouze chyby
   }
 
   // Aktualizace dat na serveru
-  try { 
-    // Získání záznamu z `PersonalInformations` na základě `employeeId`
-    const response = await directus.request(
-      readItems("PersonalInformations", {
-        filter: {
-          employeeId: id,
-        },
-        fields:  ["*", "employeeId.*"], // Načítáme pouze ID
-      })
-    );
-  
-    const existingPersonalInfoId = response?.[0]?.id; // Bezpečná kontrola
-    let savedId;
-  
-    if (existingPersonalInfoId) {
-      // Pokud záznam existuje, aktualizujeme ho
-      console.log("Nalezen existující záznam, aktualizuji...");
-      const result = await directus.request(
-        updateItem("PersonalInformations", existingPersonalInfoId, personalDataUpdate)
-      );
-  
-      if (result?.id) {
-        savedId = result.id;
-        console.log("PersonalInformations byl úspěšně aktualizován.");
-      } else {
-        console.log("Chyba při aktualizaci PersonalInformations.");
-        return {
-          errors: {
-            uploadError: ["Data se nepodařilo uložit"],
-          },
-        };
-      }
-    } else {
-      // Pokud záznam neexistuje, vytvoříme nový
-      console.log("Záznam neexistuje, vytvářím nový...",id);
-      const result = await directus.request(
-        createItem("PersonalInformations", {
-          employeeId: id,
-          ...personalDataUpdate,
+  try {
+    const id = formData.get("id") as string;
+
+    if (!id || id === undefined || id === "undefined") {
+ 
+      const folderResult = await directus.request(
+        createFolder({
+          name: `${personalDataUpdate.firstName} ${personalDataUpdate.secondName}`,
+          parent: "e18f708b-ca9c-4a8a-87c1-b2f264cbce61",
         })
       );
-  
-      if (result?.id) {
+      console.log(folderResult, "folder result");
+
+      const result = await directus.request(
+        createItem("basicEmployeeData", {
+          ...personalDataUpdate,
+          folderId: folderResult.id,
+        })
+      );
+
+      if (result.id) {
+        console.log("novy zamestnanec ulozen", result.id);
         savedId = result.id;
-        console.log("Nový záznam v PersonalInformations byl vytvořen.");
+        return { errors: {}, savedId };
       } else {
-        console.log("Chyba při vytváření PersonalInformations.");
         return {
           errors: {
             uploadError: ["Data se nepodařilo uložit"],
@@ -151,7 +126,22 @@ export async function updatePersonalEmployeeDynamic(
         };
       }
     }
-    return  { errors: {}, savedId };; // Vrátíme `savedId` úspěšně uloženého záznamu
+    if (id) {
+      const result = await directus.request(
+        updateItem("basicEmployeeData", id, personalDataUpdate)
+      );
+      if (result.id) {
+        console.log("novy zamestnanec upraven");
+        savedId = result.id;
+        return { errors: {}, savedId };
+      } else {
+        return {
+          errors: {
+            uploadError: ["Data se nepodařilo uložit"],
+          },
+        };
+      }
+    }
   } catch (error) {
     console.error("Data se nepodařilo uložit", error);
     return {
@@ -160,7 +150,7 @@ export async function updatePersonalEmployeeDynamic(
       },
     };
   }
-  
 
+  // Pokud vše proběhne v pořádku, vrátíme chyby jako prázdné a uložené ID
   return { errors: {}, savedId };
 }

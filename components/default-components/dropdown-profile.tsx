@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@heroui/react";
-import { logout } from "@/actions/auth/actions";
+import { logout } from "@/actions";
 
 interface HeaderProps {
   userName: string;

@@ -42,7 +42,6 @@ export const fetchMyForm = async (id: string) => {
 };
 export const fetchEmployeeBasicInformations = async (id: string) => {
   try {
-    console.log("form start");
     // Předpokládáme, že `directus.request` vrací Promise, takže přidáváme `await`
     const response = await directus.request(readItem("basicEmployeeData", id));
     return response;

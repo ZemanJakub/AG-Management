@@ -1,18 +1,15 @@
 "use client";
 
 import { useActionState, useEffect, useState } from "react";
-import Image from "next/image";
-import AccountImage from "@/public/images/user-avatar-80.png";
 import { DataForSession } from "@/app/lib/models";
 import { updateProfile } from "@/actions";
 import Form from "next/form";
 import { Button } from "@heroui/react";
 import DoubleCheckIcon from "@/components/my-icons/double-check-icon";
 import CrossIcon from "@/components/my-icons/cross-icon";
-import UpdatePhoto from "@/components/employees/update-photo";
 import UpdateAvatar from "@/components/users/update-avatar";
 import { toast } from "react-toastify";
-import { logout } from "@/actions/auth/actions";
+import { logout } from "@/actions";
 import { redirect } from "next/navigation";
 
 export default function AccountPanel({

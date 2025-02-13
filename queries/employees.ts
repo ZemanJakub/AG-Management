@@ -9,10 +9,12 @@ import { directus } from "@/app/lib/directus";
 import {
   deleteFile,
   deleteFiles,
+  deleteFolder,
   deleteItem,
   deleteItems,
   readFiles,
   readFolder,
+  readFolders,
   readItem,
   readItems,
 } from "@directus/sdk";
@@ -40,13 +42,52 @@ export const fetchMyForm = async (id: string) => {
     throw new Error("Failed to fetch form data.");
   }
 };
+interface DeleteBasicEmployeeDataProps{
+  id: string;
+  folderId: string;
+}
 
+export const deleteBasicEmployeeData = async ({id,folderId}:DeleteBasicEmployeeDataProps): Promise<any> => {
+  console.log("starting delete employee")
+  const folderExistance = await directus.request(
+    readFolders({
+      filter: {
+        id: {
+          _eq: folderId,
+        },
+      },
+    })
+  );
+  console.log(folderExistance, "folder existance");
+  if (folderExistance.length > 0) {
+    await directus.request(deleteFolder(folderId));
+  }
+  const employeeResult = await directus.request(
+    deleteItem("basicEmployeeData", id)
+  );
+  console.log(employeeResult, "employee result");
+  return {succces: "ok"};
+}
+
+export const fetchAllBasicEmployeeData = cache(
+  async (): Promise<any> => {
+    try {
+      const result = await directus.request(
+        readItems("basicEmployeeData")
+      );
+      return result;
+    } catch (e) {
+      console.log("Employee basic data not found");
+      return undefined;
+    }
+  }
+);
 
 export const fetchBasicEmployeeData = cache(
   async (id: string): Promise<EmployeeToDisplay | undefined> => {
     try {
       const result = await directus.request(
-        readItem("employees", id)
+        readItem("basicEmployeeData", id)
       );
 
       const employeeData = result as EmployeeToDisplay;

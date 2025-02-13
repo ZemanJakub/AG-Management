@@ -30,7 +30,7 @@ const PersonalEmployeeForm = ({ nextStep, onBack, employyeeId }: Props) => {
   const [formValues, setFormValues] = useState<Record<string, any>>({}); // Hodnoty formuláře
   const [formData, setFormData] = useState<MyFormData | null>(null);
   const [state, action, isPending] = useActionState(
-    actions.updateBasicEmployeeDynamic,
+    actions.basicEmployeeData,
     null
   );
   const formRef = useRef<HTMLFormElement>(null);

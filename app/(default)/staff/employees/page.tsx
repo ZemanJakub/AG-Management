@@ -1,33 +1,23 @@
-"use client";
-// export const metadata = {
-//   title: "Přijímací proces",
-//   description: "Přijímací proces",
-// };
+export const metadata = {
+  title: "Přehled zaměstnanců",
+  description: "Zobrazení přehledu zaměstnanců v přijímacím proesu",
+};
 
-// import FilterButton from "@/components/default-components/dropdown-filter";
-// import EmployesTable from "../../../components/employees/my-employes-table";
-// import PaginationClassic from "@/components/default-components/pagination-classic";
-// import SearchForm from "@/components/default-components/search-form";
-
-// import { directus } from "@/app/lib/directus";
-// import { readItems } from "@directus/sdk";
-// import { EmployeeToDisplay } from "@/app/lib/models";
-// import Link from "next/link";
+import { directus } from "@/app/lib/directus";
+import { readItems } from "@directus/sdk";
 import HrTable from "./hrtable";
+import { MyFormData } from "@/components/directus-form/components/types";
+import { fetchMyForm } from "@/queries/employees";
+import DataComponent from "./data-component";
 
-export default function Customers() {
-  // fetch newemployee data start
-  // const result = await directus.request(
-  //   readItems("employees")
-  // );
-  // console.log("fetch items zamestnanci", result.length)
-  // fetch newemployee data end
+const formId = "9f192b09-f334-42e9-b609-78a358223231";
+export default async function Recruitment() {
+  const result = await directus.request(readItems("basicEmployeeData"));
+  const formStructure = await fetchMyForm(formId);
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-32 py-8 w-full max-w-[-10rem] mx-auto">
- 
-      <HrTable/>
-
-    </div>
+    <>
+      <DataComponent employeeInitData={result} formStructure={formStructure} />
+    </>
   );
 }

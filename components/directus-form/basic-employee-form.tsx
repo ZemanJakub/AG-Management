@@ -5,7 +5,7 @@ import {
   fetchMyForm,
 } from "@/db/queries/employees";
 import { useActionState } from "react";
-import * as actions from "@/actions";
+import {basicEmployeeData} from "@/actions";
 import { MyFormData } from "./components/types";
 import InputField from "./components/input-field";
 import TextareaField from "./components/textarea-field";
@@ -23,24 +23,24 @@ import useSWR from "swr";
 interface Props {
   nextStep: (savedId: string) => void;
   onBack: () => void;
-  employyeeId?: string;
+  employeeId?: string;
   formId?: string;
 }
 
 const BasicEmployeeForm = ({
   nextStep,
   onBack,
-  employyeeId,
+  employeeId,
   formId,
 }: Props) => {
   const [state, action, isPending] = useActionState(
-    actions.updateBasicEmployeeDynamic,
+    basicEmployeeData,
     null
   );
   const formRef = useRef<HTMLFormElement>(null);
 
   const { data: employeeData, error: employeeError } = useSWR(
-    employyeeId ? employyeeId : null,
+    employeeId ? employeeId : null,
     fetchEmployeeBasicInformations
   );
 
@@ -139,7 +139,7 @@ const BasicEmployeeForm = ({
       <input
         type="hidden"
         name="id"
-        value={state?.savedId || employyeeId || ""}
+        value={state?.savedId || employeeId || ""}
         aria-hidden={true}
       />
       <input type="hidden" name="uploadError" value="" aria-hidden={true} />

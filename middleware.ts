@@ -2,28 +2,13 @@ import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { decrypt } from "./app/lib/session";
 import { fetchPermissions } from "./app/lib/get-permissions";
-
-const publicRoutes = [
-  "/signin",
-  "/signup",
-  "/manifest.json",
-  "/sw.js",
-  "/manifest.webmanifest",
-  "/icons", // Výjimka pro ikony
-  "/screenshots", // Výjimka pro snímky obrazovky
-];
+import { isPublicRoute } from "./lib/publicRoutes";
 
 export default async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
 
-  // Povolení statických souborů a veřejných cest
-  if (
-    path.startsWith("/_next/static/") || // Statické soubory
-    publicRoutes.some((route) => path.startsWith(route)) || // Veřejné cesty
-    path.startsWith("/icons/") || // Výjimka pro všechny ikony
-    path.startsWith("/screenshots/") || // Výjimka pro všechny snímky obrazovky
-    path.endsWith(".ico") // Favicon
-  ) {
+  // Pokud je cesta veřejná, pokračujeme bez omezení
+  if (isPublicRoute(path)) {
     return NextResponse.next();
   }
 
@@ -31,12 +16,10 @@ export default async function middleware(req: NextRequest) {
   const cookie = (await cookies()).get("session")?.value;
   const session = await decrypt(cookie);
 
-  console.log("middleware session verification");
-
   if (!session) {
-    return NextResponse.redirect(`${req.nextUrl.origin}/signin`);
+    const redirectUrl = req.nextUrl.pathname + req.nextUrl.search; // Uložíme původní URL
+    return NextResponse.redirect(`${req.nextUrl.origin}/signin?redirect=${encodeURIComponent(redirectUrl)}`);
   }
-
   // Kontrola oprávnění (příklad pro /zamestnanci)
   if (path.includes("zamestnanci") && session) {
     const permissions = await fetchPermissions("employees");
@@ -47,3 +30,4 @@ export default async function middleware(req: NextRequest) {
 
   return NextResponse.next();
 }
+

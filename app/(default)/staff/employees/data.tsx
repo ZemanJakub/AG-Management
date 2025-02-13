@@ -5,19 +5,17 @@ import {WarningCircleSvg} from "./warning-circle";
 import { JSX } from 'react';
 
 export const statusOptions = [
-  {name: "Active", uid: "active"},
-  {name: "Inactive", uid: "inactive"},
-  {name: "Paused", uid: "paused"},
-  {name: "Vacation", uid: "vacation"},
+  {name: "Aktivní", uid: "active"},
+  {name: "Proces", uid: "draft"},
+  {name: "Neaktivní", uid: "archived"},
 ] as const;
 
 export type StatusOptions = (typeof statusOptions)[number]["name"];
 
 export const statusColorMap: Record<StatusOptions, JSX.Element> = {
-  Active: SuccessCircleSvg,
-  Inactive: DefaultCircleSvg,
-  Paused: DangerCircleSvg,
-  Vacation: WarningCircleSvg,
+  Aktivní: SuccessCircleSvg,
+  Proces: DefaultCircleSvg,
+  Neaktivní: DangerCircleSvg,
 };
 
 type Teams =
@@ -408,12 +406,12 @@ const generateMockUserData = (count: number): Users[] => {
       workerType: Math.random() > 0.5 ? "Contractor" : "Employee",
       status:
         Math.random() > 0.5
-          ? "Active"
+          ? "Aktivní"
           : Math.random() > 0.5
-            ? "Paused"
+            ? "Neaktivní"
             : Math.random() > 0.5
-              ? "Vacation"
-              : "Inactive",
+              ? "Proces"
+              : "Neaktivní",
       startDate: new Date(new Date().getTime() - Math.random() * (24 * 60 * 60 * 1000 * 40)),
       teams: [
         "Design",

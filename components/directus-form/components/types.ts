@@ -1,6 +1,6 @@
 
 export interface FormElement {
-    id: number;
+    id: string;
     key: string;
     label: string;
     type: "input" | "textarea" | "select" | "date" | "address" | "number" | "email"; 

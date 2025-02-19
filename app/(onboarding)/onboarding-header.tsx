@@ -1,5 +1,6 @@
+import Logo from '@/components/default-components/ui/logo'
 import Link from 'next/link'
-import Logo from '@/components/ui/logo'
+
 
 export default function OnboardingHeader() {
   return (

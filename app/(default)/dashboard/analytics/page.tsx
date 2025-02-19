@@ -3,7 +3,7 @@ export const metadata = {
   description: 'Page description',
 }
 
-import Datepicker from '@/components/default-components/datepicker'
+
 import AnalyticsCard01 from './analytics-card-01'
 import AnalyticsCard02 from './analytics-card-02'
 import AnalyticsCard03 from './analytics-card-03'
@@ -32,7 +32,7 @@ export default function Analytics() {
         <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
 
           {/* Datepicker built with React Day Picker */}
-          <Datepicker align="right" />
+     
 
         </div>
 

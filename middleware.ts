@@ -15,7 +15,7 @@ export default async function middleware(req: NextRequest) {
   // Ověření session
   const cookie = (await cookies()).get("session")?.value;
   const session = await decrypt(cookie);
-
+  console.log("📢 Middleware session data:", session); // DEBUG
   if (!session) {
     const redirectUrl = req.nextUrl.pathname + req.nextUrl.search; // Uložíme původní URL
     return NextResponse.redirect(`${req.nextUrl.origin}/signin?redirect=${encodeURIComponent(redirectUrl)}`);

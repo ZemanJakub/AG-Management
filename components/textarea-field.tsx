@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { FormElement } from "../app/(default)/personalistika/zamestnanci/[id]/edit/drectus-form/components/types";
+
 import Tiptap from "@/components/tiptap";
+import { FormElement } from "./directus-form/components/types";
 
 interface TextareaFieldProps {
   element: FormElement;

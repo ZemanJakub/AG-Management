@@ -117,7 +117,6 @@ module.exports = {
   darkMode: "class",
   plugins: [
     heroui(),
-    require('tailwind-scrollbar-hide'),
     require('@tailwindcss/forms'),
     // add custom variant for expanding sidebar
     plugin(({ addVariant, e }) => {

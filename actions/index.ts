@@ -5,6 +5,8 @@ export * from "./employees/basic-employee-data";
 export * from "./employees/personal-employee-data";
 export * from "./employees/upload-document";
 export * from "./employees/upload-photo";
+export * from "./employees/employee-feedback";
+
 
 // users
 export * from "./users/update-profile"

@@ -14,8 +14,11 @@ import Link from "next/link";
 export default function CookieConsentModal() {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
+
   useEffect(() => {
-    // Kontrola, zda už uživatel modal viděl
+    if (process.env.NODE_ENV === "test") return; // Neaktivujeme modal v testech
+    console.log("📢 NODE_ENV:", process.env.NODE_ENV);
+
     const consent = localStorage.getItem("cookieConsent");
     if (!consent) {
       setIsModalVisible(true);
@@ -23,7 +26,6 @@ export default function CookieConsentModal() {
   }, []);
 
   const handleAccept = () => {
-    // Uložení souhlasu do localStorage
     localStorage.setItem("cookieConsent", "true");
     setIsModalVisible(false);
   };
@@ -32,7 +34,9 @@ export default function CookieConsentModal() {
     <Modal
       isOpen={isModalVisible}
       onClose={() => setIsModalVisible(false)}
-      className="bg-white dark:bg-slate-800 shadow-lg rounded-lg border border-slate-200 dark:border-slate-700"
+      className={`bg-white dark:bg-slate-800 shadow-lg rounded-lg border border-slate-200 dark:border-slate-700 ${
+        process.env.NODE_ENV === "test" ? "hidden" : ""
+      }`} // Přidáme hidden v testovacím režimu
     >
       <ModalContent>
         <ModalHeader className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
@@ -42,27 +46,11 @@ export default function CookieConsentModal() {
         </ModalHeader>
         <ModalBody className="bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100">
           <p className="text-slate-400 dark:text-slate-500">
-            Tato aplikace používá cookies pro správu přihlášení a ověření vaší
-            identity. Tyto cookies jsou nezbytné pro správnou funkčnost aplikace
-            a nejsou používány k jiným účelům, jako je sledování nebo reklama.
+            Tato aplikace používá cookies pro správu přihlášení a ověření vaší identity.
           </p>
-          {/* <p className="mt-2 text-slate-400 dark:text-slate-500">
-            Další informace naleznete v našich{" "}
-            <Link
-              href="/privacy-policy"
-              className="text-indigo-500 hover:text-indigo-600 dark:text-indigo-400 dark:hover:text-indigo-500"
-            >
-              Zásadách ochrany osobních údajů
-            </Link>
-            .
-          </p> */}
         </ModalBody>
         <ModalFooter className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
-          <Button
-            color="warning"
-            variant="flat"
-            onPress={handleAccept}
-          >
+          <Button color="warning" variant="flat" onPress={handleAccept} id="initconset">
             Rozumím
           </Button>
         </ModalFooter>
@@ -70,3 +58,5 @@ export default function CookieConsentModal() {
     </Modal>
   );
 }
+
+

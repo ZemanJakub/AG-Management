@@ -4,7 +4,6 @@ export const metadata = {
 }
 
 import FilterButton from '@/components/default-components/dropdown-filter'
-import Datepicker from '@/components/default-components/datepicker'
 import DashboardCard01 from './dashboard-card-01'
 import DashboardCard02 from './dashboard-card-02'
 import DashboardCard03 from './dashboard-card-03'
@@ -31,7 +30,6 @@ export default function Dashboard() {
           {/* Filter button */}        
           <FilterButton align="right" />
           {/* Datepicker built with React Day Picker */}
-          <Datepicker />
           {/* Add view button */}
           <button className="btn bg-gray-900 text-gray-100 hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-800 dark:hover:bg-white">
             <svg className="fill-current shrink-0 xs:hidden" width="16" height="16" viewBox="0 0 16 16">

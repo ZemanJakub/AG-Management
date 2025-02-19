@@ -1,7 +1,7 @@
 
 import { createDirectus, rest, authentication } from '@directus/sdk';
 
-export const directus = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL || 'default_backend_url')
+export const directus = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL || 'https://directus.aglikace.cz')
   .with(authentication("cookie", {credentials: "include", autoRefresh: true}))
   .with(rest());
 

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, use } from "react";
 import { useActionState } from "react";
-import * as actions from "@/actions";
+import {employeeFeedback} from "@/actions";
 import {
   Button,
   Card,
@@ -36,7 +36,7 @@ interface Feedback {
 
 const NewEmployeeFeedbackForm = ({ nextStep, onBack, employyeeId }: Props) => {
   const [state, action, isPending] = useActionState(
-    actions.updateNewEmployeeFeedback,
+    employeeFeedback,
     null
   );
   const selectedFeedbacks = useRef<Feedback[]>([]);
@@ -116,36 +116,6 @@ const handleSubmit = () => {
     theme: "dark",
   });
 };
-
-  // const handleSubmit = () => {
-  //   if (!employyeeId) {
-  //     toast.error("ID zaměstnance není k dispozici!", {
-  //       theme: "dark",
-  //     });
-  //     return;
-  //   }
-
-  //   if (selectedFeedbacks.current.length === 0) {
-  //     toast.error("Vyberte alespoň jeden feedback!", {
-  //       theme: "dark",
-  //     });
-  //     return;
-  //   }
-
-  //   // Odeslat všechny vybrané feedbacky
-  //   selectedFeedbacks.current.forEach((feedback) => {
-  //     action({
-  //       id: employyeeId,
-  //       feedback,
-  //     });
-  //   });
-
-  //   toast.info("Ukládám data...", {
-  //     autoClose: 8000,
-  //     hideProgressBar: false,
-  //     theme: "dark",
-  //   });
-  // };
 
     const background = "--heroui-background";
     const linearGradientBg = startsWith(background, "--")
@@ -232,4 +202,3 @@ const handleSubmit = () => {
 };
 
 export default NewEmployeeFeedbackForm;
-

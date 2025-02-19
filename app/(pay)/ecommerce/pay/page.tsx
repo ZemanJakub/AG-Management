@@ -5,7 +5,8 @@ export const metadata = {
 
 import Link from 'next/link'
 import PayForm from './pay-form'
-import Logo from '@/components/ui/logo'
+import Logo from '@/components/default-components/ui/logo'
+
 
 export default function Pay() {
   return (

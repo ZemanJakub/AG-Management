@@ -17,7 +17,7 @@ export default async function DocumentContent({
   isEditable,
 }: BasicContentProps) {
   const employeeData = await fetchBasicEmployeeData(id);
-  const documentData = await fetchDocumentData(employeeData?.folderId);
+  const documentData = await fetchDocumentData(employeeData?.folderId?? "");
   if (!employeeData) {
     return (
       <div className="relative px-4 sm:px-6 pb-8">
@@ -77,7 +77,7 @@ export default async function DocumentContent({
         <DocumentHandler
           id={id}
           isEditable={isEditable}
-          employeeData={employeeData}
+          employeeData={employeeData as any}
           documentData={documentData}
         />
         {/* Sidebar */}

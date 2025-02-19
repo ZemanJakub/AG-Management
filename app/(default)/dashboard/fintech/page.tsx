@@ -3,7 +3,7 @@ export const metadata = {
   description: 'Page description',
 }
 
-import Datepicker from '@/components/default-components/datepicker'
+
 import FintechIntro from './fintech-intro'
 import FintechCard01 from './fintech-card-01'
 import FintechCard02 from './fintech-card-02'
@@ -35,8 +35,7 @@ export default function Fintech() {
         {/* Right: Actions */}
         <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
 
-          {/* Datepicker built with React Day Picker */}
-          <Datepicker align="right" />
+      
 
           {/* Add account button */}
           <button className="btn bg-gray-900 text-gray-100 hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-800 dark:hover:bg-white">

@@ -164,7 +164,7 @@ export default function PageComponent({
             nextStep={onNextWithId}
             onBack={onBack}
             newEmployeeFormBasicInformations={newEmployeeFormBasicInformations}
-            employyeeId={savedId}
+            employeeId={savedId}
           />
         );
         break;

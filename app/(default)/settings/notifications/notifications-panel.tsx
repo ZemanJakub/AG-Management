@@ -7,7 +7,7 @@ import { Button, Spinner, Switch } from "@heroui/react";
 import { toast } from "react-toastify";
 
 export default function NotificationsPanel() {
-  const { unsubscribeFromPush, subscribeToPush, subscription,isSubscribtionLoading } = useSubscription();
+  const { unsubscribeFromPush, subscribeToPush, subscription,isSubscriptionLoading } = useSubscription();
 
   // Přepínače
   const [pushMessages, setPushMessages] = useState<boolean>(true);
@@ -85,7 +85,7 @@ export default function NotificationsPanel() {
               </div>
               {/* Right */}
               <div className="flex items-center ml-4">
-              {isSubscribtionLoading ? (<Spinner color="secondary"/>) : (   <Switch
+              {isSubscriptionLoading ? (<Spinner color="secondary"/>) : (   <Switch
                   isSelected={pushMessages}
                   onValueChange={() => setPushMessages(!pushMessages)}
                   color="secondary"

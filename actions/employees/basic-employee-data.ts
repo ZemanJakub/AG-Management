@@ -8,8 +8,8 @@ import {
   updateItem,
 } from "@directus/sdk";
 import { TransformToFieldErrorsType } from "@/components/utils/utils";
-import { generateSchema } from "@/app/(default)/personalistika/zamestnanci/[id]/edit/drectus-form/components/schema";
-import { MyFormData } from "@/app/(default)/personalistika/zamestnanci/[id]/edit/drectus-form/components/types";
+import { MyFormData } from "@/components/directus-form/components/types";
+import { generateSchema } from "@/components/directus-form/components/schema";
 import { fetchMyForm } from "@/db/queries/employees";
 
 async function loadCustomFormStructure(): Promise<MyFormData> {

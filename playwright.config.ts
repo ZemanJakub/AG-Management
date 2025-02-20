@@ -1,7 +1,7 @@
 import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
-  testDir: "./tests",
+  testDir: "./__Tests__/playwright-tests",
   timeout: 60000,
   globalSetup: "./playwright.setup.ts", // 🔥 Automatické přihlášení
   use: { 

@@ -7,8 +7,8 @@ import { login } from "@/actions";
 import Link from "next/link";
 import { Button } from "@heroui/react";
 import AuthHeader from "../auth-header";
-import AuthImage from "../auth-image";
 import CookieConsentModal from "./cookie-consent-modal";
+import AuthImage from "../auth-image";
 
 type LoginResponse = {
   success?: boolean;
@@ -18,7 +18,7 @@ type LoginResponse = {
 export default function SignIn() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirectUrl = searchParams.get("redirect") || "/dashboard"; // Defaultně přesměrujeme na /dashboard
+  const redirectUrl = searchParams.get("redirect") || "/dashboard";
 
   const [state, loginAction, isPending] = useActionState(
     async (
@@ -30,7 +30,6 @@ export default function SignIn() {
     undefined
   );
 
-  // Přesměrování po úspěšném přihlášení
   useEffect(() => {
     if (state?.success) {
       router.push(redirectUrl);
@@ -38,20 +37,19 @@ export default function SignIn() {
   }, [state, router, redirectUrl]);
 
   return (
-    <main className="bg-white dark:bg-zinc-950">
-      <div className="relative md:flex">
-        {/* Content */}
-        <div className="md:w-1/2">
-          <div className="min-h-[100dvh] h-full flex flex-col after:flex-1">
+    <main className="relative min-w-full min-h-screen">
+      {/* Pozadí: obrázek přes celou obrazovku */}
+      <AuthImage />
+      <div className="relative min-w-full" id="kuku">
+        <div className="w-full">
+          <div className="min-h-[100dvh] h-full min-w-full flex flex-col after:flex-1">
             <AuthHeader />
             <div className="max-w-sm mx-auto w-full px-4 py-4">
-              <h1 className="text-3xl text-zinc-800 dark:text-zinc-100 font-bold mb-6">
+              <h1 className="text-3xl text-zinc-800 dark:text-zinc-100 font-bold mb-6 mx-9 md:mx-0">
                 Vítejte zpět 👋
               </h1>
-
-              {/* Form */}
               <form action={loginAction}>
-                <div className="space-y-4">
+                <div className="space-y-4 mx-9 md:mx-0">
                   <div>
                     <label
                       className="block text-sm font-medium mb-1"
@@ -81,7 +79,7 @@ export default function SignIn() {
                     />
                   </div>
                 </div>
-                <div className="flex items-center justify-between mt-6">
+                <div className="flex items-center justify-between mt-6 mx-9 md:mx-0">
                   <div className="mr-1">
                     <Link
                       className="text-sm underline hover:no-underline"
@@ -101,8 +99,6 @@ export default function SignIn() {
                   </Button>
                 </div>
               </form>
-
-              {/* Chybové zprávy */}
               {state?.errors && (
                 <div className="mt-4 text-red-500 text-sm">
                   {Object.values(state.errors).map((errorList, index) => (
@@ -110,25 +106,10 @@ export default function SignIn() {
                   ))}
                 </div>
               )}
-
-              {/* Footer */}
-              <div className="pt-5 mt-6 border-t border-zinc-200 dark:border-zinc-700">
-                <div className="text-sm">
-                  Ještě nemáte účet?{" "}
-                  <Link
-                    className="font-medium text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400"
-                    href="/signup"
-                  >
-                    Registrujte se
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        <AuthImage />
       </div>
-      {/* Modal */}
       <CookieConsentModal />
     </main>
   );

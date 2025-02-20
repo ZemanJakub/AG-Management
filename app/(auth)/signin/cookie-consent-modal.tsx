@@ -9,7 +9,6 @@ import {
   ModalFooter,
 } from "@heroui/modal";
 import { Button } from "@heroui/react";
-import Link from "next/link";
 
 export default function CookieConsentModal() {
   const [isModalVisible, setIsModalVisible] = useState(false);

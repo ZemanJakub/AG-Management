@@ -37,12 +37,11 @@ export default function SignIn() {
   }, [state, router, redirectUrl]);
 
   return (
-    <main className="relative min-w-full min-h-screen">
-      {/* Pozadí: obrázek přes celou obrazovku */}
-      <AuthImage />
-      <div className="relative min-w-full" id="kuku">
-        <div className="w-full">
-          <div className="min-h-[100dvh] h-full min-w-full flex flex-col after:flex-1">
+    <main className="bg-white dark:bg-gray-900">
+    <div className="relative md:flex">
+      {/* Content */}
+      <div className="md:w-1/2">
+        <div className="min-h-[100dvh] h-full flex flex-col after:flex-1">
             <AuthHeader />
             <div className="max-w-sm mx-auto w-full px-4 py-4">
               <h1 className="text-3xl text-zinc-800 dark:text-zinc-100 font-bold mb-6 mx-9 md:mx-0">
@@ -109,6 +108,7 @@ export default function SignIn() {
             </div>
           </div>
         </div>
+        <AuthImage />
       </div>
       <CookieConsentModal />
     </main>

@@ -13,7 +13,7 @@ export default function AuthImage() {
         priority
         width={760}
         height={1024}
-        alt="Authentication"
+        alt="authpic"
       />
     </div>
   );

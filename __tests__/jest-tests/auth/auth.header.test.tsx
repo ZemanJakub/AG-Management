@@ -14,7 +14,7 @@ describe("AuthHeader", () => {
 
     const container = screen.getByRole("img", { name: /logo/i }).closest("div");
     expect(container).toHaveClass(
-      "flex items-center justify-center h-32 mx-auto sm:px-6 lg:px-8 mt-10"
+      "items-center justify-center h-32 mx-auto sm:px-6 lg:px-8 mb-12 md:mb-0 md:hidden"
     );
   });
 });

@@ -1,114 +1,25 @@
-"use client";
-
-import { useActionState } from "react";
-import { useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { login } from "@/actions";
-import Link from "next/link";
-import { Button } from "@heroui/react";
-import AuthHeader from "../auth-header";
-import CookieConsentModal from "./cookie-consent-modal";
 import AuthImage from "../auth-image";
+import SignInForm from "./signin-form";
+import CookieConsentModal from "./cookie-consent-modal";
 
-type LoginResponse = {
-  success?: boolean;
-  errors?: Record<string, string[]>;
+export const metadata = {
+  title: "Login",
+  description: "Login page",
+  layout: "fullscreen",
 };
 
-export default function SignIn() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const redirectUrl = searchParams.get("redirect") || "/dashboard";
-
-  const [state, loginAction, isPending] = useActionState(
-    async (
-      prevState: LoginResponse | undefined,
-      formData: FormData
-    ): Promise<LoginResponse> => {
-      return await login(prevState ?? {}, formData);
-    },
-    undefined
-  );
-
-  useEffect(() => {
-    if (state?.success) {
-      router.push(redirectUrl);
-    }
-  }, [state, router, redirectUrl]);
-
+export default function SignInPage() {
   return (
-    <main className="bg-white dark:bg-gray-900">
-    <div className="relative md:flex">
-      {/* Content */}
-      <div className="md:w-1/2">
-        <div className="min-h-[100dvh] h-full flex flex-col after:flex-1">
-            <AuthHeader />
-            <div className="max-w-sm mx-auto w-full px-4 py-4">
-              <h1 className="text-3xl text-zinc-800 dark:text-zinc-100 font-bold mb-6 mx-9 md:mx-0">
-                Vítejte zpět 👋
-              </h1>
-              <form action={loginAction}>
-                <div className="space-y-4 mx-9 md:mx-0">
-                  <div>
-                    <label
-                      className="block text-sm font-medium mb-1"
-                      htmlFor="email"
-                    >
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      className="form-input w-full"
-                      type="email"
-                      name="email"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      className="block text-sm font-medium mb-1"
-                      htmlFor="password"
-                    >
-                      Heslo
-                    </label>
-                    <input
-                      id="password"
-                      className="form-input w-full"
-                      type="password"
-                      name="password"
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center justify-between mt-6 mx-9 md:mx-0">
-                  <div className="mr-1">
-                    <Link
-                      className="text-sm underline hover:no-underline"
-                      href="/reset-password"
-                    >
-                      Zapomenuté heslo?
-                    </Link>
-                  </div>
-                  <Button
-                    data-testid="login-button"
-                    disabled={isPending}
-                    type="submit"
-                    color="primary"
-                    variant="flat"
-                  >
-                    {isPending ? "Přihlašuji..." : "Login"}
-                  </Button>
-                </div>
-              </form>
-              {state?.errors && (
-                <div className="mt-4 text-red-500 text-sm">
-                  {Object.values(state.errors).map((errorList, index) => (
-                    <p key={index}>{errorList.join(", ")}</p>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
+    <main className="relative min-h-screen bg-background dark:bg-background-dark">
+      <div className="md:flex h-screen">
+        {/* Levý sloupec: obsahuje interaktivní formulář a hlavičku */}
+        <div className="w-full md:w-1/2 h-full flex flex-col">
+          <SignInForm />
         </div>
-        <AuthImage />
+        {/* Pravý sloupec: pozadí */}
+        <div className="hidden md:block w-1/2 h-full relative">
+          <AuthImage />
+        </div>
       </div>
       <CookieConsentModal />
     </main>

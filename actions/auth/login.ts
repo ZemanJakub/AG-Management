@@ -47,7 +47,7 @@ export async function login(prevState: any, formData: FormData) {
     return { success: true };
   } catch (error) {
     console.error("Chyba při přihlašování:", error);
-    return { errors: { general: ["Chyba při přihlašování. Zkuste to znovu."] } };
+    return { message:"Zadaný email, nebo heslo nejsou platné"  };
   }
 }
 

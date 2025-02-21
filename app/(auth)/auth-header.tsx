@@ -1,13 +1,12 @@
-import Logo from '@/public/icons/favicon-96x96.png'
-import Image from 'next/image'
+import Logo from '@/public/icons/icon-128x128.png';
+import Image from 'next/image';
 
 export default function AuthHeader() {
   return (
-    <div className="flex-1">
-      <div className="flex items-center justify-between h-16 px-4 mt-4 sm:px-6 lg:px-8">
-        <Image src={Logo} alt="Logo" />
-
+    <div>
+      <div className="flex items-center justify-center h-32 mx-auto sm:px-6 lg:px-8 mt-10">
+        <Image src={Logo} alt="Logo" width={128} height={128} />
       </div>
     </div>
-  )
+  );
 }

@@ -14,7 +14,7 @@ import Link from "next/link";
 import { Button, Input } from "@heroui/react";
 import { EyeSlashFilledIcon } from "@/components/my-icons/eye-slash-icon";
 import { EyeFilledIcon } from "@/components/my-icons/eye-filled-icon";
-import AuthHeader from "../auth-header";
+import AuthHeader from "./auth-header";
 import { motion } from "framer-motion";
 
 type LoginResponse = {
@@ -38,17 +38,16 @@ export default function SignInForm() {
   const validateEmail = (value: string) =>
     /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value);
 
-// Stav pro neplatný email – validuje se až po opuštění pole
-const isInvalidEmail = useMemo(() => {
-  if (!hasBlurredEmail) return false; // Nevaliduje se, dokud uživatel neklikne pryč
-  return !validateEmail(email);
-}, [email, hasBlurredEmail]);
+  // Stav pro neplatný email – validuje se až po opuštění pole
+  const isInvalidEmail = useMemo(() => {
+    if (!hasBlurredEmail) return false; // Nevaliduje se, dokud uživatel neklikne pryč
+    return !validateEmail(email);
+  }, [email, hasBlurredEmail]);
 
   const isEmptyEmail = useMemo(() => {
     if (email === "") return true;
     return false;
   }, [email]);
-
 
   const [state, loginAction, isPending] = useActionState(
     async (
@@ -97,22 +96,25 @@ const isInvalidEmail = useMemo(() => {
       <div className="flex-1 flex items-center justify-center">
         <div className="max-w-sm w-full px-4 py-4">
           <AuthHeader />
-
-          <h1
-            className="text-3xl text-zinc-800 dark:text-zinc-100 font-bold mb-6"
-          >
-            Vítejte zpět  <motion.div
-                className="inline-block w-12"
-                initial={{ rotateZ: 0 }}
-                animate={{ rotateZ: [0, -20, 20, -20, 20,-20, 20, -20, 20,-20, 20, -20, 20,0] }}
-                transition={{ duration: 3 ,delay:1 }}
-               
-              >👋</motion.div>
+          <h1 className="text-3xl text-zinc-800 dark:text-zinc-100 font-bold mb-6">
+            Vítejte zpět{" "}
+            <motion.div
+              className="inline-block w-12"
+              initial={{ rotateZ: 0 }}
+              animate={{
+                rotateZ: [
+                  0, -20, 20, -20, 20, -20, 0,
+                ],
+              }}
+              transition={{ duration: 3, delay: 1 }}
+            >
+              👋
+            </motion.div>
           </h1>
+
           <form onSubmit={handleSubmit}>
             <div className="space-y-4">
-              <div
-              >
+              <div>
                 <label
                   className="block text-sm font-medium mb-2"
                   htmlFor="email"
@@ -143,8 +145,7 @@ const isInvalidEmail = useMemo(() => {
                   isInvalid={isInvalidEmail || Boolean(localErrors)}
                 />
               </div>
-              <div
-              >
+              <div>
                 <label
                   className="block text-sm font-medium mb-2"
                   htmlFor="password"
@@ -190,15 +191,18 @@ const isInvalidEmail = useMemo(() => {
               >
                 Zapomenuté heslo?
               </Link>
+
               <Button
                 data-testid="login-button"
                 disabled={isPending || isInvalidEmail || isEmptyEmail}
                 type="submit"
-                color={!isInvalidEmail && !isEmptyEmail? "secondary" : "default"}
+                color={
+                  !isInvalidEmail && !isEmptyEmail ? "secondary" : "default"
+                }
                 variant="shadow"
                 className="w-1/3"
               >
-                {isPending||state?.success ? "Přihlašuji..." : "Login"}
+                {isPending || state?.success ? "Přihlašuji..." : "Login"}
               </Button>
             </div>
           </form>

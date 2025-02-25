@@ -4,8 +4,8 @@ export const metadata = {
 }
 
 import Link from 'next/link'
-import AuthHeader from '../auth-header'
-import AuthImage from '../auth-image'
+import AuthHeader from '../signin/auth-header'
+import AuthImage from '../signin/auth-image'
 
 export default function SignUp() {
   return (

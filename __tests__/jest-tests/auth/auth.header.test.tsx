@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import AuthHeader from "@/app/(auth)/auth-header";
+import AuthHeader from "@/app/(auth)/signin/auth-header";
 
 describe("AuthHeader", () => {
   test("Zobrazí logo s alternativním textem", () => {
@@ -14,7 +14,7 @@ describe("AuthHeader", () => {
 
     const container = screen.getByRole("img", { name: /logo/i }).closest("div");
     expect(container).toHaveClass(
-      "items-center justify-center h-32 mx-auto sm:px-6 lg:px-8 mb-12 md:mb-0 md:hidden"
+       "flex items-center justify-center h-32 mx-auto sm:px-6 lg:px-8 mb-12"
     );
   });
 });

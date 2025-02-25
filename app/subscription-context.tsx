@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { subscribeUser, unsubscribeUser, checkSubscription } from "@/actions";
 
-interface SubscriptionContextProps {
+export interface SubscriptionContextProps {
   subscription: PushSubscription | null;
   subscribeToPush: () => Promise<void>;
   unsubscribeFromPush: () => Promise<void>;

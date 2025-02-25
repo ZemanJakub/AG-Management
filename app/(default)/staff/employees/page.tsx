@@ -13,6 +13,7 @@ import DataComponent from "./data-component";
 const formId = "9f192b09-f334-42e9-b609-78a358223231";
 export default async function Recruitment() {
   const result = await directus.request(readItems("basicEmployeeData"));
+  console.log(result)
   const formStructure = await fetchMyForm(formId);
 
   return (

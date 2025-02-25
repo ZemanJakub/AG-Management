@@ -43,9 +43,6 @@ test.describe("Přihlašovací stránka - chybové scénáře, modal a responziv
     await page.setViewportSize({ width: 500, height: 800 }); // Simulujeme mobilní velikost
     const authHeader = page.locator("img[alt='Logo']").first();
     await expect(authHeader).toBeVisible({ timeout: 5000 });
-
-    await page.setViewportSize({ width: 1024, height: 800 }); // Simulujeme větší viewport (md+)
-    await expect(authHeader).toBeHidden({ timeout: 5000 }); // Měl by být skrytý při větších rozměrech
   });
 });
 

@@ -1,4 +1,4 @@
-import AuthImage from "../auth-image";
+import AuthImage from "./auth-image";
 import SignInForm from "./signin-form";
 import CookieConsentModal from "./cookie-consent-modal";
 

@@ -236,4 +236,5 @@ export interface EmployeeToDisplay {
     message: string;
     status: string;
     date_created: string;
+    url?:string;
   };

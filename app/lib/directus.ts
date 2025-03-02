@@ -8,7 +8,6 @@ export const directus = createDirectus(process.env.NEXT_PUBLIC_DIRECTUS_URL || '
 
 
 
-
 // const client = createDirectus('http://directus.aglikace.cz').with(authentication());;
 // await client.login("jakub.zeman84@gmail.com", "t5eVEu97JpQ8pRl");
 // ktTE0XSsarFXHfUqsuFt8JvhM0rMnzDE

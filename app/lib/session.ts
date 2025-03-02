@@ -1,7 +1,6 @@
 import "server-only";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
-import { AuthenticationData } from "@directus/sdk";
 import { DataForSession } from "./models";
 
 const secretKey = process.env.SESSION_SECRET;

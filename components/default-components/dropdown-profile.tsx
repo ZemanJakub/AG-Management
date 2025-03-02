@@ -14,11 +14,11 @@ interface HeaderProps {
 export default function DropdownProfile({userName, avatar }: HeaderProps) {
   return (
     <div className="relative inline-flex">
-      <Dropdown className="bg-gray-200 dark:bg-gray-800">
+      <Dropdown >
         <DropdownTrigger>
           <Button 
           variant="light"
-          className="inline-flex justify-center items-center group">
+          className="inline-flex justify-center items-center group text-dark dark:text-light">
             <Image
               className="w-8 h-8 rounded-full"
               src={`https://directus.aglikace.cz/assets/${avatar}`}
@@ -27,7 +27,7 @@ export default function DropdownProfile({userName, avatar }: HeaderProps) {
               alt="User"
             />
             <div className="flex items-center truncate">
-              <span className="truncate ml-2 text-sm font-medium dark:text-gray-300 group-hover:text-gray-800 dark:group-hover:text-gray-200">
+              <span className="truncate ml-2 text-sm font-medium ">
                 {userName}
               </span>
             </div>
@@ -40,13 +40,13 @@ export default function DropdownProfile({userName, avatar }: HeaderProps) {
           <DropdownItem key="settings">
             <Link
               href="/settings/account"
-              className="font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:text-indigo-400 dark:hover:text-indigo-500"
+              className="font-medium "
             >
               Nastavení
             </Link>
           </DropdownItem>
           <DropdownItem key="logout" onPress={logout}>
-            <span className="font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:text-indigo-400 dark:hover:text-indigo-500">
+            <span className="font-medium text-sm">
               Odhlásit se
             </span>
           </DropdownItem>

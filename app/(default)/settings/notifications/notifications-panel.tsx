@@ -87,6 +87,7 @@ export default function NotificationsPanel() {
               <div className="flex items-center ml-4">
               {isSubscriptionLoading ? (<Spinner color="secondary"/>) : (   <Switch
                   isSelected={pushMessages}
+                  id="push-notifications"
                   onValueChange={() => setPushMessages(!pushMessages)}
                   color="secondary"
                   size="lg"

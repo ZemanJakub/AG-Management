@@ -1,128 +1,79 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { Menu, MenuButton, MenuItems, MenuItem, Transition } from '@headlessui/react'
+import Link from 'next/link';
 import useSWR from 'swr';
-import { NotificationData } from "@/app/lib/models";
 import { fetchNotifcations } from '@/queries/notifications';
-import { directus } from '@/app/lib/directus';
-import { readItems } from '@directus/sdk';
-import { createSampleProcess } from '@/app/lib/create-process';
-import { Button } from "@heroui/react";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownSection, DropdownItem, Button, cn } from "@heroui/react";
+import { NotificationData } from "@/app/lib/models";
 
 interface DropdownNotificationsProps {
   align?: 'left' | 'right';
-  userId:string
+  userId: string;
 }
 
-// Fetcher pro použití serverové akce 
+// Ikonka pro notifikace
+const NotificationIcon = (props:any) => (
+  <svg
+    aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="presentation"
+    viewBox="0 0 24 24"
+    width="1em"
+    {...props}
+  >
+    <path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Zm6-6V11c0-3.31-2.69-6-6-6S6 7.69 6 11v5l-2 2v1h16v-1l-2-2Z" fill="currentColor" />
+  </svg>
+);
 
+export default function DropdownNotifications({ align = 'left', userId }: DropdownNotificationsProps) {
+  const { data, error } = useSWR<NotificationData[]>(userId, fetchNotifcations);
 
-export default function DropdownNotifications({ align, userId }: DropdownNotificationsProps) {
-
-
-  const { data, error } = useSWR(userId,fetchNotifcations);
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
-  if(data){
-    // console.log(data,"data")
+  if (!data && !error) {
+    return <div className="p-4 text-center">Loading notifications...</div>;
   }
 
-  
-const process = async () => {
-
-  const getprocess = await directus.request(readItems('Processes',{
-    filter: {
-      name: {
-        _eq: "Objednávka"
-      },
-    fields: ['*.*']
-  }}))
-  console.log(getprocess,"process")
-}
-
-// process()
+  if (error) {
+    return <div className="p-4 text-center text-red-500">Failed to load notifications.</div>;
+  }
 
   return (
-    <Menu as="div" className="relative inline-flex">
-      {({ open }) => (
-        <>
-          <MenuButton
-            className={`w-8 h-8 flex items-center justify-center hover:bg-gray-100 lg:hover:bg-gray-200 dark:hover:bg-gray-700/50 dark:lg:hover:bg-gray-800 rounded-full ${
-              open && 'bg-gray-200 dark:bg-gray-800'
-            }`}
-          >
-            <span className="sr-only">Notifications</span>
-            <svg
-              className="fill-current text-gray-500/80 dark:text-gray-400/80"
-              width={16}
-              height={16}
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M7 0a7 7 0 0 0-7 7c0 1.202.308 2.33.84 3.316l-.789 2.368a1 1 0 0 0 1.265 1.265l2.595-.865a1 1 0 0 0-.632-1.898l-.698.233.3-.9a1 1 0 0 0-.104-.85A4.97 4.97 0 0 1 2 7a5 5 0 0 1 5-5 4.99 4.99 0 0 1 4.093 2.135 1 1 0 1 0 1.638-1.148A6.99 6.99 0 0 0 7 0Z" />
-              <path d="M11 6a5 5 0 0 0 0 10c.807 0 1.567-.194 2.24-.533l1.444.482a1 1 0 0 0 1.265-1.265l-.482-1.444A4.962 4.962 0 0 0 16 11a5 5 0 0 0-5-5Zm-3 5a3 3 0 0 1 6 0c0 .588-.171 1.134-.466 1.6a1 1 0 0 0-.115.82 1 1 0 0 0-.82.114A2.973 2.973 0 0 1 11 14a3 3 0 0 1-3-3Z" />
-            </svg>
-            <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 border-2 border-gray-100 dark:border-gray-900 rounded-full"></div>
-          </MenuButton>
-          <Transition
-            as="div"
-            className={`origin-top-right z-10 absolute top-full -mr-48 sm:mr-0 min-w-[20rem] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/60 py-1.5 rounded-lg shadow-lg overflow-hidden mt-1 ${
-              align === 'right' ? 'right-0' : 'left-0'
-            }`}
-            enter="transition ease-out duration-200 transform"
-            enterFrom="opacity-0 -translate-y-2"
-            enterTo="opacity-100 translate-y-0"
-            leave="transition ease-out duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase pt-1.5 pb-2 px-4">Notifications</div>
-            <MenuItems as="ul" className="focus:outline-none">
-              <MenuItem as="li" className="border-b border-gray-200 dark:border-gray-700/60 last:border-0">
-                {({ active }) => (
-                  <Link className={`block py-2 px-4 ${active && 'bg-gray-50 dark:bg-gray-700/20'}`} href="#0">
-                    <span className="block text-sm mb-2">
-                      📣 <span className="font-medium text-gray-800 dark:text-gray-100">Edit your information in a swipe</span> Sint occaecat cupidatat non proident,
-                      sunt in culpa qui officia deserunt mollit anim.
-                    </span>
-                    <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">Feb 12, 2024</span>
-                  </Link>
-                )}
-              </MenuItem>
-              <MenuItem as="li" className="border-b border-gray-200 dark:border-gray-700/60 last:border-0">
-                {({ active }) => (
-                  <Link className={`block py-2 px-4 ${active && 'bg-gray-50 dark:bg-gray-700/20'}`} href="#0">
-                    <span className="block text-sm mb-2">
-                      📣 <span className="font-medium text-gray-800 dark:text-gray-100">Edit your information in a swipe</span> Sint occaecat cupidatat non proident,
-                      sunt in culpa qui officia deserunt mollit anim.
-                    </span>
-                    <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">Feb 9, 2024</span>
-                  </Link>
-                )}
-              </MenuItem>
-              <MenuItem as="li" className="border-b border-gray-200 dark:border-gray-700/60 last:border-0">
-                {({ active }) => (
-                  <Link className={`block py-2 px-4 ${active && 'bg-gray-50 dark:bg-gray-700/20'}`} href="#0">
-                    <span className="block text-sm mb-2">
-                      🚀<span className="font-medium text-gray-800 dark:text-gray-100">Say goodbye to paper receipts!</span> Sint occaecat cupidatat non proident, sunt
-                      in culpa qui officia deserunt mollit anim.
-                    </span>
-                    <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">Jan 24, 2024</span>
-                  </Link>
-                )}
-              </MenuItem>
-              <MenuItem as="li" className="border-b border-gray-200 dark:border-gray-700/60 last:border-0">
-                {({ active }) => (
-                  <Button onPress={() =>createSampleProcess()}>
-                    Create process
-                  </Button>
-                )}
-              </MenuItem>
-            </MenuItems>
-          </Transition>
-        </>
-      )}
-    </Menu>
-  )
+    <Dropdown shouldBlockScroll >
+      <DropdownTrigger>
+        <Button variant="light">
+          Notifikace
+          <div className="ml-2 w-2.5 h-2.5 bg-red-500 rounded-full"></div>
+        </Button>
+      </DropdownTrigger>
+      <DropdownMenu aria-label="Notifications menu" variant="faded" className="max-h-[80vh] overflow-y-auto scrollbar-hide"
+      >
+          {!data || data.length === 0 ? (
+            <DropdownItem key="empty">
+              No new notifications
+            </DropdownItem>
+          ) : (
+            data.map((notification) => (
+              <DropdownSection showDivider key={notification.id}>
+              <DropdownItem
+                key={notification.id}
+                startContent={<NotificationIcon className="text-xl text-default-500 pointer-events-none flex-shrink-0" />}
+              >
+                <Link href={notification.url || "#"}>
+                  <span className="block text-sm font-medium text-gray-800 dark:text-gray-100">
+                    {notification.message}
+                  </span>
+                  <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">
+                    {notification.date_created
+                      ? new Date(notification.date_created).toLocaleDateString('cs-CZ', { year: 'numeric', month: 'long', day: 'numeric' })
+                      : "Neznámé datum"}
+                  </span>
+                </Link>
+              </DropdownItem>
+              </DropdownSection>
+            ))
+          )}
+      </DropdownMenu>
+    </Dropdown>
+  );
 }

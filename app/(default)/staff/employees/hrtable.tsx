@@ -438,25 +438,19 @@ export default function HrTable({
   }, [selectedKeys, filteredItems, filterValue]);
   const topContent = useMemo(() => {
     return (
-      <div className="flex items-center gap-4 overflow-auto px-[6px] py-[4px]">
+      <div className="flex items-center gap-4 overflow-auto  scrollbar-hidden px-[6px] py-[4px]">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-4">
             <Input
               className="min-w-[200px]"
               classNames={{
                 label: "text-white",
-                inputWrapper: [
-                  "bg-gray-200 dark:bg-gray-800",
-                  "group-data-[focus=true]:!bg-gray-200",
-                  "dark:group-data-[focus=true]:!bg-gray-800",
-                ],
                 innerWrapper: [
-                  "bg-gray-200 dark:bg-gray-800",
-                  "focus-within:bg-gray-200 dark:bg-gray-800 dark:focus-within:bg-gray-800",
-                  "focus:outline-none bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100 rounded-md p-2",
+              
+                  "focus:outline-none text-gray-800 dark:text-gray-100 rounded-md p-2",
                 ],
                 input: [
-                  "border-none focus:ring-0 focus:outline-none bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100 rounded-md p-2",
+                  "border-none focus:ring-0 focus:outline-none text-gray-800 dark:text-gray-100 rounded-md p-2",
                 ],
               }}
               endContent={<SearchIcon className="text-gray-500 dark:text-gray-300" width={16} />}
@@ -468,12 +462,11 @@ export default function HrTable({
             <div>
               <Dropdown
                 classNames={{
-                  base: "before:bg-default-200",
-                  content: "p-0 border-small border-divider bg-gray-200 dark:bg-gray-800",
+                  content: "p-0 border-small border-divider",
                 }}
               >
                 <DropdownTrigger>
-                  <Button className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100" size="sm" startContent={<Icon className="text-gray-500 dark:text-gray-300" icon="solar:sort-linear" width={16} />}>
+                  <Button className=" text-gray-800 dark:text-gray-100" size="sm" startContent={<Icon className="text-gray-500 dark:text-gray-300" icon="solar:sort-linear" width={16} />}>
                     Řazení
                   </Button>
                 </DropdownTrigger>
@@ -498,12 +491,11 @@ export default function HrTable({
               <Dropdown
                 closeOnSelect={false}
                 classNames={{
-                  base: "before:bg-default-200",
-                  content: "p-0 border-small border-divider bg-gray-200 dark:bg-gray-800",
+                  content: "p-0 border-small border-divider",
                 }}
               >
                 <DropdownTrigger>
-                  <Button className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100" size="sm" startContent={<Icon className="text-gray-500 dark:text-gray-300" icon="solar:sort-horizontal-linear" width={16} />}>
+                  <Button className=" text-gray-800 dark:text-gray-100" size="sm" startContent={<Icon className="text-gray-500 dark:text-gray-300" icon="solar:sort-horizontal-linear" width={16} />}>
                     Sloupce
                   </Button>
                 </DropdownTrigger>
@@ -527,8 +519,7 @@ export default function HrTable({
           {(filterSelectedKeys === "all" || filterSelectedKeys.size > 0) && (
             <Dropdown
               classNames={{
-                base: "before:bg-default-200",
-                content: "p-0 border-small border-divider bg-gray-200 dark:bg-gray-800",
+                content: "p-0 border-small border-divider",
               }}
             >
               <DropdownTrigger>
@@ -575,7 +566,7 @@ export default function HrTable({
           total={pages}
           onChange={setPage}
           classNames={{
-            wrapper: "bg-gray-100 dark:bg-gray-800 border border-divider",
+            wrapper: " border border-divider",
             item: " bg-transparent ",
             prev: "bg-transparent",
             next: "bg-transparent",
@@ -588,8 +579,7 @@ export default function HrTable({
           </span>
           <Dropdown
             classNames={{
-              base: "before:bg-default-200",
-              content: "p-0 border-small border-divider bg-gray-200 dark:bg-gray-800",
+              content: "p-0 border-small border-divider",
             }}
           >
             <DropdownTrigger>
@@ -644,14 +634,11 @@ export default function HrTable({
       <ConfirmationModal openModal={openModal} onConfirm={() => setConfirmed((prev) => !prev)} />
       <Table
         isHeaderSticky
-        aria-label="Example table with custom cells, pagination and sorting"
+        aria-label="Ttable with custom cells, pagination and sorting"
         bottomContent={bottomContent}
         bottomContentPlacement="outside"
         classNames={{
-          th: "dark:bg-gray-800 dark:text-gray-100 font-semibold px-2 py-3",
-          td: "px-2 py-2 before:bg-transparent dark:bg-transparent dark:hover:bg-transparent",
-          tr: "border-b border-gray-200 dark:border-gray-700 hover:bg-transparent dark:hover:bg-transparent dark:active:bg-transparent dark:before:bg-transparent dark:after:bg-transparent",
-          wrapper: "dark:bg-gray-800",
+          tr: "border-b border-gray-100 dark:border-gray-700",
         }}
         selectedKeys={filterSelectedKeys}
         selectionMode="multiple"

@@ -20,7 +20,7 @@ const inter = Inter({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // Načteme téma z localStorage nebo systémového nastavení
   const [theme, setTheme] = useState<string | null>(null);
-  const { resolvedTheme } = useTheme();
+
 
   useEffect(() => {
     // Získáme uživatelské nastavení z localStorage
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} ${theme === "dark" ? "dark" : ""}`}
       suppressHydrationWarning
     >
-      <body className="font-inter antialiased bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400">
+      <body className="font-inter antialiased  text-gray-600 dark:text-gray-400 bg-background dark:bg-dark-background">
         <ThemeProvider>
           <ToastProvider>
             <AppProvider>

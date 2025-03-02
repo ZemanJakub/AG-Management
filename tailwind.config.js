@@ -8,7 +8,6 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       boxShadow: {
@@ -16,7 +15,7 @@ module.exports = {
       },
       colors: {
         gray: {
-          50: '#F9FAFB',
+          50: '#F9FAFB', 
           100: '#F3F4F6',
           200: '#E5E7EB',
           300: '#BFC4CD',

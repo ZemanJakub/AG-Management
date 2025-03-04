@@ -1,5 +1,6 @@
+import AuthHeader from "@/modules/auth/components/auth-header";
 import { render, screen } from "@testing-library/react";
-import AuthHeader from "@/app/(auth)/signin/auth-header";
+
 
 describe("AuthHeader", () => {
   test("Zobrazí logo s alternativním textem", () => {

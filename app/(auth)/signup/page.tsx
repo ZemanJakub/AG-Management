@@ -3,9 +3,10 @@ export const metadata = {
   description: 'Page description',
 }
 
+import AuthHeader from '@/modules/auth/components/auth-header'
+import AuthImage from '@/modules/auth/components/auth-image'
 import Link from 'next/link'
-import AuthHeader from '../signin/auth-header'
-import AuthImage from '../signin/auth-image'
+
 
 export default function SignUp() {
   return (

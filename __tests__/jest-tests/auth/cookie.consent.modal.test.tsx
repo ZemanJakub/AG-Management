@@ -1,7 +1,8 @@
 /// <reference types="@testing-library/jest-dom" />
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import CookieConsentModal from '@/app/(auth)/signin/cookie-consent-modal';
+import CookieConsentModal from '@/modules/auth/components/cookie-consent-modal';
+
 
 
 describe('CookieConsentModal', () => {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AuthBg from "@/public/images/pc-guy.png";
+import AuthBg from "@/public/auth/pc-guy.png";
 
 export default function AuthImage() {
   return (

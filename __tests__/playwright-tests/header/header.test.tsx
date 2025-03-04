@@ -20,7 +20,7 @@ test.describe("Header", () => {
   });
 
   test("kliknutí na hamburger menu otevře sidebar", async ({ page }) => {
-    await page.setViewportSize({ width: 768, height: 1024 }); // 📱 Simulace mobilního zobrazení
+    await page.setViewportSize({ width: 360, height: 550 }); // 📱 Simulace mobilního zobrazení
   
     const menuButton = page.locator("#sidebarHeaderButton");
     await expect(menuButton).toBeVisible();

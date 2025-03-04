@@ -1,5 +1,6 @@
+import AuthImage from '@/modules/auth/components/auth-image';
 import { render, screen } from '@testing-library/react';
-import AuthImage from '@/app/(auth)/signin/auth-image';
+
 
 describe('AuthImage', () => {
   test('Zobrazí obrázek s alternativním textem', () => {

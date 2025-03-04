@@ -9,13 +9,15 @@ import {
   useMemo,
 } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { login } from "@/actions";
 import Link from "next/link";
+
 import { Button, Input } from "@heroui/react";
-import { EyeSlashFilledIcon } from "@/components/my-icons/eye-slash-icon";
-import { EyeFilledIcon } from "@/components/my-icons/eye-filled-icon";
-import AuthHeader from "./auth-header";
 import { motion } from "framer-motion";
+
+import { login } from "@/actions";
+import AuthHeader from "./auth-header";
+import { EyeFilledIcon } from "@/modules/shared/components/icons/eye-filled-icon";
+import { EyeSlashFilledIcon } from "@/modules/shared/components/icons/eye-slash-icon";
 
 type LoginResponse = {
   success?: boolean;
@@ -112,7 +114,7 @@ export default function SignInForm() {
             </motion.div>
           </h1>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} noValidate>
             <div className="space-y-4">
               <div>
                 <label

@@ -1,6 +1,7 @@
-import AuthImage from "./auth-image";
-import SignInForm from "./signin-form";
-import CookieConsentModal from "./cookie-consent-modal";
+import AuthImage from "@/modules/auth/components/auth-image";
+import CookieConsentModal from "@/modules/auth/components/cookie-consent-modal";
+import SignInForm from "@/modules/auth/components/signin-form";
+
 
 export const metadata = {
   title: "Login",

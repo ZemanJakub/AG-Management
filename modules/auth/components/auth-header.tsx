@@ -1,4 +1,4 @@
-import Logo from '@/public/icons/icon-128x128.png';
+import Logo from '@/public/auth/icon-128x128.png';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 

@@ -1,2 +1,1 @@
-import "@testing-library/jest-dom"; // Novější verze
-
+import '@testing-library/jest-dom';

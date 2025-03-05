@@ -29,7 +29,6 @@ describe('SignIn page', () => {
 
   test('renders all expected elements', () => {
     render(<SignIn />);
-
     // Nadpis
     expect(screen.getByText(/Vítejte zpět/i)).toBeInTheDocument();
 
@@ -42,8 +41,7 @@ describe('SignIn page', () => {
 
     // Odkaz pro reset hesla
     expect(screen.getByText(/Zapomenuté heslo\?/i)).toBeInTheDocument();
-
-    // Kontrola, zda se renderuje modal (pokud obsahuje např. text "Informace o cookies")
+    
     // Pokud je modal skrytý při testech, můžete očekávat, že nebude v dokumentu.
     expect(screen.queryByText(/Informace o cookies/i)).not.toBeInTheDocument();
   });

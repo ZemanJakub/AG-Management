@@ -109,6 +109,7 @@ test.describe("Feedback Settings Page", () => {
 
   test("should handle button clicks", async ({ page }) => {
     // Vybereme hodnocení a zadáme text do textového pole
+    await page.setViewportSize({ width: 1024, height: 768 }); // 📱 Simulace mobilního zobrazení
     await page.locator("button", { hasText: "4" }).click();
     await page.locator("textarea#feedback").fill("Toto je moje zpětná vazba.");
 

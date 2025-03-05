@@ -7,6 +7,10 @@ import { login } from "@/actions";
 type LoginResponse = {
   success?: boolean;
   message?: string;
+  errors?: {
+    email?: string[];
+    password?: string[];
+  };
 };
 
 /**
@@ -40,7 +44,7 @@ export function useLoginForm() {
     return false;
   }, [email]);
 
-  // Použití useActionState s opravenými typy
+  // Použití useActionState se stejnými parametry jako v původní komponentě
   const [state, loginAction, isPending] = useActionState(
     async (prevState: LoginResponse | undefined, formData: FormData): Promise<LoginResponse> => {
       return await login(prevState ?? {}, formData);
@@ -48,6 +52,7 @@ export function useLoginForm() {
     undefined
   );
 
+  // Stejný effect jako v původní komponentě pro zpracování odpovědi ze serveru
   useEffect(() => {
     if (state?.success) {
       router.push(redirectUrl);
@@ -79,20 +84,27 @@ export function useLoginForm() {
   };
 
   const toggleVisibility = () => setIsVisible(!isVisible);
+  const handleBlurEmail = () => setHasBlurredEmail(true);
 
+  // Vracíme všechny stavy a metody, které komponenta potřebuje
   return {
+    // Stavy
     email,
-    setEmail,
     password,
-    setPassword,
     isVisible,
-    toggleVisibility,
     localErrors,
     isInvalidEmail,
     isEmptyEmail,
     isPending,
     state,
-    handleBlurEmail: () => setHasBlurredEmail(true),
-    handleSubmit,
+    
+    // Settery
+    setEmail,
+    setPassword,
+    
+    // Metody
+    toggleVisibility,
+    handleBlurEmail,
+    handleSubmit
   };
 }

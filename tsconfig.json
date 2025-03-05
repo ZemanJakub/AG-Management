@@ -52,7 +52,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "__tests__/playwright-tests/settings/account.page.test.ts"  ],
+, "__tests__/playwright-tests/settings/account.page.test.ts", "__mocks__/actions/auth/login.ts"  ],
   "exclude": [
     "node_modules"
   ]

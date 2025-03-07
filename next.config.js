@@ -2,7 +2,7 @@
 const nextConfig = {
   experimental: {
     serverActions: {
-      bodySizeLimit: "50mb", // Nastavení limitu na 10 MB
+      bodySizeLimit: "50mb", // Nastavení limitu na 50 MB
     },
   },
   images: {
@@ -12,6 +12,8 @@ const nextConfig = {
         hostname: "**", // Povolení všech HTTPS obrázků
       },
     ],
+    // Přidáno: povolení lokálních obrázků ve složce public
+    domains: ["localhost"],
   }
 };
 

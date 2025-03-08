@@ -8,6 +8,7 @@ test.describe("Header", () => {
 
   test("by se měl zobrazit správně", async ({ page }) => {
     // Ověření, že header existuje
+    await page.setViewportSize({ width: 1024, height: 768 })
     const header = page.locator("header.sticky"); // ✅ Přesnější selektor
     await expect(header).toBeVisible();
 

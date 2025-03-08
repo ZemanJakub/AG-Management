@@ -809,3 +809,86 @@
 [2025-03-07T17:37:53.493Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\jedna_rodina_export_filtered.xlsx po 5 minutách 
 [2025-03-07T17:37:53.494Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 4 ST záznamů z celkových 45 
 [2025-03-07T17:37:53.495Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-07T22:49:02.850Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-07T22:49:02.852Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-07T22:49:02.851Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: RADVAN 
+[2025-03-07T22:49:03.507Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-07T22:49:07.329Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-07T22:49:11.941Z] [INFO] [scraper] Přihlášení úspěšné, nová URL: ["https://portal.avaris.cz/index.php"]
+[2025-03-07T22:49:11.942Z] [INFO] [scraper] Zpracovávám objekt: RADVAN 
+[2025-03-07T22:49:11.942Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-07T22:49:15.207Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-07T22:49:15.207Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-07T22:49:15.229Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-07T22:49:15.573Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-07T22:49:16.082Z] [INFO] [scraper] Hledám checkbox pro objekt "RADVAN" 
+[2025-03-07T22:49:16.105Z] [INFO] [scraper] Nalezen label s for="tr-snimac3707" 
+[2025-03-07T22:49:16.157Z] [INFO] [scraper] Checkbox #tr-snimac3707 byl zaškrtnut 
+[2025-03-07T22:49:16.158Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-07T22:49:17.214Z] [WARN] [scraper] Objekt "RADVAN" nebyl nalezen v tabulce po přidání! 
+[2025-03-07T22:49:17.214Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-07T22:49:22.999Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-07T22:49:23.052Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-07T22:49:23.055Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-03-04 - 2025-03-07 
+[2025-03-07T22:49:23.137Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-07T22:49:23.137Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-07T22:49:23.200Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-07T22:49:24.914Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-07T22:49:24.964Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-07T22:49:26.660Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-07T22:49:26.795Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\radvan_export.csv 
+[2025-03-07T22:49:26.800Z] [INFO] [scraper] Dokončeno zpracování objektu: RADVAN 
+[2025-03-07T22:49:26.805Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-07T22:49:26.864Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-07T22:49:26.864Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-07T22:49:26.865Z] [INFO] [csv-processor] Začínám dávkové zpracování 1 souborů 
+[2025-03-07T22:49:26.865Z] [INFO] [csv-processor] Zpracovávám data pro objekt RADVAN: /downloads/radvan_export.csv 
+[2025-03-07T22:49:26.865Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/radvan_export.csv 
+[2025-03-07T22:49:26.866Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\radvan_export.csv 
+[2025-03-07T22:49:26.868Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 6 
+[2025-03-07T22:49:26.868Z] [ERROR] [csv-processor] Chyba při čtení a parsování CSV souboru: Error: Nepodařilo se najít hlavičky v CSV souboru 
+[2025-03-07T22:49:26.869Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-07T22:49:26.869Z] [ERROR] [csv-processor] Chyba při zpracování Avaris dat: Error: Nepodařilo se najít hlavičky v CSV souboru 
+[2025-03-07T22:50:05.242Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-07T22:50:05.243Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: P3 
+[2025-03-07T22:50:05.243Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-07T22:50:05.468Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-07T22:50:07.347Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-07T22:50:07.348Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-07T22:50:07.348Z] [INFO] [scraper] Zpracovávám objekt: P3 
+[2025-03-07T22:50:09.010Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-07T22:50:09.011Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-07T22:50:09.037Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-07T22:50:09.418Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-07T22:50:09.920Z] [INFO] [scraper] Hledám checkbox pro objekt "P3" 
+[2025-03-07T22:50:09.933Z] [INFO] [scraper] Nalezen label s for="tr-snimac5122" 
+[2025-03-07T22:50:09.962Z] [INFO] [scraper] Checkbox #tr-snimac5122 byl zaškrtnut 
+[2025-03-07T22:50:09.962Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-07T22:50:11.035Z] [INFO] [scraper] Objekt "P3" byl úspěšně přidán do tabulky 
+[2025-03-07T22:50:11.036Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-07T22:50:12.645Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-07T22:50:12.678Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-07T22:50:12.679Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-03-04 - 2025-03-07 
+[2025-03-07T22:50:12.744Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-07T22:50:12.744Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-07T22:50:12.809Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-07T22:50:14.722Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-07T22:50:14.812Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-07T22:50:16.944Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-07T22:50:17.066Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\p3_export.csv 
+[2025-03-07T22:50:17.070Z] [INFO] [scraper] Dokončeno zpracování objektu: P3 
+[2025-03-07T22:50:17.073Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-07T22:50:17.117Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-07T22:50:17.118Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-07T22:50:17.118Z] [INFO] [csv-processor] Začínám dávkové zpracování 1 souborů 
+[2025-03-07T22:50:17.118Z] [INFO] [csv-processor] Zpracovávám data pro objekt P3: /downloads/p3_export.csv 
+[2025-03-07T22:50:17.119Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/p3_export.csv 
+[2025-03-07T22:50:17.119Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\p3_export.csv 
+[2025-03-07T22:50:17.123Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 505 
+[2025-03-07T22:50:17.125Z] [INFO] [csv-processor] Zpracováno 497 záznamů, z toho 98 ST a 399 ne-ST 
+[2025-03-07T22:50:17.127Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\p3_export_filtered.xlsx 
+[2025-03-07T22:50:17.138Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-07T22:50:17.139Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\p3_export_filtered.xlsx po 5 minutách 
+[2025-03-07T22:50:17.140Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 98 ST záznamů z celkových 497 
+[2025-03-07T22:50:17.140Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-07T22:55:17.152Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\p3_export_filtered.xlsx byl smazán 

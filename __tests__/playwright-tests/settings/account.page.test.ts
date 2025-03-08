@@ -36,8 +36,8 @@ test.describe("Account Settings Page", () => {
     page,
   }) => {
     // Změníme jméno a příjmení
-    await page.fill('input[name="first_name"]', "UTest");
-    await page.fill('input[name="last_name"]', "UTestovač");
+    await page.fill('input[name="first_name"]', "Test");
+    await page.fill('input[name="last_name"]', "User");
     // Vyplníme pole pro aktuální heslo, aby tlačítko "Uložit změny" bylo povoleno
     await page.fill('input[name="oldpassword"]', "Test1"); // Zde nutno doplnit skutečné heslo
 

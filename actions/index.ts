@@ -19,3 +19,8 @@ export * from "./users/send-notification"
 //auth
 export * from "./auth/login"
 export * from "./auth/logout"
+
+//avaris
+export * from "./avaris/avaris"
+export * from "./avaris/saveExcelFile"
+export * from "./avaris/deleteExcelFile"

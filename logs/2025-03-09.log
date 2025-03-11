@@ -1,0 +1,315 @@
+[2025-03-08T23:55:12.841Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-08T23:55:12.842Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: RENOCAR 
+[2025-03-08T23:55:12.843Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-08T23:55:13.083Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-08T23:55:15.184Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-08T23:55:15.185Z] [INFO] [scraper] Zpracovávám objekt: RENOCAR 
+[2025-03-08T23:55:15.185Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-08T23:55:16.849Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-08T23:55:16.850Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-08T23:55:16.875Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-08T23:55:17.219Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-08T23:55:17.735Z] [INFO] [scraper] Hledám checkbox pro objekt "RENOCAR" 
+[2025-03-08T23:55:17.744Z] [INFO] [scraper] Nalezen label s for="tr-snimac3569" 
+[2025-03-08T23:55:17.776Z] [INFO] [scraper] Checkbox #tr-snimac3569 byl zaškrtnut 
+[2025-03-08T23:55:17.776Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-08T23:55:18.836Z] [INFO] [scraper] Objekt "RENOCAR" byl úspěšně přidán do tabulky 
+[2025-03-08T23:55:18.836Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-08T23:55:20.400Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-08T23:55:20.436Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-08T23:55:20.436Z] [INFO] [scraper] Nastavuji datumové rozmezí: 02.03.2025 - 09.03.2025 
+[2025-03-08T23:55:20.505Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-08T23:55:20.506Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-08T23:55:20.552Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-08T23:55:22.483Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-08T23:55:22.575Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-08T23:55:24.721Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-08T23:55:24.827Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-08T23:55:24.832Z] [INFO] [scraper] Dokončeno zpracování objektu: RENOCAR 
+[2025-03-08T23:55:24.835Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-08T23:55:24.878Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-08T23:55:24.878Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-08T23:55:24.879Z] [INFO] [csv-processor] Začínám dávkové zpracování 1 souborů 
+[2025-03-08T23:55:24.879Z] [INFO] [csv-processor] Zpracovávám data pro objekt RENOCAR: /downloads/renocar_export.csv 
+[2025-03-08T23:55:24.880Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/renocar_export.csv 
+[2025-03-08T23:55:24.880Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-08T23:55:24.885Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 639 
+[2025-03-08T23:55:24.887Z] [INFO] [csv-processor] Zpracováno 631 záznamů, z toho 13 ST a 618 ne-ST 
+[2025-03-08T23:55:24.888Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx 
+[2025-03-08T23:55:24.897Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-08T23:55:24.898Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx po 5 minutách 
+[2025-03-08T23:55:24.899Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 13 ST záznamů z celkových 631 
+[2025-03-08T23:55:24.899Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-09T00:11:38.026Z] [INFO] [excel-utils] Kopíruji list Sheet1 ze souboru test_filtered.xlsx do souboru Elit 2-2025 - kopie.xlsx 
+[2025-03-09T00:11:38.028Z] [ERROR] [excel-utils] Chyba při kopírování listu: Error: ENOENT: no such file or directory, open 'C:\Programování\AG-Management\public\downloads\test_filtered.xlsx' 
+[2025-03-09T00:12:02.431Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-09T00:12:02.432Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: M2C LKQ CS D5 
+[2025-03-09T00:12:02.433Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-09T00:12:02.677Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-09T00:12:07.642Z] [INFO] [scraper] Zpracovávám objekt: M2C LKQ CS D5 
+[2025-03-09T00:12:07.641Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-09T00:12:07.642Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-09T00:12:09.397Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-09T00:12:09.398Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-09T00:12:09.425Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-09T00:12:09.760Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-09T00:12:10.271Z] [INFO] [scraper] Hledám checkbox pro objekt "M2C LKQ CS D5" 
+[2025-03-09T00:12:10.296Z] [INFO] [scraper] Nalezen label s for="tr-snimac3408" 
+[2025-03-09T00:12:10.334Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-09T00:12:10.334Z] [INFO] [scraper] Checkbox #tr-snimac3408 byl zaškrtnut 
+[2025-03-09T00:12:11.410Z] [INFO] [scraper] Objekt "M2C LKQ CS D5" byl úspěšně přidán do tabulky 
+[2025-03-09T00:12:11.411Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-09T00:12:13.107Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-09T00:12:13.143Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-09T00:12:13.144Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-01 
+[2025-03-09T00:12:13.210Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-09T00:12:13.210Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-09T00:12:13.270Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-09T00:12:15.770Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-09T00:12:16.163Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-09T00:12:19.228Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-09T00:12:19.419Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d5_export.csv 
+[2025-03-09T00:12:19.427Z] [INFO] [scraper] Dokončeno zpracování objektu: M2C LKQ CS D5 
+[2025-03-09T00:12:19.430Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-09T00:12:19.478Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-09T00:12:19.479Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-09T00:12:19.479Z] [INFO] [csv-processor] Začínám dávkové zpracování 1 souborů 
+[2025-03-09T00:12:19.480Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/m2c_lkq_cs_d5_export.csv 
+[2025-03-09T00:12:19.479Z] [INFO] [csv-processor] Zpracovávám data pro objekt M2C LKQ CS D5: /downloads/m2c_lkq_cs_d5_export.csv 
+[2025-03-09T00:12:19.480Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d5_export.csv 
+[2025-03-09T00:12:19.492Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 2691 
+[2025-03-09T00:12:19.497Z] [INFO] [csv-processor] Zpracováno 2683 záznamů, z toho 312 ST a 2371 ne-ST 
+[2025-03-09T00:12:19.498Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d5_export_filtered.xlsx 
+[2025-03-09T00:12:19.518Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-09T00:12:19.518Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d5_export_filtered.xlsx po 5 minutách 
+[2025-03-09T00:12:19.522Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-09T00:12:19.521Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 312 ST záznamů z celkových 2683 
+[2025-03-09T00:13:02.646Z] [INFO] [excel-utils] Kopíruji list Sheet1 ze souboru test_filtered.xlsx do souboru m2c_lkq_cs_d5_export_filtered.xlsx 
+[2025-03-09T00:13:02.649Z] [ERROR] [excel-utils] Chyba při kopírování listu: Error: ENOENT: no such file or directory, open 'C:\Programování\AG-Management\public\downloads\test_filtered.xlsx' 
+[2025-03-09T00:17:19.526Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d5_export_filtered.xlsx byl smazán 
+[2025-03-09T00:18:38.010Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-09T00:18:38.011Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: RENOCAR 
+[2025-03-09T00:18:38.011Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-09T00:18:38.444Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-09T00:18:40.846Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-09T00:18:40.847Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-09T00:18:40.846Z] [INFO] [scraper] Zpracovávám objekt: RENOCAR 
+[2025-03-09T00:18:42.394Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-09T00:18:42.394Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-09T00:18:42.421Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-09T00:18:42.772Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-09T00:18:43.285Z] [INFO] [scraper] Hledám checkbox pro objekt "RENOCAR" 
+[2025-03-09T00:18:43.298Z] [INFO] [scraper] Nalezen label s for="tr-snimac3569" 
+[2025-03-09T00:18:43.335Z] [INFO] [scraper] Checkbox #tr-snimac3569 byl zaškrtnut 
+[2025-03-09T00:18:43.336Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-09T00:18:44.396Z] [INFO] [scraper] Objekt "RENOCAR" byl úspěšně přidán do tabulky 
+[2025-03-09T00:18:44.397Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-09T00:18:46.650Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-09T00:18:46.691Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-09T00:18:46.691Z] [INFO] [scraper] Nastavuji datumové rozmezí: 02.03.2025 - 09.03.2025 
+[2025-03-09T00:18:46.775Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-09T00:18:46.775Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-09T00:18:46.844Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-09T00:18:48.544Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-09T00:18:48.650Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-09T00:18:50.293Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-09T00:18:50.411Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-09T00:18:50.415Z] [INFO] [scraper] Dokončeno zpracování objektu: RENOCAR 
+[2025-03-09T00:18:50.418Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-09T00:18:50.474Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-09T00:18:50.474Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-09T00:18:50.475Z] [INFO] [csv-processor] Začínám dávkové zpracování 1 souborů 
+[2025-03-09T00:18:50.475Z] [INFO] [csv-processor] Zpracovávám data pro objekt RENOCAR: /downloads/renocar_export.csv 
+[2025-03-09T00:18:50.475Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/renocar_export.csv 
+[2025-03-09T00:18:50.476Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-09T00:18:50.481Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 639 
+[2025-03-09T00:18:50.483Z] [INFO] [csv-processor] Zpracováno 631 záznamů, z toho 13 ST a 618 ne-ST 
+[2025-03-09T00:18:50.484Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx 
+[2025-03-09T00:18:50.493Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-09T00:18:50.495Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 13 ST záznamů z celkových 631 
+[2025-03-09T00:18:50.494Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx po 5 minutách 
+[2025-03-09T00:18:50.495Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-09T00:19:06.061Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-09T00:19:06.062Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: RENOCAR 
+[2025-03-09T00:19:06.062Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-09T00:19:06.284Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-09T00:19:08.411Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-09T00:19:08.412Z] [INFO] [scraper] Zpracovávám objekt: RENOCAR 
+[2025-03-09T00:19:08.412Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-09T00:19:10.597Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-09T00:19:10.598Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-09T00:19:10.623Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-09T00:19:10.957Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-09T00:19:11.473Z] [INFO] [scraper] Hledám checkbox pro objekt "RENOCAR" 
+[2025-03-09T00:19:11.487Z] [INFO] [scraper] Nalezen label s for="tr-snimac3569" 
+[2025-03-09T00:19:11.523Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-09T00:19:11.522Z] [INFO] [scraper] Checkbox #tr-snimac3569 byl zaškrtnut 
+[2025-03-09T00:19:12.579Z] [INFO] [scraper] Objekt "RENOCAR" byl úspěšně přidán do tabulky 
+[2025-03-09T00:19:12.580Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-09T00:19:14.535Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-09T00:19:14.580Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-09T00:19:14.581Z] [INFO] [scraper] Nastavuji datumové rozmezí: 02.03.2025 - 09.03.2025 
+[2025-03-09T00:19:14.662Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-09T00:19:14.661Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-09T00:19:14.717Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-09T00:19:16.663Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-09T00:19:16.762Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-09T00:19:18.485Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-09T00:19:18.626Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-09T00:19:18.631Z] [INFO] [scraper] Dokončeno zpracování objektu: RENOCAR 
+[2025-03-09T00:19:18.634Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-09T00:19:18.680Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-09T00:19:18.681Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-09T00:19:18.681Z] [INFO] [csv-processor] Začínám dávkové zpracování 1 souborů 
+[2025-03-09T00:19:18.681Z] [INFO] [csv-processor] Zpracovávám data pro objekt RENOCAR: /downloads/renocar_export.csv 
+[2025-03-09T00:19:18.681Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/renocar_export.csv 
+[2025-03-09T00:19:18.682Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-09T00:19:18.684Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 639 
+[2025-03-09T00:19:18.686Z] [INFO] [csv-processor] Zpracováno 631 záznamů, z toho 13 ST a 618 ne-ST 
+[2025-03-09T00:19:18.687Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx 
+[2025-03-09T00:19:18.692Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-09T00:19:18.692Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx po 5 minutách 
+[2025-03-09T00:19:18.693Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 13 ST záznamů z celkových 631 
+[2025-03-09T00:19:18.693Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-09T00:23:50.508Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx byl smazán 
+[2025-03-09T00:24:18.705Z] [ERROR] [csv-processor] Chyba při mazání souboru C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx: Error: ENOENT: no such file or directory, unlink 'C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx' 
+[2025-03-09T00:25:40.639Z] [INFO] [excel-utils] Kopíruji list Sheet1 ze souboru renocar_export_filtered.xlsx do souboru Elit 2-2025 - kopie.xlsx 
+[2025-03-09T00:25:40.641Z] [ERROR] [excel-utils] Chyba při kopírování listu: Error: ENOENT: no such file or directory, open 'C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx' 
+[2025-03-09T00:26:23.830Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-09T00:26:23.831Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: M2C LKQ CS D5 
+[2025-03-09T00:26:23.832Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-09T00:26:24.057Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-09T00:26:28.728Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-09T00:26:28.728Z] [INFO] [scraper] Zpracovávám objekt: M2C LKQ CS D5 
+[2025-03-09T00:26:28.728Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-09T00:26:30.439Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-09T00:26:30.440Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-09T00:26:30.465Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-09T00:26:30.811Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-09T00:26:31.321Z] [INFO] [scraper] Hledám checkbox pro objekt "M2C LKQ CS D5" 
+[2025-03-09T00:26:31.340Z] [INFO] [scraper] Nalezen label s for="tr-snimac3408" 
+[2025-03-09T00:26:31.390Z] [INFO] [scraper] Checkbox #tr-snimac3408 byl zaškrtnut 
+[2025-03-09T00:26:31.390Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-09T00:26:32.460Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-09T00:26:32.459Z] [INFO] [scraper] Objekt "M2C LKQ CS D5" byl úspěšně přidán do tabulky 
+[2025-03-09T00:26:34.005Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-09T00:26:34.042Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-01 
+[2025-03-09T00:26:34.042Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-09T00:26:34.110Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-09T00:26:34.110Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-09T00:26:34.165Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-09T00:26:36.744Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-09T00:26:37.118Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-09T00:26:39.584Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-09T00:26:39.701Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d5_export.csv 
+[2025-03-09T00:26:39.707Z] [INFO] [scraper] Dokončeno zpracování objektu: M2C LKQ CS D5 
+[2025-03-09T00:26:39.711Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-09T00:26:39.761Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-09T00:26:39.762Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-09T00:26:39.763Z] [INFO] [csv-processor] Začínám dávkové zpracování 1 souborů 
+[2025-03-09T00:26:39.764Z] [INFO] [csv-processor] Zpracovávám data pro objekt M2C LKQ CS D5: /downloads/m2c_lkq_cs_d5_export.csv 
+[2025-03-09T00:26:39.765Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d5_export.csv 
+[2025-03-09T00:26:39.764Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/m2c_lkq_cs_d5_export.csv 
+[2025-03-09T00:26:39.775Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 2691 
+[2025-03-09T00:26:39.782Z] [INFO] [csv-processor] Zpracováno 2683 záznamů, z toho 312 ST a 2371 ne-ST 
+[2025-03-09T00:26:39.786Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d5_export_filtered.xlsx 
+[2025-03-09T00:26:39.807Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-09T00:26:39.808Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d5_export_filtered.xlsx po 5 minutách 
+[2025-03-09T00:26:39.809Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 312 ST záznamů z celkových 2683 
+[2025-03-09T00:26:39.810Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-09T00:26:47.670Z] [INFO] [excel-utils] Kopíruji list Sheet1 ze souboru m2c_lkq_cs_d5_export_filtered.xlsx do souboru Elit 2-2025 - kopie.xlsx 
+[2025-03-09T00:26:47.778Z] [INFO] [excel-utils] List Sheet1 byl úspěšně zkopírován do souboru Elit 2-2025 - kopie.xlsx jako List2 
+[2025-03-09T11:26:14.099Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-09T11:26:14.101Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-09T11:26:14.100Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: TOP HOTEL 
+[2025-03-09T11:26:14.592Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-09T11:26:17.941Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-09T11:26:22.423Z] [INFO] [scraper] Přihlášení úspěšné, nová URL: ["https://portal.avaris.cz/index.php"]
+[2025-03-09T11:26:22.424Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-09T11:26:22.423Z] [INFO] [scraper] Zpracovávám objekt: TOP HOTEL 
+[2025-03-09T11:26:25.938Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-09T11:26:25.939Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-09T11:26:25.966Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-09T11:26:26.344Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-09T11:26:26.858Z] [INFO] [scraper] Hledám checkbox pro objekt "TOP HOTEL" 
+[2025-03-09T11:26:26.870Z] [INFO] [scraper] Nalezen label s for="tr-snimac3474" 
+[2025-03-09T11:26:26.913Z] [INFO] [scraper] Checkbox #tr-snimac3474 byl zaškrtnut 
+[2025-03-09T11:26:26.913Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-09T11:26:27.981Z] [WARN] [scraper] Objekt "TOP HOTEL" nebyl nalezen v tabulce po přidání! 
+[2025-03-09T11:26:27.982Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-09T11:26:34.581Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-09T11:26:34.676Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-03 
+[2025-03-09T11:26:34.676Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-09T11:26:34.750Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-09T11:26:34.751Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-09T11:26:34.807Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-09T11:26:44.018Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-09T11:26:48.983Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-09T11:26:57.389Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-09T11:26:57.682Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\top_hotel_export.csv 
+[2025-03-09T11:26:57.688Z] [INFO] [scraper] Dokončeno zpracování objektu: TOP HOTEL 
+[2025-03-09T11:26:57.694Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-09T11:26:57.790Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-09T11:26:57.791Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-09T11:26:57.791Z] [INFO] [csv-processor] Začínám dávkové zpracování 1 souborů 
+[2025-03-09T11:26:57.792Z] [INFO] [csv-processor] Zpracovávám data pro objekt TOP HOTEL: /downloads/top_hotel_export.csv 
+[2025-03-09T11:26:57.792Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/top_hotel_export.csv 
+[2025-03-09T11:26:57.793Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\top_hotel_export.csv 
+[2025-03-09T11:26:58.048Z] [INFO] [csv-processor] Zpracováno 34168 záznamů, z toho 3639 ST a 30529 ne-ST 
+[2025-03-09T11:26:57.952Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 34206 
+[2025-03-09T11:26:58.057Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx 
+[2025-03-09T11:26:58.179Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx po 5 minutách 
+[2025-03-09T11:26:58.200Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-09T11:26:58.178Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-09T11:26:58.199Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 3639 ST záznamů z celkových 34168 
+[2025-03-09T11:27:19.696Z] [INFO] [excel-utils] Kopíruji data z listu Sheet1 (top_hotel_export_filtered.xlsx) do listu List2 (Elit 2-2025 - kopie.xlsx) 
+[2025-03-09T11:27:20.663Z] [INFO] [excel-utils] Data z listu Sheet1 byla úspěšně zkopírována do listu List2 v souboru Elit 2-2025 - kopie.xlsx 
+[2025-03-09T11:31:58.188Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx byl smazán 
+[2025-03-09T11:37:12.504Z] [INFO] [excel-utils] Kopíruji data z listu Sheet1 (test_filtered.xlsx) do listu List2 (Elit 2-2025 - kopie.xlsx) 
+[2025-03-09T11:37:12.508Z] [ERROR] [excel-utils] Chyba při kopírování dat: Error: ENOENT: no such file or directory, open 'C:\Programování\AG-Management\public\downloads\test_filtered.xlsx' 
+[2025-03-09T11:37:29.872Z] [INFO] [excel-utils] Kopíruji data z listu Sheet1 (test_filtered.xlsx) do listu List2 (Elit 2-2025 - kopie.xlsx) 
+[2025-03-09T11:37:29.884Z] [ERROR] [excel-utils] Chyba při kopírování dat: Error: ENOENT: no such file or directory, open 'C:\Programování\AG-Management\public\downloads\test_filtered.xlsx' 
+[2025-03-09T11:38:14.872Z] [INFO] [excel-utils] Kopíruji data z listu Sheet1 (test_filtered.xlsx) do listu List2 (Elit 2-2025 - kopie.xlsx) 
+[2025-03-09T11:38:14.997Z] [INFO] [excel-utils] Specifikovaný zdrojový list nebyl nalezen, používám první list: List1 
+[2025-03-09T11:38:15.042Z] [INFO] [excel-utils] Data z listu List1 byla úspěšně zkopírována do listu List2 v souboru Elit 2-2025 - kopie.xlsx 
+[2025-03-09T11:39:53.500Z] [INFO] [excel-utils] Kopíruji data z listu Sheet1 (test_filtered.xlsx) do listu List2 (Elit 2-2025 - kopie.xlsx) 
+[2025-03-09T11:39:53.502Z] [ERROR] [excel-utils] Chyba při kopírování dat: Error: ENOENT: no such file or directory, open 'C:\Programování\AG-Management\public\downloads\test_filtered.xlsx' 
+[2025-03-09T11:40:26.004Z] [INFO] [excel-utils] Kopíruji data z listu Sheet1 (test_filtered.xlsx) do listu List2 (Elit 2-2025 - kopie.xlsx) 
+[2025-03-09T11:40:26.009Z] [ERROR] [excel-utils] Chyba při kopírování dat: Error: ENOENT: no such file or directory, open 'C:\Programování\AG-Management\public\downloads\test_filtered.xlsx' 
+[2025-03-09T11:41:03.769Z] [INFO] [excel-utils] Kopíruji data z listu Sheet1 (test_filtered.xlsx) do listu List2 (Elit 2-2025 - kopie.xlsx) 
+[2025-03-09T11:41:03.771Z] [ERROR] [excel-utils] Chyba při kopírování dat: Error: ENOENT: no such file or directory, open 'C:\Programování\AG-Management\public\downloads\test_filtered.xlsx' 
+[2025-03-09T11:41:32.651Z] [INFO] [excel-utils] Kopíruji data z listu Sheet1 (test_filtered.xlsx) do listu List2 (Elit 2-2025 - kopie.xlsx) 
+[2025-03-09T11:41:32.758Z] [INFO] [excel-utils] Data z listu Sheet1 byla úspěšně zkopírována do listu List2 v souboru Elit 2-2025 - kopie.xlsx 
+[2025-03-09T11:46:20.110Z] [INFO] [excel-utils] Zapisuji text do buňky A1 listu List2 v souboru Elit 2-2025.xlsx 
+[2025-03-09T11:46:20.569Z] [INFO] [excel-utils] Text byl úspěšně zapsán do buňky A1 listu List2 v souboru Elit 2-2025.xlsx 
+[2025-03-09T11:47:31.216Z] [INFO] [excel-utils] Zapisuji text do buňky A1 listu List2 v souboru Elit 2-2025 - kopie.xlsx 
+[2025-03-09T11:47:31.411Z] [INFO] [excel-utils] Text byl úspěšně zapsán do buňky A1 listu List2 v souboru Elit 2-2025 - kopie.xlsx 
+[2025-03-09T11:53:55.187Z] [INFO] [excel-utils] Kopíruji data z test.xlsx do listu List2 v souboru Elit 2-2025 - kopie.xlsx pomocí ExcelJS 
+[2025-03-09T11:53:55.191Z] [ERROR] [excel-utils] Chyba při kopírování dat: Error: File not found: C:\Programování\AG-Management\public\downloads\test.xlsx 
+[2025-03-09T11:54:24.196Z] [INFO] [excel-utils] Kopíruji data z test.xlsx do listu List2 v souboru Elit 2-2025 - kopie.xlsx pomocí ExcelJS 
+[2025-03-09T11:54:24.599Z] [INFO] [excel-utils] Data byla úspěšně zkopírována do listu List2 v souboru Elit 2-2025 - kopie.xlsx 
+[2025-03-09T21:56:36.503Z] [INFO] [excel-utils] Kopíruji data z test_filtered.xlsx do listu List2 v souboru Prázdný list.xlsx pomocí ExcelJS 
+[2025-03-09T21:56:36.505Z] [ERROR] [excel-utils] Chyba při kopírování dat: Error: File not found: C:\Programování\AG-Management\public\downloads\test_filtered.xlsx 
+[2025-03-09T21:57:02.670Z] [INFO] [excel-utils] Kopíruji data z test_filtered.xlsx do listu List2 v souboru Prázdný list.xlsx pomocí ExcelJS 
+[2025-03-09T21:57:02.736Z] [INFO] [excel-utils] List "List2" v cílovém souboru neexistuje, vytvářím nový 
+[2025-03-09T21:57:02.797Z] [INFO] [excel-utils] Data byla úspěšně zkopírována do listu List2 v souboru Prázdný list.xlsx 
+[2025-03-09T21:59:22.713Z] [INFO] [excel-utils] Kopíruji data z test_filtered.xlsx do listu List2 v souboru Elit 2-2025 - test.xlsx pomocí ExcelJS 
+[2025-03-09T21:59:22.867Z] [INFO] [excel-utils] List "List2" v cílovém souboru neexistuje, vytvářím nový 
+[2025-03-09T21:59:22.965Z] [INFO] [excel-utils] Data byla úspěšně zkopírována do listu List2 v souboru Elit 2-2025 - test.xlsx 
+[2025-03-09T22:00:54.201Z] [INFO] [excel-utils] Kopíruji data z test_filtered.xlsx do listu List2 v souboru Elit 2-2025 - test.xlsx pomocí ExcelJS 
+[2025-03-09T22:00:54.271Z] [INFO] [excel-utils] List "List2" v cílovém souboru neexistuje, vytvářím nový 
+[2025-03-09T22:00:54.329Z] [INFO] [excel-utils] Data byla úspěšně zkopírována do listu List2 v souboru Elit 2-2025 - test.xlsx 
+[2025-03-09T22:07:16.729Z] [INFO] [excel-utils] Kopíruji data z test.xlsx do listu List2 v souboru Elit 2-2025 - test.xlsx pomocí ExcelJS 
+[2025-03-09T22:07:16.733Z] [ERROR] [excel-utils] Chyba při kopírování dat: Error: File not found: C:\Programování\AG-Management\public\downloads\test.xlsx 
+[2025-03-09T22:08:05.918Z] [INFO] [excel-utils] Kopíruji data z test.xlsx do listu List2 v souboru Elit 2-2025 - test.xlsx pomocí ExcelJS 
+[2025-03-09T22:08:06.072Z] [INFO] [excel-utils] Nalezeno 0 pojmenovaných oblastí v cílovém souboru 
+[2025-03-09T22:08:06.074Z] [INFO] [excel-utils] List "List2" v cílovém souboru neexistuje, vytvářím nový 
+[2025-03-09T22:08:06.281Z] [INFO] [excel-utils] Po uložení zůstalo 0 pojmenovaných oblastí z původních 0 
+[2025-03-09T22:13:31.111Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Elit 2-2025 - test.xlsx jako nový list 
+[2025-03-09T22:13:31.365Z] [INFO] [excel-utils] Nový list 'AvarisData_411252' byl úspěšně vytvořen v souboru Elit 2-2025 - test.xlsx 
+[2025-03-09T22:20:55.278Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Test-1.xlsx jako nový list 
+[2025-03-09T22:20:55.686Z] [INFO] [excel-utils] Nový list 'AvarisData_855480' byl úspěšně vytvořen v souboru Test-1.xlsx 
+[2025-03-09T22:22:03.647Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Test-1.xlsx jako nový list 
+[2025-03-09T22:22:03.887Z] [INFO] [excel-utils] Nový list 'AvarisData_923766' byl úspěšně vytvořen v souboru Test-1.xlsx 
+[2025-03-09T22:24:17.932Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Test-1.xlsx jako nový list 
+[2025-03-09T22:24:18.188Z] [INFO] [excel-utils] Nový list 'AvarisData_058057' byl úspěšně vytvořen v souboru Test-1.xlsx 

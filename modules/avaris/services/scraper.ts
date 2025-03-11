@@ -1,4 +1,4 @@
-// utils/scraper.ts
+// modules/avaris/services/scraper.ts
 import { chromium } from "@playwright/test";
 import fs from "fs/promises";
 import path from "path";

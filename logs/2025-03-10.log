@@ -1,0 +1,102 @@
+[2025-03-10T14:50:57.586Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Abatis  2-2025.xlsx jako nový list 
+[2025-03-10T14:50:57.908Z] [INFO] [excel-utils] Nový list 'AvarisData_257749' byl úspěšně vytvořen v souboru Abatis  2-2025.xlsx 
+[2025-03-10T14:52:13.971Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Abatis  10-2024.xlsx jako nový list 
+[2025-03-10T14:52:14.103Z] [INFO] [excel-utils] Nový list 'AvarisData_334060' byl úspěšně vytvořen v souboru Abatis  10-2024.xlsx 
+[2025-03-10T14:55:38.069Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Abatis  1-2025.xlsx jako nový list 
+[2025-03-10T14:55:38.200Z] [INFO] [excel-utils] Nový list 'AvarisData_538147' byl úspěšně vytvořen v souboru Abatis  1-2025.xlsx 
+[2025-03-10T14:58:46.424Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Abatis  1-2025 1.xlsx jako nový list 
+[2025-03-10T14:58:46.550Z] [INFO] [excel-utils] Nový list 'AvarisData_726512' byl úspěšně vytvořen v souboru Abatis  1-2025 1.xlsx 
+[2025-03-10T15:07:47.106Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Abatis  2-2025.xlsx jako nový list 
+[2025-03-10T15:07:47.179Z] [INFO] [excel-utils] Nový list 'AvarisData_267147' byl úspěšně vytvořen v souboru Abatis  2-2025.xlsx 
+[2025-03-10T15:09:01.650Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Abatis  2-2025 - kopie.xlsx jako nový list 
+[2025-03-10T15:09:01.725Z] [INFO] [excel-utils] Nový list 'AvarisData_341690' byl úspěšně vytvořen v souboru Abatis  2-2025 - kopie.xlsx 
+[2025-03-10T15:10:57.079Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Abatis  2-2025 - kopie.xlsx jako nový list 
+[2025-03-10T15:10:57.126Z] [INFO] [excel-utils] Nový list 'AvarisData_457107' byl úspěšně vytvořen v souboru Abatis  2-2025 - kopie.xlsx 
+[2025-03-10T15:26:45.638Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Testovací tabulka.xlsx jako nový list 
+[2025-03-10T15:26:45.679Z] [INFO] [excel-utils] Nový list 'AvarisData_405661' byl úspěšně vytvořen v souboru Testovací tabulka.xlsx 
+[2025-03-10T15:37:13.815Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Testovací tabulka.xlsx jako nový list 
+[2025-03-10T15:37:13.898Z] [INFO] [excel-utils] Nový list 'AvarisData_033858' byl úspěšně vytvořen v souboru Testovací tabulka.xlsx 
+[2025-03-10T15:40:40.269Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Testovací tabulka.xlsx jako nový list 
+[2025-03-10T15:40:40.339Z] [INFO] [excel-utils] Nový list 'AvarisData_240303' byl úspěšně vytvořen v souboru Testovací tabulka.xlsx 
+[2025-03-10T22:03:26.006Z] [INFO] [excel-utils] Přidávám data z test.xlsx do souboru Testovací tabulka.xlsx jako nový list 
+[2025-03-10T22:03:26.585Z] [INFO] [excel-utils] Nový list 'List2' byl úspěšně vytvořen v souboru Testovací tabulka.xlsx 
+[2025-03-10T22:14:30.187Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-10T22:14:30.189Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: BPK 
+[2025-03-10T22:14:30.190Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-10T22:14:30.758Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-10T22:14:34.160Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-10T22:14:54.558Z] [ERROR] [scraper] Chyba při přihlašování: [{}]
+[2025-03-10T22:14:54.559Z] [ERROR] [scraper] Chyba při scrapování: [{}]
+[2025-03-10T22:14:55.701Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-10T22:14:55.701Z] [ERROR] [avaris-action] Chyba při scrapování: Error: Nelze detekovat úspěšné přihlášení. Kontrolní screenshot uložen. 
+[2025-03-10T22:16:12.338Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-10T22:16:12.339Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: BPK 
+[2025-03-10T22:16:12.340Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-10T22:16:12.673Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-10T22:16:12.978Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-10T22:16:33.338Z] [ERROR] [scraper] Chyba při přihlašování: [{}]
+[2025-03-10T22:16:33.339Z] [ERROR] [scraper] Chyba při scrapování: [{}]
+[2025-03-10T22:16:34.470Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-10T22:16:34.471Z] [ERROR] [avaris-action] Chyba při scrapování: Error: Nelze detekovat úspěšné přihlášení. Kontrolní screenshot uložen. 
+[2025-03-10T22:19:58.482Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-10T22:19:58.478Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-10T22:19:58.480Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: BPK 
+[2025-03-10T22:19:58.771Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-10T22:19:59.075Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-10T22:20:19.519Z] [ERROR] [scraper] Chyba při přihlašování: [{}]
+[2025-03-10T22:20:19.520Z] [ERROR] [scraper] Chyba při scrapování: [{}]
+[2025-03-10T22:20:20.515Z] [ERROR] [avaris-action] Chyba při scrapování: Error: Nelze detekovat úspěšné přihlášení. Kontrolní screenshot uložen. 
+[2025-03-10T22:20:20.514Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-10T22:22:16.139Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-10T22:22:16.141Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: BPK 
+[2025-03-10T22:22:16.143Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-10T22:22:16.494Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-10T22:22:16.790Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-10T22:22:37.094Z] [ERROR] [scraper] Chyba při přihlašování: [{}]
+[2025-03-10T22:22:37.095Z] [ERROR] [scraper] Chyba při scrapování: [{}]
+[2025-03-10T22:22:38.075Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-10T22:22:38.076Z] [ERROR] [avaris-action] Chyba při scrapování: Error: Nelze detekovat úspěšné přihlášení. Kontrolní screenshot uložen. 
+[2025-03-10T22:22:56.405Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-10T22:22:56.411Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-10T22:22:56.408Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: BPK 
+[2025-03-10T22:22:56.718Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-10T22:22:57.025Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-10T22:23:01.308Z] [INFO] [scraper] Přihlášení úspěšné, nová URL: ["https://portal.avaris.cz/index.php"]
+[2025-03-10T22:23:01.308Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-10T22:23:01.308Z] [INFO] [scraper] Zpracovávám objekt: BPK 
+[2025-03-10T22:23:05.079Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-10T22:23:05.078Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-10T22:23:05.105Z] [INFO] [scraper] Nalezeno 0 položek k odstranění 
+[2025-03-10T22:23:05.106Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-10T22:23:05.625Z] [INFO] [scraper] Hledám checkbox pro objekt "BPK" 
+[2025-03-10T22:23:05.638Z] [INFO] [scraper] Nalezen label s for="tr-snimac1078" 
+[2025-03-10T22:23:05.684Z] [INFO] [scraper] Checkbox #tr-snimac1078 byl zaškrtnut 
+[2025-03-10T22:23:05.685Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-10T22:23:06.754Z] [WARN] [scraper] Objekt "BPK" nebyl nalezen v tabulce po přidání! 
+[2025-03-10T22:23:06.755Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-10T22:23:14.684Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-10T22:23:14.742Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-10T22:23:14.742Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-01 
+[2025-03-10T22:23:14.843Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-10T22:23:14.843Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-10T22:23:14.897Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-10T22:23:18.025Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-10T22:23:18.749Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-10T22:23:21.410Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-10T22:23:21.564Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\bpk_export.csv 
+[2025-03-10T22:23:21.571Z] [INFO] [scraper] Dokončeno zpracování objektu: BPK 
+[2025-03-10T22:23:21.580Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-10T22:23:21.666Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-10T22:23:21.669Z] [INFO] [csv-processor] Začínám dávkové zpracování 1 souborů 
+[2025-03-10T22:23:21.667Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-10T22:23:21.670Z] [INFO] [csv-processor] Zpracovávám data pro objekt BPK: /downloads/bpk_export.csv 
+[2025-03-10T22:23:21.670Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/bpk_export.csv 
+[2025-03-10T22:23:21.671Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\bpk_export.csv 
+[2025-03-10T22:23:21.691Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 4508 
+[2025-03-10T22:23:21.702Z] [INFO] [csv-processor] Zpracováno 4500 záznamů, z toho 65 ST a 4435 ne-ST 
+[2025-03-10T22:23:21.705Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\bpk_export_filtered.xlsx 
+[2025-03-10T22:23:21.726Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-10T22:23:21.727Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\bpk_export_filtered.xlsx po 5 minutách 
+[2025-03-10T22:23:21.731Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 65 ST záznamů z celkových 4500 
+[2025-03-10T22:23:21.732Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-10T22:28:21.735Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\bpk_export_filtered.xlsx byl smazán 

@@ -1,4 +1,4 @@
-// utils/logger.ts
+// modules/avaris/services/logger.ts
 import fs from 'fs/promises';
 import path from 'path';
 

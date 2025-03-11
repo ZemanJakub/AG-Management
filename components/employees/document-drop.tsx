@@ -1,4 +1,3 @@
-// modules/avaris/components/document-drop.tsx
 "use client";
 import {
   Modal,

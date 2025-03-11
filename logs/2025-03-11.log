@@ -1,0 +1,330 @@
+[2025-03-11T13:23:29.607Z] [INFO] [avaris-action] Zpracovávám požadavek na získání Avaris dat 
+[2025-03-11T13:23:29.608Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: BPK 
+[2025-03-11T13:23:29.609Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-11T13:23:30.111Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-11T13:23:33.228Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-11T13:23:37.667Z] [INFO] [scraper] Přihlášení úspěšné, nová URL: ["https://portal.avaris.cz/index.php"]
+[2025-03-11T13:23:37.667Z] [INFO] [scraper] Zpracovávám objekt: BPK 
+[2025-03-11T13:23:37.667Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-11T13:23:43.314Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-11T13:23:43.313Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-11T13:23:43.340Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-11T13:23:43.693Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-11T13:23:44.205Z] [INFO] [scraper] Hledám checkbox pro objekt "BPK" 
+[2025-03-11T13:23:44.218Z] [INFO] [scraper] Nalezen label s for="tr-snimac1081" 
+[2025-03-11T13:23:44.257Z] [INFO] [scraper] Checkbox #tr-snimac1081 byl zaškrtnut 
+[2025-03-11T13:23:44.257Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-11T13:23:45.328Z] [WARN] [scraper] Objekt "BPK" nebyl nalezen v tabulce po přidání! 
+[2025-03-11T13:23:45.329Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-11T13:23:53.238Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-11T13:23:53.455Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-11T13:23:53.456Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-01 
+[2025-03-11T13:23:53.564Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-11T13:23:53.564Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-11T13:23:53.625Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-11T13:23:55.496Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-11T13:23:55.548Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-11T13:23:57.272Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-11T13:23:57.720Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\bpk_export.csv 
+[2025-03-11T13:23:57.725Z] [INFO] [scraper] Dokončeno zpracování objektu: BPK 
+[2025-03-11T13:23:57.729Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-11T13:23:57.789Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-11T13:23:57.790Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-11T13:23:57.790Z] [INFO] [csv-processor] Začínám dávkové zpracování 1 souborů 
+[2025-03-11T13:23:57.790Z] [INFO] [csv-processor] Zpracovávám data pro objekt BPK: /downloads/bpk_export.csv 
+[2025-03-11T13:23:57.790Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/bpk_export.csv 
+[2025-03-11T13:23:57.790Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\bpk_export.csv 
+[2025-03-11T13:23:57.792Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 6 
+[2025-03-11T13:23:57.792Z] [ERROR] [csv-processor] Chyba při čtení a parsování CSV souboru: Error: Nepodařilo se najít hlavičky v CSV souboru 
+[2025-03-11T13:23:57.792Z] [ERROR] [csv-processor] Chyba při zpracování Avaris dat: Error: Nepodařilo se najít hlavičky v CSV souboru 
+[2025-03-11T13:23:57.792Z] [INFO] [csv-processor] Dávkové zpracování dokončeno, zpracováno 1 souborů 
+[2025-03-11T15:07:03.366Z] [INFO] [avaris-action] Zpracovávám komplexní požadavek na získání a zpracování Avaris dat 
+[2025-03-11T15:07:03.367Z] [INFO] [avaris-action] Nahrán soubor: Testovací tabulka.xlsx 
+[2025-03-11T15:07:03.377Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: NA LOVU 
+[2025-03-11T15:07:03.380Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-11T15:07:03.922Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-11T15:07:07.149Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-11T15:07:11.238Z] [INFO] [scraper] Přihlášení úspěšné, nová URL: ["https://portal.avaris.cz/index.php"]
+[2025-03-11T15:07:11.238Z] [INFO] [scraper] Zpracovávám objekt: NA LOVU 
+[2025-03-11T15:07:11.239Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-11T15:07:14.390Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-11T15:07:14.390Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-11T15:07:14.417Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-11T15:07:14.771Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-11T15:07:15.282Z] [INFO] [scraper] Hledám checkbox pro objekt "NA LOVU" 
+[2025-03-11T15:07:15.301Z] [INFO] [scraper] Nalezen label s for="tr-snimac1078" 
+[2025-03-11T15:07:15.343Z] [INFO] [scraper] Checkbox #tr-snimac1078 byl zaškrtnut 
+[2025-03-11T15:07:15.343Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-11T15:07:16.402Z] [INFO] [scraper] Objekt "NA LOVU" byl úspěšně přidán do tabulky 
+[2025-03-11T15:07:16.403Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-11T15:07:23.686Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-11T15:07:23.724Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-11T15:07:23.725Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-01 
+[2025-03-11T15:07:23.819Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-11T15:07:23.820Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-11T15:07:23.870Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-11T15:07:32.416Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-11T15:07:38.635Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-11T15:07:49.282Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-11T15:07:49.692Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-11T15:07:49.705Z] [INFO] [scraper] Dokončeno zpracování objektu: NA LOVU 
+[2025-03-11T15:07:49.715Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-11T15:07:49.862Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-11T15:07:49.863Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-11T15:07:49.864Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/na_lovu_export.csv 
+[2025-03-11T15:07:49.865Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-11T15:07:50.092Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 31884 
+[2025-03-11T15:07:50.325Z] [INFO] [csv-processor] Zpracováno 31846 záznamů, z toho 3452 ST a 28394 ne-ST 
+[2025-03-11T15:07:50.330Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx 
+[2025-03-11T15:07:50.622Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-11T15:07:50.624Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx po 5 minutách 
+[2025-03-11T15:07:50.664Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 3452 ST záznamů z celkových 31846 
+[2025-03-11T15:07:50.672Z] [INFO] [avaris-action] Zahajuji integraci dat do nahraného Excel souboru 
+[2025-03-11T15:07:52.350Z] [INFO] [avaris-action] Finální soubor byl uložen do: /processed/Testovací tabulka_komplet_2025-03-11T15-07-52-240Z.xlsx 
+[2025-03-11T15:12:50.631Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx byl smazán 
+[2025-03-11T15:13:25.436Z] [INFO] [avaris-action] Zpracovávám komplexní požadavek na získání a zpracování Avaris dat 
+[2025-03-11T15:13:25.438Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-11T15:13:25.437Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: RENOCAR 
+[2025-03-11T15:13:25.659Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-11T15:13:28.756Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-11T15:13:28.757Z] [INFO] [scraper] Zpracovávám objekt: RENOCAR 
+[2025-03-11T15:13:28.757Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-11T15:13:30.612Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-11T15:13:30.615Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-11T15:13:30.642Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-11T15:13:30.642Z] [INFO] [scraper] Nalezeno 0 položek k odstranění 
+[2025-03-11T15:13:31.148Z] [INFO] [scraper] Hledám checkbox pro objekt "RENOCAR" 
+[2025-03-11T15:13:31.163Z] [INFO] [scraper] Nalezen label s for="tr-snimac3569" 
+[2025-03-11T15:13:31.195Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-11T15:13:31.195Z] [INFO] [scraper] Checkbox #tr-snimac3569 byl zaškrtnut 
+[2025-03-11T15:13:32.266Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-11T15:13:32.265Z] [INFO] [scraper] Objekt "RENOCAR" byl úspěšně přidán do tabulky 
+[2025-03-11T15:13:34.043Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-11T15:13:34.075Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-11T15:13:34.076Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-01 
+[2025-03-11T15:13:34.173Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-11T15:13:34.174Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-11T15:13:34.242Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-11T15:13:36.643Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-11T15:13:37.027Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-11T15:13:40.194Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-11T15:13:40.382Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-11T15:13:40.388Z] [INFO] [scraper] Dokončeno zpracování objektu: RENOCAR 
+[2025-03-11T15:13:40.392Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-11T15:13:40.457Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-11T15:13:40.457Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-11T15:13:40.458Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/renocar_export.csv 
+[2025-03-11T15:13:40.458Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-11T15:13:40.473Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 2584 
+[2025-03-11T15:13:40.479Z] [INFO] [csv-processor] Zpracováno 2576 záznamů, z toho 63 ST a 2513 ne-ST 
+[2025-03-11T15:13:40.481Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx 
+[2025-03-11T15:13:40.503Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-11T15:13:40.509Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 63 ST záznamů z celkových 2576 
+[2025-03-11T15:13:40.504Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx po 5 minutách 
+[2025-03-11T15:15:12.622Z] [INFO] [avaris-action] Zpracovávám komplexní požadavek na získání a zpracování Avaris dat 
+[2025-03-11T15:15:12.623Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: NA LOVU 
+[2025-03-11T15:15:12.624Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-11T15:15:12.855Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-11T15:15:15.693Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-11T15:15:15.694Z] [INFO] [scraper] Zpracovávám objekt: NA LOVU 
+[2025-03-11T15:15:15.694Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-11T15:15:17.741Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-11T15:15:17.742Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-11T15:15:17.788Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-11T15:15:18.144Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-11T15:15:18.657Z] [INFO] [scraper] Hledám checkbox pro objekt "NA LOVU" 
+[2025-03-11T15:15:18.676Z] [INFO] [scraper] Nalezen label s for="tr-snimac1078" 
+[2025-03-11T15:15:18.721Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-11T15:15:18.720Z] [INFO] [scraper] Checkbox #tr-snimac1078 byl zaškrtnut 
+[2025-03-11T15:15:19.796Z] [INFO] [scraper] Objekt "NA LOVU" byl úspěšně přidán do tabulky 
+[2025-03-11T15:15:19.796Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-11T15:15:21.805Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-11T15:15:21.848Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-11T15:15:21.849Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-01 
+[2025-03-11T15:15:21.942Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-11T15:15:21.944Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-11T15:15:22.007Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-11T15:15:25.014Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-11T15:15:25.847Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-11T15:15:31.368Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-11T15:15:31.529Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-11T15:15:31.533Z] [INFO] [scraper] Dokončeno zpracování objektu: NA LOVU 
+[2025-03-11T15:15:31.541Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-11T15:15:31.609Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-11T15:15:31.610Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/na_lovu_export.csv 
+[2025-03-11T15:15:31.610Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-11T15:15:31.611Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-11T15:15:31.628Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 4508 
+[2025-03-11T15:15:31.646Z] [INFO] [csv-processor] Zpracováno 4500 záznamů, z toho 65 ST a 4435 ne-ST 
+[2025-03-11T15:15:31.649Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx 
+[2025-03-11T15:15:31.680Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-11T15:15:31.681Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx po 5 minutách 
+[2025-03-11T15:15:31.688Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 65 ST záznamů z celkových 4500 
+[2025-03-11T15:17:32.352Z] [INFO] [avaris-action] Zpracovávám komplexní požadavek na získání a zpracování Avaris dat 
+[2025-03-11T15:17:32.353Z] [INFO] [avaris-action] Nahrán soubor: Testovací tabulka.xlsx 
+[2025-03-11T15:17:32.356Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: RENOCAR 
+[2025-03-11T15:17:32.357Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-11T15:17:32.584Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-11T15:17:34.719Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-11T15:17:34.719Z] [INFO] [scraper] Zpracovávám objekt: RENOCAR 
+[2025-03-11T15:17:34.720Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-11T15:17:36.557Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-11T15:17:36.558Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-11T15:17:36.588Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-11T15:17:36.929Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-11T15:17:37.447Z] [INFO] [scraper] Hledám checkbox pro objekt "RENOCAR" 
+[2025-03-11T15:17:37.461Z] [INFO] [scraper] Nalezen label s for="tr-snimac3569" 
+[2025-03-11T15:17:37.501Z] [INFO] [scraper] Checkbox #tr-snimac3569 byl zaškrtnut 
+[2025-03-11T15:17:37.502Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-11T15:17:38.558Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-11T15:17:38.557Z] [INFO] [scraper] Objekt "RENOCAR" byl úspěšně přidán do tabulky 
+[2025-03-11T15:17:41.055Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-11T15:17:41.098Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-11T15:17:41.099Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-01 
+[2025-03-11T15:17:41.204Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-11T15:17:41.203Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-11T15:17:41.273Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-11T15:17:44.500Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-11T15:17:44.926Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-11T15:17:48.709Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-11T15:17:48.888Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-11T15:17:48.891Z] [INFO] [scraper] Dokončeno zpracování objektu: RENOCAR 
+[2025-03-11T15:17:48.894Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-11T15:17:48.951Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-11T15:17:48.952Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-11T15:17:48.953Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-11T15:17:48.952Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/renocar_export.csv 
+[2025-03-11T15:17:48.962Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 2584 
+[2025-03-11T15:17:48.969Z] [INFO] [csv-processor] Zpracováno 2576 záznamů, z toho 63 ST a 2513 ne-ST 
+[2025-03-11T15:17:48.974Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx 
+[2025-03-11T15:17:48.995Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-11T15:17:48.996Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx po 5 minutách 
+[2025-03-11T15:17:48.998Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 63 ST záznamů z celkových 2576 
+[2025-03-11T15:17:49.000Z] [INFO] [avaris-action] Zahajuji integraci dat do nahraného Excel souboru 
+[2025-03-11T15:17:49.216Z] [INFO] [avaris-action] Finální soubor byl uložen do: /processed/Testovací tabulka_komplet_2025-03-11T15-17-49-194Z.xlsx 
+[2025-03-11T15:18:40.520Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx byl smazán 
+[2025-03-11T15:20:31.693Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx byl smazán 
+[2025-03-11T15:21:31.471Z] [INFO] [avaris-action] Zpracovávám komplexní požadavek na získání a zpracování Avaris dat 
+[2025-03-11T15:21:31.473Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: RENOCAR 
+[2025-03-11T15:21:31.473Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-11T15:21:31.843Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-11T15:21:33.890Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-11T15:21:33.891Z] [INFO] [scraper] Zpracovávám objekt: RENOCAR 
+[2025-03-11T15:21:33.891Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-11T15:21:35.671Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-11T15:21:35.671Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-11T15:21:35.715Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-11T15:21:36.075Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-11T15:21:36.591Z] [INFO] [scraper] Hledám checkbox pro objekt "RENOCAR" 
+[2025-03-11T15:21:36.608Z] [INFO] [scraper] Nalezen label s for="tr-snimac3569" 
+[2025-03-11T15:21:36.642Z] [INFO] [scraper] Checkbox #tr-snimac3569 byl zaškrtnut 
+[2025-03-11T15:21:36.642Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-11T15:21:37.707Z] [INFO] [scraper] Objekt "RENOCAR" byl úspěšně přidán do tabulky 
+[2025-03-11T15:21:37.708Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-11T15:21:39.391Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-11T15:21:39.429Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-03-04 - 2025-03-11 
+[2025-03-11T15:21:39.429Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-11T15:21:39.521Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-11T15:21:39.522Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-11T15:21:39.595Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-11T15:21:41.992Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-11T15:21:42.465Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-11T15:21:45.373Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-11T15:21:45.589Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-11T15:21:45.592Z] [INFO] [scraper] Dokončeno zpracování objektu: RENOCAR 
+[2025-03-11T15:21:45.596Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-11T15:21:45.650Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-11T15:21:45.651Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-11T15:21:45.651Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/renocar_export.csv 
+[2025-03-11T15:21:45.652Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\renocar_export.csv 
+[2025-03-11T15:21:45.664Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 2584 
+[2025-03-11T15:21:45.673Z] [INFO] [csv-processor] Zpracováno 2576 záznamů, z toho 63 ST a 2513 ne-ST 
+[2025-03-11T15:21:45.674Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx 
+[2025-03-11T15:21:45.693Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-11T15:21:45.693Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx po 5 minutách 
+[2025-03-11T15:21:45.698Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 63 ST záznamů z celkových 2576 
+[2025-03-11T15:22:49.001Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx byl smazán 
+[2025-03-11T15:26:45.698Z] [ERROR] [csv-processor] Chyba při mazání souboru C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx: Error: ENOENT: no such file or directory, unlink 'C:\Programování\AG-Management\public\downloads\renocar_export_filtered.xlsx' 
+[2025-03-11T15:30:31.212Z] [INFO] [avaris-action] Zpracovávám komplexní požadavek na získání a zpracování Avaris dat 
+[2025-03-11T15:30:31.213Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: NA LOVU 
+[2025-03-11T15:30:31.215Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-11T15:30:31.637Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-11T15:30:36.640Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-11T15:30:36.640Z] [INFO] [scraper] Zpracovávám objekt: NA LOVU 
+[2025-03-11T15:30:36.641Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-11T15:30:38.586Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-11T15:30:38.587Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-11T15:30:38.621Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-11T15:30:38.974Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-11T15:30:39.484Z] [INFO] [scraper] Hledám checkbox pro objekt "NA LOVU" 
+[2025-03-11T15:30:39.503Z] [INFO] [scraper] Nalezen label s for="tr-snimac1078" 
+[2025-03-11T15:30:39.538Z] [INFO] [scraper] Checkbox #tr-snimac1078 byl zaškrtnut 
+[2025-03-11T15:30:39.538Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-11T15:30:40.606Z] [INFO] [scraper] Objekt "NA LOVU" byl úspěšně přidán do tabulky 
+[2025-03-11T15:30:40.607Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-11T15:30:42.450Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-11T15:30:42.488Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-11T15:30:42.489Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-01 
+[2025-03-11T15:30:42.597Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-11T15:30:42.598Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-11T15:30:42.673Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-11T15:30:45.451Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-11T15:30:46.244Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-11T15:30:48.726Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-11T15:30:48.935Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-11T15:30:48.939Z] [INFO] [scraper] Dokončeno zpracování objektu: NA LOVU 
+[2025-03-11T15:30:48.945Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-11T15:30:49.013Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-11T15:30:49.014Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-11T15:30:49.015Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/na_lovu_export.csv 
+[2025-03-11T15:30:49.015Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-11T15:30:49.056Z] [INFO] [csv-processor] Zpracováno 4500 záznamů, z toho 65 ST a 4435 ne-ST 
+[2025-03-11T15:30:49.034Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 4508 
+[2025-03-11T15:30:49.058Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx 
+[2025-03-11T15:30:49.077Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-11T15:30:49.079Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx po 5 minutách 
+[2025-03-11T15:30:49.087Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 65 ST záznamů z celkových 4500 
+[2025-03-11T15:31:37.989Z] [INFO] [avaris-action] Zpracovávám komplexní požadavek na získání a zpracování Avaris dat 
+[2025-03-11T15:31:37.991Z] [INFO] [avaris-action] Nahrán soubor: Testovací tabulka.xlsx 
+[2025-03-11T15:31:37.994Z] [INFO] [avaris-action] Spouštím captureAvarisData pro objekty: NA LOVU 
+[2025-03-11T15:31:37.995Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-11T15:31:38.225Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-11T15:31:40.602Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-11T15:31:40.603Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-11T15:31:40.603Z] [INFO] [scraper] Zpracovávám objekt: NA LOVU 
+[2025-03-11T15:31:42.803Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-11T15:31:42.804Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-11T15:31:42.844Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-11T15:31:43.197Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-11T15:31:43.707Z] [INFO] [scraper] Hledám checkbox pro objekt "NA LOVU" 
+[2025-03-11T15:31:43.727Z] [INFO] [scraper] Nalezen label s for="tr-snimac1078" 
+[2025-03-11T15:31:43.767Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-11T15:31:43.766Z] [INFO] [scraper] Checkbox #tr-snimac1078 byl zaškrtnut 
+[2025-03-11T15:31:44.828Z] [INFO] [scraper] Objekt "NA LOVU" byl úspěšně přidán do tabulky 
+[2025-03-11T15:31:44.829Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-11T15:31:46.749Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-11T15:31:46.774Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-11T15:31:46.774Z] [INFO] [scraper] Nastavuji datumové rozmezí: 2025-02-01 - 2025-03-01 
+[2025-03-11T15:31:46.886Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-11T15:31:46.886Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-11T15:31:46.951Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-11T15:31:49.603Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-11T15:31:50.471Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-11T15:31:53.481Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-11T15:31:53.644Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-11T15:31:53.648Z] [INFO] [scraper] Dokončeno zpracování objektu: NA LOVU 
+[2025-03-11T15:31:53.655Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-11T15:31:53.732Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-11T15:31:53.733Z] [INFO] [avaris-action] Zpracovávám stažené CSV soubory 
+[2025-03-11T15:31:53.734Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/na_lovu_export.csv 
+[2025-03-11T15:31:53.734Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-11T15:31:53.752Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 4508 
+[2025-03-11T15:31:53.767Z] [INFO] [csv-processor] Zpracováno 4500 záznamů, z toho 65 ST a 4435 ne-ST 
+[2025-03-11T15:31:53.768Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx 
+[2025-03-11T15:31:53.774Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX 
+[2025-03-11T15:31:53.775Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx po 5 minutách 
+[2025-03-11T15:31:53.781Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 65 ST záznamů z celkových 4500 
+[2025-03-11T15:31:53.783Z] [INFO] [avaris-action] Zahajuji integraci dat do nahraného Excel souboru 
+[2025-03-11T15:31:53.996Z] [INFO] [avaris-action] Finální soubor byl uložen do: /processed/Testovací tabulka_komplet_2025-03-11T15-31-53-983Z.xlsx 
+[2025-03-11T15:35:49.086Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx byl smazán 
+[2025-03-11T15:36:53.790Z] [ERROR] [csv-processor] Chyba při mazání souboru C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx: Error: ENOENT: no such file or directory, unlink 'C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx' 

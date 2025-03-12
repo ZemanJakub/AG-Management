@@ -1,7 +1,7 @@
 // app/actions/avaris/processExcel.ts
 'use server'
 
-import { ExcelProcessor } from '@/modules/avaris/services/excelProcessor';
+import { ExcelProcessor } from '@/modules/podklady/services/excelProcessor';
 import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
 

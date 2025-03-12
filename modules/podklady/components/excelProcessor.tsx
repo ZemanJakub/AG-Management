@@ -3,7 +3,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Button, Card, CardBody, CardHeader, Alert, Tabs, Tab, Spinner } from '@heroui/react';
-import { DocumentDrop } from '@/modules/avaris/components/document-drop';
+import { DocumentDrop } from '@/modules/podklady/components/document-drop';
 import { processExcelFile, processNameComparison, processTimeUpdate, getExcelReport } from '@/actions';
 import Link from 'next/link';
 

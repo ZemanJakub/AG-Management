@@ -251,8 +251,13 @@ async function saveFilteredXLSX(originalFilePath: string, records: AvarisRecord[
     
     // Připravíme data pro list - pouze filtrovaná data bez sloupců Typ a Strážný
     const sheetData = [
-      // První řádek - hlavičky
-      ['', 'Čas načtení', 'Název bodu', '']
+      // Přidáme záhlaví stejné jako v copySheet.ts
+      ['Data z Avarisu'],
+      ['Pro zpracování spusťte makro v List1'],
+      [`Datum generování: ${new Date().toLocaleString('cs-CZ')}`],
+      [], // Prázdný řádek
+      // Hlavičky sloupců
+      ['Den', 'Čas', 'Místo', ''] // Přidáváme prázdný sloupec D pro časové hodnoty
     ];
     
     // Přidáme filtrovaná data
@@ -270,24 +275,33 @@ async function saveFilteredXLSX(originalFilePath: string, records: AvarisRecord[
     
     // Nastavíme šířky sloupců
     const colWidths = [
-      { wch: 10 },  // A
-      { wch: 20 },  // B
-      { wch: 30 },  // C
-      { wch: 10 },  // D
+      { wch: 12 },  // A - Den
+      { wch: 15 },  // B - Čas
+      { wch: 30 },  // C - Místo
+      { wch: 10 },  // D - Čas (formátovaný)
     ];
     
     sheet['!cols'] = colWidths;
     
-    // Nastavíme formát buněk pro sloupec D (časové hodnoty)
-    // Procházíme všechny buňky (od řádku 2, kde začínají data)
-    const range = XLSX.utils.decode_range(sheet['!ref'] || 'A1:D1');
+    // Formátování záhlaví - tučné písmo a šedé pozadí pro řádek 5
+    ['A5', 'B5', 'C5', 'D5'].forEach(cell => {
+      if (!sheet[cell]) sheet[cell] = { v: '' };
+      if (!sheet[cell].s) sheet[cell].s = {};
+      sheet[cell].s.font = { bold: true };
+      sheet[cell].s.fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: { argb: 'FFE0E0E0' }
+      };
+    });
     
-    for (let R = 1; R <= range.e.r; ++R) {
-      // Přeskočíme řádek s hlavičkou
-      if (R === 0) continue;
+    // Nastavíme formát buněk pro sloupec D (časové hodnoty)
+    // Procházíme všechny buňky (od řádku 6, kde začínají data)
+    for (let i = 0; i < records.length; i++) {
+      const rowIndex = i + 5; // +5 protože data začínají na řádku 6 (indexování od 0)
       
       // Získáme buňku s časem (sloupec B)
-      const timeRef = XLSX.utils.encode_cell({ r: R, c: 1 });
+      const timeRef = XLSX.utils.encode_cell({ r: rowIndex, c: 1 });
       const timeCell = sheet[timeRef];
       
       // Pokud existuje buňka s časem
@@ -296,7 +310,7 @@ async function saveFilteredXLSX(originalFilePath: string, records: AvarisRecord[
         const timeStr = String(timeCell.v);
         
         // Vytvoříme referenci na buňku ve sloupci D
-        const cellRef = XLSX.utils.encode_cell({ r: R, c: 3 });
+        const cellRef = XLSX.utils.encode_cell({ r: rowIndex, c: 3 });
         
         // Vytvoříme buňku s časovou hodnotou a formátováním
         sheet[cellRef] = { 
@@ -307,14 +321,21 @@ async function saveFilteredXLSX(originalFilePath: string, records: AvarisRecord[
       }
     }
     
-    // Přidáme list do workbooku
-    XLSX.utils.book_append_sheet(workbook, sheet, 'Sheet1');
+    // Přidáme list do workbooku jako "List2" místo "Sheet1"
+    XLSX.utils.book_append_sheet(workbook, sheet, 'List2');
+    
+    // Přidáme prázdný List1, aby struktura byla konzistentní
+    const emptySheet = XLSX.utils.aoa_to_sheet([]);
+    XLSX.utils.book_append_sheet(workbook, emptySheet, 'List1');
+    
+    // Změníme pořadí listů - List1 jako první
+    workbook.SheetNames = ['List1', 'List2'];
     
     // Uložíme workbook
     const excelBuffer = XLSX.write(workbook, { type: 'buffer', bookType: 'xlsx' });
     await fs.writeFile(newFilePath, excelBuffer);
     
-    logger.info(`Filtrovaná data úspěšně uložena do XLSX`);
+    logger.info(`Filtrovaná data úspěšně uložena do XLSX s konzistentní strukturou`);
     
     // Vrátíme URL cestu pro použití v prohlížeči
     return `/downloads/${newFileName}`;

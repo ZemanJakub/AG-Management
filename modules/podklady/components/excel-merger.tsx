@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import { Button, Card, CardBody, CardHeader, Alert } from '@heroui/react';
-import { DocumentDrop } from '@/modules/avaris/components/document-drop';
+import { DocumentDrop } from '@/modules/podklady/components/document-drop';
 import { copySheet } from '@/actions'; // upravte cestu podle vaší struktury
 import { toast } from 'react-toastify';
 import Link from 'next/link';

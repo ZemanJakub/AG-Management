@@ -21,8 +21,8 @@ export * from "./auth/login"
 export * from "./auth/logout"
 
 //avaris
-export * from "./avaris/avaris"
-export * from "./avaris/saveExcelFile"
-export * from "./avaris/deleteExcelFile"
-export * from "./avaris/copySheet"
-export * from "./avaris/processExcel"
+export * from "./cipovacky/avaris"
+export * from "./podklady/saveExcelFile"
+export * from "./podklady/deleteExcelFile"
+export * from "./podklady/copySheet"
+export * from "./podklady/processExcel"

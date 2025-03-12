@@ -402,16 +402,16 @@ export default function Sidebar({
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-8 mt-1 ${!open && 'hidden'}`}>
                           <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/avaris">
+                            <SidebarLink href="/avaris/podklady">
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                 Podklady
                               </span>
                             </SidebarLink>
                           </li>
                           <li className="mb-1 last:mb-0">
-                            <SidebarLink href="/avaris/detail">
+                            <SidebarLink href="/avaris/cipovacky">
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Jména
+                                Čipovačky
                               </span>
                             </SidebarLink>
                           </li>

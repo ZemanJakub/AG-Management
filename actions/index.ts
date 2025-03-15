@@ -26,3 +26,7 @@ export * from "./podklady/saveExcelFile"
 export * from "./podklady/deleteExcelFile"
 export * from "./podklady/copySheet"
 export * from "./podklady/processExcel"
+export * from "./podklady/enhancedSheetProcessor"
+export * from "./podklady/processAvarisWithExcel"
+export * from "./podklady/advancedExcelProcessing"
+

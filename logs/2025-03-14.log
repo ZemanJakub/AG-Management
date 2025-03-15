@@ -1,0 +1,756 @@
+[2025-03-14T21:36:33.252Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T21:36:33.254Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:36:33.258Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:36:33.384Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T21:36:33.680Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T21:36:33.682Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:36:33.684Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T21:36:33.714Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T21:36:33.716Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T21:36:33.717Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T21:36:33.718Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T21:36:33.717Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T21:36:33.719Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T21:36:33.719Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T21:36:33.720Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T21:36:33.721Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T21:36:33.721Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T21:36:33.722Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T21:36:33.722Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T21:36:33.723Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T21:36:33.720Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T21:36:33.723Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T21:36:33.723Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T21:36:33.724Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T21:36:33.724Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T21:36:33.724Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T21:36:33.724Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T21:36:33.725Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T21:36:33.725Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T21:36:33.728Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T21:36:33.728Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T21:36:33.729Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T21:36:33.730Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T21:36:33.731Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T21:36:33.731Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T21:36:33.732Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T21:36:33.732Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T21:36:33.732Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T21:36:33.733Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T21:36:33.733Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T21:36:33.734Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T21:36:33.734Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T21:36:33.734Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T21:36:33.735Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T21:36:33.735Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T21:36:33.735Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T21:36:33.736Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T21:36:33.736Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T21:36:33.736Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T21:36:33.737Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T21:36:33.838Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T21-36-33-737Z.xlsx 
+[2025-03-14T21:49:59.797Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T21:49:59.799Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:49:59.803Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:50:00.067Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T21:50:00.615Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T21:50:00.617Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:50:00.621Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T21:50:00.699Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T21:50:00.701Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T21:50:00.704Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T21:50:00.705Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T21:50:00.708Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T21:50:00.702Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T21:50:00.710Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T21:50:00.714Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T21:50:00.712Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T21:50:00.715Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T21:50:00.711Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T21:50:00.716Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T21:50:00.718Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T21:50:00.715Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T21:50:00.717Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T21:50:00.720Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T21:50:00.723Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T21:50:00.721Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T21:50:00.726Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T21:50:00.727Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T21:50:00.729Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T21:50:00.722Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T21:50:00.730Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T21:50:00.728Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T21:50:00.731Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T21:50:00.733Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T21:50:00.734Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T21:50:00.735Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T21:50:00.736Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T21:50:00.737Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T21:50:00.737Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T21:50:00.740Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T21:50:00.742Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T21:50:00.744Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T21:50:00.745Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T21:50:00.746Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T21:50:00.747Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T21:50:00.750Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T21:50:00.748Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T21:50:00.751Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T21:50:00.752Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T21:50:00.753Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T21:50:00.754Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T21:50:00.990Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T21-50-00-755Z.xlsx 
+[2025-03-14T21:51:25.147Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T21:51:25.148Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:51:25.150Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:51:25.308Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T21:51:25.964Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T21:51:25.966Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:51:25.968Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T21:51:26.053Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T21:51:26.056Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T21:51:26.058Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T21:51:26.060Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T21:51:26.061Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T21:51:26.063Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T21:51:26.065Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T21:51:26.067Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T21:51:26.068Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T21:51:26.069Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T21:51:26.072Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T21:51:26.073Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T21:51:26.074Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T21:51:26.075Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T21:51:26.076Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T21:51:26.079Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T21:51:26.081Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T21:51:26.083Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T21:51:26.084Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T21:51:26.086Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T21:51:26.085Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T21:51:26.089Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T21:51:26.090Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T21:51:26.087Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T21:51:26.090Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T21:51:26.091Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T21:51:26.092Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T21:51:26.094Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T21:51:26.095Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T21:51:26.097Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T21:51:26.098Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T21:51:26.100Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T21:51:26.101Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T21:51:26.103Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T21:51:26.104Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T21:51:26.105Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T21:51:26.106Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T21:51:26.107Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T21:51:26.109Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T21:51:26.113Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T21:51:26.111Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T21:51:26.110Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T21:51:26.116Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T21:51:26.363Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T21-51-26-117Z.xlsx 
+[2025-03-14T21:56:15.983Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T21:56:15.985Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:56:15.987Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:56:16.228Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T21:56:16.827Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T21:56:16.830Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:56:16.833Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T21:56:16.917Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T21:56:16.919Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T21:56:16.923Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T21:56:16.926Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T21:56:16.929Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T21:56:16.931Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T21:56:16.932Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T21:56:16.935Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T21:56:16.941Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T21:56:16.938Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T21:56:16.937Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T21:56:16.942Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T21:56:16.944Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T21:56:16.943Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T21:56:16.947Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T21:56:16.948Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T21:56:16.949Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T21:56:16.950Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T21:56:16.951Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T21:56:16.953Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T21:56:16.957Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T21:56:16.955Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T21:56:16.958Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T21:56:16.959Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T21:56:16.959Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T21:56:16.960Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T21:56:16.961Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T21:56:16.962Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T21:56:16.963Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T21:56:16.963Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T21:56:16.964Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T21:56:16.965Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T21:56:16.967Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T21:56:16.968Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T21:56:16.969Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T21:56:16.971Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T21:56:16.970Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T21:56:16.973Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T21:56:16.972Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T21:56:16.974Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T21:56:16.976Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T21:56:16.977Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T21:56:16.975Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T21:56:17.244Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T21-56-16-978Z.xlsx 
+[2025-03-14T21:59:22.954Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T21:59:22.955Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:59:22.957Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:59:23.205Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T21:59:23.789Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T21:59:23.790Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T21:59:23.793Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T21:59:23.872Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T21:59:23.874Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T21:59:23.876Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T21:59:23.878Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T21:59:23.880Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T21:59:23.882Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T21:59:23.883Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T21:59:23.886Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T21:59:23.887Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T21:59:23.889Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T21:59:23.891Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T21:59:23.892Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T21:59:23.894Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T21:59:23.895Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T21:59:23.897Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T21:59:23.898Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T21:59:23.899Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T21:59:23.900Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T21:59:23.902Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T21:59:23.903Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T21:59:23.903Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T21:59:23.904Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T21:59:23.905Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T21:59:23.907Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T21:59:23.908Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T21:59:23.910Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T21:59:23.912Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T21:59:23.913Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T21:59:23.914Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T21:59:23.915Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T21:59:23.916Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T21:59:23.917Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T21:59:23.919Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T21:59:23.920Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T21:59:23.921Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T21:59:23.922Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T21:59:23.923Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T21:59:23.924Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T21:59:23.926Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T21:59:23.927Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T21:59:23.929Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T21:59:23.930Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T21:59:23.931Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T21:59:24.191Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T21-59-23-931Z.xlsx 
+[2025-03-14T22:03:08.781Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T22:03:08.782Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:03:08.784Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:03:09.016Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T22:03:09.646Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T22:03:09.648Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:03:09.651Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T22:03:09.733Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T22:03:09.735Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T22:03:09.738Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T22:03:09.740Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T22:03:09.742Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T22:03:09.744Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T22:03:09.745Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T22:03:09.748Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T22:03:09.749Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T22:03:09.750Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T22:03:09.751Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T22:03:09.752Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T22:03:09.753Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T22:03:09.754Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T22:03:09.755Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T22:03:09.758Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T22:03:09.759Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T22:03:09.761Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T22:03:09.762Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T22:03:09.764Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T22:03:09.766Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T22:03:09.767Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T22:03:09.768Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T22:03:09.769Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T22:03:09.770Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T22:03:09.771Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T22:03:09.772Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T22:03:09.775Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T22:03:09.774Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T22:03:09.777Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T22:03:09.778Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T22:03:09.779Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T22:03:09.780Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T22:03:09.781Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T22:03:09.782Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T22:03:09.783Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T22:03:09.784Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T22:03:09.786Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T22:03:09.787Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T22:03:09.787Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T22:03:09.790Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T22:03:09.792Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T22:03:09.793Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T22:03:10.055Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T22-03-09-794Z.xlsx 
+[2025-03-14T22:03:55.924Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T22:03:55.925Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:03:55.928Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:03:56.013Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T22:03:56.624Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T22:03:56.626Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:03:56.629Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T22:03:56.691Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T22:03:56.693Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T22:03:56.694Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T22:03:56.696Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T22:03:56.697Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T22:03:56.699Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T22:03:56.701Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T22:03:56.702Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T22:03:56.703Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T22:03:56.704Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T22:03:56.705Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T22:03:56.706Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T22:03:56.707Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T22:03:56.708Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T22:03:56.709Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T22:03:56.710Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T22:03:56.711Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T22:03:56.712Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T22:03:56.713Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T22:03:56.714Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T22:03:56.716Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T22:03:56.717Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T22:03:56.719Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T22:03:56.720Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T22:03:56.722Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T22:03:56.724Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T22:03:56.723Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T22:03:56.726Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T22:03:56.725Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T22:03:56.727Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T22:03:56.727Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T22:03:56.728Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T22:03:56.729Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T22:03:56.731Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T22:03:56.732Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T22:03:56.733Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T22:03:56.734Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T22:03:56.735Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T22:03:56.737Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T22:03:56.738Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T22:03:56.739Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T22:03:56.740Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T22:03:56.741Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T22:03:56.848Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T22-03-56-742Z.xlsx 
+[2025-03-14T22:07:45.561Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T22:07:45.562Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:07:45.571Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:07:45.970Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T22:07:46.568Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T22:07:46.569Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:07:46.573Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T22:07:46.667Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T22:07:46.668Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T22:07:46.671Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T22:07:46.673Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T22:07:46.675Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T22:07:46.677Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T22:07:46.678Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T22:07:46.681Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T22:07:46.683Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T22:07:46.684Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T22:07:46.686Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T22:07:46.687Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T22:07:46.688Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T22:07:46.689Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T22:07:46.690Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T22:07:46.692Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T22:07:46.693Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T22:07:46.695Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T22:07:46.696Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T22:07:46.697Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T22:07:46.698Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T22:07:46.700Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T22:07:46.699Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T22:07:46.700Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T22:07:46.702Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T22:07:46.703Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T22:07:46.704Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T22:07:46.705Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T22:07:46.706Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T22:07:46.707Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T22:07:46.708Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T22:07:46.709Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T22:07:46.711Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T22:07:46.713Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T22:07:46.712Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T22:07:46.715Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T22:07:46.717Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T22:07:46.719Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T22:07:46.718Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T22:07:46.721Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T22:07:46.722Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T22:07:46.723Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T22:07:46.725Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T22:07:46.981Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T22-07-46-726Z.xlsx 
+[2025-03-14T22:13:34.156Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:13:34.155Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T22:13:34.157Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:13:34.296Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T22:13:34.708Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T22:13:34.709Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:13:34.710Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T22:13:34.764Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T22:13:34.766Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T22:13:34.770Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T22:13:34.771Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T22:13:34.772Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T22:13:34.773Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T22:13:34.773Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T22:13:34.774Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T22:13:34.774Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T22:13:34.774Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T22:13:34.775Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T22:13:34.775Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T22:13:34.776Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T22:13:34.776Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T22:13:34.777Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T22:13:34.777Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T22:13:34.778Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T22:13:34.778Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T22:13:34.778Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T22:13:34.779Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T22:13:34.779Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T22:13:34.779Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T22:13:34.780Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T22:13:34.780Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T22:13:34.780Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T22:13:34.781Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T22:13:34.781Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T22:13:34.781Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T22:13:34.782Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T22:13:34.782Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T22:13:34.782Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T22:13:34.783Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T22:13:34.783Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T22:13:34.784Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T22:13:34.784Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T22:13:34.784Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T22:13:34.785Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T22:13:34.785Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T22:13:34.786Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T22:13:34.786Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T22:13:34.787Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T22:13:34.787Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T22:13:34.788Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T22:13:34.902Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T22-13-34-788Z.xlsx 
+[2025-03-14T22:22:14.667Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T22:22:14.668Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:22:14.670Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:22:14.798Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T22:22:15.322Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T22:22:15.326Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:22:15.328Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T22:22:15.416Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T22:22:15.416Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T22:22:15.417Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T22:22:15.418Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T22:22:15.418Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T22:22:15.419Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T22:22:15.419Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T22:22:15.420Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T22:22:15.421Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T22:22:15.421Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T22:22:15.422Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T22:22:15.422Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T22:22:15.423Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T22:22:15.423Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T22:22:15.423Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T22:22:15.424Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T22:22:15.424Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T22:22:15.424Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T22:22:15.425Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T22:22:15.425Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T22:22:15.425Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T22:22:15.426Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T22:22:15.426Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T22:22:15.426Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T22:22:15.427Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T22:22:15.427Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T22:22:15.427Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T22:22:15.427Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T22:22:15.428Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T22:22:15.428Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T22:22:15.429Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T22:22:15.429Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T22:22:15.430Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T22:22:15.430Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T22:22:15.431Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T22:22:15.431Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T22:22:15.432Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T22:22:15.432Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T22:22:15.433Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T22:22:15.433Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T22:22:15.436Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T22:22:15.437Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T22:22:15.438Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T22:22:15.547Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T22-22-15-438Z.xlsx 
+[2025-03-14T22:24:00.526Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:24:00.525Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T22:24:00.528Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:24:00.641Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T22:24:01.011Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T22:24:01.012Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:24:01.015Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T22:24:01.064Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T22:24:01.065Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T22:24:01.067Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T22:24:01.068Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T22:24:01.070Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T22:24:01.071Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T22:24:01.072Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T22:24:01.073Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T22:24:01.073Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T22:24:01.073Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T22:24:01.074Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T22:24:01.074Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T22:24:01.075Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T22:24:01.076Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T22:24:01.077Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T22:24:01.078Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T22:24:01.078Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T22:24:01.079Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T22:24:01.079Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T22:24:01.079Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T22:24:01.080Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T22:24:01.080Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T22:24:01.080Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T22:24:01.081Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T22:24:01.081Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T22:24:01.082Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T22:24:01.082Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T22:24:01.083Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T22:24:01.083Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T22:24:01.084Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T22:24:01.086Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T22:24:01.088Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T22:24:01.088Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T22:24:01.089Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T22:24:01.089Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T22:24:01.090Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T22:24:01.090Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T22:24:01.091Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T22:24:01.091Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T22:24:01.092Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T22:24:01.092Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T22:24:01.093Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T22:24:01.093Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T22:24:01.209Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T22-24-01-094Z.xlsx 
+[2025-03-14T22:29:17.145Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T22:29:17.146Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:29:17.149Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:29:17.266Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T22:29:17.678Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T22:29:17.679Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:29:17.683Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T22:29:17.731Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T22:29:17.732Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T22:29:17.733Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T22:29:17.735Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T22:29:17.736Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T22:29:17.737Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T22:29:17.738Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T22:29:17.738Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T22:29:17.739Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T22:29:17.740Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T22:29:17.741Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T22:29:17.741Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T22:29:17.742Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T22:29:17.743Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T22:29:17.744Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T22:29:17.745Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T22:29:17.745Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T22:29:17.746Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T22:29:17.747Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T22:29:17.748Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T22:29:17.748Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T22:29:17.749Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T22:29:17.749Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T22:29:17.750Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T22:29:17.750Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T22:29:17.751Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T22:29:17.752Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T22:29:17.753Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T22:29:17.753Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T22:29:17.754Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T22:29:17.754Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T22:29:17.755Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T22:29:17.756Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T22:29:17.757Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T22:29:17.758Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T22:29:17.762Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T22:29:17.763Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T22:29:17.764Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T22:29:17.765Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T22:29:17.766Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T22:29:17.766Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T22:29:17.767Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T22:29:17.768Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T22:29:17.904Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T22-29-17-769Z.xlsx 
+[2025-03-14T22:30:43.645Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T22:30:43.646Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:30:43.648Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:30:43.773Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T22:30:44.124Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T22:30:44.126Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:30:44.128Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T22:30:44.169Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T22:30:44.171Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T22:30:44.172Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T22:30:44.173Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T22:30:44.174Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T22:30:44.175Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T22:30:44.176Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T22:30:44.177Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T22:30:44.178Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T22:30:44.179Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T22:30:44.183Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T22:30:44.185Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T22:30:44.186Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T22:30:44.187Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T22:30:44.188Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T22:30:44.189Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T22:30:44.189Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T22:30:44.190Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T22:30:44.191Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T22:30:44.191Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T22:30:44.192Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T22:30:44.194Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T22:30:44.195Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T22:30:44.195Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T22:30:44.196Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T22:30:44.197Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T22:30:44.198Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T22:30:44.199Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T22:30:44.200Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T22:30:44.201Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T22:30:44.202Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T22:30:44.202Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T22:30:44.203Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T22:30:44.204Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T22:30:44.204Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T22:30:44.205Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T22:30:44.205Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T22:30:44.207Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T22:30:44.208Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T22:30:44.210Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-14T22:30:44.209Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T22:30:44.211Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-14T22:30:44.212Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T22:30:44.354Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T22-30-44-212Z.xlsx 
+[2025-03-14T22:35:44.955Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-14T22:35:44.956Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:35:44.958Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:35:45.131Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-14T22:35:45.590Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-14T22:35:45.592Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-14T22:35:45.594Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-14T22:35:45.646Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-14T22:35:45.648Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-14T22:35:45.650Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-14T22:35:45.651Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-14T22:35:45.652Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-14T22:35:45.660Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-14T22:35:45.661Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-14T22:35:45.663Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-14T22:35:45.665Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-14T22:35:45.666Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-14T22:35:45.667Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-14T22:35:45.668Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-14T22:35:45.669Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-14T22:35:45.671Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-14T22:35:45.675Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-14T22:35:45.673Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-14T22:35:45.676Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-14T22:35:45.678Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-14T22:35:45.677Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-14T22:35:45.678Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-14T22:35:45.679Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-14T22:35:45.681Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-14T22:35:45.683Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-14T22:35:45.683Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-14T22:35:45.684Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-14T22:35:45.685Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-14T22:35:45.686Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-14T22:35:45.687Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-14T22:35:45.687Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-14T22:35:45.688Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-14T22:35:45.688Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-14T22:35:45.689Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-14T22:35:45.690Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-14T22:35:45.691Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-14T22:35:45.691Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-14T22:35:45.692Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-14T22:35:45.693Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-14T22:35:45.693Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-14T22:35:45.698Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-14T22:35:45.699Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-14T22:35:45.700Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 2, Nenalezených: 4 
+[2025-03-14T22:35:45.701Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=2, 
+                    Nenalezené=4 
+[2025-03-14T22:35:45.703Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-14T22:35:45.856Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-14T22-35-45-704Z.xlsx 

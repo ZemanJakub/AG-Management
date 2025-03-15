@@ -1,14 +1,12 @@
-// app/actions/avaris/processAvarisWithExcel.ts
+// app/actions/podklady/processAvarisWithExcel.ts
 "use server";
 
 import { createLogger } from "@/modules/podklady/services/logger";
 import { captureAvarisData } from "@/modules/podklady/services/scraper";
 import { processAvarisData } from "@/modules/podklady/services/csvProcessor";
-import { writeFile, mkdir, readFile, access, copyFile } from "fs/promises";
+import { writeFile, mkdir, readFile, access } from "fs/promises";
 import path from "path";
-import fs from "fs";
-import { ExcelProcessor } from "@/modules/podklady/services/excelProcessor";
-import { copySheet, getFileInfo } from "@/actions/podklady/copySheet";
+import { processExcelSheet } from "./enhancedSheetProcessor";
 
 const logger = createLogger("avaris-excel-action");
 
@@ -16,8 +14,8 @@ export type AvarisExcelResult = {
   success: boolean;
   error?: string;
   reportData?: {
-    nameReport?: string;
-    timeReport?: string;
+    dataAdded?: number;
+    message?: string;
   };
   finalFilePath?: string;
 };
@@ -34,7 +32,7 @@ function formatDateString(dateStr: string): string {
     
     // Pokud je datum již ve správném formátu nebo v jiném formátu, vrátíme ho beze změny
     return dateStr;
-  }
+}
 
 /**
  * Funkce pro kontrolu existence souboru
@@ -143,17 +141,26 @@ export async function processAvarisWithExcel(
     }
 
     logger.info(`Úspěšně staženo ${Object.keys(downloadedFiles).length} souborů: ${Object.keys(downloadedFiles).join(", ")}`);
-    logger.info("Zpracovávám stažené CSV soubory");
-    const processedData: any = {};
-
+    
     // Zpracování dat pro každý objekt
+    let allAvarisRecords: any[] = [];
+    
     for (const [objektName, filePath] of Object.entries(downloadedFiles)) {
       try {
         logger.info(`Zpracovávám data pro objekt ${objektName} z ${filePath}`);
         const result = await processAvarisData(filePath);
-        processedData[objektName] = result;
-        if (result.success) {
-          logger.info(`Objekt ${objektName} zpracován úspěšně, XLSX cesta: ${result.xlsxFilePath}`);
+        
+        if (result.success && result.data) {
+          logger.info(`Objekt ${objektName} zpracován úspěšně, počet záznamů: ${result.data.length}`);
+          
+          // Příprava dat pro vložení do Excel
+          const recordsForExcel = result.data.map(record => [
+            record.den || '',                // Den - sloupec A
+            record.cas || '',                // Datum a čas - sloupec B
+            record.strazny || record.misto   // Jméno/Místo - sloupec C
+          ]);
+          
+          allAvarisRecords = [...allAvarisRecords, ...recordsForExcel];
         } else {
           logger.warn(`Objekt ${objektName} zpracován s chybou: ${result.error}`);
         }
@@ -163,104 +170,28 @@ export async function processAvarisWithExcel(
         );
       }
     }
-
-    // Krok 4: Najdeme první úspěšně zpracovaný objekt
-    let sourceXlsxPath = "";
-    let realSourceFilePath = "";
     
-    for (const [objektName, data] of Object.entries(processedData)) {
-      const objData = data as any;
-      if (objData && objData.success && objData.xlsxFilePath) {
-        sourceXlsxPath = objData.xlsxFilePath;
-        // Převedeme relativní cestu na absolutní
-        realSourceFilePath = path.join(process.cwd(), 'public', objData.xlsxFilePath.substring(1));
-        logger.info(`Nalezen zdrojový soubor: ${sourceXlsxPath}, absolutní cesta: ${realSourceFilePath}`);
-        break;
-      }
-    }
-
-    if (!sourceXlsxPath) {
+    if (allAvarisRecords.length === 0) {
       return {
         success: false,
-        error: "Nepodařilo se zpracovat žádný objekt",
+        error: "Nepodařilo se získat žádná data z Avarisu",
       };
     }
+    
+    logger.info(`Celkem získáno ${allAvarisRecords.length} záznamů ze všech objektů`);
 
-    // Ověříme, že soubor skutečně existuje
-    const exists = await fileExists(realSourceFilePath);
-    logger.info(`Kontrola existence souboru ${realSourceFilePath}: ${exists ? 'soubor existuje' : 'soubor neexistuje'}`);
-
-    if (!exists) {
+    // Krok 4: Zpracování Excel souboru - využití nové logiky
+    const sheetResult = await processExcelSheet(fileName, allAvarisRecords);
+    
+    if (!sheetResult.success) {
       return {
         success: false,
-        error: `Zdrojový soubor neexistuje: ${realSourceFilePath}`,
+        error: sheetResult.error || "Chyba při zpracování Excel souboru",
       };
     }
-
-    // Krok 5: Připravíme soubory pro kopírování dat
+    
+    // Krok 5: Vytvoření kopie zpracovaného souboru
     try {
-      // Získáme informace o souborech - upraveno pro použití přímé cesty k souboru
-      const sourceFileName = path.basename(realSourceFilePath);
-      const targetFilePath = path.join(process.cwd(), 'public', 'downloads', fileName);
-      
-      logger.info(`Připravuji kopírování dat ze souboru ${sourceFileName} do ${fileName}`);
-      
-      // Nejprve vytvoříme kopii zdrojového souboru, abychom předešli jeho smazání
-      const sourceFileBackup = path.join(
-        process.cwd(), 
-        'public', 
-        'downloads', 
-        `backup_${sourceFileName}`
-      );
-      
-      // Kopírování souboru pomocí fs.promises
-      await copyFile(realSourceFilePath, sourceFileBackup);
-      logger.info(`Vytvořena záloha zdrojového souboru: ${sourceFileBackup}`);
-
-      // Ověříme, že záloha byla skutečně vytvořena
-      if (!await fileExists(sourceFileBackup)) {
-        logger.error(`Záložní soubor nebyl vytvořen: ${sourceFileBackup}`);
-        return {
-          success: false,
-          error: "Nepodařilo se vytvořit zálohu zdrojového souboru",
-        };
-      }
-      
-      // Získáme pouze název záložního souboru pro copySheet
-      const backupFileName = path.basename(sourceFileBackup);
-      logger.info(`Název záložního souboru pro copySheet: ${backupFileName}`);
-
-      // Krok 6: Použijeme copySheet pro vytvoření List2 s lepším formátováním
-      logger.info(`Volám copySheet s parametry: zdrojový soubor=${backupFileName}, cílový soubor=${fileName}`);
-      const copyResult = await copySheet(
-        backupFileName, // Pouze název záložního souboru
-        fileName
-      );
-
-      if (!copyResult.success) {
-        logger.error(`Chyba při vytváření nového listu: ${copyResult.error}`);
-        return {
-          success: false,
-          error: `Chyba při vytváření nového listu: ${copyResult.error}`,
-        };
-      }
-
-      logger.info(`Úspěšně vytvořen nový list: ${copyResult.newSheetName}`);
-
-      // Krok 7: Nyní načteme výsledný soubor a použijeme ExcelProcessor pro další zpracování
-      logger.info(`Načítám výsledný soubor pro zpracování: ${targetFilePath}`);
-      const fileBuffer = await readFile(targetFilePath);
-
-      // Převod Buffer na ArrayBuffer
-      const arrayBuffer = new Uint8Array(fileBuffer).buffer;
-
-      // Nyní použijeme správný typ ArrayBuffer
-      logger.info(`Inicializuji ExcelProcessor pro další zpracování`);
-      const processor = new ExcelProcessor(arrayBuffer);
-      const processedBuffer = processor.processAll();
-      const reportData = processor.getReport();
-
-      // Krok 8: Uložíme zpracovaný soubor
       const processedDir = path.join(process.cwd(), "public", "processed");
       await mkdir(processedDir, { recursive: true });
 
@@ -268,33 +199,29 @@ export async function processAvarisWithExcel(
       const extIndex = fileName.lastIndexOf(".");
       const baseName = extIndex !== -1 ? fileName.slice(0, extIndex) : fileName;
       const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-      const newFileName = `${baseName}_komplet_${timestamp}.xlsx`;
+      const newFileName = `${baseName}_aktualizovano_${timestamp}.xlsx`;
       const outputPath = path.join(processedDir, newFileName);
-
-      // Uložíme výsledný soubor
-      await writeFile(outputPath, Buffer.from(processedBuffer));
+      
+      // Zkopírování souboru do složky processed
+      const sourceBuffer = await readFile(userFilePath);
+      await writeFile(outputPath, sourceBuffer);
 
       const finalFilePath = `/processed/${newFileName}`;
       logger.info(`Finální soubor byl uložen do: ${finalFilePath}`);
 
-      // Zkusíme odstranit záložní soubor, ale neskončíme chybou, pokud se to nepodaří
-      try {
-        await fs.promises.unlink(sourceFileBackup);
-        logger.info(`Záložní soubor byl odstraněn: ${sourceFileBackup}`);
-      } catch (error) {
-        logger.warn(`Nepodařilo se odstranit záložní soubor ${sourceFileBackup}: ${error}`);
-      }
-
       return {
         success: true,
-        reportData,
+        reportData: {
+          dataAdded: sheetResult.dataAdded,
+          message: sheetResult.message
+        },
         finalFilePath,
       };
     } catch (error) {
-      logger.error(`Chyba při zpracování Excel souboru: ${error}`);
+      logger.error(`Chyba při vytváření výstupního souboru: ${error}`);
       return {
         success: false,
-        error: `Chyba při zpracování Excel souboru: ${error instanceof Error ? error.message : "Neznámá chyba"}`,
+        error: `Chyba při vytváření výstupního souboru: ${error instanceof Error ? error.message : "Neznámá chyba"}`,
       };
     }
   } catch (error) {

@@ -3394,3 +3394,285 @@
 [2025-03-12T12:47:56.167Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 6 
 [2025-03-12T12:47:56.170Z] [ERROR] [csv-processor] Chyba při zpracování Avaris dat: Error: Nepodařilo se najít hlavičky v CSV souboru 
 [2025-03-12T12:47:56.169Z] [ERROR] [csv-processor] Chyba při čtení a parsování CSV souboru: Error: Nepodařilo se najít hlavičky v CSV souboru 
+[2025-03-12T19:42:51.270Z] [INFO] [avaris-excel-action] Zpracovávám požadavek na integraci Avaris dat do Excel souboru 
+[2025-03-12T19:42:51.271Z] [INFO] [avaris-excel-action] Zpracování pro období od 01.02.2025 do 01.03.2025 
+[2025-03-12T19:42:51.272Z] [INFO] [avaris-excel-action] Nahraný soubor: Testovací tabulka.xlsx 
+[2025-03-12T19:42:51.271Z] [INFO] [avaris-excel-action] Zvolené objekty: NA LOVU 
+[2025-03-12T19:42:51.276Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-12T19:42:51.274Z] [INFO] [avaris-excel-action] Spouštím captureAvarisData pro objekty: NA LOVU 
+[2025-03-12T19:42:51.792Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-12T19:42:55.000Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-12T19:42:58.837Z] [INFO] [scraper] Zpracovávám objekt: NA LOVU 
+[2025-03-12T19:42:58.837Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-12T19:42:58.836Z] [INFO] [scraper] Přihlášení úspěšné, nová URL: ["https://portal.avaris.cz/index.php"]
+[2025-03-12T19:43:02.488Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-12T19:43:02.488Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-12T19:43:02.511Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-12T19:43:02.855Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-12T19:43:03.357Z] [INFO] [scraper] Hledám checkbox pro objekt "NA LOVU" 
+[2025-03-12T19:43:03.368Z] [INFO] [scraper] Nalezen label s for="tr-snimac1078" 
+[2025-03-12T19:43:03.401Z] [INFO] [scraper] Checkbox #tr-snimac1078 byl zaškrtnut 
+[2025-03-12T19:43:03.402Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-12T19:43:04.492Z] [WARN] [scraper] Objekt "NA LOVU" nebyl nalezen v tabulce po přidání! 
+[2025-03-12T19:43:04.493Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-12T19:43:11.661Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-12T19:43:11.704Z] [INFO] [scraper] Nastavuji typ období na "Interval" a požadované sloupce pro výpis 
+[2025-03-12T19:43:11.704Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-12T19:43:11.705Z] [INFO] [scraper] Nastavuji období na "Interval" 
+[2025-03-12T19:43:11.721Z] [INFO] [scraper] Radio button pro "Interval" již byl zaškrtnutý 
+[2025-03-12T19:43:11.721Z] [INFO] [scraper] Začínám nastavovat sloupce pro výpis 
+[2025-03-12T19:43:11.732Z] [INFO] [scraper] Nalezeno 6 checkboxů pro sloupce 
+[2025-03-12T19:43:11.772Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-12T19:43:11.822Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-12T19:43:11.876Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-12T19:43:11.922Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-12T19:43:11.967Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 1 
+[2025-03-12T19:43:12.015Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 3 
+[2025-03-12T19:43:12.050Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 4 
+[2025-03-12T19:43:12.100Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 8 
+[2025-03-12T19:43:12.114Z] [INFO] [scraper] Nastavuji datumové rozmezí: 01.02.2025 - 01.03.2025 
+[2025-03-12T19:43:12.114Z] [INFO] [scraper] Všechny požadované sloupce byly úspěšně zaškrtnuty 
+[2025-03-12T19:43:12.183Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-12T19:43:12.184Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-12T19:43:12.253Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-12T19:43:16.123Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-12T19:43:16.640Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-12T19:43:20.122Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-12T19:43:20.252Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-12T19:43:20.257Z] [INFO] [scraper] Dokončeno zpracování objektu: NA LOVU 
+[2025-03-12T19:43:20.263Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-12T19:43:20.331Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-12T19:43:20.332Z] [INFO] [avaris-excel-action] Úspěšně staženo 1 souborů: NA LOVU 
+[2025-03-12T19:43:20.332Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/na_lovu_export.csv 
+[2025-03-12T19:43:20.333Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-12T19:43:20.332Z] [INFO] [avaris-excel-action] Zpracovávám data pro objekt NA LOVU z /downloads/na_lovu_export.csv 
+[2025-03-12T19:43:20.349Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 4508 
+[2025-03-12T19:43:20.360Z] [INFO] [csv-processor] Zpracováno 4500 záznamů, z toho 65 ST a 4435 ne-ST 
+[2025-03-12T19:43:20.361Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx 
+[2025-03-12T19:43:20.415Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX s konzistentní strukturou 
+[2025-03-12T19:43:20.416Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx po 5 minutách 
+[2025-03-12T19:43:20.419Z] [INFO] [avaris-excel-action] Objekt NA LOVU zpracován úspěšně, počet záznamů: 65 
+[2025-03-12T19:43:20.418Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 65 ST záznamů z celkových 4500 
+[2025-03-12T19:43:20.420Z] [INFO] [avaris-excel-action] Celkem získáno 65 záznamů ze všech objektů 
+[2025-03-12T19:43:20.421Z] [INFO] [enhanced-sheet-processor] Zpracovávám Excel soubor Testovací tabulka.xlsx pro přidání dat z Avarisu 
+[2025-03-12T19:43:20.422Z] [INFO] [enhanced-sheet-processor] Cílový soubor existuje: C:\Programování\AG-Management\public\downloads\Testovací tabulka.xlsx 
+[2025-03-12T19:43:20.529Z] [INFO] [enhanced-sheet-processor] List2 existuje, obsahuje 0 řádků, poslední časový údaj: null 
+[2025-03-12T19:43:20.531Z] [INFO] [enhanced-sheet-processor] Ukládám změny do souboru: C:\Programování\AG-Management\public\downloads\Testovací tabulka.xlsx 
+[2025-03-12T19:43:20.530Z] [INFO] [enhanced-sheet-processor] Nastavuji vlastnosti sloupců a formátování... 
+[2025-03-12T19:43:20.613Z] [INFO] [avaris-excel-action] Finální soubor byl uložen do: /processed/Testovací tabulka_aktualizovano_2025-03-12T19-43-20-611Z.xlsx 
+[2025-03-12T19:47:20.406Z] [INFO] [avaris-excel-action] Zpracování pro období od 01.02.2025 do 01.03.2025 
+[2025-03-12T19:47:20.405Z] [INFO] [avaris-excel-action] Zpracovávám požadavek na integraci Avaris dat do Excel souboru 
+[2025-03-12T19:47:20.407Z] [INFO] [avaris-excel-action] Nahraný soubor: Testovací tabulka.xlsx 
+[2025-03-12T19:47:20.406Z] [INFO] [avaris-excel-action] Zvolené objekty: NA LOVU 
+[2025-03-12T19:47:20.409Z] [INFO] [avaris-excel-action] Spouštím captureAvarisData pro objekty: NA LOVU 
+[2025-03-12T19:47:20.410Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-12T19:47:20.655Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-12T19:47:22.837Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-12T19:47:22.838Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-12T19:47:22.837Z] [INFO] [scraper] Zpracovávám objekt: NA LOVU 
+[2025-03-12T19:47:25.932Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-12T19:47:25.933Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-12T19:47:25.961Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-12T19:47:26.300Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-12T19:47:26.802Z] [INFO] [scraper] Hledám checkbox pro objekt "NA LOVU" 
+[2025-03-12T19:47:26.808Z] [INFO] [scraper] Nalezen label s for="tr-snimac1078" 
+[2025-03-12T19:47:26.840Z] [INFO] [scraper] Checkbox #tr-snimac1078 byl zaškrtnut 
+[2025-03-12T19:47:26.841Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-12T19:47:27.907Z] [INFO] [scraper] Objekt "NA LOVU" byl úspěšně přidán do tabulky 
+[2025-03-12T19:47:27.908Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-12T19:47:34.874Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-12T19:47:34.962Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-12T19:47:34.963Z] [INFO] [scraper] Nastavuji typ období na "Interval" a požadované sloupce pro výpis 
+[2025-03-12T19:47:34.964Z] [INFO] [scraper] Nastavuji období na "Interval" 
+[2025-03-12T19:47:34.984Z] [INFO] [scraper] Začínám nastavovat sloupce pro výpis 
+[2025-03-12T19:47:34.984Z] [INFO] [scraper] Radio button pro "Interval" již byl zaškrtnutý 
+[2025-03-12T19:47:34.999Z] [INFO] [scraper] Nalezeno 6 checkboxů pro sloupce 
+[2025-03-12T19:47:35.073Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-12T19:47:35.110Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-12T19:47:35.170Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-12T19:47:35.233Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-12T19:47:35.274Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 1 
+[2025-03-12T19:47:35.323Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 3 
+[2025-03-12T19:47:35.364Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 4 
+[2025-03-12T19:47:35.413Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 8 
+[2025-03-12T19:47:35.435Z] [INFO] [scraper] Všechny požadované sloupce byly úspěšně zaškrtnuty 
+[2025-03-12T19:47:35.436Z] [INFO] [scraper] Nastavuji datumové rozmezí: 01.02.2025 - 01.03.2025 
+[2025-03-12T19:47:35.540Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-12T19:47:35.539Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-12T19:47:35.598Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-12T19:47:38.329Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-12T19:47:39.199Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-12T19:47:41.874Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-12T19:47:41.987Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-12T19:47:41.992Z] [INFO] [scraper] Dokončeno zpracování objektu: NA LOVU 
+[2025-03-12T19:47:41.996Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-12T19:47:42.056Z] [INFO] [avaris-excel-action] Úspěšně staženo 1 souborů: NA LOVU 
+[2025-03-12T19:47:42.056Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-12T19:47:42.057Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/na_lovu_export.csv 
+[2025-03-12T19:47:42.056Z] [INFO] [avaris-excel-action] Zpracovávám data pro objekt NA LOVU z /downloads/na_lovu_export.csv 
+[2025-03-12T19:47:42.057Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\na_lovu_export.csv 
+[2025-03-12T19:47:42.092Z] [INFO] [csv-processor] Zpracováno 4500 záznamů, z toho 65 ST a 4435 ne-ST 
+[2025-03-12T19:47:42.073Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 4508 
+[2025-03-12T19:47:42.094Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx 
+[2025-03-12T19:47:42.102Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX s konzistentní strukturou 
+[2025-03-12T19:47:42.102Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx po 5 minutách 
+[2025-03-12T19:47:42.105Z] [INFO] [avaris-excel-action] Objekt NA LOVU zpracován úspěšně, počet záznamů: 65 
+[2025-03-12T19:47:42.104Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 65 ST záznamů z celkových 4500 
+[2025-03-12T19:47:42.106Z] [INFO] [avaris-excel-action] Celkem získáno 65 záznamů ze všech objektů 
+[2025-03-12T19:47:42.106Z] [INFO] [enhanced-sheet-processor] Zpracovávám Excel soubor Testovací tabulka.xlsx pro přidání dat z Avarisu 
+[2025-03-12T19:47:42.109Z] [INFO] [enhanced-sheet-processor] Cílový soubor existuje: C:\Programování\AG-Management\public\downloads\Testovací tabulka.xlsx 
+[2025-03-12T19:47:42.177Z] [INFO] [enhanced-sheet-processor] List2 existuje, obsahuje 47 řádků, poslední časový údaj: Wed Feb 19 2025 15:32:15 GMT+0100 (středoevropský standardní čas) 
+[2025-03-12T19:47:42.178Z] [INFO] [enhanced-sheet-processor] Filtrováno 22 nových záznamů z celkových 65 
+[2025-03-12T19:47:42.179Z] [INFO] [enhanced-sheet-processor] Ukládám změny do souboru: C:\Programování\AG-Management\public\downloads\Testovací tabulka.xlsx 
+[2025-03-12T19:47:42.279Z] [INFO] [avaris-excel-action] Finální soubor byl uložen do: /processed/Testovací tabulka_aktualizovano_2025-03-12T19-47-42-277Z.xlsx 
+[2025-03-12T19:48:20.424Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx byl smazán 
+[2025-03-12T19:52:42.112Z] [ERROR] [csv-processor] Chyba při mazání souboru C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx: Error: ENOENT: no such file or directory, unlink 'C:\Programování\AG-Management\public\downloads\na_lovu_export_filtered.xlsx' 
+[2025-03-12T20:16:25.294Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-12T20:16:25.295Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T20:16:25.298Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T20:16:25.385Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-12T20:16:25.685Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-12T21:16:30.855Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-12T21:16:30.858Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:16:30.855Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:16:31.013Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-12T21:16:31.405Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-12T21:16:31.406Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:16:31.408Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-12T21:16:31.452Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-12T21:16:31.455Z] [INFO] [name-comparison-service] Načteno 7 unikátních příjmení z List2 
+[2025-03-12T21:16:31.454Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-12T21:16:31.457Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 0, Bezpečných shod: 0, Nenalezených: 36 
+[2025-03-12T21:16:31.457Z] [INFO] [advanced-excel-processing] Nebyly provedeny žádné změny v názvech 
+[2025-03-12T21:18:15.892Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-12T21:18:15.893Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:18:15.897Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:18:16.071Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-12T21:18:16.528Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-12T21:18:16.529Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:18:16.533Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-12T21:18:16.596Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-12T21:18:16.594Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-12T21:18:16.598Z] [INFO] [name-comparison-service] Načteno 7 unikátních příjmení z List2 
+[2025-03-12T21:18:16.601Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-12T21:18:16.602Z] [INFO] [advanced-excel-processing] Provedeno 1 změn v názvech 
+[2025-03-12T21:18:16.723Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-12T21-18-16-603Z.xlsx 
+[2025-03-12T21:23:28.974Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-12T21:23:28.975Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:23:28.976Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:23:29.081Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-12T21:23:29.399Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-12T21:23:29.400Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:23:29.402Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-12T21:23:29.452Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-12T21:23:29.453Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-12T21:23:29.456Z] [INFO] [name-comparison-service] Načteno 7 unikátních příjmení z List2 
+[2025-03-12T21:23:29.460Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-12T21:23:29.460Z] [INFO] [advanced-excel-processing] Provedeno 1 změn v názvech 
+[2025-03-12T21:23:29.552Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-12T21-23-29-461Z.xlsx 
+[2025-03-12T21:24:39.027Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-12T21:24:39.028Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:24:39.029Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:24:39.109Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-12T21:24:39.488Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-12T21:24:39.490Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:24:39.492Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-12T21:24:39.525Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-12T21:24:39.526Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-12T21:24:39.527Z] [INFO] [name-comparison-service] Načteno 7 unikátních příjmení z List2 
+[2025-03-12T21:24:39.527Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-12T21:24:39.528Z] [INFO] [advanced-excel-processing] Provedeno 1 změn v názvech 
+[2025-03-12T21:24:39.581Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-12T21-24-39-528Z.xlsx 
+[2025-03-12T21:26:25.459Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-12T21:26:25.460Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:26:25.461Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:26:25.588Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-12T21:26:25.961Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-12T21:26:25.962Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:26:25.963Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-12T21:26:26.004Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-12T21:26:26.007Z] [INFO] [name-comparison-service] Načteno 7 unikátních příjmení z List2 
+[2025-03-12T21:26:26.006Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-12T21:26:26.010Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-12T21:26:26.011Z] [INFO] [advanced-excel-processing] Provedeno 1 změn v názvech 
+[2025-03-12T21:26:26.098Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-12T21-26-26-011Z.xlsx 
+[2025-03-12T21:37:54.027Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-12T21:37:54.028Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:37:54.029Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:37:54.259Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-12T21:37:54.657Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-12T21:37:54.661Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:37:54.663Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-12T21:37:54.719Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-12T21:37:54.721Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-12T21:37:54.723Z] [INFO] [name-comparison-service] Načteno 7 unikátních příjmení z List2 
+[2025-03-12T21:37:54.725Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-12T21:37:54.728Z] [INFO] [advanced-excel-processing] Provedeno 1 změn v názvech 
+[2025-03-12T21:37:54.863Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-12T21-37-54-728Z.xlsx 
+[2025-03-12T21:39:01.676Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:39:01.674Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-12T21:39:01.678Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:39:01.792Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-12T21:39:02.251Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-12T21:39:02.252Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:39:02.254Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-12T21:39:02.310Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-12T21:39:02.312Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-12T21:39:02.313Z] [INFO] [name-comparison-service] Načteno 7 unikátních příjmení z List2 
+[2025-03-12T21:39:02.315Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-12T21:39:02.315Z] [INFO] [advanced-excel-processing] Provedeno 1 změn v názvech 
+[2025-03-12T21:39:02.429Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-12T21-39-02-316Z.xlsx 
+[2025-03-12T21:43:44.987Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-12T21:43:44.987Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:43:44.989Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:43:45.067Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-12T21:43:45.246Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":false,"detectConsecutiveShifts":false} 
+[2025-03-12T21:43:45.247Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-12T21:43:45.249Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-12T21:43:45.276Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-12T21:43:45.277Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-12T21:43:45.277Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-12T21:43:45.279Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-12T21:43:45.278Z] [INFO] [name-comparison-service] Načteno 43 jmen z List2 
+[2025-03-12T21:43:45.279Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-12T21:43:45.280Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-12T21:43:45.281Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-12T21:43:45.281Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-12T21:43:45.282Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-12T21:43:45.283Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-12T21:43:45.283Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-12T21:43:45.284Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-12T21:43:45.284Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-12T21:43:45.284Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-12T21:43:45.285Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-12T21:43:45.285Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-12T21:43:45.286Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-12T21:43:45.286Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-12T21:43:45.287Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-12T21:43:45.288Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-12T21:43:45.288Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-12T21:43:45.288Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-12T21:43:45.288Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-12T21:43:45.289Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-12T21:43:45.289Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-12T21:43:45.289Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-12T21:43:45.289Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-12T21:43:45.291Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-12T21:43:45.291Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-12T21:43:45.291Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-12T21:43:45.292Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-12T21:43:45.292Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-12T21:43:45.292Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-12T21:43:45.292Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-12T21:43:45.293Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-12T21:43:45.293Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-12T21:43:45.293Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-12T21:43:45.294Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-12T21:43:45.294Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-12T21:43:45.295Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 30, Bezpečných shod: 1, Nenalezených: 5 
+[2025-03-12T21:43:45.295Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-12T21:43:45.295Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=30, 
+                    Bezpečné=1, 
+                    Nenalezené=5 
+[2025-03-12T21:43:45.362Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-12T21-43-45-295Z.xlsx 

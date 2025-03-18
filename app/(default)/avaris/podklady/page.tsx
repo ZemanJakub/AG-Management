@@ -154,8 +154,8 @@ export default function PodkladyPage() {
         sourceResult.sourceFile || "Testovací tabulka.xlsx",
         {
           compareNames: true,
-          updateTimes: false,
-          detectConsecutiveShifts: false
+          updateTimes: true,
+          detectConsecutiveShifts: true
         }
       );
       
@@ -292,7 +292,7 @@ export default function PodkladyPage() {
                       <div>
                         <h4 className="text-md font-semibold mb-2">Aktualizace časů:</h4>
                         <div 
-                          className="p-3 mt-2 border rounded-md bg-gray-50 max-h-48 overflow-auto" 
+                          className="p-3 mt-2 border rounded-md  max-h-48 overflow-auto" 
                           dangerouslySetInnerHTML={{ __html: advancedResult.reportData.timeUpdateReport }}
                         />
                       </div>
@@ -302,18 +302,18 @@ export default function PodkladyPage() {
               )}
               
               {advancedResult?.outputFile && (
-                <div className="p-4 border border-green-200  rounded-md">
+                <div className="p-4  rounded-md ">
                   <p className="font-medium mb-4">
                     Pokročilé zpracování bylo dokončeno! Nyní si můžete stáhnout výsledek:
                   </p>
                   <div className="flex justify-center">
                     <Button
-                      color="success"
-                      variant="flat"
+                      color="secondary"
+                      variant="bordered"
                       as={Link}
                       href={`/processed/${advancedResult.outputFile}`}
                       target="_blank"
-                      className="w-full max-w-md mx-auto block"
+                     
                     >
                       Stáhnout zpracovaný soubor
                     </Button>

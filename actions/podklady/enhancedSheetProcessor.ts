@@ -213,21 +213,28 @@ export async function processExcelSheet(
       const timeValue = rowData[1]; // index 1 odpovídá sloupci B (časový údaj)
       if (timeValue) {
         const timeStr = String(timeValue);
-        if (timeStr && timeStr.includes(":")) {
+        // Extrakce času z formátu "04.02.2025 18:22:47"
+        if (timeStr && timeStr.includes(" ")) {
           try {
-            const timeParts = timeStr.split(":");
-            if (timeParts.length >= 2) {
-              const hours = parseInt(timeParts[0], 10);
-              const minutes = parseInt(timeParts[1], 10);
-              const seconds = timeParts.length > 2 ? parseInt(timeParts[2], 10) : 0;
-
-              // Výpočet excel časové hodnoty
-              const excelTime = hours / 24 + minutes / 1440 + seconds / 86400;
-
-              // Nastavíme hodnotu a formát
-              const cell = row.getCell(4); // Sloupec D
-              cell.value = excelTime;
-              cell.numFmt = "h:mm";
+            // Oddělení času od datumu
+            const parts = timeStr.split(" ");
+            if (parts.length > 1) {
+              const timePart = parts[1]; // část "18:22:47"
+              const timeParts = timePart.split(":");
+              
+              if (timeParts.length >= 2) {
+                const hours = parseInt(timeParts[0], 10);
+                const minutes = parseInt(timeParts[1], 10);
+                const seconds = timeParts.length > 2 ? parseInt(timeParts[2], 10) : 0;
+      
+                // Výpočet excel časové hodnoty (hodiny/24 + minuty/1440 + sekundy/86400)
+                const excelTime = hours / 24 + minutes / 1440 + seconds / 86400;
+      
+                // Nastavíme hodnotu a formát
+                const cell = row.getCell(4); // Sloupec D
+                cell.value = excelTime;
+                cell.numFmt = "h:mm"; // Formát zobrazení "18:22" (přestože hodnota obsahuje i sekundy)
+              }
             }
           } catch (error) {
             logger.error(`Chyba při zpracování času ${timeStr}: ${error}`);

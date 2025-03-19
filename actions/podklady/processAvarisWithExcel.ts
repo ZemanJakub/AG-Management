@@ -7,6 +7,8 @@ import { processAvarisData } from "@/modules/podklady/services/csvProcessor";
 import { writeFile, mkdir, readFile, access } from "fs/promises";
 import path from "path";
 import { processExcelSheet } from "./enhancedSheetProcessor";
+import { runAdvancedProcessing } from "./advancedExcelProcessing";
+import ExcelJS from "exceljs";
 
 const logger = createLogger("avaris-excel-action");
 
@@ -16,8 +18,18 @@ export type AvarisExcelResult = {
   reportData?: {
     dataAdded?: number;
     message?: string;
+    nameComparisonReport?: string;
+    timeUpdateReport?: string;
+    consecutiveShiftsReport?: string;
+    consecutiveShiftsCount?: number;
   };
   finalFilePath?: string;
+};
+
+export type ProcessingOptions = {
+  compareNames?: boolean;
+  updateTimes?: boolean;
+  detectConsecutiveShifts?: boolean;
 };
 
 function formatDateString(dateStr: string): string {
@@ -49,21 +61,48 @@ async function fileExists(filePath: string): Promise<boolean> {
 /**
  * Serverová akce pro zpracování Excel souboru s daty z Avarisu
  * @param formData Formulářová data od uživatele
+ * @param options Možnosti zpracování (porovnání jmen, aktualizace časů, detekce navazujících směn)
  */
 export async function processAvarisWithExcel(
-  formData: FormData
+  formData: FormData,
+  options: ProcessingOptions = {}
 ): Promise<AvarisExcelResult> {
   try {
     logger.info(
       "Zpracovávám požadavek na integraci Avaris dat do Excel souboru"
     );
 
-    // Krok 1: Načtení parametrů z formuláře
-    const ico = "25790668" as string; // Hardcoded přihlašovací údaje
-    const username = "reditel@ares-group.cz" as string;
-    const password = "slunicko" as string;
+    // Výchozí možnosti zpracování, pokud nejsou explicitně stanoveny
+    const processingOptions: ProcessingOptions = {
+      compareNames: options.compareNames !== undefined ? options.compareNames : true,
+      updateTimes: options.updateTimes !== undefined ? options.updateTimes : true,
+      detectConsecutiveShifts: options.detectConsecutiveShifts !== undefined ? options.detectConsecutiveShifts : true
+    };
 
-    // Získání nahrané souboru
+    // Zkusíme načíst možnosti zpracování z formData, pokud byly předány
+    const optionsFromForm = formData.get("options");
+    if (optionsFromForm) {
+      try {
+        const parsedOptions = JSON.parse(optionsFromForm as string);
+        if (parsedOptions) {
+          processingOptions.compareNames = parsedOptions.compareNames !== undefined ? parsedOptions.compareNames : processingOptions.compareNames;
+          processingOptions.updateTimes = parsedOptions.updateTimes !== undefined ? parsedOptions.updateTimes : processingOptions.updateTimes;
+          processingOptions.detectConsecutiveShifts = parsedOptions.detectConsecutiveShifts !== undefined ? parsedOptions.detectConsecutiveShifts : processingOptions.detectConsecutiveShifts;
+        }
+      } catch (error) {
+        logger.warn(`Chyba při parsování možností zpracování: ${error}. Používám výchozí hodnoty.`);
+      }
+    }
+
+    logger.info(`Možnosti zpracování: ${JSON.stringify(processingOptions)}`);
+
+    // Krok 1: Načtení parametrů z formuláře
+    // Použití proměnných prostředí pro přihlašovací údaje, s fallback hodnotami
+    const ico = process.env.AVARIS_ICO || "25790668";
+    const username = process.env.AVARIS_USERNAME || "reditel@ares-group.cz";
+    const password = process.env.AVARIS_PASSWORD || "slunicko";
+
+    // Získání nahraného souboru
     const fileName = formData.get("fileName") as string;
 
     if (!fileName) {
@@ -74,7 +113,7 @@ export async function processAvarisWithExcel(
     }
 
     // Získání objektů
-    const objektInput = (formData.get("objekty") as string);
+    const objektInput = (formData.get("objekty") as string) || "";
     const objektNames = objektInput
       .split(/[\n,]/)
       .map((item) => item.trim())
@@ -115,6 +154,14 @@ export async function processAvarisWithExcel(
         success: false,
         error: `Nahraný soubor nebyl nalezen: ${fileName}`,
       };
+    }
+
+    // Kontrola, zda jde o testovací režim
+    const isTestMode = formData.get("testMode") === "true";
+    if (isTestMode) {
+      logger.info("Aktivován testovací režim - bude použit testovací soubor místo stahování dat z Avarisu");
+      // Logika pro testovací režim - použijeme předem připravená data místo stahování z Avarisu
+      return await processWithTestData(fileName, processingOptions);
     }
 
     // Krok 2: Získání dat z Avarisu
@@ -180,7 +227,7 @@ export async function processAvarisWithExcel(
     
     logger.info(`Celkem získáno ${allAvarisRecords.length} záznamů ze všech objektů`);
 
-    // Krok 4: Zpracování Excel souboru - využití nové logiky
+    // Krok 4: Zpracování Excel souboru - vytvoření listu s daty
     const sheetResult = await processExcelSheet(fileName, allAvarisRecords);
     
     if (!sheetResult.success) {
@@ -190,7 +237,52 @@ export async function processAvarisWithExcel(
       };
     }
     
-    // Krok 5: Vytvoření kopie zpracovaného souboru
+    // Krok 5: Pokročilé zpracování (dle vybraných možností)
+    const reportData: AvarisExcelResult['reportData'] = {
+      dataAdded: sheetResult.dataAdded,
+      message: sheetResult.message
+    };
+    
+    // Pokud jsou požadovány pokročilé funkce zpracování
+    if (processingOptions.compareNames || processingOptions.updateTimes || processingOptions.detectConsecutiveShifts) {
+      logger.info(`Spouštím pokročilé zpracování pro soubor ${fileName} s možnostmi: ${JSON.stringify(processingOptions)}`);
+      
+      // Spuštění pokročilého zpracování s definovanými (ne undefined) hodnotami
+      const advancedResult = await runAdvancedProcessing(
+        fileName,
+        {
+          compareNames: !!processingOptions.compareNames,
+          updateTimes: !!processingOptions.updateTimes,
+          detectConsecutiveShifts: !!processingOptions.detectConsecutiveShifts
+        }
+      );
+      
+      if (!advancedResult.success) {
+        logger.warn(`Pokročilé zpracování nebylo úspěšné: ${advancedResult.error}`);
+        // Pokračujeme v běhu, protože základní zpracování již bylo úspěšně dokončeno
+      } else {
+        logger.info(`Pokročilé zpracování dokončeno úspěšně`);
+        
+        // Doplnění reportů z pokročilého zpracování
+        if (advancedResult.reportData) {
+          reportData.nameComparisonReport = advancedResult.reportData.nameComparisonReport;
+          reportData.timeUpdateReport = advancedResult.reportData.timeUpdateReport;
+          reportData.consecutiveShiftsReport = advancedResult.reportData.consecutiveShiftsReport;
+          reportData.consecutiveShiftsCount = advancedResult.reportData.consecutiveShiftsCount;
+        }
+        
+        // Použít nový výstupní soubor, pokud byl vytvořen
+        if (advancedResult.outputFile) {
+          return {
+            success: true,
+            reportData,
+            finalFilePath: `/processed/${advancedResult.outputFile}`
+          };
+        }
+      }
+    }
+    
+    // Krok 6: Vytvoření kopie zpracovaného souboru (pokud nebylo použito pokročilé zpracování)
     try {
       const processedDir = path.join(process.cwd(), "public", "processed");
       await mkdir(processedDir, { recursive: true });
@@ -211,10 +303,7 @@ export async function processAvarisWithExcel(
 
       return {
         success: true,
-        reportData: {
-          dataAdded: sheetResult.dataAdded,
-          message: sheetResult.message
-        },
+        reportData,
         finalFilePath,
       };
     } catch (error) {
@@ -229,6 +318,135 @@ export async function processAvarisWithExcel(
     return {
       success: false,
       error: error instanceof Error ? error.message : "Neznámá chyba",
+    };
+  }
+}
+
+/**
+ * Funkce pro zpracování v testovacím režimu
+ * @param fileName Název souboru nahraného uživatelem
+ * @param options Možnosti zpracování
+ */
+async function processWithTestData(
+  fileName: string,
+  options: ProcessingOptions
+): Promise<AvarisExcelResult> {
+  logger.info(`Spouštím testovací režim pro soubor ${fileName}`);
+  
+  try {
+    // Cesta k testovacímu souboru
+    const testFilePath = path.join(process.cwd(), 'public', 'testsource', 'Testovací tabulka.xlsx');
+    
+    // Kontrola existence testovacího souboru
+    if (!await fileExists(testFilePath)) {
+      logger.error(`Testovací soubor neexistuje: ${testFilePath}`);
+      return {
+        success: false,
+        error: `Testovací soubor nenalezen. Ujistěte se, že soubor 'Testovací tabulka.xlsx' existuje ve složce public/testsource`
+      };
+    }
+    
+    // Načtení testovacího souboru
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.readFile(testFilePath);
+    
+    // Kontrola struktury testovacího souboru
+    if (!workbook.getWorksheet('List1') || !workbook.getWorksheet('List2')) {
+      logger.error(`Testovací soubor nemá požadovanou strukturu (List1 a List2)`);
+      return {
+        success: false,
+        error: `Testovací soubor nemá požadovanou strukturu. Musí obsahovat listy List1 a List2.`
+      };
+    }
+    
+    // Kopírování testovacích dat do souboru uživatele
+    const userFilePath = path.join(process.cwd(), 'public', 'downloads', fileName);
+    
+    // Zkopírujeme testovací data do List2 souboru uživatele
+    const userWorkbook = new ExcelJS.Workbook();
+    await userWorkbook.xlsx.readFile(userFilePath);
+    
+    // Nahradíme List2 nebo ho vytvoříme, pokud neexistuje
+    const sourceList2 = workbook.getWorksheet('List2');
+    
+    // Kontrola, zda sourceList2 existuje
+    if (!sourceList2) {
+      logger.error(`Testovací soubor neobsahuje List2`);
+      return {
+        success: false,
+        error: `Testovací soubor musí obsahovat list List2.`
+      };
+    }
+    
+    let targetList2 = userWorkbook.getWorksheet('List2');
+    
+    if (targetList2) {
+      userWorkbook.removeWorksheet(targetList2.id);
+    }
+    
+    // Vytvoříme nový List2 zkopírováním z testovacího souboru
+    targetList2 = userWorkbook.addWorksheet('List2');
+    
+    // Kopírování dat a formátování
+    sourceList2.eachRow((row, rowIndex) => {
+      const newRow = targetList2!.getRow(rowIndex);
+      
+      // Kopírování hodnot
+      row.eachCell((cell, colIndex) => {
+        newRow.getCell(colIndex).value = cell.value;
+      });
+      
+      // Kopírování formátování
+      newRow.height = row.height;
+      newRow.commit();
+    });
+    
+    // Kopírování nastavení sloupců
+    sourceList2.columns.forEach((column, index) => {
+      if (targetList2 && targetList2.columns[index]) {
+        targetList2.columns[index].width = column.width;
+      }
+    });
+    
+    // Uložení změn
+    await userWorkbook.xlsx.writeFile(userFilePath);
+    
+    logger.info(`Testovací data byla úspěšně kopírována do souboru ${fileName}`);
+    
+    // Nyní spustíme pokročilé zpracování s definovanými (ne undefined) hodnotami
+    const result = await runAdvancedProcessing(
+      fileName,
+      {
+        compareNames: !!options.compareNames,
+        updateTimes: !!options.updateTimes,
+        detectConsecutiveShifts: !!options.detectConsecutiveShifts
+      }
+    );
+    
+    if (!result.success) {
+      return {
+        success: false,
+        error: result.error || "Chyba při pokročilém zpracování v testovacím režimu"
+      };
+    }
+    
+    // Připravit výsledek
+    return {
+      success: true,
+      reportData: {
+        message: "Testovací režim: Data byla úspěšně zpracována",
+        nameComparisonReport: result.reportData?.nameComparisonReport,
+        timeUpdateReport: result.reportData?.timeUpdateReport,
+        consecutiveShiftsReport: result.reportData?.consecutiveShiftsReport,
+        consecutiveShiftsCount: result.reportData?.consecutiveShiftsCount
+      },
+      finalFilePath: result.outputFile ? `/processed/${result.outputFile}` : undefined
+    };
+  } catch (error) {
+    logger.error(`Chyba v testovacím režimu: ${error}`);
+    return {
+      success: false,
+      error: `Chyba v testovacím režimu: ${error instanceof Error ? error.message : "Neznámá chyba"}`
     };
   }
 }

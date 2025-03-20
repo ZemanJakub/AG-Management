@@ -1,7 +1,8 @@
 // modules/podklady/services/nameComparisonService.ts
 import ExcelJS from 'exceljs';
-import { levenshtein } from './nameCompareUtils';
-import { createLogger } from './logger';
+import { levenshtein, normalizeName, removeDiacriticsFromText, compareNamesExtended } from '@/modules/podklady/utils/textUtils';
+import { loadExcelData, loadExcelFromBuffer } from '@/modules/podklady/utils/excelUtils';
+import { createLogger } from '@/modules/podklady/services/logger';
 
 const logger = createLogger('name-comparison-service');
 
@@ -95,16 +96,8 @@ export class NameComparisonService {
    */
   public async loadFromBuffer(buffer: Buffer | ArrayBuffer): Promise<void> {
     try {
-      // Použijeme typové přetypování k obejití typových omezení
-      if (buffer instanceof ArrayBuffer) {
-        // Pro ArrayBuffer musíme nejprve vytvořit Uint8Array a pak Buffer
-        const data = new Uint8Array(buffer);
-        // Použijeme any, abychom obešli typovou kontrolu
-        await this.workbook.xlsx.load(Buffer.from(data) as any);
-      } else {
-        // Pro existující Buffer také použijeme any
-        await this.workbook.xlsx.load(buffer as any);
-      }
+      // Použijeme novou utilitu pro načtení workbooku z bufferu
+      this.workbook = await loadExcelFromBuffer(buffer);
       
       // Kontrola existence listů
       const list1 = this.workbook.getWorksheet('List1');
@@ -123,171 +116,6 @@ export class NameComparisonService {
       logger.error(`Chyba při načítání workbooku z bufferu: ${error}`);
       throw error;
     }
-  }
-
-  /**
-   * Odstraní diakritiku z textu
-   */
-  private removeDiacritics(text: string): string {
-    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  }
-
-  /**
-   * Normalizace jména -- odstraňuje přebytečné mezery, převádí text na malá písmena a odstraňuje diakritiku
-   * @param name Vstupní jméno
-   * @returns Normalizované jméno
-   */
-  private normalizeName(name: string): string {
-    if (!name) return '';
-    
-    let normalizedName = String(name).trim().toLowerCase();
-    
-    // Náhrada více mezer za jednu
-    while (normalizedName.includes('  ')) {
-      normalizedName = normalizedName.replace('  ', ' ');
-    }
-    
-    // Odstranění diakritiky
-    normalizedName = this.removeDiacritics(normalizedName);
-    
-    return normalizedName;
-  }
-
-  /**
-   * Porovnání jmen s váhováním a rozdělením na části
-   * @param name1 První jméno
-   * @param name2 Druhé jméno
-   * @returns Skóre podobnosti a informace o typu shody
-   */
-  private compareNames(name1: string, name2: string): {
-    score: number;
-    exactMatch: boolean;
-    safeMatch: boolean;
-  } {
-    // Normalizace jmen pro porovnání
-    const normalized1 = this.normalizeName(name1);
-    const normalized2 = this.normalizeName(name2);
-    
-    // Kontrola absolutní shody
-    if (normalized1 === normalized2) {
-      return { score: 100, exactMatch: true, safeMatch: true };
-    }
-    
-    // Rozdělení na části (příjmení je první část)
-    const parts1 = normalized1.split(' ');
-    const parts2 = normalized2.split(' ');
-    
-    // Kontrola prázdných jmen
-    if (parts1.length === 0 || parts2.length === 0) {
-      return { score: 0, exactMatch: false, safeMatch: false };
-    }
-    
-    // Extrahování příjmení (první část)
-    const surname1 = parts1[0];
-    const surname2 = parts2[0];
-    
-    // Vylepšená kontrola shody příjmení - porovnává také začátek příjmení
-    // Toto pomůže se zkrácenými formami jako "Durich" vs "Duricha"
-    const minSurnameLength = Math.min(surname1.length, surname2.length);
-    const commonPrefixLength = 4; // Minimálně 4 znaky musí být stejné
-    
-    // Kontrola, zda jedno příjmení začíná druhým
-    if (minSurnameLength >= commonPrefixLength && 
-        (surname1.startsWith(surname2) || surname2.startsWith(surname1))) {
-      // Možná zkrácená forma příjmení
-      
-      // Případ, kdy jedno nebo obě jména obsahují jen příjmení
-      if (parts1.length === 1 || parts2.length === 1) {
-        if (parts1.length === 1 && parts2.length === 1) {
-          // Obě jména obsahují jen příjmení, která se částečně shodují
-          return { score: 85, exactMatch: false, safeMatch: true };
-        }
-        
-        // Jedno jméno má jen příjmení, druhé má i křestní jméno
-        return { score: 65, exactMatch: false, safeMatch: true };
-      }
-      
-      // Obě jména mají příjmení i křestní jméno
-      // Porovnání křestních jmen (vše kromě prvního elementu, který je příjmení)
-      const givenName1 = parts1.slice(1).join(' ');
-      const givenName2 = parts2.slice(1).join(' ');
-      
-      const distance = levenshtein(givenName1, givenName2);
-      
-      // Bezpečná shoda, pokud je vzdálenost menší nebo rovna prahu
-      const isSafeMatch = distance <= this.options.similarityThreshold;
-      
-      // Skóre na základě vzdálenosti (100 pro přesnou shodu, méně pro podobné)
-      const score = isSafeMatch ? 90 - (distance * 10) : 0;
-      
-      return {
-        score,
-        exactMatch: false,
-        safeMatch: isSafeMatch
-      };
-    }
-    
-    // Původní kontrola přesné shody příjmení
-    if (surname1 !== surname2) {
-      // Dodatečná kontrola podobnosti příjmení
-      const surnameDistance = levenshtein(surname1, surname2);
-      
-      // Pokud jsou příjmení velmi podobná (maximálně 2 znaky rozdíl)
-      if (surnameDistance <= 2) {
-        // Podobná příjmení - dále kontrolujeme křestní jména
-        if (parts1.length === 1 || parts2.length === 1) {
-          return { score: 60, exactMatch: false, safeMatch: true };
-        }
-        
-        // Obě jména mají i křestní jméno
-        const givenName1 = parts1.slice(1).join(' ');
-        const givenName2 = parts2.slice(1).join(' ');
-        
-        const distance = levenshtein(givenName1, givenName2);
-        const isSafeMatch = distance <= this.options.similarityThreshold;
-        
-        // Nižší skóre kvůli rozdílům v příjmení
-        const score = isSafeMatch ? 80 - (distance * 10) - (surnameDistance * 5) : 0;
-        
-        return {
-          score,
-          exactMatch: false,
-          safeMatch: isSafeMatch
-        };
-      }
-      
-      return { score: 0, exactMatch: false, safeMatch: false };
-    }
-    
-    // Případ, kdy jedno nebo obě jména obsahují jen příjmení
-    if (parts1.length === 1 || parts2.length === 1) {
-      if (parts1.length === 1 && parts2.length === 1) {
-        // Obě jména obsahují jen příjmení, která se shodují
-        return { score: 90, exactMatch: false, safeMatch: true };
-      }
-      
-      // Jedno jméno má jen příjmení, druhé má i křestní jméno
-      return { score: 70, exactMatch: false, safeMatch: true };
-    }
-    
-    // Obě jména mají příjmení i křestní jméno
-    // Porovnání křestních jmen (vše kromě prvního elementu, který je příjmení)
-    const givenName1 = parts1.slice(1).join(' ');
-    const givenName2 = parts2.slice(1).join(' ');
-    
-    const distance = levenshtein(givenName1, givenName2);
-    
-    // Bezpečná shoda, pokud je vzdálenost menší nebo rovna prahu
-    const isSafeMatch = distance <= this.options.similarityThreshold;
-    
-    // Skóre na základě vzdálenosti (100 pro přesnou shodu, méně pro podobné)
-    const score = isSafeMatch ? 100 - (distance * 10) : 0;
-    
-    return {
-      score,
-      exactMatch: false,
-      safeMatch: isSafeMatch
-    };
   }
 
   /**
@@ -367,7 +195,8 @@ export class NameComparisonService {
         let bestScore = 0;
         
         for (const list2Name of list2Names) {
-          const comparison = this.compareNames(originalName, list2Name);
+          // Použijeme novou utilitu pro porovnání jmen
+          const comparison = compareNamesExtended(originalName, list2Name, this.options.similarityThreshold);
           
           if (comparison.exactMatch) {
             // Přesná shoda - použijeme a skončíme hledání

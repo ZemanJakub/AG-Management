@@ -35,9 +35,11 @@ const availableObjects = [
   { key: "P3", label: "P3" },
   { key: "RADVAN", label: "RADVAN" },
   { key: "SERVIS - SVJ NA OKRAJI", label: "SERVIS - SVJ NA OKRAJI" },
+  { key: "SVJ NA OKRAJI", label: "SVJ NA OKRAJI" },
   { key: "SVJ NA CÍSAŘCE", label: "SVJ NA CÍSAŘCE" },
   { key: "SVJ NA HŘEBENKÁCH", label: "SVJ NA HŘEBENKÁCH" },
   { key: "NA LOVU", label: "NA LOVU" },
+  { key: "M2C COMMSCOPE", label: "M2C COMMSCOPE" },
 ];
 
 // Definice stavů zpracování

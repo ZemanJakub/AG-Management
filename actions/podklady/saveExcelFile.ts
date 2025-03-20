@@ -1,8 +1,13 @@
 // app/actions/avaris/saveExcelFile.ts
 'use server'
 
-import { writeFile, mkdir } from 'fs/promises';
+import { getFilePath, getFileUrl } from '@/modules/podklady/utils/excelUtils';
+import { createLogger } from '@/modules/podklady/services/logger';
+import { mkdir } from 'fs/promises';
 import path from 'path';
+import fs from 'fs/promises';
+
+const logger = createLogger('save-excel-file');
 
 type SaveResult = {
   success: boolean;
@@ -35,22 +40,22 @@ export async function saveExcelFile(formData: FormData): Promise<SaveResult> {
     await mkdir(downloadDir, { recursive: true });
 
     // Příprava cesty pro uložení souboru
-    const filePath = path.join(downloadDir, file.name);
+    const filePath = getFilePath('downloads', file.name);
     
     // Konverze File na ArrayBuffer a následně na Buffer
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
     
     // Zápis souboru do složky
-    await writeFile(filePath, buffer);
+    await fs.writeFile(filePath, buffer);
     
     return { 
       success: true, 
       fileName: file.name,
-      filePath: `/downloads/${file.name}` // Relativní cesta dostupná z front-endu
+      filePath: getFileUrl('downloads', file.name) // Relativní cesta dostupná z front-endu
     };
   } catch (error) {
-    console.error('Chyba při ukládání souboru:', error);
+    logger.error('Chyba při ukládání souboru:', error);
     return {
       success: false,
       error: 'Nastala chyba při ukládání souboru'

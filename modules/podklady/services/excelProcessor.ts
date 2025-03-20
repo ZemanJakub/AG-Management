@@ -1,6 +1,13 @@
 // modules/avaris/services/excelProcessor.ts
 import * as XLSX from 'xlsx';
-import { normalizeName, compareNames, levenshtein, excelDateToJsDate, excelTimeToJsDate, formatTime } from './nameCompareUtils';
+import { normalizeName, compareNames, levenshtein } from '@/modules/podklady/utils/nameCompareUtils';
+import { 
+  excelDateToJsDate, 
+  excelTimeToJsDate, 
+  formatTime, 
+  parseTimestamp,
+  createExcelTime
+} from '@/modules/podklady/utils/excelUtils';
 
 // Definice typů pro výsledky porovnání jmen
 interface NameComparisonResult {
@@ -9,6 +16,7 @@ interface NameComparisonResult {
   newName: string;
   matchType: 'exact' | 'safe' | 'none';
   rowIndex: number;
+  score?: number; 
 }
 
 // Definice typů pro statistiky porovnání jmen

@@ -5,7 +5,6 @@ import { ExcelProcessor } from '@/modules/podklady/services/excelProcessor';
 import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
 
-
 type ProcessResult = {
   success: boolean;
   error?: string;
@@ -42,7 +41,7 @@ export async function processExcelFile(formData: FormData): Promise<ProcessResul
     
     // Zpracování Excel souboru
     const processor = new ExcelProcessor(fileBuffer);
-    const outputBuffer = processor.processAll();
+    const outputBuffer = await processor.processAll(); // Přidáváme await
     
     // Získání reportu pro náhled
     const { nameReport, timeReport } = processor.getReport();
@@ -60,7 +59,7 @@ export async function processExcelFile(formData: FormData): Promise<ProcessResul
     const outputPath = path.join(processedDir, newFileName);
     
     // Uložení zpracovaného souboru
-    await writeFile(outputPath, Buffer.from(outputBuffer));
+    await writeFile(outputPath, Buffer.from(outputBuffer)); // Již máme await na processAll(), takže outputBuffer je již ArrayBuffer
     
     return { 
       success: true, 
@@ -94,7 +93,7 @@ export async function processNameComparison(formData: FormData): Promise<Process
 
     const fileBuffer = await file.arrayBuffer();
     const processor = new ExcelProcessor(fileBuffer);
-    const outputBuffer = processor.processNameComparison();
+    const outputBuffer = await processor.processNameComparison(); // Přidáváme await
     
     // Získání reportu pro náhled
     const { nameReport } = processor.getReport();
@@ -145,7 +144,7 @@ export async function processTimeUpdate(formData: FormData): Promise<ProcessResu
 
     const fileBuffer = await file.arrayBuffer();
     const processor = new ExcelProcessor(fileBuffer);
-    const outputBuffer = processor.processTimeUpdate();
+    const outputBuffer = await processor.processTimeUpdate(); // Přidáváme await
     
     // Získání reportu pro náhled
     const { timeReport } = processor.getReport();

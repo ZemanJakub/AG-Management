@@ -5955,3 +5955,1609 @@
 [2025-03-20T10:23:06.650Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d1_export_filtered.xlsx po 5 minutách 
 [2025-03-20T10:23:06.651Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 270 ST záznamů z celkových 939 
 [2025-03-20T10:28:06.660Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\m2c_lkq_cs_d1_export_filtered.xlsx byl smazán 
+[2025-03-20T15:42:46.524Z] [INFO] [advanced-excel-processing] Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: true 
+[2025-03-20T15:42:46.526Z] [INFO] [advanced-excel-processing] Používám testovací soubor: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-20T15:42:46.528Z] [INFO] [advanced-excel-processing] Zdrojový soubor existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-20T15:42:46.618Z] [INFO] [advanced-excel-processing] Soubor byl úspěšně načten, statistika: {"fileName":"Testovací tabulka.xlsx","fullPath":"C:\\Programování\\AG-Management\\public\\testsource\\Testovací tabulka.xlsx","hasList1":true,"hasList2":true,"worksheetCount":2,"worksheetNames":["List1","List2"]} 
+[2025-03-20T15:42:46.871Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru Testovací tabulka.xlsx s možnostmi: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-20T15:42:46.874Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\testsource\Testovací tabulka.xlsx 
+[2025-03-20T15:42:46.875Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: Testovací tabulka.xlsx 
+[2025-03-20T15:42:46.876Z] [INFO] [excel-utils] Načítám Excel soubor z Buffer 
+[2025-03-20T15:42:46.903Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-20T15:42:46.904Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-20T15:42:46.905Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-20T15:42:46.906Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Ďuricha Jozef 
+[2025-03-20T15:42:46.905Z] [INFO] [name-comparison-service] Načteno 51 jmen z List2 
+[2025-03-20T15:42:46.912Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Ďuricha Jozef 
+[2025-03-20T15:42:46.913Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: HERYČ 
+[2025-03-20T15:42:46.914Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jakš Libor 
+[2025-03-20T15:42:46.914Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Tomšů Michal 
+[2025-03-20T15:42:46.915Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Heryč Jiří 
+[2025-03-20T15:42:46.915Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Jakš Libor 
+[2025-03-20T15:42:46.916Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Tomšů Michal 
+[2025-03-20T15:42:46.916Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Shcherban Edvard 
+[2025-03-20T15:42:46.919Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Ďuricha Jozef 
+[2025-03-20T15:42:46.919Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Durich 
+[2025-03-20T15:42:46.920Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jakš Libor 
+[2025-03-20T15:42:46.920Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Heryč Jiří 
+[2025-03-20T15:42:46.921Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Tomšů Michal 
+[2025-03-20T15:42:46.921Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Shcherban Edvard 
+[2025-03-20T15:42:46.921Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Shcherban Edvard 
+[2025-03-20T15:42:46.922Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Tomšů Michal 
+[2025-03-20T15:42:46.922Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Jakš Libor 
+[2025-03-20T15:42:46.922Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Ďuricha Jozef 
+[2025-03-20T15:42:46.923Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ďuricha Jozef 
+[2025-03-20T15:42:46.923Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Heryč Jiří 
+[2025-03-20T15:42:46.923Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Ďuricha Jozef 
+[2025-03-20T15:42:46.924Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Tomšů Michal 
+[2025-03-20T15:42:46.924Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Shcherban Edvard 
+[2025-03-20T15:42:46.925Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Shcherban Edvard 
+[2025-03-20T15:42:46.926Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Duffek Dušan 
+[2025-03-20T15:42:46.925Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Tomšů Michal 
+[2025-03-20T15:42:46.925Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Heryč Jiří 
+[2025-03-20T15:42:46.927Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Duffek Dušan 
+[2025-03-20T15:42:46.927Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jakš Libor 
+[2025-03-20T15:42:46.928Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Tomšů Michal 
+[2025-03-20T15:42:46.928Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Jakš Libor 
+[2025-03-20T15:42:46.929Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Duffek Dušan 
+[2025-03-20T15:42:46.929Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Duffek Dušan 
+[2025-03-20T15:42:46.930Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Tomšů Michal 
+[2025-03-20T15:42:46.930Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jakš Libor 
+[2025-03-20T15:42:46.931Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 36, Přesných shod: 34, Bezpečných shod: 2, Nenalezených: 0 
+[2025-03-20T15:42:46.931Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=36, 
+                    Přesné=34, 
+                    Bezpečné=2, 
+                    Nenalezené=0 
+[2025-03-20T15:42:46.932Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-20T15:42:46.933Z] [INFO] [advanced-excel-processing] Extrahováno 36 směn a 64 čipovacích záznamů 
+[2025-03-20T15:42:46.933Z] [INFO] [advanced-excel-processing] Spouštím detekci navazujících směn 
+[2025-03-20T15:42:46.934Z] [INFO] [consecutive-shift-detector] Detekuji navazující směny podle logiky Excel makra 
+[2025-03-20T15:42:46.957Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ďuricha Jozef, první směna (řádek 5): 1. 2. 2025 08:30-20:30, druhá směna (řádek 6): 1. 2. 2025 20:30-07:30 
+[2025-03-20T15:42:46.958Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ďuricha Jozef, první směna (řádek 14): 8. 2. 2025 08:30-20:30, druhá směna (řádek 15): 8. 2. 2025 20:30-07:00 
+[2025-03-20T15:42:46.959Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ďuricha Jozef, první směna (řádek 23): 15. 2. 2025 07:30-20:30, druhá směna (řádek 24): 15. 2. 2025 20:30-07:00 
+[2025-03-20T15:42:46.962Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Duffek Dušan, první směna (řádek 32): 22. 2. 2025 07:30-20:30, druhá směna (řádek 33): 22. 2. 2025 20:30-06:30 
+[2025-03-20T15:42:46.961Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Jakš Libor, první směna (řádek 34): 23. 2. 2025 07:00-20:30, druhá směna (řádek 35): 23. 2. 2025 20:30-08:30 
+[2025-03-20T15:42:46.963Z] [INFO] [consecutive-shift-detector] Celkem nalezeno 5 párů navazujících směn (10 směn) 
+[2025-03-20T15:42:46.963Z] [INFO] [advanced-excel-processing] Detekováno 5 párů navazujících směn (10 směn) 
+[2025-03-20T15:42:46.967Z] [INFO] [advanced-excel-processing] Spouštím aktualizaci časů příchodů a odchodů 
+[2025-03-20T15:42:46.968Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ďuricha Jozef 
+[2025-03-20T15:42:46.969Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:30 (řádek 5) 
+[2025-03-20T15:42:46.970Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ďuricha Jozef 
+[2025-03-20T15:42:46.970Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:30 (řádek 6) 
+[2025-03-20T15:42:46.971Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:30 (řádek 14) 
+[2025-03-20T15:42:46.972Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:30 (řádek 15) 
+[2025-03-20T15:42:46.972Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ďuricha Jozef 
+[2025-03-20T15:42:46.973Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:30 (řádek 23) 
+[2025-03-20T15:42:46.973Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:30 (řádek 24) 
+[2025-03-20T15:42:46.974Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Jakš Libor 
+[2025-03-20T15:42:46.974Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:30 (řádek 34) 
+[2025-03-20T15:42:46.975Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:30 (řádek 35) 
+[2025-03-20T15:42:46.976Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Duffek Dušan 
+[2025-03-20T15:42:46.976Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:30 (řádek 32) 
+[2025-03-20T15:42:46.977Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:30 (řádek 33) 
+[2025-03-20T15:42:46.977Z] [INFO] [shift-time-processor] Začínám aktualizaci časů pro 36 směn, z toho 10 navazujících 
+[2025-03-20T15:42:46.979Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ďuricha Jozef (řádek 5): 1. 2. 2025 08:30-20:30 
+[2025-03-20T15:42:46.979Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ďuricha Jozef (řádek 5) 
+[2025-03-20T15:42:46.980Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ďuricha Jozef (řádek 6): 1. 2. 2025 20:30-07:30 
+[2025-03-20T15:42:46.980Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ďuricha Jozef (řádek 6) 
+[2025-03-20T15:42:46.981Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Heryč Jiří (řádek 7): 2. 2. 2025 07:30-20:30 
+[2025-03-20T15:42:46.981Z] [INFO] [shift-time-processor] Nenalezen příchod pro Heryč Jiří (řádek 7) 
+[2025-03-20T15:42:46.982Z] [INFO] [shift-time-processor] Nenalezen odchod pro Heryč Jiří (řádek 7) 
+[2025-03-20T15:42:46.982Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jakš Libor (řádek 8): 2. 2. 2025 20:30-08:30 
+[2025-03-20T15:42:46.983Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jakš Libor (řádek 8) 
+[2025-03-20T15:42:46.983Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jakš Libor (řádek 8) 
+[2025-03-20T15:42:46.984Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Tomšů Michal (řádek 9): 3. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:46.984Z] [INFO] [shift-time-processor] Nenalezen příchod pro Tomšů Michal (řádek 9) 
+[2025-03-20T15:42:46.985Z] [INFO] [shift-time-processor] Nalezen odchod pro Tomšů Michal (řádek 9): 07:31 (řádek List2: 11) 
+[2025-03-20T15:42:46.985Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jakš Libor (řádek 10): 4. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:46.986Z] [INFO] [shift-time-processor] Nalezen příchod pro Jakš Libor (řádek 10): 15:45 (řádek List2: 12) 
+[2025-03-20T15:42:46.986Z] [INFO] [shift-time-processor] Nalezen odchod pro Jakš Libor (řádek 10): 07:32 (řádek List2: 13) 
+[2025-03-20T15:42:46.987Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Heryč Jiří (řádek 11): 5. 2. 2025 19:30-08:30 
+[2025-03-20T15:42:46.988Z] [INFO] [shift-time-processor] Nalezen příchod pro Heryč Jiří (řádek 11): 18:18 (řádek List2: 14) 
+[2025-03-20T15:42:46.990Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Tomšů Michal (řádek 12): 6. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:46.989Z] [INFO] [shift-time-processor] Nalezen odchod pro Heryč Jiří (řádek 11): 07:29 (řádek List2: 15) 
+[2025-03-20T15:42:46.990Z] [INFO] [shift-time-processor] Nenalezen příchod pro Tomšů Michal (řádek 12) 
+[2025-03-20T15:42:46.991Z] [INFO] [shift-time-processor] Nalezen odchod pro Tomšů Michal (řádek 12): 07:30 (řádek List2: 16) 
+[2025-03-20T15:42:46.992Z] [INFO] [shift-time-processor] Nenalezen příchod pro Shcherban Edvard (řádek 13) 
+[2025-03-20T15:42:46.992Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Shcherban Edvard (řádek 13): 7. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:46.994Z] [INFO] [shift-time-processor] Nalezen odchod pro Shcherban Edvard (řádek 13): 07:36 (řádek List2: 20) 
+[2025-03-20T15:42:46.995Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ďuricha Jozef (řádek 14): 8. 2. 2025 08:30-20:30 
+[2025-03-20T15:42:46.996Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ďuricha Jozef (řádek 15): 8. 2. 2025 20:30-07:00 
+[2025-03-20T15:42:46.995Z] [INFO] [shift-time-processor] Nalezen příchod pro první navazující směnu Ďuricha Jozef (řádek 14): 07:30 (řádek List2: 19) 
+[2025-03-20T15:42:46.997Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ďuricha Jozef (řádek 15): 06:14 (řádek List2: 22) 
+[2025-03-20T15:42:46.998Z] [INFO] [shift-time-processor] Nalezen příchod pro Jakš Libor (řádek 16): 05:53 (řádek List2: 21) 
+[2025-03-20T15:42:46.998Z] [INFO] [shift-time-processor] Nalezen odchod pro Jakš Libor (řádek 16): 17:50 (řádek List2: 24) 
+[2025-03-20T15:42:47.000Z] [INFO] [shift-time-processor] Nalezen příchod pro Heryč Jiří (řádek 17): 17:33 (řádek List2: 23) 
+[2025-03-20T15:42:46.997Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jakš Libor (řádek 16): 9. 2. 2025 07:00-19:00 
+[2025-03-20T15:42:46.999Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Heryč Jiří (řádek 17): 9. 2. 2025 19:00-08:30 
+[2025-03-20T15:42:47.000Z] [INFO] [shift-time-processor] Nalezen odchod pro Heryč Jiří (řádek 17): 07:35 (řádek List2: 25) 
+[2025-03-20T15:42:47.001Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Tomšů Michal (řádek 18): 10. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.002Z] [INFO] [shift-time-processor] Nalezen příchod pro Tomšů Michal (řádek 18): 15:52 (řádek List2: 26) 
+[2025-03-20T15:42:47.002Z] [INFO] [shift-time-processor] Nalezen odchod pro Tomšů Michal (řádek 18): 07:30 (řádek List2: 27) 
+[2025-03-20T15:42:47.003Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Shcherban Edvard (řádek 19): 11. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.004Z] [INFO] [shift-time-processor] Nalezen příchod pro Shcherban Edvard (řádek 19): 15:35 (řádek List2: 28) 
+[2025-03-20T15:42:47.004Z] [INFO] [shift-time-processor] Nalezen odchod pro Shcherban Edvard (řádek 19): 07:30 (řádek List2: 29) 
+[2025-03-20T15:42:47.005Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Shcherban Edvard (řádek 20): 12. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.006Z] [INFO] [shift-time-processor] Nalezen odchod pro Shcherban Edvard (řádek 20): 07:33 (řádek List2: 32) 
+[2025-03-20T15:42:47.008Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Tomšů Michal (řádek 21): 13. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.005Z] [INFO] [shift-time-processor] Nalezen příchod pro Shcherban Edvard (řádek 20): 15:38 (řádek List2: 30) 
+[2025-03-20T15:42:47.009Z] [INFO] [shift-time-processor] Nalezen příchod pro Tomšů Michal (řádek 21): 15:51 (řádek List2: 33) 
+[2025-03-20T15:42:47.011Z] [INFO] [shift-time-processor] Nalezen odchod pro Tomšů Michal (řádek 21): 07:32 (řádek List2: 34) 
+[2025-03-20T15:42:47.012Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jakš Libor (řádek 22): 14. 2. 2025 17:00-07:30 
+[2025-03-20T15:42:47.013Z] [INFO] [shift-time-processor] Nalezen příchod pro Jakš Libor (řádek 22): 15:33 (řádek List2: 35) 
+[2025-03-20T15:42:47.014Z] [INFO] [shift-time-processor] Nalezen odchod pro Jakš Libor (řádek 22): 06:18 (řádek List2: 36) 
+[2025-03-20T15:42:47.015Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ďuricha Jozef (řádek 23): 15. 2. 2025 07:30-20:30 
+[2025-03-20T15:42:47.016Z] [INFO] [shift-time-processor] Nalezen příchod pro první navazující směnu Ďuricha Jozef (řádek 23): 06:35 (řádek List2: 37) 
+[2025-03-20T15:42:47.017Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ďuricha Jozef (řádek 24): 15. 2. 2025 20:30-07:00 
+[2025-03-20T15:42:47.017Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ďuricha Jozef (řádek 24): 05:57 (řádek List2: 39) 
+[2025-03-20T15:42:47.018Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Heryč Jiří (řádek 25): 16. 2. 2025 07:00-20:30 
+[2025-03-20T15:42:47.018Z] [INFO] [shift-time-processor] Nalezen příchod pro Heryč Jiří (řádek 25): 05:51 (řádek List2: 38) 
+[2025-03-20T15:42:47.019Z] [INFO] [shift-time-processor] Nalezen odchod pro Heryč Jiří (řádek 25): 16:47 (řádek List2: 40) 
+[2025-03-20T15:42:47.020Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ďuricha Jozef (řádek 26): 16. 2. 2025 20:30-08:30 
+[2025-03-20T15:42:47.020Z] [INFO] [shift-time-processor] Nalezen příchod pro Ďuricha Jozef (řádek 26): 16:47 (řádek List2: 41) 
+[2025-03-20T15:42:47.021Z] [INFO] [shift-time-processor] Nalezen odchod pro Ďuricha Jozef (řádek 26): 07:32 (řádek List2: 44) 
+[2025-03-20T15:42:47.022Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Tomšů Michal (řádek 27): 17. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.022Z] [INFO] [shift-time-processor] Nalezen příchod pro Tomšů Michal (řádek 27): 15:53 (řádek List2: 46) 
+[2025-03-20T15:42:47.023Z] [INFO] [shift-time-processor] Nalezen odchod pro Tomšů Michal (řádek 27): 07:30 (řádek List2: 47) 
+[2025-03-20T15:42:47.024Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Shcherban Edvard (řádek 28): 18. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.025Z] [INFO] [shift-time-processor] Nalezen příchod pro Shcherban Edvard (řádek 28): 15:44 (řádek List2: 48) 
+[2025-03-20T15:42:47.026Z] [INFO] [shift-time-processor] Nalezen odchod pro Shcherban Edvard (řádek 28): 07:31 (řádek List2: 49) 
+[2025-03-20T15:42:47.027Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Shcherban Edvard (řádek 29): 19. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.028Z] [INFO] [shift-time-processor] Nalezen příchod pro Shcherban Edvard (řádek 29): 15:32 (řádek List2: 50) 
+[2025-03-20T15:42:47.029Z] [INFO] [shift-time-processor] Nalezen odchod pro Shcherban Edvard (řádek 29): 07:31 (řádek List2: 51) 
+[2025-03-20T15:42:47.030Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Tomšů Michal (řádek 30): 20. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.031Z] [INFO] [shift-time-processor] Nalezen příchod pro Tomšů Michal (řádek 30): 15:51 (řádek List2: 52) 
+[2025-03-20T15:42:47.031Z] [INFO] [shift-time-processor] Nalezen odchod pro Tomšů Michal (řádek 30): 07:30 (řádek List2: 53) 
+[2025-03-20T15:42:47.032Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Heryč Jiří (řádek 31): 21. 2. 2025 18:00-07:30 
+[2025-03-20T15:42:47.032Z] [INFO] [shift-time-processor] Nalezen příchod pro Heryč Jiří (řádek 31): 16:53 (řádek List2: 55) 
+[2025-03-20T15:42:47.033Z] [INFO] [shift-time-processor] Nenalezen odchod pro Heryč Jiří (řádek 31) 
+[2025-03-20T15:42:47.033Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Duffek Dušan (řádek 32): 22. 2. 2025 07:30-20:30 
+[2025-03-20T15:42:47.034Z] [INFO] [shift-time-processor] Nalezen příchod pro první navazující směnu Duffek Dušan (řádek 32): 06:23 (řádek List2: 56) 
+[2025-03-20T15:42:47.034Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Duffek Dušan (řádek 33): 22. 2. 2025 20:30-06:30 
+[2025-03-20T15:42:47.035Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Duffek Dušan (řádek 33): 05:44 (řádek List2: 59) 
+[2025-03-20T15:42:47.035Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Jakš Libor (řádek 34): 23. 2. 2025 07:00-20:30 
+[2025-03-20T15:42:47.036Z] [INFO] [shift-time-processor] Nalezen příchod pro první navazující směnu Jakš Libor (řádek 34): 05:46 (řádek List2: 60) 
+[2025-03-20T15:42:47.036Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Jakš Libor (řádek 35): 23. 2. 2025 20:30-08:30 
+[2025-03-20T15:42:47.037Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Tomšů Michal (řádek 36): 24. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.037Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Jakš Libor (řádek 35): 07:30 (řádek List2: 61) 
+[2025-03-20T15:42:47.038Z] [INFO] [shift-time-processor] Nalezen příchod pro Tomšů Michal (řádek 36): 15:55 (řádek List2: 62) 
+[2025-03-20T15:42:47.039Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Duffek Dušan (řádek 37): 25. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.038Z] [INFO] [shift-time-processor] Nalezen odchod pro Tomšů Michal (řádek 36): 07:29 (řádek List2: 63) 
+[2025-03-20T15:42:47.040Z] [INFO] [shift-time-processor] Nalezen příchod pro Duffek Dušan (řádek 37): 15:46 (řádek List2: 64) 
+[2025-03-20T15:42:47.040Z] [INFO] [shift-time-processor] Nalezen odchod pro Duffek Dušan (řádek 37): 07:18 (řádek List2: 65) 
+[2025-03-20T15:42:47.041Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Duffek Dušan (řádek 38): 26. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.043Z] [INFO] [shift-time-processor] Nalezen odchod pro Duffek Dušan (řádek 38): 07:25 (řádek List2: 68) 
+[2025-03-20T15:42:47.042Z] [INFO] [shift-time-processor] Nalezen příchod pro Duffek Dušan (řádek 38): 15:45 (řádek List2: 67) 
+[2025-03-20T15:42:47.045Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Tomšů Michal (řádek 39): 27. 2. 2025 17:00-08:30 
+[2025-03-20T15:42:47.047Z] [INFO] [shift-time-processor] Nalezen odchod pro Tomšů Michal (řádek 39): 07:29 (řádek List2: 71) 
+[2025-03-20T15:42:47.046Z] [INFO] [shift-time-processor] Nalezen příchod pro Tomšů Michal (řádek 39): 15:57 (řádek List2: 69) 
+[2025-03-20T15:42:47.048Z] [INFO] [shift-time-processor] Nalezen příchod pro Jakš Libor (řádek 40): 15:53 (řádek List2: 72) 
+[2025-03-20T15:42:47.048Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jakš Libor (řádek 40): 28. 2. 2025 17:00-08:00 
+[2025-03-20T15:42:47.049Z] [INFO] [shift-time-processor] Celkem aktualizováno 32 směn, nalezeno 25 příchodů a 26 odchodů 
+[2025-03-20T15:42:47.049Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jakš Libor (řádek 40) 
+[2025-03-20T15:42:47.049Z] [INFO] [shift-time-processor] Mapa usedRowsStart obsahuje 25 položek, usedRowsEnd obsahuje 26 položek 
+[2025-03-20T15:42:47.050Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 10 -> List2 řádek 12 
+[2025-03-20T15:42:47.050Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 11 -> List2 řádek 14 
+[2025-03-20T15:42:47.051Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 14 -> List2 řádek 19 
+[2025-03-20T15:42:47.051Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 16 -> List2 řádek 21 
+[2025-03-20T15:42:47.051Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 17 -> List2 řádek 23 
+[2025-03-20T15:42:47.051Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 18 -> List2 řádek 26 
+[2025-03-20T15:42:47.052Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 20 -> List2 řádek 30 
+[2025-03-20T15:42:47.052Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 19 -> List2 řádek 28 
+[2025-03-20T15:42:47.052Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 21 -> List2 řádek 33 
+[2025-03-20T15:42:47.052Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 22 -> List2 řádek 35 
+[2025-03-20T15:42:47.053Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 23 -> List2 řádek 37 
+[2025-03-20T15:42:47.053Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 25 -> List2 řádek 38 
+[2025-03-20T15:42:47.053Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 26 -> List2 řádek 41 
+[2025-03-20T15:42:47.053Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 27 -> List2 řádek 46 
+[2025-03-20T15:42:47.054Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 30 -> List2 řádek 52 
+[2025-03-20T15:42:47.054Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 28 -> List2 řádek 48 
+[2025-03-20T15:42:47.054Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 29 -> List2 řádek 50 
+[2025-03-20T15:42:47.055Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 31 -> List2 řádek 55 
+[2025-03-20T15:42:47.055Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 32 -> List2 řádek 56 
+[2025-03-20T15:42:47.055Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 34 -> List2 řádek 60 
+[2025-03-20T15:42:47.056Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 37 -> List2 řádek 64 
+[2025-03-20T15:42:47.056Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 36 -> List2 řádek 62 
+[2025-03-20T15:42:47.056Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 38 -> List2 řádek 67 
+[2025-03-20T15:42:47.057Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 39 -> List2 řádek 69 
+[2025-03-20T15:42:47.057Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 40 -> List2 řádek 72 
+[2025-03-20T15:42:47.058Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 9 -> List2 řádek 11 
+[2025-03-20T15:42:47.058Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 10 -> List2 řádek 13 
+[2025-03-20T15:42:47.059Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 11 -> List2 řádek 15 
+[2025-03-20T15:42:47.059Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 12 -> List2 řádek 16 
+[2025-03-20T15:42:47.059Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 13 -> List2 řádek 20 
+[2025-03-20T15:42:47.060Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 15 -> List2 řádek 22 
+[2025-03-20T15:42:47.060Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 17 -> List2 řádek 25 
+[2025-03-20T15:42:47.060Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 16 -> List2 řádek 24 
+[2025-03-20T15:42:47.061Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 18 -> List2 řádek 27 
+[2025-03-20T15:42:47.061Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 19 -> List2 řádek 29 
+[2025-03-20T15:42:47.062Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 21 -> List2 řádek 34 
+[2025-03-20T15:42:47.062Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 22 -> List2 řádek 36 
+[2025-03-20T15:42:47.061Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 20 -> List2 řádek 32 
+[2025-03-20T15:42:47.062Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 24 -> List2 řádek 39 
+[2025-03-20T15:42:47.063Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 25 -> List2 řádek 40 
+[2025-03-20T15:42:47.063Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 26 -> List2 řádek 44 
+[2025-03-20T15:42:47.063Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 27 -> List2 řádek 47 
+[2025-03-20T15:42:47.064Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 28 -> List2 řádek 49 
+[2025-03-20T15:42:47.064Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 29 -> List2 řádek 51 
+[2025-03-20T15:42:47.064Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 30 -> List2 řádek 53 
+[2025-03-20T15:42:47.065Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 35 -> List2 řádek 61 
+[2025-03-20T15:42:47.065Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 33 -> List2 řádek 59 
+[2025-03-20T15:42:47.065Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 36 -> List2 řádek 63 
+[2025-03-20T15:42:47.065Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 37 -> List2 řádek 65 
+[2025-03-20T15:42:47.066Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 38 -> List2 řádek 68 
+[2025-03-20T15:42:47.066Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 39 -> List2 řádek 71 
+[2025-03-20T15:42:47.067Z] [INFO] [advanced-excel-processing] Aktualizováno 32 směn, nalezeno 25 příchodů a 26 odchodů 
+[2025-03-20T15:42:47.067Z] [INFO] [advanced-excel-processing] Mapa usedRowsStart obsahuje 25 položek 
+[2025-03-20T15:42:47.068Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 10 -> List2 řádek 12 
+[2025-03-20T15:42:47.067Z] [INFO] [advanced-excel-processing] Mapa usedRowsEnd obsahuje 26 položek 
+[2025-03-20T15:42:47.068Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 14 -> List2 řádek 19 
+[2025-03-20T15:42:47.068Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 11 -> List2 řádek 14 
+[2025-03-20T15:42:47.068Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 16 -> List2 řádek 21 
+[2025-03-20T15:42:47.069Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 17 -> List2 řádek 23 
+[2025-03-20T15:42:47.069Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 18 -> List2 řádek 26 
+[2025-03-20T15:42:47.070Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 19 -> List2 řádek 28 
+[2025-03-20T15:42:47.070Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 20 -> List2 řádek 30 
+[2025-03-20T15:42:47.070Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 21 -> List2 řádek 33 
+[2025-03-20T15:42:47.070Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 22 -> List2 řádek 35 
+[2025-03-20T15:42:47.071Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 23 -> List2 řádek 37 
+[2025-03-20T15:42:47.071Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 25 -> List2 řádek 38 
+[2025-03-20T15:42:47.071Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 26 -> List2 řádek 41 
+[2025-03-20T15:42:47.072Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 27 -> List2 řádek 46 
+[2025-03-20T15:42:47.072Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 28 -> List2 řádek 48 
+[2025-03-20T15:42:47.072Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 29 -> List2 řádek 50 
+[2025-03-20T15:42:47.072Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 30 -> List2 řádek 52 
+[2025-03-20T15:42:47.073Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 31 -> List2 řádek 55 
+[2025-03-20T15:42:47.073Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 32 -> List2 řádek 56 
+[2025-03-20T15:42:47.073Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 34 -> List2 řádek 60 
+[2025-03-20T15:42:47.074Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 36 -> List2 řádek 62 
+[2025-03-20T15:42:47.074Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 37 -> List2 řádek 64 
+[2025-03-20T15:42:47.074Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 38 -> List2 řádek 67 
+[2025-03-20T15:42:47.074Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 39 -> List2 řádek 69 
+[2025-03-20T15:42:47.075Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 40 -> List2 řádek 72 
+[2025-03-20T15:42:47.077Z] [INFO] [excel-data-extractor] updateExcelWorkbook: počet směn: 36, z toho s actualStart: 30, s actualEnd: 31 
+[2025-03-20T15:42:47.080Z] [INFO] [excel-data-extractor] Obarvování buněk v List2 bylo deaktivováno. 
+[2025-03-20T15:42:47.077Z] [INFO] [excel-data-extractor] timeUpdateResult: usedRowsStart: 25, usedRowsEnd: 26 
+[2025-03-20T15:42:47.236Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\Testovací tabulka_zpracovano_2025-03-20T15-42-47-080Z.xlsx 
+[2025-03-20T15:44:16.142Z] [INFO] [avaris-excel-action] Zpracovávám požadavek na integraci Avaris dat do Excel souboru 
+[2025-03-20T15:44:16.143Z] [INFO] [avaris-excel-action] Možnosti zpracování: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-20T15:44:16.145Z] [INFO] [avaris-excel-action] Nahraný soubor: TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:44:16.144Z] [INFO] [avaris-excel-action] Zvolené objekty: TOP HOTEL 
+[2025-03-20T15:44:16.144Z] [INFO] [avaris-excel-action] Zpracování pro období od 01.03.2025 do 21.03.2025 
+[2025-03-20T15:44:16.150Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-20T15:44:16.147Z] [INFO] [avaris-excel-action] Spouštím captureAvarisData pro objekty: TOP HOTEL 
+[2025-03-20T15:44:24.414Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-20T15:44:27.630Z] [INFO] [scraper] Cookies vypršely, přihlašuji se znovu 
+[2025-03-20T15:44:31.922Z] [INFO] [scraper] Přihlášení úspěšné, nová URL: ["https://portal.avaris.cz/index.php"]
+[2025-03-20T15:44:31.923Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-20T15:44:31.923Z] [INFO] [scraper] Zpracovávám objekt: TOP HOTEL 
+[2025-03-20T15:44:35.766Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-20T15:44:35.765Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-20T15:44:35.791Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-20T15:44:36.151Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-20T15:44:36.665Z] [INFO] [scraper] Hledám checkbox pro objekt "TOP HOTEL" 
+[2025-03-20T15:44:36.681Z] [INFO] [scraper] Nalezen label s for="tr-snimac3474" 
+[2025-03-20T15:44:36.718Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-20T15:44:36.718Z] [INFO] [scraper] Checkbox #tr-snimac3474 byl zaškrtnut 
+[2025-03-20T15:44:37.779Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-20T15:44:37.778Z] [INFO] [scraper] Objekt "TOP HOTEL" byl úspěšně přidán do tabulky 
+[2025-03-20T15:44:45.170Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-20T15:44:45.290Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-20T15:44:45.290Z] [INFO] [scraper] Nastavuji typ období na "Interval" a požadované sloupce pro výpis 
+[2025-03-20T15:44:45.291Z] [INFO] [scraper] Nastavuji období na "Interval" 
+[2025-03-20T15:44:45.357Z] [INFO] [scraper] Radio button pro "Interval" byl zaškrtnut 
+[2025-03-20T15:44:45.665Z] [INFO] [scraper] Začínám nastavovat sloupce pro výpis 
+[2025-03-20T15:44:45.691Z] [INFO] [scraper] Nalezeno 6 checkboxů pro sloupce 
+[2025-03-20T15:44:45.753Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:44:45.800Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:44:45.846Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:44:45.899Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:44:45.943Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 1 
+[2025-03-20T15:44:45.978Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 3 
+[2025-03-20T15:44:46.029Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 4 
+[2025-03-20T15:44:46.082Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 8 
+[2025-03-20T15:44:46.096Z] [INFO] [scraper] Všechny požadované sloupce byly úspěšně zaškrtnuty 
+[2025-03-20T15:44:46.096Z] [INFO] [scraper] Nastavuji datumové rozmezí: 01.03.2025 - 21.03.2025 
+[2025-03-20T15:44:46.167Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-20T15:44:46.168Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-20T15:44:46.232Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-20T15:44:48.892Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-20T15:44:49.175Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-20T15:44:51.961Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-20T15:44:52.107Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\top_hotel_export.csv 
+[2025-03-20T15:44:52.111Z] [INFO] [scraper] Dokončeno zpracování objektu: TOP HOTEL 
+[2025-03-20T15:44:52.117Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-20T15:44:52.186Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-20T15:44:52.186Z] [INFO] [avaris-excel-action] Úspěšně staženo 1 souborů: TOP HOTEL 
+[2025-03-20T15:44:52.186Z] [INFO] [avaris-excel-action] Zpracovávám data pro objekt TOP HOTEL z /downloads/top_hotel_export.csv 
+[2025-03-20T15:44:52.187Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/top_hotel_export.csv 
+[2025-03-20T15:44:52.187Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\top_hotel_export.csv 
+[2025-03-20T15:44:52.199Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 2565 
+[2025-03-20T15:44:52.206Z] [INFO] [csv-processor] Zpracováno 2557 záznamů, z toho 75 ST a 2482 ne-ST 
+[2025-03-20T15:44:52.208Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx 
+[2025-03-20T15:44:52.225Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX s konzistentní strukturou 
+[2025-03-20T15:44:52.226Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx po 5 minutách 
+[2025-03-20T15:44:52.228Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 75 ST záznamů z celkových 2557 
+[2025-03-20T15:44:52.228Z] [INFO] [avaris-excel-action] Objekt TOP HOTEL zpracován úspěšně, počet záznamů: 75 
+[2025-03-20T15:44:52.229Z] [INFO] [avaris-excel-action] Celkem získáno 75 záznamů ze všech objektů 
+[2025-03-20T15:44:52.230Z] [INFO] [enhanced-sheet-processor] Zpracovávám Excel soubor TOP Hotel 3-2025.xlsx pro přidání dat z Avarisu 
+[2025-03-20T15:44:52.231Z] [INFO] [enhanced-sheet-processor] Cílový soubor existuje: C:\Programování\AG-Management\public\downloads\TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:44:52.283Z] [INFO] [enhanced-sheet-processor] List2 existuje, obsahuje 47 řádků, poslední časový údaj: Tue Mar 11 2025 18:56:22 GMT+0100 (středoevropský standardní čas) 
+[2025-03-20T15:44:52.284Z] [INFO] [enhanced-sheet-processor] Filtrováno 32 nových záznamů z celkových 75 
+[2025-03-20T15:44:52.285Z] [INFO] [enhanced-sheet-processor] Ukládám změny do souboru: C:\Programování\AG-Management\public\downloads\TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:44:52.336Z] [INFO] [avaris-excel-action] Spouštím pokročilé zpracování pro soubor TOP Hotel 3-2025.xlsx s možnostmi: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-20T15:44:52.337Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru TOP Hotel 3-2025.xlsx s možnostmi: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-20T15:44:52.337Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\downloads\TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:44:52.339Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:44:52.339Z] [INFO] [excel-utils] Načítám Excel soubor z Buffer 
+[2025-03-20T15:44:52.368Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-20T15:44:52.369Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-20T15:44:52.369Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-20T15:44:52.370Z] [INFO] [name-comparison-service] Načteno 51 jmen z List2 
+[2025-03-20T15:44:52.370Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: Sedmík Václav 
+[2025-03-20T15:44:52.370Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Jelínek Filip 
+[2025-03-20T15:44:52.371Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: Sedmík Václav 
+[2025-03-20T15:44:52.371Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jelínek Filip 
+[2025-03-20T15:44:52.372Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Ouerghi Houssem 
+[2025-03-20T15:44:52.372Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Bartůněk Stanislav 
+[2025-03-20T15:44:52.371Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Ouerghi Houssem 
+[2025-03-20T15:44:52.373Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Bartůněk Stanislav 
+[2025-03-20T15:44:52.373Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Jelínek Filip 
+[2025-03-20T15:44:52.373Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Klim Rudolf 
+[2025-03-20T15:44:52.372Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Jelínek Filip 
+[2025-03-20T15:44:52.374Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Ouerghi Houssem 
+[2025-03-20T15:44:52.374Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Ouerghi Houssem 
+[2025-03-20T15:44:52.375Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Klim Rudolf 
+[2025-03-20T15:44:52.373Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jelínek Filip 
+[2025-03-20T15:44:52.375Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Sedmík Václav 
+[2025-03-20T15:44:52.375Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Ouerghi Houssem 
+[2025-03-20T15:44:52.376Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Sedmík Václav 
+[2025-03-20T15:44:52.377Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Jelínek Filip 
+[2025-03-20T15:44:52.374Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Jelínek Filip 
+[2025-03-20T15:44:52.376Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ouerghi Houssem 
+[2025-03-20T15:44:52.377Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Klim Rudolf 
+[2025-03-20T15:44:52.377Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Jelínek Filip 
+[2025-03-20T15:44:52.377Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Klim Rudolf 
+[2025-03-20T15:44:52.378Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Jelínek Filip 
+[2025-03-20T15:44:52.378Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Ouerghi Houssem 
+[2025-03-20T15:44:52.376Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Klim Rudolf 
+[2025-03-20T15:44:52.378Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Ouerghi Houssem 
+[2025-03-20T15:44:52.378Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Klim Rudolf 
+[2025-03-20T15:44:52.379Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jelínek Filip 
+[2025-03-20T15:44:52.380Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Ouerghi Houssem 
+[2025-03-20T15:44:52.379Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Klim Rudolf 
+[2025-03-20T15:44:52.381Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Ouerghi Houssem 
+[2025-03-20T15:44:52.381Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jelínek Filip 
+[2025-03-20T15:44:52.380Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Sedmík Václav 
+[2025-03-20T15:44:52.381Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Sedmík Václav 
+[2025-03-20T15:44:52.381Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 41: Klim Rudolf 
+[2025-03-20T15:44:52.382Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 44: Jelínek Filip 
+[2025-03-20T15:44:52.383Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 45: Ouerghi Houssem 
+[2025-03-20T15:44:52.383Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 46: Ouerghi Houssem 
+[2025-03-20T15:44:52.382Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 43: Klim Rudolf 
+[2025-03-20T15:44:52.383Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 47: Klim Rudolf 
+[2025-03-20T15:44:52.382Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 42: Jelínek Filip 
+[2025-03-20T15:44:52.384Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 49: Klim Rudolf 
+[2025-03-20T15:44:52.384Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 50: Jelínek Filip 
+[2025-03-20T15:44:52.384Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 51: Ouerghi Houssem 
+[2025-03-20T15:44:52.385Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 53: Sedmík Václav 
+[2025-03-20T15:44:52.384Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 52: Ouerghi Houssem 
+[2025-03-20T15:44:52.385Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 55: Sedmík Václav 
+[2025-03-20T15:44:52.385Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 51, Přesných shod: 51, Bezpečných shod: 0, Nenalezených: 0 
+[2025-03-20T15:44:52.386Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=51, 
+                    Přesné=51, 
+                    Bezpečné=0, 
+                    Nenalezené=0 
+[2025-03-20T15:44:52.383Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 48: Jelínek Filip 
+[2025-03-20T15:44:52.386Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-20T15:44:52.385Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 54: Jelínek Filip 
+[2025-03-20T15:44:52.388Z] [INFO] [consecutive-shift-detector] Detekuji navazující směny podle logiky Excel makra 
+[2025-03-20T15:44:52.389Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 9): 3. 3. 2025 08:00-20:00, druhá směna (řádek 10): 3. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.388Z] [INFO] [advanced-excel-processing] Extrahováno 60 směn a 75 čipovacích záznamů 
+[2025-03-20T15:44:52.391Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 31): 14. 3. 2025 08:00-20:00, druhá směna (řádek 32): 14. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.388Z] [INFO] [advanced-excel-processing] Spouštím detekci navazujících směn 
+[2025-03-20T15:44:52.392Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 45): 21. 3. 2025 08:00-20:00, druhá směna (řádek 46): 21. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.393Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 51): 24. 3. 2025 08:00-20:00, druhá směna (řádek 52): 24. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.393Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 59): 28. 3. 2025 08:00-20:00, druhá směna (řádek 60): 28. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.394Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 65): 31. 3. 2025 08:00-20:00, druhá směna (řádek 66): 31. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.394Z] [INFO] [consecutive-shift-detector] Celkem nalezeno 7 párů navazujících směn (14 směn) 
+[2025-03-20T15:44:52.390Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 17): 7. 3. 2025 08:00-20:00, druhá směna (řádek 18): 7. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.394Z] [INFO] [advanced-excel-processing] Detekováno 7 párů navazujících směn (14 směn) 
+[2025-03-20T15:44:52.399Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 9) 
+[2025-03-20T15:44:52.398Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:44:52.398Z] [INFO] [advanced-excel-processing] Spouštím aktualizaci časů příchodů a odchodů 
+[2025-03-20T15:44:52.399Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 10) 
+[2025-03-20T15:44:52.400Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:44:52.400Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 17) 
+[2025-03-20T15:44:52.401Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:44:52.402Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 32) 
+[2025-03-20T15:44:52.401Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 31) 
+[2025-03-20T15:44:52.402Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:44:52.401Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 18) 
+[2025-03-20T15:44:52.403Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:44:52.402Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 45) 
+[2025-03-20T15:44:52.404Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:44:52.404Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 52) 
+[2025-03-20T15:44:52.403Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 46) 
+[2025-03-20T15:44:52.405Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 59) 
+[2025-03-20T15:44:52.403Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 51) 
+[2025-03-20T15:44:52.405Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 60) 
+[2025-03-20T15:44:52.406Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 65) 
+[2025-03-20T15:44:52.405Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:44:52.406Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 66) 
+[2025-03-20T15:44:52.406Z] [INFO] [shift-time-processor] Začínám aktualizaci časů pro 60 směn, z toho 14 navazujících 
+[2025-03-20T15:44:52.407Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 5): 1. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.408Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 5): 18:48 (řádek List2: 9) 
+[2025-03-20T15:44:52.407Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 5): 06:51 (řádek List2: 6) 
+[2025-03-20T15:44:52.409Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 6): 1. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.409Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 6): 18:43 (řádek List2: 8) 
+[2025-03-20T15:44:52.415Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 7): 07:10 (řádek List2: 10) 
+[2025-03-20T15:44:52.410Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 7): 2. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.416Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 7): 18:46 (řádek List2: 13) 
+[2025-03-20T15:44:52.410Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 6): 07:11 (řádek List2: 11) 
+[2025-03-20T15:44:52.417Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 8): 2. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.418Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 8): 06:47 (řádek List2: 14) 
+[2025-03-20T15:44:52.418Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 8): 18:46 (řádek List2: 12) 
+[2025-03-20T15:44:52.419Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 9): 3. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.420Z] [INFO] [shift-time-processor] Nalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 9): 06:59 (řádek List2: 15) 
+[2025-03-20T15:44:52.421Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 10): 3. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.421Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 10): 06:30 (řádek List2: 17) 
+[2025-03-20T15:44:52.422Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Bartůněk Stanislav (řádek 11): 4. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.423Z] [INFO] [shift-time-processor] Nalezen příchod pro Bartůněk Stanislav (řádek 11): 06:28 (řádek List2: 16) 
+[2025-03-20T15:44:52.423Z] [INFO] [shift-time-processor] Nenalezen odchod pro Bartůněk Stanislav (řádek 11) 
+[2025-03-20T15:44:52.424Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 12): 4. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.425Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 12): 18:30 (řádek List2: 18) 
+[2025-03-20T15:44:52.425Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 12): 06:38 (řádek List2: 19) 
+[2025-03-20T15:44:52.426Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Bartůněk Stanislav (řádek 13): 5. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.428Z] [INFO] [shift-time-processor] Nalezen odchod pro Bartůněk Stanislav (řádek 13): 18:19 (řádek List2: 25) 
+[2025-03-20T15:44:52.427Z] [INFO] [shift-time-processor] Nalezen příchod pro Bartůněk Stanislav (řádek 13): 06:38 (řádek List2: 20) 
+[2025-03-20T15:44:52.430Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 14): 18:19 (řádek List2: 24) 
+[2025-03-20T15:44:52.429Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 14): 5. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.430Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 14): 06:20 (řádek List2: 26) 
+[2025-03-20T15:44:52.431Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 15): 6. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.432Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 15): 06:37 (řádek List2: 27) 
+[2025-03-20T15:44:52.433Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 15): 18:57 (řádek List2: 29) 
+[2025-03-20T15:44:52.434Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 16): 6. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.434Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 16): 18:31 (řádek List2: 28) 
+[2025-03-20T15:44:52.435Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 16): 06:57 (řádek List2: 30) 
+[2025-03-20T15:44:52.436Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 17): 7. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.437Z] [INFO] [shift-time-processor] Nalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 17): 06:59 (řádek List2: 31) 
+[2025-03-20T15:44:52.438Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 18): 7. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.439Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 18): 06:21 (řádek List2: 33) 
+[2025-03-20T15:44:52.440Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 19): 8. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.441Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 19): 06:19 (řádek List2: 32) 
+[2025-03-20T15:44:52.442Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 19): 18:40 (řádek List2: 34) 
+[2025-03-20T15:44:52.443Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 20): 8. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.444Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 20): 18:41 (řádek List2: 35) 
+[2025-03-20T15:44:52.445Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 20): 06:52 (řádek List2: 37) 
+[2025-03-20T15:44:52.446Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 21): 9. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.447Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 21): 06:51 (řádek List2: 36) 
+[2025-03-20T15:44:52.448Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 21): 18:58 (řádek List2: 39) 
+[2025-03-20T15:44:52.449Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 22): 9. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.451Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 22): 18:58 (řádek List2: 38) 
+[2025-03-20T15:44:52.452Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 22): 06:47 (řádek List2: 41) 
+[2025-03-20T15:44:52.453Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 23): 10. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.454Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 23): 06:46 (řádek List2: 40) 
+[2025-03-20T15:44:52.455Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 23): 18:51 (řádek List2: 43) 
+[2025-03-20T15:44:52.457Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 24): 10. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.458Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 24): 18:51 (řádek List2: 44) 
+[2025-03-20T15:44:52.459Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 24): 06:26 (řádek List2: 46) 
+[2025-03-20T15:44:52.461Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 25): 06:26 (řádek List2: 45) 
+[2025-03-20T15:44:52.460Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 25): 11. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.461Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 25): 18:56 (řádek List2: 48) 
+[2025-03-20T15:44:52.462Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 26): 11. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.463Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 26): 18:41 (řádek List2: 47) 
+[2025-03-20T15:44:52.463Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 26): 06:27 (řádek List2: 49) 
+[2025-03-20T15:44:52.465Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 27): 12. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.466Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 27): 06:27 (řádek List2: 50) 
+[2025-03-20T15:44:52.467Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 27): 18:42 (řádek List2: 52) 
+[2025-03-20T15:44:52.467Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 28): 12. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.468Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 28): 18:42 (řádek List2: 51) 
+[2025-03-20T15:44:52.468Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 28): 06:29 (řádek List2: 54) 
+[2025-03-20T15:44:52.469Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 29): 13. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.471Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 29): 06:28 (řádek List2: 53) 
+[2025-03-20T15:44:52.472Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 29): 18:42 (řádek List2: 56) 
+[2025-03-20T15:44:52.473Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 30): 13. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.473Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 30): 18:23 (řádek List2: 55) 
+[2025-03-20T15:44:52.474Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 30): 06:39 (řádek List2: 57) 
+[2025-03-20T15:44:52.475Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 31): 14. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.476Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 31) 
+[2025-03-20T15:44:52.477Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 32): 14. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.477Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 32): 06:30 (řádek List2: 59) 
+[2025-03-20T15:44:52.479Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 33): 15. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.480Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 33): 06:28 (řádek List2: 58) 
+[2025-03-20T15:44:52.481Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 33): 18:34 (řádek List2: 61) 
+[2025-03-20T15:44:52.482Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 34): 15. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.483Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 34): 18:34 (řádek List2: 62) 
+[2025-03-20T15:44:52.484Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 34): 06:28 (řádek List2: 64) 
+[2025-03-20T15:44:52.485Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 35): 16. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.486Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 35): 06:28 (řádek List2: 63) 
+[2025-03-20T15:44:52.487Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 35): 19:02 (řádek List2: 66) 
+[2025-03-20T15:44:52.488Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 36): 16. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.489Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 36): 18:59 (řádek List2: 65) 
+[2025-03-20T15:44:52.490Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 36): 06:46 (řádek List2: 68) 
+[2025-03-20T15:44:52.491Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 37): 17. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.493Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 37): 18:51 (řádek List2: 70) 
+[2025-03-20T15:44:52.492Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 37): 06:46 (řádek List2: 67) 
+[2025-03-20T15:44:52.494Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 38): 17. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.495Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 38): 18:49 (řádek List2: 69) 
+[2025-03-20T15:44:52.496Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 38): 06:41 (řádek List2: 72) 
+[2025-03-20T15:44:52.498Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 39): 18. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.498Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 39): 06:40 (řádek List2: 71) 
+[2025-03-20T15:44:52.501Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 40): 18. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.501Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 40): 18:42 (řádek List2: 73) 
+[2025-03-20T15:44:52.499Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 39): 18:46 (řádek List2: 74) 
+[2025-03-20T15:44:52.503Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 41): 19. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.502Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 40): 06:10 (řádek List2: 76) 
+[2025-03-20T15:44:52.504Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 41): 06:10 (řádek List2: 75) 
+[2025-03-20T15:44:52.505Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 41): 18:39 (řádek List2: 78) 
+[2025-03-20T15:44:52.506Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 42): 19. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.507Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 42): 06:20 (řádek List2: 79) 
+[2025-03-20T15:44:52.506Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 42): 18:38 (řádek List2: 77) 
+[2025-03-20T15:44:52.508Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 43): 20. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.508Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 43): 06:21 (řádek List2: 80) 
+[2025-03-20T15:44:52.509Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 43) 
+[2025-03-20T15:44:52.511Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 44) 
+[2025-03-20T15:44:52.510Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 44): 20. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.511Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 44) 
+[2025-03-20T15:44:52.512Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 45): 21. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.513Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 45) 
+[2025-03-20T15:44:52.515Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 47): 22. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.514Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 46) 
+[2025-03-20T15:44:52.514Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 46): 21. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.515Z] [INFO] [shift-time-processor] Nenalezen příchod pro Klim Rudolf (řádek 47) 
+[2025-03-20T15:44:52.516Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 47) 
+[2025-03-20T15:44:52.517Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 48): 22. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.517Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 48) 
+[2025-03-20T15:44:52.517Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 48) 
+[2025-03-20T15:44:52.518Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 49): 23. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.519Z] [INFO] [shift-time-processor] Nenalezen příchod pro Klim Rudolf (řádek 49) 
+[2025-03-20T15:44:52.519Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 49) 
+[2025-03-20T15:44:52.520Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 50): 23. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.521Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 50) 
+[2025-03-20T15:44:52.521Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 50) 
+[2025-03-20T15:44:52.522Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 51): 24. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.522Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 51) 
+[2025-03-20T15:44:52.523Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 52) 
+[2025-03-20T15:44:52.523Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 52): 24. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.524Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 53): 25. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.525Z] [INFO] [shift-time-processor] Nenalezen příchod pro Sedmík Václav (řádek 53) 
+[2025-03-20T15:44:52.525Z] [INFO] [shift-time-processor] Nenalezen odchod pro Sedmík Václav (řádek 53) 
+[2025-03-20T15:44:52.526Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 54): 25. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.526Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 54) 
+[2025-03-20T15:44:52.527Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 54) 
+[2025-03-20T15:44:52.528Z] [INFO] [shift-time-processor] Nenalezen příchod pro Sedmík Václav (řádek 55) 
+[2025-03-20T15:44:52.530Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 56): 26. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.528Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 55): 26. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.529Z] [INFO] [shift-time-processor] Nenalezen odchod pro Sedmík Václav (řádek 55) 
+[2025-03-20T15:44:52.531Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 56) 
+[2025-03-20T15:44:52.532Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 57): 27. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.532Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 56) 
+[2025-03-20T15:44:52.533Z] [INFO] [shift-time-processor] Nenalezen příchod pro Klim Rudolf (řádek 57) 
+[2025-03-20T15:44:52.534Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 57) 
+[2025-03-20T15:44:52.535Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 58) 
+[2025-03-20T15:44:52.534Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 58): 27. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.536Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 59): 28. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.537Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 60): 28. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.535Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 58) 
+[2025-03-20T15:44:52.537Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 59) 
+[2025-03-20T15:44:52.538Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 60) 
+[2025-03-20T15:44:52.539Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 62): 29. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.539Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 62) 
+[2025-03-20T15:44:52.541Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 64): 30. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.540Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 62) 
+[2025-03-20T15:44:52.541Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 64) 
+[2025-03-20T15:44:52.542Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 64) 
+[2025-03-20T15:44:52.544Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 65): 31. 3. 2025 08:00-20:00 
+[2025-03-20T15:44:52.544Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 65) 
+[2025-03-20T15:44:52.544Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 66): 31. 3. 2025 20:00-08:00 
+[2025-03-20T15:44:52.545Z] [INFO] [shift-time-processor] Celkem aktualizováno 38 směn, nalezeno 35 příchodů a 34 odchodů 
+[2025-03-20T15:44:52.546Z] [INFO] [shift-time-processor] Mapa usedRowsStart obsahuje 35 položek, usedRowsEnd obsahuje 34 položek 
+[2025-03-20T15:44:52.545Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 66) 
+[2025-03-20T15:44:52.547Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 5 -> List2 řádek 6 
+[2025-03-20T15:44:52.547Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 6 -> List2 řádek 8 
+[2025-03-20T15:44:52.547Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 7 -> List2 řádek 10 
+[2025-03-20T15:44:52.548Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 8 -> List2 řádek 12 
+[2025-03-20T15:44:52.548Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 9 -> List2 řádek 15 
+[2025-03-20T15:44:52.549Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 11 -> List2 řádek 16 
+[2025-03-20T15:44:52.550Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 13 -> List2 řádek 20 
+[2025-03-20T15:44:52.549Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 12 -> List2 řádek 18 
+[2025-03-20T15:44:52.550Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 14 -> List2 řádek 24 
+[2025-03-20T15:44:52.551Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 16 -> List2 řádek 28 
+[2025-03-20T15:44:52.551Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 15 -> List2 řádek 27 
+[2025-03-20T15:44:52.551Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 17 -> List2 řádek 31 
+[2025-03-20T15:44:52.551Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 19 -> List2 řádek 32 
+[2025-03-20T15:44:52.552Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 20 -> List2 řádek 35 
+[2025-03-20T15:44:52.553Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 22 -> List2 řádek 38 
+[2025-03-20T15:44:52.552Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 21 -> List2 řádek 36 
+[2025-03-20T15:44:52.553Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 24 -> List2 řádek 44 
+[2025-03-20T15:44:52.553Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 23 -> List2 řádek 40 
+[2025-03-20T15:44:52.554Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 25 -> List2 řádek 45 
+[2025-03-20T15:44:52.554Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 26 -> List2 řádek 47 
+[2025-03-20T15:44:52.554Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 27 -> List2 řádek 50 
+[2025-03-20T15:44:52.555Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 28 -> List2 řádek 51 
+[2025-03-20T15:44:52.555Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 29 -> List2 řádek 53 
+[2025-03-20T15:44:52.556Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 33 -> List2 řádek 58 
+[2025-03-20T15:44:52.555Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 30 -> List2 řádek 55 
+[2025-03-20T15:44:52.556Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 34 -> List2 řádek 62 
+[2025-03-20T15:44:52.557Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 35 -> List2 řádek 63 
+[2025-03-20T15:44:52.557Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 36 -> List2 řádek 65 
+[2025-03-20T15:44:52.558Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 37 -> List2 řádek 67 
+[2025-03-20T15:44:52.558Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 38 -> List2 řádek 69 
+[2025-03-20T15:44:52.559Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 39 -> List2 řádek 71 
+[2025-03-20T15:44:52.559Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 40 -> List2 řádek 73 
+[2025-03-20T15:44:52.560Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 41 -> List2 řádek 75 
+[2025-03-20T15:44:52.560Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 42 -> List2 řádek 77 
+[2025-03-20T15:44:52.561Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 43 -> List2 řádek 80 
+[2025-03-20T15:44:52.561Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 5 -> List2 řádek 9 
+[2025-03-20T15:44:52.562Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 6 -> List2 řádek 11 
+[2025-03-20T15:44:52.562Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 7 -> List2 řádek 13 
+[2025-03-20T15:44:52.563Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 8 -> List2 řádek 14 
+[2025-03-20T15:44:52.563Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 10 -> List2 řádek 17 
+[2025-03-20T15:44:52.564Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 12 -> List2 řádek 19 
+[2025-03-20T15:44:52.564Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 13 -> List2 řádek 25 
+[2025-03-20T15:44:52.564Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 14 -> List2 řádek 26 
+[2025-03-20T15:44:52.565Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 15 -> List2 řádek 29 
+[2025-03-20T15:44:52.565Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 16 -> List2 řádek 30 
+[2025-03-20T15:44:52.566Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 18 -> List2 řádek 33 
+[2025-03-20T15:44:52.566Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 19 -> List2 řádek 34 
+[2025-03-20T15:44:52.567Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 20 -> List2 řádek 37 
+[2025-03-20T15:44:52.567Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 21 -> List2 řádek 39 
+[2025-03-20T15:44:52.568Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 22 -> List2 řádek 41 
+[2025-03-20T15:44:52.568Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 23 -> List2 řádek 43 
+[2025-03-20T15:44:52.568Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 24 -> List2 řádek 46 
+[2025-03-20T15:44:52.569Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 26 -> List2 řádek 49 
+[2025-03-20T15:44:52.568Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 25 -> List2 řádek 48 
+[2025-03-20T15:44:52.569Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 27 -> List2 řádek 52 
+[2025-03-20T15:44:52.570Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 28 -> List2 řádek 54 
+[2025-03-20T15:44:52.570Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 29 -> List2 řádek 56 
+[2025-03-20T15:44:52.570Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 30 -> List2 řádek 57 
+[2025-03-20T15:44:52.571Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 33 -> List2 řádek 61 
+[2025-03-20T15:44:52.572Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 34 -> List2 řádek 64 
+[2025-03-20T15:44:52.571Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 32 -> List2 řádek 59 
+[2025-03-20T15:44:52.572Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 35 -> List2 řádek 66 
+[2025-03-20T15:44:52.572Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 36 -> List2 řádek 68 
+[2025-03-20T15:44:52.573Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 37 -> List2 řádek 70 
+[2025-03-20T15:44:52.573Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 38 -> List2 řádek 72 
+[2025-03-20T15:44:52.574Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 39 -> List2 řádek 74 
+[2025-03-20T15:44:52.574Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 40 -> List2 řádek 76 
+[2025-03-20T15:44:52.575Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 41 -> List2 řádek 78 
+[2025-03-20T15:44:52.575Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 42 -> List2 řádek 79 
+[2025-03-20T15:44:52.575Z] [INFO] [advanced-excel-processing] Aktualizováno 38 směn, nalezeno 35 příchodů a 34 odchodů 
+[2025-03-20T15:44:52.576Z] [INFO] [advanced-excel-processing] Mapa usedRowsStart obsahuje 35 položek 
+[2025-03-20T15:44:52.576Z] [INFO] [advanced-excel-processing] Mapa usedRowsEnd obsahuje 34 položek 
+[2025-03-20T15:44:52.576Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 5 -> List2 řádek 6 
+[2025-03-20T15:44:52.577Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 6 -> List2 řádek 8 
+[2025-03-20T15:44:52.578Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 8 -> List2 řádek 12 
+[2025-03-20T15:44:52.577Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 7 -> List2 řádek 10 
+[2025-03-20T15:44:52.578Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 9 -> List2 řádek 15 
+[2025-03-20T15:44:52.578Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 11 -> List2 řádek 16 
+[2025-03-20T15:44:52.579Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 12 -> List2 řádek 18 
+[2025-03-20T15:44:52.580Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 14 -> List2 řádek 24 
+[2025-03-20T15:44:52.580Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 15 -> List2 řádek 27 
+[2025-03-20T15:44:52.581Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 16 -> List2 řádek 28 
+[2025-03-20T15:44:52.581Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 17 -> List2 řádek 31 
+[2025-03-20T15:44:52.582Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 20 -> List2 řádek 35 
+[2025-03-20T15:44:52.579Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 13 -> List2 řádek 20 
+[2025-03-20T15:44:52.583Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 21 -> List2 řádek 36 
+[2025-03-20T15:44:52.582Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 19 -> List2 řádek 32 
+[2025-03-20T15:44:52.584Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 24 -> List2 řádek 44 
+[2025-03-20T15:44:52.583Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 22 -> List2 řádek 38 
+[2025-03-20T15:44:52.584Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 25 -> List2 řádek 45 
+[2025-03-20T15:44:52.584Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 23 -> List2 řádek 40 
+[2025-03-20T15:44:52.585Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 26 -> List2 řádek 47 
+[2025-03-20T15:44:52.585Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 28 -> List2 řádek 51 
+[2025-03-20T15:44:52.586Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 30 -> List2 řádek 55 
+[2025-03-20T15:44:52.586Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 29 -> List2 řádek 53 
+[2025-03-20T15:44:52.587Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 34 -> List2 řádek 62 
+[2025-03-20T15:44:52.585Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 27 -> List2 řádek 50 
+[2025-03-20T15:44:52.587Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 33 -> List2 řádek 58 
+[2025-03-20T15:44:52.588Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 36 -> List2 řádek 65 
+[2025-03-20T15:44:52.589Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 38 -> List2 řádek 69 
+[2025-03-20T15:44:52.589Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 39 -> List2 řádek 71 
+[2025-03-20T15:44:52.588Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 35 -> List2 řádek 63 
+[2025-03-20T15:44:52.590Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 40 -> List2 řádek 73 
+[2025-03-20T15:44:52.591Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 43 -> List2 řádek 80 
+[2025-03-20T15:44:52.590Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 41 -> List2 řádek 75 
+[2025-03-20T15:44:52.588Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 37 -> List2 řádek 67 
+[2025-03-20T15:44:52.591Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 42 -> List2 řádek 77 
+[2025-03-20T15:44:52.592Z] [INFO] [excel-data-extractor] updateExcelWorkbook: počet směn: 60, z toho s actualStart: 42, s actualEnd: 41 
+[2025-03-20T15:44:52.592Z] [INFO] [excel-data-extractor] timeUpdateResult: usedRowsStart: 35, usedRowsEnd: 34 
+[2025-03-20T15:44:52.596Z] [INFO] [excel-data-extractor] Obarvování buněk v List2 bylo deaktivováno. 
+[2025-03-20T15:44:52.737Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\TOP Hotel 3-2025_zpracovano_2025-03-20T15-44-52-597Z.xlsx 
+[2025-03-20T15:44:52.740Z] [INFO] [avaris-excel-action] Pokročilé zpracování dokončeno úspěšně 
+[2025-03-20T15:46:04.889Z] [INFO] [avaris-excel-action] Zpracovávám požadavek na integraci Avaris dat do Excel souboru 
+[2025-03-20T15:46:04.890Z] [INFO] [avaris-excel-action] Možnosti zpracování: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-20T15:46:04.892Z] [INFO] [avaris-excel-action] Nahraný soubor: TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:46:04.891Z] [INFO] [avaris-excel-action] Zpracování pro období od 01.03.2025 do 21.03.2025 
+[2025-03-20T15:46:04.892Z] [INFO] [avaris-excel-action] Zvolené objekty: TOP HOTEL 
+[2025-03-20T15:46:04.896Z] [INFO] [avaris-excel-action] Spouštím captureAvarisData pro objekty: TOP HOTEL 
+[2025-03-20T15:46:04.896Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-20T15:46:13.503Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-20T15:46:15.943Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-20T15:46:15.943Z] [INFO] [scraper] Zpracovávám objekt: TOP HOTEL 
+[2025-03-20T15:46:15.944Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-20T15:46:17.870Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-20T15:46:17.871Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-20T15:46:17.905Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-20T15:46:18.290Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-20T15:46:18.799Z] [INFO] [scraper] Hledám checkbox pro objekt "TOP HOTEL" 
+[2025-03-20T15:46:18.807Z] [INFO] [scraper] Nalezen label s for="tr-snimac3474" 
+[2025-03-20T15:46:18.844Z] [INFO] [scraper] Checkbox #tr-snimac3474 byl zaškrtnut 
+[2025-03-20T15:46:18.845Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-20T15:46:19.931Z] [INFO] [scraper] Objekt "TOP HOTEL" byl úspěšně přidán do tabulky 
+[2025-03-20T15:46:19.932Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-20T15:46:21.657Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-20T15:46:21.730Z] [INFO] [scraper] Nastavuji typ období na "Interval" a požadované sloupce pro výpis 
+[2025-03-20T15:46:21.729Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-20T15:46:21.730Z] [INFO] [scraper] Nastavuji období na "Interval" 
+[2025-03-20T15:46:21.804Z] [INFO] [scraper] Radio button pro "Interval" byl zaškrtnut 
+[2025-03-20T15:46:22.112Z] [INFO] [scraper] Začínám nastavovat sloupce pro výpis 
+[2025-03-20T15:46:22.133Z] [INFO] [scraper] Nalezeno 6 checkboxů pro sloupce 
+[2025-03-20T15:46:22.199Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:46:22.249Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:46:22.300Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:46:22.388Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:46:22.432Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 1 
+[2025-03-20T15:46:22.477Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 3 
+[2025-03-20T15:46:22.531Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 4 
+[2025-03-20T15:46:22.587Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 8 
+[2025-03-20T15:46:22.616Z] [INFO] [scraper] Všechny požadované sloupce byly úspěšně zaškrtnuty 
+[2025-03-20T15:46:22.617Z] [INFO] [scraper] Nastavuji datumové rozmezí: 01.03.2025 - 21.03.2025 
+[2025-03-20T15:46:22.726Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-20T15:46:22.727Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-20T15:46:22.812Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-20T15:46:25.260Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-20T15:46:25.641Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-20T15:46:29.378Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-20T15:46:29.507Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\top_hotel_export.csv 
+[2025-03-20T15:46:29.512Z] [INFO] [scraper] Dokončeno zpracování objektu: TOP HOTEL 
+[2025-03-20T15:46:29.515Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-20T15:46:29.567Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-20T15:46:29.568Z] [INFO] [avaris-excel-action] Úspěšně staženo 1 souborů: TOP HOTEL 
+[2025-03-20T15:46:29.568Z] [INFO] [avaris-excel-action] Zpracovávám data pro objekt TOP HOTEL z /downloads/top_hotel_export.csv 
+[2025-03-20T15:46:29.568Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/top_hotel_export.csv 
+[2025-03-20T15:46:29.569Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\top_hotel_export.csv 
+[2025-03-20T15:46:29.578Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 2565 
+[2025-03-20T15:46:29.586Z] [INFO] [csv-processor] Zpracováno 2557 záznamů, z toho 75 ST a 2482 ne-ST 
+[2025-03-20T15:46:29.588Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx 
+[2025-03-20T15:46:29.596Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX s konzistentní strukturou 
+[2025-03-20T15:46:29.596Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx po 5 minutách 
+[2025-03-20T15:46:29.597Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 75 ST záznamů z celkových 2557 
+[2025-03-20T15:46:29.598Z] [INFO] [avaris-excel-action] Objekt TOP HOTEL zpracován úspěšně, počet záznamů: 75 
+[2025-03-20T15:46:29.598Z] [INFO] [avaris-excel-action] Celkem získáno 75 záznamů ze všech objektů 
+[2025-03-20T15:46:29.599Z] [INFO] [enhanced-sheet-processor] Zpracovávám Excel soubor TOP Hotel 3-2025.xlsx pro přidání dat z Avarisu 
+[2025-03-20T15:46:29.599Z] [INFO] [enhanced-sheet-processor] Cílový soubor existuje: C:\Programování\AG-Management\public\downloads\TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:46:29.627Z] [INFO] [enhanced-sheet-processor] List2 existuje, obsahuje 47 řádků, poslední časový údaj: Tue Mar 11 2025 18:56:22 GMT+0100 (středoevropský standardní čas) 
+[2025-03-20T15:46:29.627Z] [INFO] [enhanced-sheet-processor] Filtrováno 32 nových záznamů z celkových 75 
+[2025-03-20T15:46:29.628Z] [INFO] [enhanced-sheet-processor] Ukládám změny do souboru: C:\Programování\AG-Management\public\downloads\TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:46:29.653Z] [INFO] [avaris-excel-action] Spouštím pokročilé zpracování pro soubor TOP Hotel 3-2025.xlsx s možnostmi: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-20T15:46:29.654Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru TOP Hotel 3-2025.xlsx s možnostmi: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-20T15:46:29.654Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\downloads\TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:46:29.656Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:46:29.656Z] [INFO] [excel-utils] Načítám Excel soubor z Buffer 
+[2025-03-20T15:46:29.680Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-20T15:46:29.681Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-20T15:46:29.681Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-20T15:46:29.681Z] [INFO] [name-comparison-service] Načteno 51 jmen z List2 
+[2025-03-20T15:46:29.683Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: SEDMIK 
+[2025-03-20T15:46:29.684Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Jelínek Filip 
+[2025-03-20T15:46:29.685Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: Sedmík Václav 
+[2025-03-20T15:46:29.685Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jelínek Filip 
+[2025-03-20T15:46:29.685Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Ouerghi Houssem 
+[2025-03-20T15:46:29.686Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Ouerghi Houssem 
+[2025-03-20T15:46:29.686Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Bartůněk Stanislav 
+[2025-03-20T15:46:29.687Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Jelínek Filip 
+[2025-03-20T15:46:29.687Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Bartunek 
+[2025-03-20T15:46:29.688Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Jelínek Filip 
+[2025-03-20T15:46:29.688Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Klim Rudolf 
+[2025-03-20T15:46:29.688Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jelínek Filip 
+[2025-03-20T15:46:29.689Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Ouerghi Houssem 
+[2025-03-20T15:46:29.690Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Ouerghi Houssem 
+[2025-03-20T15:46:29.691Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Jelínek Filip 
+[2025-03-20T15:46:29.691Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Klim Rudolf 
+[2025-03-20T15:46:29.693Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Sedmík Václav 
+[2025-03-20T15:46:29.693Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Ouerghi Houssem 
+[2025-03-20T15:46:29.694Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Sedmík Václav 
+[2025-03-20T15:46:29.694Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ouerghi Houssem 
+[2025-03-20T15:46:29.694Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Klim Rudolf 
+[2025-03-20T15:46:29.695Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Jelínek Filip 
+[2025-03-20T15:46:29.695Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Klim Rudolf 
+[2025-03-20T15:46:29.696Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Jelínek Filip 
+[2025-03-20T15:46:29.696Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Klim Rudolf 
+[2025-03-20T15:46:29.697Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Jelínek Filip 
+[2025-03-20T15:46:29.697Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Ouerghi Houssem 
+[2025-03-20T15:46:29.698Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Ouerghi Houssem 
+[2025-03-20T15:46:29.698Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Klim Rudolf 
+[2025-03-20T15:46:29.699Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jelínek Filip 
+[2025-03-20T15:46:29.699Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Klim Rudolf 
+[2025-03-20T15:46:29.700Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Ouerghi Houssem 
+[2025-03-20T15:46:29.700Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Sedmík Václav 
+[2025-03-20T15:46:29.701Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Ouerghi Houssem 
+[2025-03-20T15:46:29.701Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Sedmík Václav 
+[2025-03-20T15:46:29.701Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jelínek Filip 
+[2025-03-20T15:46:29.702Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 41: Klim Rudolf 
+[2025-03-20T15:46:29.702Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 42: Jelínek Filip 
+[2025-03-20T15:46:29.703Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 43: Klim Rudolf 
+[2025-03-20T15:46:29.703Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 44: Jelínek Filip 
+[2025-03-20T15:46:29.703Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 45: Ouerghi Houssem 
+[2025-03-20T15:46:29.704Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 46: Ouerghi Houssem 
+[2025-03-20T15:46:29.704Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 47: Klim Rudolf 
+[2025-03-20T15:46:29.705Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 48: Jelínek Filip 
+[2025-03-20T15:46:29.705Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 49: Klim Rudolf 
+[2025-03-20T15:46:29.706Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 50: Jelínek Filip 
+[2025-03-20T15:46:29.706Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 51: Ouerghi Houssem 
+[2025-03-20T15:46:29.707Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 52: Ouerghi Houssem 
+[2025-03-20T15:46:29.707Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 53: Sedmík Václav 
+[2025-03-20T15:46:29.708Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 54: Jelínek Filip 
+[2025-03-20T15:46:29.709Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 55: Sedmík Václav 
+[2025-03-20T15:46:29.709Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 51, Přesných shod: 49, Bezpečných shod: 2, Nenalezených: 0 
+[2025-03-20T15:46:29.710Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=51, 
+                    Přesné=49, 
+                    Bezpečné=2, 
+                    Nenalezené=0 
+[2025-03-20T15:46:29.710Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-20T15:46:29.711Z] [INFO] [advanced-excel-processing] Extrahováno 60 směn a 75 čipovacích záznamů 
+[2025-03-20T15:46:29.712Z] [INFO] [advanced-excel-processing] Spouštím detekci navazujících směn 
+[2025-03-20T15:46:29.712Z] [INFO] [consecutive-shift-detector] Detekuji navazující směny podle logiky Excel makra 
+[2025-03-20T15:46:29.714Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 9): 3. 3. 2025 08:00-20:00, druhá směna (řádek 10): 3. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.715Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 17): 7. 3. 2025 08:00-20:00, druhá směna (řádek 18): 7. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.716Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 31): 14. 3. 2025 08:00-20:00, druhá směna (řádek 32): 14. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.717Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 45): 21. 3. 2025 08:00-20:00, druhá směna (řádek 46): 21. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.718Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 51): 24. 3. 2025 08:00-20:00, druhá směna (řádek 52): 24. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.721Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 65): 31. 3. 2025 08:00-20:00, druhá směna (řádek 66): 31. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.720Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 59): 28. 3. 2025 08:00-20:00, druhá směna (řádek 60): 28. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.722Z] [INFO] [consecutive-shift-detector] Celkem nalezeno 7 párů navazujících směn (14 směn) 
+[2025-03-20T15:46:29.723Z] [INFO] [advanced-excel-processing] Detekováno 7 párů navazujících směn (14 směn) 
+[2025-03-20T15:46:29.728Z] [INFO] [advanced-excel-processing] Spouštím aktualizaci časů příchodů a odchodů 
+[2025-03-20T15:46:29.728Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:46:29.729Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 9) 
+[2025-03-20T15:46:29.729Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 10) 
+[2025-03-20T15:46:29.730Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:46:29.730Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 17) 
+[2025-03-20T15:46:29.731Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 18) 
+[2025-03-20T15:46:29.731Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:46:29.732Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 32) 
+[2025-03-20T15:46:29.731Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 31) 
+[2025-03-20T15:46:29.732Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:46:29.733Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 45) 
+[2025-03-20T15:46:29.733Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 46) 
+[2025-03-20T15:46:29.733Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:46:29.734Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 51) 
+[2025-03-20T15:46:29.734Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 52) 
+[2025-03-20T15:46:29.735Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:46:29.735Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 59) 
+[2025-03-20T15:46:29.736Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 60) 
+[2025-03-20T15:46:29.736Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:46:29.736Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 65) 
+[2025-03-20T15:46:29.737Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 66) 
+[2025-03-20T15:46:29.737Z] [INFO] [shift-time-processor] Začínám aktualizaci časů pro 60 směn, z toho 14 navazujících 
+[2025-03-20T15:46:29.738Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 5): 1. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.738Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 5): 06:51 (řádek List2: 6) 
+[2025-03-20T15:46:29.739Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 5): 18:48 (řádek List2: 9) 
+[2025-03-20T15:46:29.741Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 6): 1. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.743Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 6): 18:43 (řádek List2: 8) 
+[2025-03-20T15:46:29.744Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 6): 07:11 (řádek List2: 11) 
+[2025-03-20T15:46:29.744Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 7): 2. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.745Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 7): 07:10 (řádek List2: 10) 
+[2025-03-20T15:46:29.746Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 7): 18:46 (řádek List2: 13) 
+[2025-03-20T15:46:29.746Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 8): 2. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.747Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 8): 18:46 (řádek List2: 12) 
+[2025-03-20T15:46:29.748Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 8): 06:47 (řádek List2: 14) 
+[2025-03-20T15:46:29.749Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 9): 3. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.749Z] [INFO] [shift-time-processor] Nalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 9): 06:59 (řádek List2: 15) 
+[2025-03-20T15:46:29.750Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 10): 3. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.750Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 10): 06:30 (řádek List2: 17) 
+[2025-03-20T15:46:29.751Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Bartůněk Stanislav (řádek 11): 4. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.752Z] [INFO] [shift-time-processor] Nalezen příchod pro Bartůněk Stanislav (řádek 11): 06:28 (řádek List2: 16) 
+[2025-03-20T15:46:29.752Z] [INFO] [shift-time-processor] Nenalezen odchod pro Bartůněk Stanislav (řádek 11) 
+[2025-03-20T15:46:29.753Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 12): 4. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.753Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 12): 18:30 (řádek List2: 18) 
+[2025-03-20T15:46:29.754Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 12): 06:38 (řádek List2: 19) 
+[2025-03-20T15:46:29.755Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Bartůněk Stanislav (řádek 13): 5. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.756Z] [INFO] [shift-time-processor] Nalezen příchod pro Bartůněk Stanislav (řádek 13): 06:38 (řádek List2: 20) 
+[2025-03-20T15:46:29.756Z] [INFO] [shift-time-processor] Nalezen odchod pro Bartůněk Stanislav (řádek 13): 18:19 (řádek List2: 25) 
+[2025-03-20T15:46:29.757Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 14): 5. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.758Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 14): 18:19 (řádek List2: 24) 
+[2025-03-20T15:46:29.759Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 14): 06:20 (řádek List2: 26) 
+[2025-03-20T15:46:29.760Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 15): 6. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.761Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 15): 06:37 (řádek List2: 27) 
+[2025-03-20T15:46:29.761Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 15): 18:57 (řádek List2: 29) 
+[2025-03-20T15:46:29.762Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 16): 6. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.763Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 16): 18:31 (řádek List2: 28) 
+[2025-03-20T15:46:29.764Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 16): 06:57 (řádek List2: 30) 
+[2025-03-20T15:46:29.765Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 17): 7. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.766Z] [INFO] [shift-time-processor] Nalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 17): 06:59 (řádek List2: 31) 
+[2025-03-20T15:46:29.767Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 18): 7. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.767Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 18): 06:21 (řádek List2: 33) 
+[2025-03-20T15:46:29.768Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 19): 8. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.769Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 19): 06:19 (řádek List2: 32) 
+[2025-03-20T15:46:29.770Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 19): 18:40 (řádek List2: 34) 
+[2025-03-20T15:46:29.770Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 20): 8. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.771Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 20): 18:41 (řádek List2: 35) 
+[2025-03-20T15:46:29.772Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 20): 06:52 (řádek List2: 37) 
+[2025-03-20T15:46:29.773Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 21): 9. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.774Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 21): 06:51 (řádek List2: 36) 
+[2025-03-20T15:46:29.774Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 21): 18:58 (řádek List2: 39) 
+[2025-03-20T15:46:29.775Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 22): 9. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.776Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 22): 18:58 (řádek List2: 38) 
+[2025-03-20T15:46:29.777Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 22): 06:47 (řádek List2: 41) 
+[2025-03-20T15:46:29.778Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 23): 10. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.778Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 23): 06:46 (řádek List2: 40) 
+[2025-03-20T15:46:29.779Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 23): 18:51 (řádek List2: 43) 
+[2025-03-20T15:46:29.780Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 24): 10. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.781Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 24): 18:51 (řádek List2: 44) 
+[2025-03-20T15:46:29.781Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 24): 06:26 (řádek List2: 46) 
+[2025-03-20T15:46:29.782Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 25): 11. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.783Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 25): 06:26 (řádek List2: 45) 
+[2025-03-20T15:46:29.784Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 25): 18:56 (řádek List2: 48) 
+[2025-03-20T15:46:29.785Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 26): 11. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.785Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 26): 18:41 (řádek List2: 47) 
+[2025-03-20T15:46:29.786Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 26): 06:27 (řádek List2: 49) 
+[2025-03-20T15:46:29.787Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 27): 12. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.787Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 27): 06:27 (řádek List2: 50) 
+[2025-03-20T15:46:29.788Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 27): 18:42 (řádek List2: 52) 
+[2025-03-20T15:46:29.795Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 28): 18:42 (řádek List2: 51) 
+[2025-03-20T15:46:29.794Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 28): 12. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.796Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 28): 06:29 (řádek List2: 54) 
+[2025-03-20T15:46:29.796Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 29): 13. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.797Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 29): 06:28 (řádek List2: 53) 
+[2025-03-20T15:46:29.798Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 30): 13. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.797Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 29): 18:42 (řádek List2: 56) 
+[2025-03-20T15:46:29.798Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 30): 18:23 (řádek List2: 55) 
+[2025-03-20T15:46:29.799Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 30): 06:39 (řádek List2: 57) 
+[2025-03-20T15:46:29.799Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 31): 14. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.800Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 31) 
+[2025-03-20T15:46:29.801Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 32): 06:30 (řádek List2: 59) 
+[2025-03-20T15:46:29.800Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 32): 14. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.801Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 33): 15. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.802Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 33): 06:28 (řádek List2: 58) 
+[2025-03-20T15:46:29.802Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 33): 18:34 (řádek List2: 61) 
+[2025-03-20T15:46:29.803Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 34): 15. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.803Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 34): 18:34 (řádek List2: 62) 
+[2025-03-20T15:46:29.804Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 34): 06:28 (řádek List2: 64) 
+[2025-03-20T15:46:29.804Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 35): 16. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.805Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 35): 06:28 (řádek List2: 63) 
+[2025-03-20T15:46:29.805Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 35): 19:02 (řádek List2: 66) 
+[2025-03-20T15:46:29.806Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 36): 16. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.807Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 36): 18:59 (řádek List2: 65) 
+[2025-03-20T15:46:29.808Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 36): 06:46 (řádek List2: 68) 
+[2025-03-20T15:46:29.809Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 37): 17. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.810Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 37): 06:46 (řádek List2: 67) 
+[2025-03-20T15:46:29.811Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 37): 18:51 (řádek List2: 70) 
+[2025-03-20T15:46:29.811Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 38): 17. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.812Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 38): 18:49 (řádek List2: 69) 
+[2025-03-20T15:46:29.812Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 38): 06:41 (řádek List2: 72) 
+[2025-03-20T15:46:29.813Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 39): 18. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.813Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 39): 06:40 (řádek List2: 71) 
+[2025-03-20T15:46:29.814Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 39): 18:46 (řádek List2: 74) 
+[2025-03-20T15:46:29.815Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 40): 18. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.815Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 40): 18:42 (řádek List2: 73) 
+[2025-03-20T15:46:29.816Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 40): 06:10 (řádek List2: 76) 
+[2025-03-20T15:46:29.816Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 41): 19. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.817Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 41): 06:10 (řádek List2: 75) 
+[2025-03-20T15:46:29.817Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 41): 18:39 (řádek List2: 78) 
+[2025-03-20T15:46:29.818Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 42): 19. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.818Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 42): 18:38 (řádek List2: 77) 
+[2025-03-20T15:46:29.819Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 42): 06:20 (řádek List2: 79) 
+[2025-03-20T15:46:29.819Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 43): 20. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.820Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 43): 06:21 (řádek List2: 80) 
+[2025-03-20T15:46:29.820Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 43) 
+[2025-03-20T15:46:29.821Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 44): 20. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.821Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 44) 
+[2025-03-20T15:46:29.821Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 44) 
+[2025-03-20T15:46:29.822Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 45): 21. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.822Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 45) 
+[2025-03-20T15:46:29.823Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 46): 21. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.823Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 46) 
+[2025-03-20T15:46:29.824Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 47): 22. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.825Z] [INFO] [shift-time-processor] Nenalezen příchod pro Klim Rudolf (řádek 47) 
+[2025-03-20T15:46:29.826Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 47) 
+[2025-03-20T15:46:29.826Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 48): 22. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.827Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 48) 
+[2025-03-20T15:46:29.827Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 48) 
+[2025-03-20T15:46:29.828Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 49): 23. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.828Z] [INFO] [shift-time-processor] Nenalezen příchod pro Klim Rudolf (řádek 49) 
+[2025-03-20T15:46:29.828Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 49) 
+[2025-03-20T15:46:29.829Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 50): 23. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.829Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 50) 
+[2025-03-20T15:46:29.830Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 50) 
+[2025-03-20T15:46:29.830Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 51): 24. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.830Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 51) 
+[2025-03-20T15:46:29.831Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 52): 24. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.831Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 52) 
+[2025-03-20T15:46:29.832Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 53): 25. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.832Z] [INFO] [shift-time-processor] Nenalezen příchod pro Sedmík Václav (řádek 53) 
+[2025-03-20T15:46:29.833Z] [INFO] [shift-time-processor] Nenalezen odchod pro Sedmík Václav (řádek 53) 
+[2025-03-20T15:46:29.833Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 54): 25. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.833Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 54) 
+[2025-03-20T15:46:29.834Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 55): 26. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.834Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 54) 
+[2025-03-20T15:46:29.835Z] [INFO] [shift-time-processor] Nenalezen odchod pro Sedmík Václav (řádek 55) 
+[2025-03-20T15:46:29.835Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 56): 26. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.835Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 56) 
+[2025-03-20T15:46:29.834Z] [INFO] [shift-time-processor] Nenalezen příchod pro Sedmík Václav (řádek 55) 
+[2025-03-20T15:46:29.836Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 56) 
+[2025-03-20T15:46:29.836Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 57): 27. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.836Z] [INFO] [shift-time-processor] Nenalezen příchod pro Klim Rudolf (řádek 57) 
+[2025-03-20T15:46:29.837Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 57) 
+[2025-03-20T15:46:29.837Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 58): 27. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.837Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 58) 
+[2025-03-20T15:46:29.838Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 58) 
+[2025-03-20T15:46:29.839Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 59) 
+[2025-03-20T15:46:29.838Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 59): 28. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.840Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 60): 28. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.840Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 60) 
+[2025-03-20T15:46:29.842Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 62) 
+[2025-03-20T15:46:29.841Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 62): 29. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.843Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 62) 
+[2025-03-20T15:46:29.845Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 64): 30. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.845Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 64) 
+[2025-03-20T15:46:29.846Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 65): 31. 3. 2025 08:00-20:00 
+[2025-03-20T15:46:29.846Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 65) 
+[2025-03-20T15:46:29.845Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 64) 
+[2025-03-20T15:46:29.847Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 66) 
+[2025-03-20T15:46:29.847Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 66): 31. 3. 2025 20:00-08:00 
+[2025-03-20T15:46:29.847Z] [INFO] [shift-time-processor] Celkem aktualizováno 38 směn, nalezeno 35 příchodů a 34 odchodů 
+[2025-03-20T15:46:29.847Z] [INFO] [shift-time-processor] Mapa usedRowsStart obsahuje 35 položek, usedRowsEnd obsahuje 34 položek 
+[2025-03-20T15:46:29.848Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 5 -> List2 řádek 6 
+[2025-03-20T15:46:29.848Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 6 -> List2 řádek 8 
+[2025-03-20T15:46:29.848Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 7 -> List2 řádek 10 
+[2025-03-20T15:46:29.848Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 8 -> List2 řádek 12 
+[2025-03-20T15:46:29.849Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 9 -> List2 řádek 15 
+[2025-03-20T15:46:29.849Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 12 -> List2 řádek 18 
+[2025-03-20T15:46:29.849Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 11 -> List2 řádek 16 
+[2025-03-20T15:46:29.850Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 13 -> List2 řádek 20 
+[2025-03-20T15:46:29.850Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 14 -> List2 řádek 24 
+[2025-03-20T15:46:29.850Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 15 -> List2 řádek 27 
+[2025-03-20T15:46:29.851Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 16 -> List2 řádek 28 
+[2025-03-20T15:46:29.851Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 19 -> List2 řádek 32 
+[2025-03-20T15:46:29.851Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 17 -> List2 řádek 31 
+[2025-03-20T15:46:29.851Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 20 -> List2 řádek 35 
+[2025-03-20T15:46:29.852Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 21 -> List2 řádek 36 
+[2025-03-20T15:46:29.852Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 22 -> List2 řádek 38 
+[2025-03-20T15:46:29.852Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 23 -> List2 řádek 40 
+[2025-03-20T15:46:29.853Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 24 -> List2 řádek 44 
+[2025-03-20T15:46:29.853Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 25 -> List2 řádek 45 
+[2025-03-20T15:46:29.853Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 26 -> List2 řádek 47 
+[2025-03-20T15:46:29.853Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 27 -> List2 řádek 50 
+[2025-03-20T15:46:29.854Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 28 -> List2 řádek 51 
+[2025-03-20T15:46:29.854Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 29 -> List2 řádek 53 
+[2025-03-20T15:46:29.854Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 30 -> List2 řádek 55 
+[2025-03-20T15:46:29.855Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 33 -> List2 řádek 58 
+[2025-03-20T15:46:29.855Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 34 -> List2 řádek 62 
+[2025-03-20T15:46:29.855Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 35 -> List2 řádek 63 
+[2025-03-20T15:46:29.855Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 36 -> List2 řádek 65 
+[2025-03-20T15:46:29.856Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 37 -> List2 řádek 67 
+[2025-03-20T15:46:29.856Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 39 -> List2 řádek 71 
+[2025-03-20T15:46:29.856Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 38 -> List2 řádek 69 
+[2025-03-20T15:46:29.857Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 40 -> List2 řádek 73 
+[2025-03-20T15:46:29.857Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 41 -> List2 řádek 75 
+[2025-03-20T15:46:29.857Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 42 -> List2 řádek 77 
+[2025-03-20T15:46:29.857Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 43 -> List2 řádek 80 
+[2025-03-20T15:46:29.858Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 5 -> List2 řádek 9 
+[2025-03-20T15:46:29.858Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 6 -> List2 řádek 11 
+[2025-03-20T15:46:29.859Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 7 -> List2 řádek 13 
+[2025-03-20T15:46:29.859Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 8 -> List2 řádek 14 
+[2025-03-20T15:46:29.859Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 10 -> List2 řádek 17 
+[2025-03-20T15:46:29.860Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 12 -> List2 řádek 19 
+[2025-03-20T15:46:29.860Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 13 -> List2 řádek 25 
+[2025-03-20T15:46:29.860Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 14 -> List2 řádek 26 
+[2025-03-20T15:46:29.860Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 15 -> List2 řádek 29 
+[2025-03-20T15:46:29.861Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 16 -> List2 řádek 30 
+[2025-03-20T15:46:29.861Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 18 -> List2 řádek 33 
+[2025-03-20T15:46:29.861Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 19 -> List2 řádek 34 
+[2025-03-20T15:46:29.862Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 20 -> List2 řádek 37 
+[2025-03-20T15:46:29.862Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 21 -> List2 řádek 39 
+[2025-03-20T15:46:29.862Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 22 -> List2 řádek 41 
+[2025-03-20T15:46:29.862Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 23 -> List2 řádek 43 
+[2025-03-20T15:46:29.863Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 24 -> List2 řádek 46 
+[2025-03-20T15:46:29.863Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 25 -> List2 řádek 48 
+[2025-03-20T15:46:29.863Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 26 -> List2 řádek 49 
+[2025-03-20T15:46:29.864Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 27 -> List2 řádek 52 
+[2025-03-20T15:46:29.864Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 28 -> List2 řádek 54 
+[2025-03-20T15:46:29.864Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 29 -> List2 řádek 56 
+[2025-03-20T15:46:29.864Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 30 -> List2 řádek 57 
+[2025-03-20T15:46:29.865Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 32 -> List2 řádek 59 
+[2025-03-20T15:46:29.865Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 33 -> List2 řádek 61 
+[2025-03-20T15:46:29.865Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 34 -> List2 řádek 64 
+[2025-03-20T15:46:29.865Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 35 -> List2 řádek 66 
+[2025-03-20T15:46:29.866Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 36 -> List2 řádek 68 
+[2025-03-20T15:46:29.866Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 37 -> List2 řádek 70 
+[2025-03-20T15:46:29.866Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 38 -> List2 řádek 72 
+[2025-03-20T15:46:29.866Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 39 -> List2 řádek 74 
+[2025-03-20T15:46:29.867Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 40 -> List2 řádek 76 
+[2025-03-20T15:46:29.868Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 41 -> List2 řádek 78 
+[2025-03-20T15:46:29.868Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 42 -> List2 řádek 79 
+[2025-03-20T15:46:29.868Z] [INFO] [advanced-excel-processing] Aktualizováno 38 směn, nalezeno 35 příchodů a 34 odchodů 
+[2025-03-20T15:46:29.868Z] [INFO] [advanced-excel-processing] Mapa usedRowsStart obsahuje 35 položek 
+[2025-03-20T15:46:29.869Z] [INFO] [advanced-excel-processing] Mapa usedRowsEnd obsahuje 34 položek 
+[2025-03-20T15:46:29.869Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 5 -> List2 řádek 6 
+[2025-03-20T15:46:29.869Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 6 -> List2 řádek 8 
+[2025-03-20T15:46:29.869Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 7 -> List2 řádek 10 
+[2025-03-20T15:46:29.870Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 8 -> List2 řádek 12 
+[2025-03-20T15:46:29.870Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 9 -> List2 řádek 15 
+[2025-03-20T15:46:29.870Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 11 -> List2 řádek 16 
+[2025-03-20T15:46:29.870Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 12 -> List2 řádek 18 
+[2025-03-20T15:46:29.870Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 13 -> List2 řádek 20 
+[2025-03-20T15:46:29.871Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 14 -> List2 řádek 24 
+[2025-03-20T15:46:29.871Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 15 -> List2 řádek 27 
+[2025-03-20T15:46:29.889Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 16 -> List2 řádek 28 
+[2025-03-20T15:46:29.895Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 17 -> List2 řádek 31 
+[2025-03-20T15:46:29.895Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 19 -> List2 řádek 32 
+[2025-03-20T15:46:29.896Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 20 -> List2 řádek 35 
+[2025-03-20T15:46:29.896Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 21 -> List2 řádek 36 
+[2025-03-20T15:46:29.896Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 22 -> List2 řádek 38 
+[2025-03-20T15:46:29.897Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 23 -> List2 řádek 40 
+[2025-03-20T15:46:29.905Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 24 -> List2 řádek 44 
+[2025-03-20T15:46:29.914Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 25 -> List2 řádek 45 
+[2025-03-20T15:46:29.915Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 26 -> List2 řádek 47 
+[2025-03-20T15:46:29.915Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 27 -> List2 řádek 50 
+[2025-03-20T15:46:29.915Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 28 -> List2 řádek 51 
+[2025-03-20T15:46:29.915Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 29 -> List2 řádek 53 
+[2025-03-20T15:46:29.916Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 30 -> List2 řádek 55 
+[2025-03-20T15:46:29.916Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 33 -> List2 řádek 58 
+[2025-03-20T15:46:29.916Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 34 -> List2 řádek 62 
+[2025-03-20T15:46:29.917Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 35 -> List2 řádek 63 
+[2025-03-20T15:46:29.917Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 36 -> List2 řádek 65 
+[2025-03-20T15:46:29.917Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 37 -> List2 řádek 67 
+[2025-03-20T15:46:29.918Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 38 -> List2 řádek 69 
+[2025-03-20T15:46:29.919Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 41 -> List2 řádek 75 
+[2025-03-20T15:46:29.919Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 42 -> List2 řádek 77 
+[2025-03-20T15:46:29.918Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 40 -> List2 řádek 73 
+[2025-03-20T15:46:29.918Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 39 -> List2 řádek 71 
+[2025-03-20T15:46:29.919Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 43 -> List2 řádek 80 
+[2025-03-20T15:46:29.920Z] [INFO] [excel-data-extractor] updateExcelWorkbook: počet směn: 60, z toho s actualStart: 42, s actualEnd: 41 
+[2025-03-20T15:46:29.923Z] [INFO] [excel-data-extractor] Obarvování buněk v List2 bylo deaktivováno. 
+[2025-03-20T15:46:29.920Z] [INFO] [excel-data-extractor] timeUpdateResult: usedRowsStart: 35, usedRowsEnd: 34 
+[2025-03-20T15:46:30.080Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\TOP Hotel 3-2025_zpracovano_2025-03-20T15-46-29-925Z.xlsx 
+[2025-03-20T15:46:30.082Z] [INFO] [avaris-excel-action] Pokročilé zpracování dokončeno úspěšně 
+[2025-03-20T15:47:55.516Z] [INFO] [avaris-excel-action] Zpracovávám požadavek na integraci Avaris dat do Excel souboru 
+[2025-03-20T15:47:55.517Z] [INFO] [avaris-excel-action] Možnosti zpracování: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-20T15:47:55.518Z] [INFO] [avaris-excel-action] Zpracování pro období od 01.03.2025 do 21.03.2025 
+[2025-03-20T15:47:55.519Z] [INFO] [avaris-excel-action] Zvolené objekty: TOP HOTEL 
+[2025-03-20T15:47:55.519Z] [INFO] [avaris-excel-action] Nahraný soubor: TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:47:55.522Z] [INFO] [avaris-excel-action] Spouštím captureAvarisData pro objekty: TOP HOTEL 
+[2025-03-20T15:47:55.523Z] [INFO] [scraper] Spouštím captureAvarisData pro 1 objektů 
+[2025-03-20T15:48:05.894Z] [INFO] [scraper] Pokus o použití existujících cookies 
+[2025-03-20T15:48:08.291Z] [INFO] [scraper] Úspěšně přihlášeno pomocí cookies 
+[2025-03-20T15:48:08.292Z] [INFO] [scraper] Zpracovávám objekt: TOP HOTEL 
+[2025-03-20T15:48:08.292Z] [INFO] [scraper] Navigace na stránku vyhodnocení snímačů 
+[2025-03-20T15:48:10.343Z] [INFO] [scraper] Stránka vyhodnocení snímačů načtena 
+[2025-03-20T15:48:10.343Z] [INFO] [scraper] Začínám manipulaci s tabulkami 
+[2025-03-20T15:48:10.388Z] [INFO] [scraper] Nalezeno 1 položek k odstranění 
+[2025-03-20T15:48:10.756Z] [INFO] [scraper] Všechny položky byly odebrány 
+[2025-03-20T15:48:11.270Z] [INFO] [scraper] Hledám checkbox pro objekt "TOP HOTEL" 
+[2025-03-20T15:48:11.282Z] [INFO] [scraper] Nalezen label s for="tr-snimac3474" 
+[2025-03-20T15:48:11.326Z] [INFO] [scraper] Klikám na tlačítko "Přidat" 
+[2025-03-20T15:48:11.326Z] [INFO] [scraper] Checkbox #tr-snimac3474 byl zaškrtnut 
+[2025-03-20T15:48:12.385Z] [INFO] [scraper] Objekt "TOP HOTEL" byl úspěšně přidán do tabulky 
+[2025-03-20T15:48:12.386Z] [INFO] [scraper] Klikám na tlačítko "Uložit" 
+[2025-03-20T15:48:14.326Z] [INFO] [scraper] Tlačítko "Uložit" bylo stisknuto 
+[2025-03-20T15:48:14.395Z] [INFO] [scraper] Ukládání dokončeno 
+[2025-03-20T15:48:14.396Z] [INFO] [scraper] Nastavuji typ období na "Interval" a požadované sloupce pro výpis 
+[2025-03-20T15:48:14.397Z] [INFO] [scraper] Nastavuji období na "Interval" 
+[2025-03-20T15:48:14.460Z] [INFO] [scraper] Radio button pro "Interval" byl zaškrtnut 
+[2025-03-20T15:48:14.765Z] [INFO] [scraper] Začínám nastavovat sloupce pro výpis 
+[2025-03-20T15:48:14.793Z] [INFO] [scraper] Nalezeno 6 checkboxů pro sloupce 
+[2025-03-20T15:48:14.863Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:48:14.946Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:48:14.995Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:48:15.045Z] [INFO] [scraper] Odznačen checkbox pro sloupec 
+[2025-03-20T15:48:15.092Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 1 
+[2025-03-20T15:48:15.141Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 3 
+[2025-03-20T15:48:15.194Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 4 
+[2025-03-20T15:48:15.243Z] [INFO] [scraper] Zaškrtnut checkbox pro sloupec s hodnotou 8 
+[2025-03-20T15:48:15.262Z] [INFO] [scraper] Všechny požadované sloupce byly úspěšně zaškrtnuty 
+[2025-03-20T15:48:15.263Z] [INFO] [scraper] Nastavuji datumové rozmezí: 01.03.2025 - 21.03.2025 
+[2025-03-20T15:48:15.358Z] [INFO] [scraper] Datumové rozmezí bylo nastaveno 
+[2025-03-20T15:48:15.359Z] [INFO] [scraper] Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna 
+[2025-03-20T15:48:15.431Z] [INFO] [scraper] Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna 
+[2025-03-20T15:48:17.942Z] [INFO] [scraper] Nové okno bylo otevřeno, čekám na načtení obsahu 
+[2025-03-20T15:48:18.321Z] [INFO] [scraper] Hledám tlačítko CSV v novém okně 
+[2025-03-20T15:48:20.786Z] [INFO] [scraper] Tlačítko CSV bylo stisknuto 
+[2025-03-20T15:48:20.937Z] [INFO] [scraper] CSV soubor byl stažen do: C:\Programování\AG-Management\public\downloads\top_hotel_export.csv 
+[2025-03-20T15:48:20.940Z] [INFO] [scraper] Dokončeno zpracování objektu: TOP HOTEL 
+[2025-03-20T15:48:20.943Z] [INFO] [scraper] Celkem zpracováno 1 objektů z 1 
+[2025-03-20T15:48:21.014Z] [INFO] [scraper] Browser uzavřen 
+[2025-03-20T15:48:21.015Z] [INFO] [avaris-excel-action] Úspěšně staženo 1 souborů: TOP HOTEL 
+[2025-03-20T15:48:21.015Z] [INFO] [avaris-excel-action] Zpracovávám data pro objekt TOP HOTEL z /downloads/top_hotel_export.csv 
+[2025-03-20T15:48:21.016Z] [INFO] [csv-processor] Začínám zpracování Avaris dat z: /downloads/top_hotel_export.csv 
+[2025-03-20T15:48:21.016Z] [INFO] [csv-processor] Čtení CSV souboru: C:\Programování\AG-Management\public\downloads\top_hotel_export.csv 
+[2025-03-20T15:48:21.027Z] [INFO] [csv-processor] CSV úspěšně načteno, počet řádků: 2565 
+[2025-03-20T15:48:21.032Z] [INFO] [csv-processor] Zpracováno 2557 záznamů, z toho 75 ST a 2482 ne-ST 
+[2025-03-20T15:48:21.034Z] [INFO] [csv-processor] Ukládám filtrovaný soubor do Excel XLSX: C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx 
+[2025-03-20T15:48:21.042Z] [INFO] [csv-processor] Nastaveno smazání souboru C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx po 5 minutách 
+[2025-03-20T15:48:21.041Z] [INFO] [csv-processor] Filtrovaná data úspěšně uložena do XLSX s konzistentní strukturou 
+[2025-03-20T15:48:21.044Z] [INFO] [csv-processor] Zpracování dokončeno, vyfiltrováno 75 ST záznamů z celkových 2557 
+[2025-03-20T15:48:21.045Z] [INFO] [avaris-excel-action] Objekt TOP HOTEL zpracován úspěšně, počet záznamů: 75 
+[2025-03-20T15:48:21.045Z] [INFO] [avaris-excel-action] Celkem získáno 75 záznamů ze všech objektů 
+[2025-03-20T15:48:21.046Z] [INFO] [enhanced-sheet-processor] Zpracovávám Excel soubor TOP Hotel 3-2025.xlsx pro přidání dat z Avarisu 
+[2025-03-20T15:48:21.047Z] [INFO] [enhanced-sheet-processor] Cílový soubor existuje: C:\Programování\AG-Management\public\downloads\TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:48:21.109Z] [INFO] [enhanced-sheet-processor] Filtrováno 0 nových záznamů z celkových 75 
+[2025-03-20T15:48:21.108Z] [INFO] [enhanced-sheet-processor] List2 existuje, obsahuje 79 řádků, poslední časový údaj: Thu Mar 20 2025 06:21:08 GMT+0100 (středoevropský standardní čas) 
+[2025-03-20T15:48:21.109Z] [INFO] [enhanced-sheet-processor] Ukládám změny do souboru: C:\Programování\AG-Management\public\downloads\TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:48:21.159Z] [INFO] [avaris-excel-action] Spouštím pokročilé zpracování pro soubor TOP Hotel 3-2025.xlsx s možnostmi: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-20T15:48:21.159Z] [INFO] [advanced-excel-processing] Spouštím pokročilé zpracování souboru TOP Hotel 3-2025.xlsx s možnostmi: {"compareNames":true,"updateTimes":true,"detectConsecutiveShifts":true} 
+[2025-03-20T15:48:21.160Z] [INFO] [advanced-excel-processing] Zdrojový soubor pro zpracování existuje: C:\Programování\AG-Management\public\downloads\TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:48:21.162Z] [INFO] [advanced-excel-processing] Spouštím porovnání a korekci jmen pro soubor: TOP Hotel 3-2025.xlsx 
+[2025-03-20T15:48:21.162Z] [INFO] [excel-utils] Načítám Excel soubor z Buffer 
+[2025-03-20T15:48:21.190Z] [INFO] [name-comparison-service] Workbook úspěšně načten z bufferu 
+[2025-03-20T15:48:21.191Z] [INFO] [advanced-excel-processing] Služba pro porovnávání jmen byla inicializována, spouštím porovnání 
+[2025-03-20T15:48:21.191Z] [INFO] [name-comparison-service] Spouštím porovnání a korekci jmen 
+[2025-03-20T15:48:21.191Z] [INFO] [name-comparison-service] Načteno 51 jmen z List2 
+[2025-03-20T15:48:21.192Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 5: SEDMIK 
+[2025-03-20T15:48:21.192Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 6: Jelínek Filip 
+[2025-03-20T15:48:21.192Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 7: Sedmík Václav 
+[2025-03-20T15:48:21.193Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 8: Jelínek Filip 
+[2025-03-20T15:48:21.193Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 9: Ouerghi Houssem 
+[2025-03-20T15:48:21.193Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 10: Ouerghi Houssem 
+[2025-03-20T15:48:21.193Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 11: Bartůněk Stanislav 
+[2025-03-20T15:48:21.194Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 12: Jelínek Filip 
+[2025-03-20T15:48:21.194Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 13: Bartunek 
+[2025-03-20T15:48:21.194Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 14: Jelínek Filip 
+[2025-03-20T15:48:21.195Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 15: Klim Rudolf 
+[2025-03-20T15:48:21.195Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 16: Jelínek Filip 
+[2025-03-20T15:48:21.195Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 17: Ouerghi Houssem 
+[2025-03-20T15:48:21.196Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 18: Ouerghi Houssem 
+[2025-03-20T15:48:21.196Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 19: Jelínek Filip 
+[2025-03-20T15:48:21.196Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 20: Klim Rudolf 
+[2025-03-20T15:48:21.196Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 21: Sedmík Václav 
+[2025-03-20T15:48:21.197Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 22: Ouerghi Houssem 
+[2025-03-20T15:48:21.198Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 23: Sedmík Václav 
+[2025-03-20T15:48:21.198Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 24: Ouerghi Houssem 
+[2025-03-20T15:48:21.199Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 25: Klim Rudolf 
+[2025-03-20T15:48:21.199Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 26: Jelínek Filip 
+[2025-03-20T15:48:21.199Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 27: Klim Rudolf 
+[2025-03-20T15:48:21.200Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 28: Jelínek Filip 
+[2025-03-20T15:48:21.200Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 29: Klim Rudolf 
+[2025-03-20T15:48:21.201Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 30: Jelínek Filip 
+[2025-03-20T15:48:21.201Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 31: Ouerghi Houssem 
+[2025-03-20T15:48:21.201Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 32: Ouerghi Houssem 
+[2025-03-20T15:48:21.201Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 33: Klim Rudolf 
+[2025-03-20T15:48:21.202Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 34: Jelínek Filip 
+[2025-03-20T15:48:21.202Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 35: Klim Rudolf 
+[2025-03-20T15:48:21.203Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 36: Ouerghi Houssem 
+[2025-03-20T15:48:21.203Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 37: Sedmík Václav 
+[2025-03-20T15:48:21.203Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 38: Ouerghi Houssem 
+[2025-03-20T15:48:21.204Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 39: Sedmík Václav 
+[2025-03-20T15:48:21.204Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 40: Jelínek Filip 
+[2025-03-20T15:48:21.204Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 41: Klim Rudolf 
+[2025-03-20T15:48:21.204Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 42: Jelínek Filip 
+[2025-03-20T15:48:21.205Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 43: Klim Rudolf 
+[2025-03-20T15:48:21.205Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 44: Jelínek Filip 
+[2025-03-20T15:48:21.205Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 45: Ouerghi Houssem 
+[2025-03-20T15:48:21.205Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 46: Ouerghi Houssem 
+[2025-03-20T15:48:21.206Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 47: Klim Rudolf 
+[2025-03-20T15:48:21.206Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 48: Jelínek Filip 
+[2025-03-20T15:48:21.206Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 49: Klim Rudolf 
+[2025-03-20T15:48:21.206Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 50: Jelínek Filip 
+[2025-03-20T15:48:21.207Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 51: Ouerghi Houssem 
+[2025-03-20T15:48:21.207Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 52: Ouerghi Houssem 
+[2025-03-20T15:48:21.207Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 53: Sedmík Václav 
+[2025-03-20T15:48:21.208Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 54: Jelínek Filip 
+[2025-03-20T15:48:21.208Z] [INFO] [name-comparison-service] Zpracovávám jméno v řádku 55: Sedmík Václav 
+[2025-03-20T15:48:21.208Z] [INFO] [name-comparison-service] Dokončeno porovnání jmen. Celkem: 51, Přesných shod: 49, Bezpečných shod: 2, Nenalezených: 0 
+[2025-03-20T15:48:21.208Z] [INFO] [advanced-excel-processing] Porovnání dokončeno. Výsledky: Celkem=51, 
+                    Přesné=49, 
+                    Bezpečné=2, 
+                    Nenalezené=0 
+[2025-03-20T15:48:21.209Z] [INFO] [advanced-excel-processing] Workbook byl aktualizován a bude uložen 
+[2025-03-20T15:48:21.210Z] [INFO] [advanced-excel-processing] Extrahováno 60 směn a 75 čipovacích záznamů 
+[2025-03-20T15:48:21.210Z] [INFO] [advanced-excel-processing] Spouštím detekci navazujících směn 
+[2025-03-20T15:48:21.210Z] [INFO] [consecutive-shift-detector] Detekuji navazující směny podle logiky Excel makra 
+[2025-03-20T15:48:21.212Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 9): 3. 3. 2025 08:00-20:00, druhá směna (řádek 10): 3. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.212Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 17): 7. 3. 2025 08:00-20:00, druhá směna (řádek 18): 7. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.213Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 31): 14. 3. 2025 08:00-20:00, druhá směna (řádek 32): 14. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.214Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 45): 21. 3. 2025 08:00-20:00, druhá směna (řádek 46): 21. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.215Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 51): 24. 3. 2025 08:00-20:00, druhá směna (řádek 52): 24. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.216Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 59): 28. 3. 2025 08:00-20:00, druhá směna (řádek 60): 28. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.217Z] [INFO] [consecutive-shift-detector] Detekována navazující směna: Ouerghi Houssem, první směna (řádek 65): 31. 3. 2025 08:00-20:00, druhá směna (řádek 66): 31. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.218Z] [INFO] [consecutive-shift-detector] Celkem nalezeno 7 párů navazujících směn (14 směn) 
+[2025-03-20T15:48:21.218Z] [INFO] [advanced-excel-processing] Detekováno 7 párů navazujících směn (14 směn) 
+[2025-03-20T15:48:21.221Z] [INFO] [advanced-excel-processing] Spouštím aktualizaci časů příchodů a odchodů 
+[2025-03-20T15:48:21.221Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:48:21.222Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 9) 
+[2025-03-20T15:48:21.222Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 10) 
+[2025-03-20T15:48:21.222Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:48:21.223Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 17) 
+[2025-03-20T15:48:21.223Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 18) 
+[2025-03-20T15:48:21.223Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:48:21.224Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 31) 
+[2025-03-20T15:48:21.224Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 32) 
+[2025-03-20T15:48:21.224Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:48:21.225Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 45) 
+[2025-03-20T15:48:21.225Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 46) 
+[2025-03-20T15:48:21.226Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:48:21.226Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 51) 
+[2025-03-20T15:48:21.227Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 52) 
+[2025-03-20T15:48:21.227Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:48:21.227Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 59) 
+[2025-03-20T15:48:21.228Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 60) 
+[2025-03-20T15:48:21.228Z] [INFO] [shift-time-processor] POSLEDNÍ KONTROLA navazujících směn: Ouerghi Houssem 
+[2025-03-20T15:48:21.229Z] [INFO] [shift-time-processor] VYNUCENÍ konce první směny: 20:00 (řádek 65) 
+[2025-03-20T15:48:21.232Z] [INFO] [shift-time-processor] VYNUCENÍ začátku druhé směny: 20:00 (řádek 66) 
+[2025-03-20T15:48:21.232Z] [INFO] [shift-time-processor] Začínám aktualizaci časů pro 60 směn, z toho 14 navazujících 
+[2025-03-20T15:48:21.233Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 5): 1. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.234Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 5): 06:51 (řádek List2: 6) 
+[2025-03-20T15:48:21.235Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 5): 18:48 (řádek List2: 9) 
+[2025-03-20T15:48:21.236Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 6): 1. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.237Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 6): 18:43 (řádek List2: 8) 
+[2025-03-20T15:48:21.237Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 6): 07:11 (řádek List2: 11) 
+[2025-03-20T15:48:21.238Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 7): 2. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.238Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 7): 07:10 (řádek List2: 10) 
+[2025-03-20T15:48:21.239Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 7): 18:46 (řádek List2: 13) 
+[2025-03-20T15:48:21.240Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 8): 2. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.241Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 8): 18:46 (řádek List2: 12) 
+[2025-03-20T15:48:21.241Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 8): 06:47 (řádek List2: 14) 
+[2025-03-20T15:48:21.242Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 9): 3. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.242Z] [INFO] [shift-time-processor] Nalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 9): 06:59 (řádek List2: 15) 
+[2025-03-20T15:48:21.243Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 10): 3. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.243Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 10): 06:30 (řádek List2: 17) 
+[2025-03-20T15:48:21.244Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Bartůněk Stanislav (řádek 11): 4. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.245Z] [INFO] [shift-time-processor] Nalezen příchod pro Bartůněk Stanislav (řádek 11): 06:28 (řádek List2: 16) 
+[2025-03-20T15:48:21.245Z] [INFO] [shift-time-processor] Nenalezen odchod pro Bartůněk Stanislav (řádek 11) 
+[2025-03-20T15:48:21.246Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 12): 4. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.246Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 12): 18:30 (řádek List2: 18) 
+[2025-03-20T15:48:21.247Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 12): 06:38 (řádek List2: 19) 
+[2025-03-20T15:48:21.247Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Bartůněk Stanislav (řádek 13): 5. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.248Z] [INFO] [shift-time-processor] Nalezen příchod pro Bartůněk Stanislav (řádek 13): 06:38 (řádek List2: 20) 
+[2025-03-20T15:48:21.249Z] [INFO] [shift-time-processor] Nalezen odchod pro Bartůněk Stanislav (řádek 13): 18:19 (řádek List2: 25) 
+[2025-03-20T15:48:21.250Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 14): 5. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.251Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 14): 18:19 (řádek List2: 24) 
+[2025-03-20T15:48:21.252Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 14): 06:20 (řádek List2: 26) 
+[2025-03-20T15:48:21.254Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 15): 6. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.255Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 15): 06:37 (řádek List2: 27) 
+[2025-03-20T15:48:21.256Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 15): 18:57 (řádek List2: 29) 
+[2025-03-20T15:48:21.257Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 16): 6. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.258Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 16): 18:31 (řádek List2: 28) 
+[2025-03-20T15:48:21.258Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 16): 06:57 (řádek List2: 30) 
+[2025-03-20T15:48:21.260Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 17): 7. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.260Z] [INFO] [shift-time-processor] Nalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 17): 06:59 (řádek List2: 31) 
+[2025-03-20T15:48:21.261Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 18): 7. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.262Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 18): 06:21 (řádek List2: 33) 
+[2025-03-20T15:48:21.263Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 19): 8. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.264Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 19): 18:40 (řádek List2: 34) 
+[2025-03-20T15:48:21.263Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 19): 06:19 (řádek List2: 32) 
+[2025-03-20T15:48:21.264Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 20): 8. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.265Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 20): 18:41 (řádek List2: 35) 
+[2025-03-20T15:48:21.266Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 20): 06:52 (řádek List2: 37) 
+[2025-03-20T15:48:21.267Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 21): 9. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.267Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 21): 06:51 (řádek List2: 36) 
+[2025-03-20T15:48:21.268Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 21): 18:58 (řádek List2: 39) 
+[2025-03-20T15:48:21.269Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 22): 9. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.270Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 22): 18:58 (řádek List2: 38) 
+[2025-03-20T15:48:21.272Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 23): 10. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.272Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 23): 06:46 (řádek List2: 40) 
+[2025-03-20T15:48:21.271Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 22): 06:47 (řádek List2: 41) 
+[2025-03-20T15:48:21.273Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 23): 18:51 (řádek List2: 43) 
+[2025-03-20T15:48:21.274Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 24): 10. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.275Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 24): 06:26 (řádek List2: 46) 
+[2025-03-20T15:48:21.274Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 24): 18:51 (řádek List2: 44) 
+[2025-03-20T15:48:21.276Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 25): 06:26 (řádek List2: 45) 
+[2025-03-20T15:48:21.276Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 25): 11. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.277Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 25): 18:56 (řádek List2: 48) 
+[2025-03-20T15:48:21.278Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 26): 11. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.279Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 26): 18:41 (řádek List2: 47) 
+[2025-03-20T15:48:21.279Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 26): 06:27 (řádek List2: 49) 
+[2025-03-20T15:48:21.280Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 27): 12. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.281Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 27): 06:27 (řádek List2: 50) 
+[2025-03-20T15:48:21.281Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 27): 18:42 (řádek List2: 52) 
+[2025-03-20T15:48:21.282Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 28): 12. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.283Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 28): 18:42 (řádek List2: 51) 
+[2025-03-20T15:48:21.284Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 28): 06:29 (řádek List2: 54) 
+[2025-03-20T15:48:21.285Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 29): 13. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.286Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 29): 06:28 (řádek List2: 53) 
+[2025-03-20T15:48:21.286Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 29): 18:42 (řádek List2: 56) 
+[2025-03-20T15:48:21.288Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 30): 18:23 (řádek List2: 55) 
+[2025-03-20T15:48:21.287Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 30): 13. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.289Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 30): 06:39 (řádek List2: 57) 
+[2025-03-20T15:48:21.290Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 31): 14. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.291Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 31) 
+[2025-03-20T15:48:21.291Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 32): 14. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.292Z] [INFO] [shift-time-processor] Nalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 32): 06:30 (řádek List2: 59) 
+[2025-03-20T15:48:21.293Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 33): 15. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.294Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 33): 18:34 (řádek List2: 61) 
+[2025-03-20T15:48:21.294Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 33): 06:28 (řádek List2: 58) 
+[2025-03-20T15:48:21.295Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 34): 15. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.296Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 34): 18:34 (řádek List2: 62) 
+[2025-03-20T15:48:21.296Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 34): 06:28 (řádek List2: 64) 
+[2025-03-20T15:48:21.298Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 35): 16. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.299Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 35): 06:28 (řádek List2: 63) 
+[2025-03-20T15:48:21.299Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 35): 19:02 (řádek List2: 66) 
+[2025-03-20T15:48:21.300Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 36): 16. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.302Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 36): 06:46 (řádek List2: 68) 
+[2025-03-20T15:48:21.304Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 37): 17. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.305Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 37): 06:46 (řádek List2: 67) 
+[2025-03-20T15:48:21.301Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 36): 18:59 (řádek List2: 65) 
+[2025-03-20T15:48:21.306Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 37): 18:51 (řádek List2: 70) 
+[2025-03-20T15:48:21.307Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Ouerghi Houssem (řádek 38): 17. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.308Z] [INFO] [shift-time-processor] Nalezen příchod pro Ouerghi Houssem (řádek 38): 18:49 (řádek List2: 69) 
+[2025-03-20T15:48:21.309Z] [INFO] [shift-time-processor] Nalezen odchod pro Ouerghi Houssem (řádek 38): 06:41 (řádek List2: 72) 
+[2025-03-20T15:48:21.311Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 39): 18. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.312Z] [INFO] [shift-time-processor] Nalezen příchod pro Sedmík Václav (řádek 39): 06:40 (řádek List2: 71) 
+[2025-03-20T15:48:21.313Z] [INFO] [shift-time-processor] Nalezen odchod pro Sedmík Václav (řádek 39): 18:46 (řádek List2: 74) 
+[2025-03-20T15:48:21.314Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 40): 18. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.315Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 40): 18:42 (řádek List2: 73) 
+[2025-03-20T15:48:21.316Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 40): 06:10 (řádek List2: 76) 
+[2025-03-20T15:48:21.317Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 41): 19. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.318Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 41): 06:10 (řádek List2: 75) 
+[2025-03-20T15:48:21.320Z] [INFO] [shift-time-processor] Nalezen odchod pro Klim Rudolf (řádek 41): 18:39 (řádek List2: 78) 
+[2025-03-20T15:48:21.322Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 42): 19. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.322Z] [INFO] [shift-time-processor] Nalezen příchod pro Jelínek Filip (řádek 42): 18:38 (řádek List2: 77) 
+[2025-03-20T15:48:21.323Z] [INFO] [shift-time-processor] Nalezen odchod pro Jelínek Filip (řádek 42): 06:20 (řádek List2: 79) 
+[2025-03-20T15:48:21.324Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 43): 20. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.325Z] [INFO] [shift-time-processor] Nalezen příchod pro Klim Rudolf (řádek 43): 06:21 (řádek List2: 80) 
+[2025-03-20T15:48:21.326Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 43) 
+[2025-03-20T15:48:21.327Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 44) 
+[2025-03-20T15:48:21.327Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 44): 20. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.328Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 44) 
+[2025-03-20T15:48:21.329Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 45): 21. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.340Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 45) 
+[2025-03-20T15:48:21.341Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 46): 21. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.341Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 46) 
+[2025-03-20T15:48:21.343Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 47): 22. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.343Z] [INFO] [shift-time-processor] Nenalezen příchod pro Klim Rudolf (řádek 47) 
+[2025-03-20T15:48:21.344Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 47) 
+[2025-03-20T15:48:21.345Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 48): 22. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.345Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 48) 
+[2025-03-20T15:48:21.346Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 48) 
+[2025-03-20T15:48:21.346Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 49): 23. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.347Z] [INFO] [shift-time-processor] Nenalezen příchod pro Klim Rudolf (řádek 49) 
+[2025-03-20T15:48:21.348Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 49) 
+[2025-03-20T15:48:21.349Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 50): 23. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.350Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 50) 
+[2025-03-20T15:48:21.351Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 50) 
+[2025-03-20T15:48:21.353Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 51): 24. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.354Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 51) 
+[2025-03-20T15:48:21.356Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 52): 24. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.357Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 52) 
+[2025-03-20T15:48:21.358Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 53): 25. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.359Z] [INFO] [shift-time-processor] Nenalezen příchod pro Sedmík Václav (řádek 53) 
+[2025-03-20T15:48:21.360Z] [INFO] [shift-time-processor] Nenalezen odchod pro Sedmík Václav (řádek 53) 
+[2025-03-20T15:48:21.361Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 54): 25. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.362Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 54) 
+[2025-03-20T15:48:21.361Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 54) 
+[2025-03-20T15:48:21.363Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Sedmík Václav (řádek 55): 26. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.364Z] [INFO] [shift-time-processor] Nenalezen příchod pro Sedmík Václav (řádek 55) 
+[2025-03-20T15:48:21.367Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 56): 26. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.364Z] [INFO] [shift-time-processor] Nenalezen odchod pro Sedmík Václav (řádek 55) 
+[2025-03-20T15:48:21.368Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 56) 
+[2025-03-20T15:48:21.369Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 56) 
+[2025-03-20T15:48:21.370Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Klim Rudolf (řádek 57): 27. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.371Z] [INFO] [shift-time-processor] Nenalezen příchod pro Klim Rudolf (řádek 57) 
+[2025-03-20T15:48:21.372Z] [INFO] [shift-time-processor] Nenalezen odchod pro Klim Rudolf (řádek 57) 
+[2025-03-20T15:48:21.374Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 58): 27. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.374Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 58) 
+[2025-03-20T15:48:21.375Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 58) 
+[2025-03-20T15:48:21.376Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 59): 28. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.377Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 59) 
+[2025-03-20T15:48:21.379Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 60): 28. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.379Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 60) 
+[2025-03-20T15:48:21.380Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 62): 29. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.381Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 62) 
+[2025-03-20T15:48:21.382Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 62) 
+[2025-03-20T15:48:21.384Z] [INFO] [shift-time-processor] Zpracovávám běžnou směnu pro Jelínek Filip (řádek 64): 30. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.385Z] [INFO] [shift-time-processor] Nenalezen příchod pro Jelínek Filip (řádek 64) 
+[2025-03-20T15:48:21.386Z] [INFO] [shift-time-processor] Nenalezen odchod pro Jelínek Filip (řádek 64) 
+[2025-03-20T15:48:21.387Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 65): 31. 3. 2025 08:00-20:00 
+[2025-03-20T15:48:21.388Z] [INFO] [shift-time-processor] Nenalezen příchod pro první navazující směnu Ouerghi Houssem (řádek 65) 
+[2025-03-20T15:48:21.390Z] [INFO] [shift-time-processor] Zpracovávám navazující směnu pro Ouerghi Houssem (řádek 66): 31. 3. 2025 20:00-08:00 
+[2025-03-20T15:48:21.390Z] [INFO] [shift-time-processor] Nenalezen odchod pro druhou navazující směnu Ouerghi Houssem (řádek 66) 
+[2025-03-20T15:48:21.391Z] [INFO] [shift-time-processor] Celkem aktualizováno 38 směn, nalezeno 35 příchodů a 34 odchodů 
+[2025-03-20T15:48:21.392Z] [INFO] [shift-time-processor] Mapa usedRowsStart obsahuje 35 položek, usedRowsEnd obsahuje 34 položek 
+[2025-03-20T15:48:21.392Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 5 -> List2 řádek 6 
+[2025-03-20T15:48:21.393Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 6 -> List2 řádek 8 
+[2025-03-20T15:48:21.393Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 7 -> List2 řádek 10 
+[2025-03-20T15:48:21.394Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 8 -> List2 řádek 12 
+[2025-03-20T15:48:21.394Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 9 -> List2 řádek 15 
+[2025-03-20T15:48:21.395Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 11 -> List2 řádek 16 
+[2025-03-20T15:48:21.396Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 12 -> List2 řádek 18 
+[2025-03-20T15:48:21.396Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 13 -> List2 řádek 20 
+[2025-03-20T15:48:21.397Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 14 -> List2 řádek 24 
+[2025-03-20T15:48:21.398Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 15 -> List2 řádek 27 
+[2025-03-20T15:48:21.399Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 16 -> List2 řádek 28 
+[2025-03-20T15:48:21.400Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 17 -> List2 řádek 31 
+[2025-03-20T15:48:21.401Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 19 -> List2 řádek 32 
+[2025-03-20T15:48:21.402Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 21 -> List2 řádek 36 
+[2025-03-20T15:48:21.401Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 20 -> List2 řádek 35 
+[2025-03-20T15:48:21.403Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 22 -> List2 řádek 38 
+[2025-03-20T15:48:21.404Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 24 -> List2 řádek 44 
+[2025-03-20T15:48:21.405Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 25 -> List2 řádek 45 
+[2025-03-20T15:48:21.403Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 23 -> List2 řádek 40 
+[2025-03-20T15:48:21.406Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 26 -> List2 řádek 47 
+[2025-03-20T15:48:21.406Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 27 -> List2 řádek 50 
+[2025-03-20T15:48:21.407Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 29 -> List2 řádek 53 
+[2025-03-20T15:48:21.407Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 28 -> List2 řádek 51 
+[2025-03-20T15:48:21.408Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 30 -> List2 řádek 55 
+[2025-03-20T15:48:21.409Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 34 -> List2 řádek 62 
+[2025-03-20T15:48:21.409Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 33 -> List2 řádek 58 
+[2025-03-20T15:48:21.410Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 35 -> List2 řádek 63 
+[2025-03-20T15:48:21.410Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 36 -> List2 řádek 65 
+[2025-03-20T15:48:21.411Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 37 -> List2 řádek 67 
+[2025-03-20T15:48:21.412Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 38 -> List2 řádek 69 
+[2025-03-20T15:48:21.413Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 39 -> List2 řádek 71 
+[2025-03-20T15:48:21.414Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 40 -> List2 řádek 73 
+[2025-03-20T15:48:21.414Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 41 -> List2 řádek 75 
+[2025-03-20T15:48:21.415Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 42 -> List2 řádek 77 
+[2025-03-20T15:48:21.415Z] [INFO] [shift-time-processor] usedRowsStart: Směna řádek 43 -> List2 řádek 80 
+[2025-03-20T15:48:21.416Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 6 -> List2 řádek 11 
+[2025-03-20T15:48:21.416Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 5 -> List2 řádek 9 
+[2025-03-20T15:48:21.417Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 7 -> List2 řádek 13 
+[2025-03-20T15:48:21.417Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 8 -> List2 řádek 14 
+[2025-03-20T15:48:21.418Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 10 -> List2 řádek 17 
+[2025-03-20T15:48:21.419Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 12 -> List2 řádek 19 
+[2025-03-20T15:48:21.419Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 13 -> List2 řádek 25 
+[2025-03-20T15:48:21.420Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 14 -> List2 řádek 26 
+[2025-03-20T15:48:21.420Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 15 -> List2 řádek 29 
+[2025-03-20T15:48:21.421Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 16 -> List2 řádek 30 
+[2025-03-20T15:48:21.421Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 18 -> List2 řádek 33 
+[2025-03-20T15:48:21.422Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 19 -> List2 řádek 34 
+[2025-03-20T15:48:21.423Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 20 -> List2 řádek 37 
+[2025-03-20T15:48:21.426Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 21 -> List2 řádek 39 
+[2025-03-20T15:48:21.426Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 22 -> List2 řádek 41 
+[2025-03-20T15:48:21.427Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 23 -> List2 řádek 43 
+[2025-03-20T15:48:21.428Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 24 -> List2 řádek 46 
+[2025-03-20T15:48:21.429Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 25 -> List2 řádek 48 
+[2025-03-20T15:48:21.429Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 26 -> List2 řádek 49 
+[2025-03-20T15:48:21.430Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 28 -> List2 řádek 54 
+[2025-03-20T15:48:21.430Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 27 -> List2 řádek 52 
+[2025-03-20T15:48:21.431Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 29 -> List2 řádek 56 
+[2025-03-20T15:48:21.432Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 30 -> List2 řádek 57 
+[2025-03-20T15:48:21.432Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 32 -> List2 řádek 59 
+[2025-03-20T15:48:21.433Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 33 -> List2 řádek 61 
+[2025-03-20T15:48:21.434Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 35 -> List2 řádek 66 
+[2025-03-20T15:48:21.433Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 34 -> List2 řádek 64 
+[2025-03-20T15:48:21.435Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 37 -> List2 řádek 70 
+[2025-03-20T15:48:21.434Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 36 -> List2 řádek 68 
+[2025-03-20T15:48:21.435Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 38 -> List2 řádek 72 
+[2025-03-20T15:48:21.436Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 40 -> List2 řádek 76 
+[2025-03-20T15:48:21.436Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 39 -> List2 řádek 74 
+[2025-03-20T15:48:21.437Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 41 -> List2 řádek 78 
+[2025-03-20T15:48:21.437Z] [INFO] [shift-time-processor] usedRowsEnd: Směna řádek 42 -> List2 řádek 79 
+[2025-03-20T15:48:21.438Z] [INFO] [advanced-excel-processing] Aktualizováno 38 směn, nalezeno 35 příchodů a 34 odchodů 
+[2025-03-20T15:48:21.438Z] [INFO] [advanced-excel-processing] Mapa usedRowsStart obsahuje 35 položek 
+[2025-03-20T15:48:21.439Z] [INFO] [advanced-excel-processing] Mapa usedRowsEnd obsahuje 34 položek 
+[2025-03-20T15:48:21.439Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 5 -> List2 řádek 6 
+[2025-03-20T15:48:21.440Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 6 -> List2 řádek 8 
+[2025-03-20T15:48:21.441Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 7 -> List2 řádek 10 
+[2025-03-20T15:48:21.441Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 8 -> List2 řádek 12 
+[2025-03-20T15:48:21.442Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 9 -> List2 řádek 15 
+[2025-03-20T15:48:21.442Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 11 -> List2 řádek 16 
+[2025-03-20T15:48:21.443Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 12 -> List2 řádek 18 
+[2025-03-20T15:48:21.443Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 13 -> List2 řádek 20 
+[2025-03-20T15:48:21.444Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 14 -> List2 řádek 24 
+[2025-03-20T15:48:21.445Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 15 -> List2 řádek 27 
+[2025-03-20T15:48:21.445Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 16 -> List2 řádek 28 
+[2025-03-20T15:48:21.446Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 17 -> List2 řádek 31 
+[2025-03-20T15:48:21.446Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 19 -> List2 řádek 32 
+[2025-03-20T15:48:21.447Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 20 -> List2 řádek 35 
+[2025-03-20T15:48:21.447Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 21 -> List2 řádek 36 
+[2025-03-20T15:48:21.448Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 22 -> List2 řádek 38 
+[2025-03-20T15:48:21.448Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 23 -> List2 řádek 40 
+[2025-03-20T15:48:21.449Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 24 -> List2 řádek 44 
+[2025-03-20T15:48:21.449Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 25 -> List2 řádek 45 
+[2025-03-20T15:48:21.450Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 26 -> List2 řádek 47 
+[2025-03-20T15:48:21.451Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 27 -> List2 řádek 50 
+[2025-03-20T15:48:21.451Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 28 -> List2 řádek 51 
+[2025-03-20T15:48:21.452Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 29 -> List2 řádek 53 
+[2025-03-20T15:48:21.453Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 30 -> List2 řádek 55 
+[2025-03-20T15:48:21.453Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 33 -> List2 řádek 58 
+[2025-03-20T15:48:21.454Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 34 -> List2 řádek 62 
+[2025-03-20T15:48:21.455Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 35 -> List2 řádek 63 
+[2025-03-20T15:48:21.455Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 36 -> List2 řádek 65 
+[2025-03-20T15:48:21.456Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 37 -> List2 řádek 67 
+[2025-03-20T15:48:21.457Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 38 -> List2 řádek 69 
+[2025-03-20T15:48:21.458Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 40 -> List2 řádek 73 
+[2025-03-20T15:48:21.458Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 39 -> List2 řádek 71 
+[2025-03-20T15:48:21.460Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 42 -> List2 řádek 77 
+[2025-03-20T15:48:21.459Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 41 -> List2 řádek 75 
+[2025-03-20T15:48:21.461Z] [INFO] [excel-data-extractor] updateExcelWorkbook: počet směn: 60, z toho s actualStart: 42, s actualEnd: 41 
+[2025-03-20T15:48:21.461Z] [INFO] [advanced-excel-processing] Příchod: List1 řádek 43 -> List2 řádek 80 
+[2025-03-20T15:48:21.462Z] [INFO] [excel-data-extractor] timeUpdateResult: usedRowsStart: 35, usedRowsEnd: 34 
+[2025-03-20T15:48:21.466Z] [INFO] [excel-data-extractor] Obarvování buněk v List2 bylo deaktivováno. 
+[2025-03-20T15:48:21.674Z] [INFO] [advanced-excel-processing] Výsledný soubor byl uložen do: C:\Programování\AG-Management\public\processed\TOP Hotel 3-2025_zpracovano_2025-03-20T15-48-21-467Z.xlsx 
+[2025-03-20T15:48:21.675Z] [INFO] [avaris-excel-action] Pokročilé zpracování dokončeno úspěšně 
+[2025-03-20T15:49:52.230Z] [INFO] [csv-processor] Soubor C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx byl smazán 
+[2025-03-20T15:51:29.604Z] [ERROR] [csv-processor] Chyba při mazání souboru C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx: Error: ENOENT: no such file or directory, unlink 'C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx' 
+[2025-03-20T15:53:21.058Z] [ERROR] [csv-processor] Chyba při mazání souboru C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx: Error: ENOENT: no such file or directory, unlink 'C:\Programování\AG-Management\public\downloads\top_hotel_export_filtered.xlsx' 

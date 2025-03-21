@@ -114,6 +114,244 @@ async function performLogin(
   }
 }
 
+// Vylepšená funkce pro přidání objektu do pravého sloupce
+/**
+ * Pomocná funkce pro přidání objektu do pravého sloupce s opakovanými pokusy.
+ * Funkce kontroluje, zda se objekt skutečně objevil v pravé tabulce.
+ * 
+ * @param page Playwright Page objekt
+ * @param objektName Název objektu, který má být přidán
+ * @param maxRetries Maximální počet pokusů o přidání objektu
+ * @returns Promise<boolean> True pokud byl objekt úspěšně přidán, jinak false
+ */
+async function addObjectToRightColumn(
+  page: any, // Ideálně by zde měl být přesný typ z Playwright
+  objektName: string,
+  maxRetries: number = 3
+): Promise<boolean> {
+  // Získání instance loggeru pro tuto komponentu
+  const logger = StructuredLogger.getInstance().getComponentLogger("scraper");
+  
+  // Zpracování přidání objektu s možností opakovaných pokusů
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      logger.info(`Pokus #${attempt}: Hledám checkbox pro objekt`, { objektName });
+
+      // 1. Najdeme label s požadovaným textem - přesná shoda
+      const label = await page.locator(
+        `label.cursor-pointer:text-is("${objektName}")`
+      );
+      const labelCount = await label.count();
+
+      if (labelCount > 0) {
+        // Získáme 'for' atribut z labelu
+        const forAttr = await label.getAttribute("for");
+        logger.info(`Nalezen label s atributem`, { forAttr });
+
+        if (forAttr) {
+          // Najdeme a označíme checkbox
+          const checkbox = await page.locator(`#${forAttr}`);
+          await checkbox.check();
+          logger.info(`Checkbox zaškrtnut`, { checkboxId: forAttr });
+
+          // Klikneme na tlačítko Přidat >>
+          logger.info('Klikám na tlačítko "Přidat"');
+          await page.click("button >> text=Přidat");
+
+          // Delší pauza po kliknutí na "Přidat" - zvyšujeme pravděpodobnost úspěchu
+          await page.waitForTimeout(2000);
+
+          // Ověříme, že se položka objevila v tabulce pomocí více různých selektorů
+          const tableItemSelectors = [
+            `table.table-vypis tr td:has-text("${objektName}")`,
+            `table.table-vypis tr:has-text("${objektName}")`,
+            `table.table-vypis tr td:text-is("${objektName}")`,
+            `table.table-vypis tr td:text-matches("${objektName}", "i")`  // Nezávislé na velikosti písmen
+          ];
+          
+          // Postupně zkusíme všechny selektory
+          let itemFound = false;
+          for (const selector of tableItemSelectors) {
+            const count = await page.locator(selector).count();
+            if (count > 0) {
+              itemFound = true;
+              logger.info(`Objekt nalezen v tabulce pomocí selektoru`, { selector, objektName });
+              break;
+            }
+          }
+            
+          if (itemFound) {
+            logger.info(`Objekt byl úspěšně přidán do tabulky`, { objektName, attempt });
+            return true; // Úspěšné přidání
+          } else {
+            logger.warn(`Objekt nebyl nalezen v tabulce po přidání (pokus #${attempt})`, { objektName });
+            
+            // Zkusíme screenshotem zachytit stav
+            if (attempt === maxRetries) {
+              try {
+                const screenshotPath = path.join(
+                  process.cwd(),
+                  "public",
+                  "screenshots",
+                  `failed-add-${objektName.replace(/[^a-z0-9]/gi, "-")}.png`
+                );
+                await fs.mkdir(path.dirname(screenshotPath), { recursive: true }).catch(() => {});
+                await page.screenshot({ path: screenshotPath });
+                logger.info(`Vytvořen screenshot chybového stavu`, { screenshotPath });
+              } catch (screenshotError) {
+                logger.error(`Nepodařilo se vytvořit screenshot`, { error: screenshotError });
+              }
+            }
+            
+            // Pokud to není poslední pokus, zkusíme znovu
+            if (attempt < maxRetries) {
+              logger.info(`Zkusím přidat objekt znovu (pokus #${attempt+1})`, { objektName });
+              
+              // Před dalším pokusem počkáme o něco déle
+              await page.waitForTimeout(1000 * attempt); // Postupně zvyšujeme čekací dobu
+              continue;
+            }
+          }
+        } else {
+          throw new Error(`Label pro "${objektName}" nemá atribut 'for'!`);
+        }
+      } else {
+        // 2. Pokud nenajdeme label přesně podle textu, zkusíme vyhledat částečnou shodu
+        logger.info(
+          `Přesný text nenalezen, zkouším částečnou shodu`, { objektName }
+        );
+        const labelPartial = await page.locator(
+          `label.cursor-pointer:has-text("${objektName}")`
+        );
+        const labelPartialCount = await labelPartial.count();
+
+        if (labelPartialCount > 0) {
+          const forAttr = await labelPartial.getAttribute("for");
+          logger.info(`Nalezen label s atributem (částečná shoda)`, { forAttr });
+
+          if (forAttr) {
+            const checkbox = await page.locator(`#${forAttr}`);
+            await checkbox.check();
+            logger.info(`Checkbox zaškrtnut (částečná shoda)`, { checkboxId: forAttr });
+
+            // Klikneme na tlačítko Přidat >>
+            await page.click("button >> text=Přidat");
+            await page.waitForTimeout(2000);
+            
+            // Ověříme, že se položka objevila v tabulce
+            const tableItemSelectors = [
+              `table.table-vypis tr td:has-text("${objektName}")`,
+              `table.table-vypis tr:has-text("${objektName}")`,
+              `table.table-vypis tr td:text-matches("${objektName}", "i")`
+            ];
+            
+            // Postupně zkusíme všechny selektory
+            let itemFound = false;
+            for (const selector of tableItemSelectors) {
+              const count = await page.locator(selector).count();
+              if (count > 0) {
+                itemFound = true;
+                logger.info(`Objekt nalezen v tabulce pomocí selektoru (částečná shoda)`, { selector, objektName });
+                break;
+              }
+            }
+              
+            if (itemFound) {
+              logger.info(`Objekt byl úspěšně přidán do tabulky (částečná shoda)`, { objektName });
+              return true; // Úspěšné přidání
+            } else {
+              logger.warn(`Objekt nebyl nalezen v tabulce po přidání (částečná shoda, pokus #${attempt})`, { objektName });
+              
+              // Zkusíme screenshotem zachytit stav při posledním pokusu
+              if (attempt === maxRetries) {
+                try {
+                  const screenshotPath = path.join(
+                    process.cwd(),
+                    "public",
+                    "screenshots",
+                    `failed-add-partial-${objektName.replace(/[^a-z0-9]/gi, "-")}.png`
+                  );
+                  await fs.mkdir(path.dirname(screenshotPath), { recursive: true }).catch(() => {});
+                  await page.screenshot({ path: screenshotPath });
+                  logger.info(`Vytvořen screenshot chybového stavu (částečná shoda)`, { screenshotPath });
+                } catch (screenshotError) {
+                  logger.error(`Nepodařilo se vytvořit screenshot`, { error: screenshotError });
+                }
+              }
+              
+              // Pokud to není poslední pokus, zkusíme znovu
+              if (attempt < maxRetries) {
+                logger.info(`Zkusím přidat objekt znovu (pokus #${attempt+1})`, { objektName });
+                // Před dalším pokusem počkáme o něco déle
+                await page.waitForTimeout(1000 * attempt);
+                continue;
+              }
+            }
+          } else {
+            throw new Error(
+              `Label pro "${objektName}" (částečná shoda) nemá atribut 'for'!`
+            );
+          }
+        } else {
+          // 3. Poslední pokus: zkusíme najít jakýkoli similar text
+          logger.info(`Ani částečná shoda nenalezena, zkouším hledat podobné názvy`, { objektName });
+          
+          // Pokud systém používá zkratky, zkusíme vyhledat první 3-4 znaky objektu
+          if (objektName.length > 4) {
+            const shortPrefix = objektName.substring(0, 4);
+            const prefixLabel = await page.locator(
+              `label.cursor-pointer:has-text("${shortPrefix}")`
+            );
+            
+            if (await prefixLabel.count() > 0) {
+              const forAttr = await prefixLabel.getAttribute("for");
+              if (forAttr) {
+                logger.info(`Nalezen label s podobným prefixem`, { prefix: shortPrefix, forAttr });
+                
+                const checkbox = await page.locator(`#${forAttr}`);
+                await checkbox.check();
+                
+                // Klikneme na tlačítko Přidat >>
+                await page.click("button >> text=Přidat");
+                await page.waitForTimeout(2000);
+                
+                // Kontrola přidání (použijeme méně striktní kritéria)
+                const prefixInTable = await page.locator(`table.table-vypis tr:has-text("${shortPrefix}")`).count();
+                if (prefixInTable > 0) {
+                  logger.info(`Objekt s prefixem nalezen v tabulce`, { prefix: shortPrefix });
+                  return true;
+                }
+              }
+            }
+          }
+          
+          throw new Error(
+            `Objekt "${objektName}" nebyl nalezen ani pomocí částečné shody!`
+          );
+        }
+      }
+    } catch (error) {
+      logger.error(
+        `Chyba při hledání a označení objektu (pokus #${attempt})`, { 
+          objektName, 
+          error: error instanceof Error ? error.message : String(error)
+        }
+      );
+      
+      // Pokud to není poslední pokus, zkusíme znovu
+      if (attempt < maxRetries) {
+        logger.info(`Zkusím přidat objekt znovu po chybě (pokus #${attempt+1})`, { objektName });
+        await page.waitForTimeout(1000 * attempt);
+        continue;
+      }
+    }
+  }
+  
+  // Pokud se dostaneme sem, znamená to, že všechny pokusy selhaly
+  logger.error(`Nepodařilo se přidat objekt do pravého sloupce po ${maxRetries} pokusech`, { objektName });
+  return false;
+}
+
 // Aktualizovaná funkce pro dávkové zpracování
 export async function captureAvarisData(
   ico: string | undefined,
@@ -162,10 +400,8 @@ export async function captureAvarisData(
     if (cookies) {
       await context.addCookies(cookies);
 
-      // Zkusit přistoupit přímo na dashboard
-      await page.goto("https://portal.avaris.cz/index.php");
-
       // Zkontrolovat, zda jsme přihlášeni
+      await page.goto("https://portal.avaris.cz/index.php");
       const isLoggedIn = await page.evaluate(() => {
         return (
           document.querySelector("body") !== null &&
@@ -217,87 +453,10 @@ export async function captureAvarisData(
 
         // Zkrácená pauza po odebrání všech položek
         await page.waitForTimeout(800);
-
+ // 2. Nová funkce - Přidáme požadovaný objekt s kontrolou a opakováním
+ const objectAdded = await addObjectToRightColumn(page, objektName);
         // 2. Nyní přidáme požadovaný objekt
-        try {
-          logger.info(`Hledám checkbox pro objekt`, { objektName });
-
-          // Najdeme label s požadovaným textem
-          const label = await page.locator(
-            `label.cursor-pointer:text-is("${objektName}")`
-          );
-          const labelCount = await label.count();
-
-          if (labelCount > 0) {
-            // Získáme 'for' atribut
-            const forAttr = await label.getAttribute("for");
-            logger.info(`Nalezen label s atributem`, { forAttr });
-
-            if (forAttr) {
-              // Najdeme a označíme checkbox
-              const checkbox = await page.locator(`#${forAttr}`);
-              await checkbox.check();
-              logger.info(`Checkbox zaškrtnut`, { checkboxId: forAttr });
-
-              // Klikneme na tlačítko Přidat >>
-              logger.info('Klikám na tlačítko "Přidat"');
-              await page.click("button >> text=Přidat");
-
-              // Zkrácená pauza po kliknutí na "Přidat"
-              await page.waitForTimeout(1500);
-
-              // Pokusíme se ověřit, že se položka objevila v tabulce
-              const itemInTable = await page
-                .locator(`table.table-vypis tr td:has-text("${objektName}")`)
-                .count();
-              if (itemInTable > 0) {
-                logger.info(`Objekt byl úspěšně přidán do tabulky`, { objektName });
-              } else {
-                logger.warn(`Objekt nebyl nalezen v tabulce po přidání`, { objektName });
-              }
-            } else {
-              throw new Error(`Label pro "${objektName}" nemá atribut 'for'!`);
-            }
-          } else {
-            // Pokud nenajdeme label přesně podle textu, zkusíme vyhledat částečnou shodu
-            logger.info(
-              `Přesný text nenalezen, zkouším částečnou shodu`, { objektName }
-            );
-            const labelPartial = await page.locator(
-              `label.cursor-pointer:has-text("${objektName}")`
-            );
-            const labelPartialCount = await labelPartial.count();
-
-            if (labelPartialCount > 0) {
-              const forAttr = await labelPartial.getAttribute("for");
-              logger.info(`Nalezen label s atributem (částečná shoda)`, { forAttr });
-
-              if (forAttr) {
-                const checkbox = await page.locator(`#${forAttr}`);
-                await checkbox.check();
-                logger.info(`Checkbox zaškrtnut (částečná shoda)`, { checkboxId: forAttr });
-
-                // Klikneme na tlačítko Přidat >>
-                await page.click("button >> text=Přidat");
-                await page.waitForTimeout(1000);
-              } else {
-                throw new Error(
-                  `Label pro "${objektName}" (částečná shoda) nemá atribut 'for'!`
-                );
-              }
-            } else {
-              throw new Error(
-                `Objekt "${objektName}" nebyl nalezen ani pomocí částečné shody!`
-              );
-            }
-          }
-        } catch (error) {
-          logger.error(
-            `Chyba při hledání a označení objektu`, { objektName, error }
-          );
-          // Pokračujeme s dalším objektem místo ukončení celého procesu
-          continue;
-        }
+if (objectAdded) {
 
         // 3. Klikneme na tlačítko "Uložit" pro potvrzení změn
         logger.info('Klikám na tlačítko "Uložit"');
@@ -320,6 +479,7 @@ export async function captureAvarisData(
         } catch (error) {
           logger.error(`Chyba při ukládání změn`, { error });
         }
+        
         // Nový krok: Nastavení období na "Interval" a výběr požadovaných sloupců
         logger.info('Nastavuji typ období na "Interval" a požadované sloupce');
 
@@ -522,9 +682,14 @@ export async function captureAvarisData(
         } catch (error) {
           logger.error(`Chyba při práci s tlačítkem CSV`, { objektName, error });
         }
-
-        // Před zpracováním dalšího objektu zavřeme popup okno
         await popupPage.close();
+      } else {
+        // Pokud se objekt nepodařilo přidat do pravého sloupce, přeskočíme zpracování
+        logger.warn(`Přeskakuji zpracování objektu ${objektName}, protože se ho nepodařilo přidat do pravého sloupce`);
+        continue; // Přejde na další objekt v cyklu
+      }
+        // Před zpracováním dalšího objektu zavřeme popup okno
+        
         logger.info(`Dokončeno zpracování objektu`, { objektName });
       } catch (error) {
         logger.error(`Chyba při zpracování objektu`, { objektName, error });

@@ -1004,3 +1004,4 @@
 {"component":"avaris-excel-action","correlationId":"process_m8iqmiw3_0fzri","level":"info","message":"Pokročilé zpracování dokončeno úspěšně","service":"excel-processing","timestamp":"2025-03-21 13:09:57"}
 {"component":"avaris-excel-action","correlationId":"process_m8iqmiw3_0fzri","level":"info","message":"Používám nový výstupní soubor: BPK 3-2025_zpracovano_2025-03-21T12-09-57-467Z.xlsx","service":"excel-processing","timestamp":"2025-03-21 13:09:57"}
 {"component":"csv-processor","level":"info","message":"Soubor C:\\Programování\\AG-Management\\public\\downloads\\bpk_export_filtered.xlsx byl smazán","service":"excel-processing","timestamp":"2025-03-21 13:14:57"}
+{"component":"scraper","level":"warn","message":"Objekt nebyl nalezen v tabulce po přidání (pokus #1)","objektName":"TOP HOTEL","service":"excel-processing","timestamp":"2025-03-21 14:53:28"}

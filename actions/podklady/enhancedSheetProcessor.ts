@@ -4,10 +4,11 @@
 import ExcelJS from "exceljs";
 import { read, utils, writeFile } from "xlsx";
 import path from "path";
-import { createLogger } from "@/modules/podklady/services/logger";
+import { StructuredLogger } from "@/modules/podklady/services/structuredLogger";
 import fs from "fs/promises";
 
-const logger = createLogger("enhanced-sheet-processor");
+// Inicializace StructuredLogger místo starého loggeru
+const logger = StructuredLogger.getInstance().getComponentLogger('enhanced-sheet-processor');
 
 type ProcessSheetResult = {
   success: boolean;
@@ -27,9 +28,16 @@ export async function processExcelSheet(
   targetFileName: string,
   sourceData: any[]
 ): Promise<ProcessSheetResult> {
+  // Generujeme korelační ID pro sledování této operace
+  const correlationId = `sheet_${Date.now().toString(36)}_${Math.random().toString(36).substring(2, 7)}`;
+  logger.setCorrelationId(correlationId);
+  
   try {
     logger.info(
-      `Zpracovávám Excel soubor ${targetFileName} pro přidání dat z Avarisu`
+      `Zpracovávám Excel soubor ${targetFileName} pro přidání dat z Avarisu`, {
+        fileName: targetFileName,
+        dataCount: sourceData.length
+      }
     );
 
     // Cesta k souboru
@@ -45,7 +53,9 @@ export async function processExcelSheet(
       await fs.access(targetFilePath);
       logger.info(`Cílový soubor existuje: ${targetFilePath}`);
     } catch (error) {
-      logger.error(`Cílový soubor neexistuje: ${targetFilePath}`);
+      logger.error(`Cílový soubor neexistuje: ${targetFilePath}`, {
+        error: error instanceof Error ? error.message : 'Neznámá chyba'
+      });
       return {
         success: false,
         error: `Cílový soubor neexistuje: ${targetFileName}`,
@@ -59,6 +69,7 @@ export async function processExcelSheet(
     // Kontrola existence List1 a jeho zachování
     const list1 = workbook.getWorksheet('List1');
     if (!list1) {
+      logger.error("Soubor neobsahuje list 'List1', který je nezbytný pro zpracování");
       return {
         success: false,
         error: "Soubor neobsahuje list 'List1', který je nezbytný pro zpracování.",
@@ -108,14 +119,21 @@ export async function processExcelSheet(
                 lastTimestamp = timestamp;
               }
             } catch (e) {
-              logger.warn(`Chyba při zpracování časového údaje v řádku ${rowNumber}: ${e}`);
+              logger.warn(`Chyba při zpracování časového údaje v řádku ${rowNumber}: ${e}`, {
+                rowNumber,
+                cellValue: timestampCell.value,
+                error: e instanceof Error ? e.message : 'Neznámá chyba'
+              });
             }
           }
         }
       });
       
       existingData = rowCount > 5; // Pokud je více než 5 řádků, považujeme to za existující data
-      logger.info(`List2 existuje, obsahuje ${rowCount} řádků, poslední časový údaj: ${lastTimestamp}`);
+      logger.info(`List2 existuje, obsahuje ${rowCount} řádků, poslední časový údaj: ${lastTimestamp || 'není'}`, {
+        rowCount,
+        lastTimestamp: lastTimestamp
+      });
     } else {
       // List2 neexistuje, vytvoříme ho
       list2 = workbook.addWorksheet('List2');
@@ -129,15 +147,24 @@ export async function processExcelSheet(
         // Převod časového údaje v záznamu (předpokládáme, že je ve sloupci B)
         try {
           const recordTimestamp = parseTimestamp(record[1]); // index 1 odpovídá sloupci B
-          if (lastTimestamp && lastTimestamp!==null)
-          return recordTimestamp > lastTimestamp;
+          if (lastTimestamp && recordTimestamp > lastTimestamp) {
+            return true;
+          }
+          return false;
         } catch (e) {
-          logger.warn(`Chyba při filtrování záznamu podle času: ${e}`);
+          logger.warn(`Chyba při filtrování záznamu podle času: ${e}`, {
+            record,
+            error: e instanceof Error ? e.message : 'Neznámá chyba'
+          });
           return false;
         }
       });
       
-      logger.info(`Filtrováno ${filteredData.length} nových záznamů z celkových ${sourceData.length}`);
+      logger.info(`Filtrováno ${filteredData.length} nových záznamů z celkových ${sourceData.length}`, {
+        totalRecords: sourceData.length,
+        filteredRecords: filteredData.length,
+        filteredPercentage: Math.round((filteredData.length / sourceData.length) * 100)
+      });
     }
 
     // Pokud neexistují data, nastavíme hlavičky a formátování
@@ -237,7 +264,10 @@ export async function processExcelSheet(
               }
             }
           } catch (error) {
-            logger.error(`Chyba při zpracování času ${timeStr}: ${error}`);
+            logger.error(`Chyba při zpracování času ${timeStr}: ${error}`, {
+              timeString: timeStr,
+              error: error instanceof Error ? error.message : 'Neznámá chyba'
+            });
           }
         }
       }
@@ -257,9 +287,14 @@ export async function processExcelSheet(
     });
 
     // Uložení změn do cílového souboru
-    logger.info(`Ukládám změny do souboru: ${targetFilePath}`);
+    logger.info(`Ukládám změny do souboru: ${targetFilePath}`, {
+      rowsAdded,
+      totalRows: (existingData ? list2.rowCount - rowsAdded : 0) + rowsAdded
+    });
     await workbook.xlsx.writeFile(targetFilePath);
 
+    logger.info(`Zpracování Excel souboru dokončeno, přidáno ${rowsAdded} záznamů`);
+    
     return {
       success: true,
       message: `${rowsAdded} záznamů bylo úspěšně přidáno do listu 'List2'.`,
@@ -267,7 +302,10 @@ export async function processExcelSheet(
       dataAdded: rowsAdded
     };
   } catch (error) {
-    logger.error(`Chyba při zpracování Excel souboru: ${error}`);
+    logger.error(`Chyba při zpracování Excel souboru: ${error}`, {
+      error: error instanceof Error ? error.message : 'Neznámá chyba',
+      stack: error instanceof Error ? error.stack : undefined
+    });
     return {
       success: false,
       error: error instanceof Error ? error.message : "Neznámá chyba",

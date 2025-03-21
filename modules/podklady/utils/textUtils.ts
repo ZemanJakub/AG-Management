@@ -1,7 +1,7 @@
 // modules/common/utils/textUtils.ts
-import { createLogger } from "@/modules/podklady/services/logger";
+import { StructuredLogger } from "@/modules/podklady/services/structuredLogger";
 
-const logger = createLogger("text-utils");
+const logger = StructuredLogger.getInstance().getComponentLogger('text-utils');
 
 /**
  * Normalizace jména -- odstraňuje přebytečné mezery, převádí text na malá písmena a volitelně odstraňuje diakritiku

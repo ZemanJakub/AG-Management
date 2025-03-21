@@ -1,10 +1,12 @@
 // modules/podklady/services/excelDataExtractor.ts
 import ExcelJS from "exceljs";
-import { createLogger } from "./logger";
+import { StructuredLogger } from "./structuredLogger";
 
-const logger = createLogger("excel-data-extractor");
+const logger = StructuredLogger.getInstance().getComponentLogger("excel-data-extractor");
 
-// Interface pro data směny
+/**
+ * Interface pro data směny
+ */
 export interface ShiftData {
   rowIndex: number;
   name: string;
@@ -17,7 +19,9 @@ export interface ShiftData {
   isSecondPartOfConsecutive?: boolean;
 }
 
-// Interface pro čipovací záznam
+/**
+ * Interface pro čipovací záznam
+ */
 export interface ClockRecord {
   rowIndex: number;
   name: string;
@@ -28,9 +32,6 @@ export interface ClockRecord {
   type?: string;
 }
 
-/**
- * Funkce pro extrakci dat směn z List1 s rozšířenou diagnostikou
- */
 /**
  * Funkce pro extrakci dat směn z List1 s korektními indexy sloupců
  */
@@ -100,6 +101,7 @@ export function extractShiftsFromList1(
 
     if (!date) {
       skippedRows++;
+      logger.debug(`Přeskakuji řádek - nelze parsovat datum`, { rowNum, dateValue: dateCell.value });
       return; // Přeskočit řádek, pokud nemůžeme parsovat datum
     }
 
@@ -162,6 +164,13 @@ export function extractShiftsFromList1(
     });
   });
 
+  logger.info(`Extrakce směn z List1 dokončena`, {
+    totalRows: processedRows + skippedRows,
+    processedRows,
+    skippedRows, 
+    extractedShifts: shifts.length
+  });
+
   return shifts;
 }
 
@@ -184,6 +193,11 @@ export function extractClockRecordsFromList2(
 
   // Kontrola, zda List2 existuje a má nějaká data
   if (!worksheet || worksheet.rowCount < startRow) {
+    logger.warn(`List2 neexistuje nebo nemá dostatek řádků`, {
+      exists: !!worksheet,
+      rowCount: worksheet?.rowCount || 0,
+      startRow
+    });
     return records;
   }
 
@@ -252,7 +266,12 @@ export function extractClockRecordsFromList2(
       }
     } catch (error) {
       logger.error(
-        `Chyba při parsování datumu/času na řádku ${rowNum}: ${error}`
+        `Chyba při parsování datumu/času`, 
+        { 
+          rowNum, 
+          dateTimeValue,
+          error 
+        }
       );
     }
 
@@ -272,17 +291,32 @@ export function extractClockRecordsFromList2(
     });
   });
 
+  logger.info(`Extrakce čipovacích záznamů z List2 dokončena`, {
+    totalRows: processedRows + skippedRows,
+    processedRows,
+    skippedRows, 
+    extractedRecords: records.length
+  });
+
   return records;
 }
+
 /**
- * Funkce pro aktualizaci Excel souboru podle upravených dat
+ * Funkce pro zjištění, zda buňka již obsahuje ručně vloženou hodnotu
+ * @param cell Buňka k ověření
+ * @returns true pokud byla hodnota již ručně vložena
  */
-/**
- * Funkce pro aktualizaci Excel souboru podle upravených dat
- */
-/**
- * Funkce pro aktualizaci Excel souboru podle upravených dat
- */
+function isManuallyEntered(cell: ExcelJS.Cell): boolean {
+  // Zkontrolujeme, zda buňka obsahuje hodnotu
+  if (cell.value === null || cell.value === undefined || cell.value === "") {
+    return false;
+  }
+  
+  // Zkontrolujeme, zda buňka má nějaké formátování (barva, styl písma, atd.)
+  // To může značit, že hodnota byla ručně vložena nebo již dříve zpracována
+  return true;
+}
+
 /**
  * Funkce pro aktualizaci Excel souboru podle upravených dat - BEZ obarvování List2
  */
@@ -300,12 +334,14 @@ export function updateExcelWorkbook(
     }
   
     // Diagnostika na začátek funkce pro lepší debugging
-    logger.info(`updateExcelWorkbook: počet směn: ${shifts.length}, z toho s actualStart: ${shifts.filter(s => s.actualStart).length}, s actualEnd: ${shifts.filter(s => s.actualEnd).length}`);
-    if (timeUpdateResult) {
-      logger.info(`timeUpdateResult: usedRowsStart: ${timeUpdateResult.usedRowsStart?.size || 0}, usedRowsEnd: ${timeUpdateResult.usedRowsEnd?.size || 0}`);
-    } else {
-      logger.warn(`timeUpdateResult není k dispozici!`);
-    }
+    logger.info(`Zahájení aktualizace Excel workbooku`, { 
+      shiftsCount: shifts.length, 
+      shiftsWithActualStart: shifts.filter(s => s.actualStart).length, 
+      shiftsWithActualEnd: shifts.filter(s => s.actualEnd).length,
+      consecutiveShiftsCount: consecutiveShifts.length,
+      usedRowsStartCount: timeUpdateResult?.usedRowsStart?.size || 0,
+      usedRowsEndCount: timeUpdateResult?.usedRowsEnd?.size || 0
+    });
 
     // Sloupce pro aktualizaci
     const columns = {
@@ -326,6 +362,11 @@ export function updateExcelWorkbook(
     }
     
     // Aktualizace buněk v List1
+    let updatedCells = 0;
+    let preservedCells = 0;
+    let updatedConsecutive = 0;
+    let updatedRegular = 0;
+
     for (const shift of shifts) {
       const row = worksheet.getRow(shift.rowIndex);
       
@@ -355,11 +396,24 @@ export function updateExcelWorkbook(
             pattern: 'solid',
             fgColor: { argb: 'FF92D050' } // Zelená barva (stejná jako v Excel makru)
           } as ExcelJS.FillPattern;
+
+          updatedCells++;
           
           // 2. Nastavit skutečný čas příchodu (pokud byl nalezen)
-          if (shift.actualStart) {
-            const startCell = row.getCell(columns.actualStart);
+          const startCell = row.getCell(columns.actualStart);
+          
+          // Kontrola, zda buňka už obsahuje hodnotu (ručně vloženou)
+          if (isManuallyEntered(startCell)) {
+            // Zachováme existující hodnotu i formátování
+            logger.info(`Zachovávám již existující hodnotu příchodu pro první směnu navazujícího páru`, {
+              rowIndex: shift.rowIndex,
+              name: shift.name,
+              existingValue: startCell.value
+            });
             
+            preservedCells++;
+          } else if (shift.actualStart) {
+            // Pokud buňka neobsahuje hodnotu, ale máme aktualizovaný čas, nastavíme ho
             try {
               // Přímý přístup k času (pouze hodiny a minuty)
               const hours = shift.actualStart.getHours();
@@ -381,13 +435,18 @@ export function updateExcelWorkbook(
                 pattern: 'solid',
                 fgColor: { argb: 'FFFFFFFF' } // Bílá barva
               } as ExcelJS.FillPattern;
+
+              updatedCells++;
             } catch (error) {
-              logger.error(`Chyba při aktualizaci času příchodu pro první směnu navazujícího páru (řádek ${shift.rowIndex}): ${error}`);
+              logger.error(`Chyba při aktualizaci času příchodu pro první směnu navazujícího páru`, { 
+                rowIndex: shift.rowIndex, 
+                name: shift.name,
+                error 
+              });
             }
           } else {
-            // Pokud nemáme záznam, nastavíme žluté pozadí
-            const startCell = row.getCell(columns.actualStart);
-            startCell.value = ""; // Vyčistíme hodnotu
+            // Pokud nemáme záznam a buňka neobsahuje hodnotu, nastavíme žluté pozadí
+            startCell.value = null; // Nastavíme hodnotu na null místo prázdného řetězce
             
             // Hluboká kopie stylu buňky
             startCell.style = JSON.parse(JSON.stringify(startCell.style));
@@ -397,8 +456,11 @@ export function updateExcelWorkbook(
               pattern: 'solid',
               fgColor: { argb: 'FFFFFF00' } // Žluté pozadí pro chybějící hodnoty
             } as ExcelJS.FillPattern;
+
+            updatedCells++;
           }
           
+          updatedConsecutive++;
         } else {
           // Pro druhou směnu z páru:
           // 1. Nastavit začátek na plánovaný začátek (pevný čas)
@@ -420,11 +482,24 @@ export function updateExcelWorkbook(
             pattern: 'solid',
             fgColor: { argb: 'FF92D050' } // Zelená barva (stejná jako v Excel makru)
           } as ExcelJS.FillPattern;
+
+          updatedCells++;
           
           // 2. Nastavit skutečný čas odchodu (pokud byl nalezen)
-          if (shift.actualEnd) {
-            const endCell = row.getCell(columns.actualEnd);
+          const endCell = row.getCell(columns.actualEnd);
+          
+          // Kontrola, zda buňka už obsahuje hodnotu (ručně vloženou)
+          if (isManuallyEntered(endCell)) {
+            // Zachováme existující hodnotu i formátování
+            logger.info(`Zachovávám již existující hodnotu odchodu pro druhou směnu navazujícího páru`, {
+              rowIndex: shift.rowIndex,
+              name: shift.name,
+              existingValue: endCell.value
+            });
             
+            preservedCells++;
+          } else if (shift.actualEnd) {
+            // Pokud buňka neobsahuje hodnotu, ale máme aktualizovaný čas, nastavíme ho
             try {
               // Přímý přístup k času (pouze hodiny a minuty)
               const hours = shift.actualEnd.getHours();
@@ -446,13 +521,18 @@ export function updateExcelWorkbook(
                 pattern: 'solid',
                 fgColor: { argb: 'FFFFFFFF' } // Bílá barva
               } as ExcelJS.FillPattern;
+
+              updatedCells++;
             } catch (error) {
-              logger.error(`Chyba při aktualizaci času odchodu pro druhou směnu navazujícího páru (řádek ${shift.rowIndex}): ${error}`);
+              logger.error(`Chyba při aktualizaci času odchodu pro druhou směnu navazujícího páru`, { 
+                rowIndex: shift.rowIndex,
+                name: shift.name,
+                error 
+              });
             }
           } else {
-            // Pokud nemáme záznam, nastavíme žluté pozadí
-            const endCell = row.getCell(columns.actualEnd);
-            endCell.value = ""; // Vyčistíme hodnotu
+            // Pokud nemáme záznam a buňka neobsahuje hodnotu, nastavíme žluté pozadí
+            endCell.value = null; // Nastavíme hodnotu na null místo prázdného řetězce
             
             // Hluboká kopie stylu buňky
             endCell.style = JSON.parse(JSON.stringify(endCell.style));
@@ -462,14 +542,28 @@ export function updateExcelWorkbook(
               pattern: 'solid',
               fgColor: { argb: 'FFFFFF00' } // Žluté pozadí pro chybějící hodnoty
             } as ExcelJS.FillPattern;
+
+            updatedCells++;
           }
+          
+          updatedConsecutive++;
         }
       } else {
         // Standardní logika pro běžné směny
         // Aktualizace času příchodu (sloupec N)
-        if (shift.actualStart) {
-          const cell = row.getCell(columns.actualStart);
+        const startCell = row.getCell(columns.actualStart);
           
+        // Kontrola, zda buňka už obsahuje hodnotu (ručně vloženou)
+        if (isManuallyEntered(startCell)) {
+          // Zachováme existující hodnotu i formátování
+          logger.info(`Zachovávám již existující hodnotu příchodu`, {
+            rowIndex: shift.rowIndex,
+            name: shift.name,
+            existingValue: startCell.value
+          });
+          
+          preservedCells++;
+        } else if (shift.actualStart) {
           try {
             // Přímý přístup k času (pouze hodiny a minuty)
             const hours = shift.actualStart.getHours();
@@ -479,40 +573,57 @@ export function updateExcelWorkbook(
             const excelTime = hours / 24 + minutes / 1440;
             
             // Nastavení hodnoty a formátu
-            cell.value = excelTime;
-            cell.numFmt = timeFormat;
+            startCell.value = excelTime;
+            startCell.numFmt = timeFormat;
             
             // Hluboká kopie stylu buňky, aby se zabránilo ovlivnění ostatních buněk
-            cell.style = JSON.parse(JSON.stringify(cell.style));
+            startCell.style = JSON.parse(JSON.stringify(startCell.style));
             
             // Nastavení barvy pozadí - bílé pozadí pro běžnou směnu
-            cell.fill = {
+            startCell.fill = {
               type: 'pattern',
               pattern: 'solid',
               fgColor: { argb: 'FFFFFFFF' } // Bílá barva
             } as ExcelJS.FillPattern;
+
+            updatedCells++;
           } catch (error) {
-            logger.error(`Chyba při aktualizaci času příchodu (řádek ${shift.rowIndex}): ${error}`);
+            logger.error(`Chyba při aktualizaci času příchodu`, { 
+              rowIndex: shift.rowIndex,
+              name: shift.name,
+              error 
+            });
           }
         } else {
-          // Pokud nemáme záznam, nastavíme žluté pozadí
-          const cell = row.getCell(columns.actualStart);
-          cell.value = ""; // Vyčistíme hodnotu
+          // Pokud nemáme záznam a buňka neobsahuje hodnotu, nastavíme žluté pozadí
+          startCell.value = null; // Nastavíme hodnotu na null místo prázdného řetězce
           
           // Hluboká kopie stylu buňky
-          cell.style = JSON.parse(JSON.stringify(cell.style));
+          startCell.style = JSON.parse(JSON.stringify(startCell.style));
           
-          cell.fill = {
+          startCell.fill = {
             type: 'pattern',
             pattern: 'solid',
             fgColor: { argb: 'FFFFFF00' } // Žluté pozadí pro chybějící hodnoty
           } as ExcelJS.FillPattern;
+
+          updatedCells++;
         }
         
         // Aktualizace času odchodu (sloupec O)
-        if (shift.actualEnd) {
-          const cell = row.getCell(columns.actualEnd);
+        const endCell = row.getCell(columns.actualEnd);
           
+        // Kontrola, zda buňka už obsahuje hodnotu (ručně vloženou)
+        if (isManuallyEntered(endCell)) {
+          // Zachováme existující hodnotu i formátování
+          logger.info(`Zachovávám již existující hodnotu odchodu`, {
+            rowIndex: shift.rowIndex,
+            name: shift.name,
+            existingValue: endCell.value
+          });
+          
+          preservedCells++;
+        } else if (shift.actualEnd) {
           try {
             // Přímý přístup k času (pouze hodiny a minuty)
             const hours = shift.actualEnd.getHours();
@@ -522,42 +633,53 @@ export function updateExcelWorkbook(
             const excelTime = hours / 24 + minutes / 1440;
             
             // Nastavení hodnoty a formátu
-            cell.value = excelTime;
-            cell.numFmt = timeFormat;
+            endCell.value = excelTime;
+            endCell.numFmt = timeFormat;
             
             // Hluboká kopie stylu buňky
-            cell.style = JSON.parse(JSON.stringify(cell.style));
+            endCell.style = JSON.parse(JSON.stringify(endCell.style));
             
             // Nastavení barvy pozadí - bílé pozadí pro běžnou směnu
-            cell.fill = {
+            endCell.fill = {
               type: 'pattern',
               pattern: 'solid',
               fgColor: { argb: 'FFFFFFFF' } // Bílá barva
             } as ExcelJS.FillPattern;
+
+            updatedCells++;
           } catch (error) {
-            logger.error(`Chyba při aktualizaci času odchodu (řádek ${shift.rowIndex}): ${error}`);
+            logger.error(`Chyba při aktualizaci času odchodu`, { 
+              rowIndex: shift.rowIndex,
+              name: shift.name,
+              error 
+            });
           }
         } else {
-          // Pokud nemáme záznam, nastavíme žluté pozadí
-          const cell = row.getCell(columns.actualEnd);
-          cell.value = ""; // Vyčistíme hodnotu
+          // Pokud nemáme záznam a buňka neobsahuje hodnotu, nastavíme žluté pozadí
+          endCell.value = null; // Nastavíme hodnotu na null místo prázdného řetězce
           
           // Hluboká kopie stylu buňky
-          cell.style = JSON.parse(JSON.stringify(cell.style));
+          endCell.style = JSON.parse(JSON.stringify(endCell.style));
           
-          cell.fill = {
+          endCell.fill = {
             type: 'pattern',
             pattern: 'solid',
             fgColor: { argb: 'FFFFFF00' } // Žluté pozadí pro chybějící hodnoty
           } as ExcelJS.FillPattern;
+
+          updatedCells++;
         }
+
+        updatedRegular++;
       }
     }
     
-    // Odebrali jsme celou část pro zpracování List2
-    
-    // Pouze informativní log, že List2 nebude obarvován
-    if (timeUpdateResult) {
-      logger.info("Obarvování buněk v List2 bylo deaktivováno.");
-    }
+    // Informativní log o výsledku aktualizace
+    logger.info("Aktualizace Excel workbooku dokončena", {
+      updatedCells,
+      preservedCells,
+      updatedConsecutiveShifts: updatedConsecutive,
+      updatedRegularShifts: updatedRegular,
+      List2NotProcessed: true
+    });
   }

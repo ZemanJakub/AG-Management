@@ -3,7 +3,7 @@
 
 import ExcelJS from "exceljs";
 import path from "path";
-import { createLogger } from "@/modules/podklady/services/logger";
+import { StructuredLogger } from "@/modules/podklady/services/structuredLogger";
 import fs from "fs/promises";
 import { NameComparisonService } from "@/modules/podklady/services/nameComparisonService";
 import {
@@ -22,7 +22,8 @@ import {
   generateTimeUpdateReport,
 } from "@/modules/podklady/services/shiftTimeProcessor";
 
-const logger = createLogger("advanced-excel-processing");
+// Inicializace StructuredLogger místo starého createLogger
+const logger = StructuredLogger.getInstance().getComponentLogger("advanced-excel-processing");
 
 export type AdvancedProcessingResult = {
   success: boolean;
@@ -46,9 +47,16 @@ export async function loadSourceData(
   sourceFileName: string | null,
   useTestData: boolean = false
 ): Promise<AdvancedProcessingResult> {
+  // Generujeme korelační ID pro sledování této operace
+  const correlationId = `load_${Date.now().toString(36)}_${Math.random().toString(36).substring(2, 7)}`;
+  logger.setCorrelationId(correlationId);
+  
   try {
     logger.info(
-      `Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: ${useTestData}`
+      `Načítám zdrojový soubor pro pokročilé zpracování, testovací režim: ${useTestData}`, {
+        sourceFileName,
+        useTestData
+      }
     );
 
     let filePath: string;
@@ -72,6 +80,7 @@ export async function loadSourceData(
       );
       logger.info(`Používám soubor z předchozí činnosti: ${filePath}`);
     } else {
+      logger.error("Nebyl zadán název souboru a zároveň není zapnutý testovací režim");
       return {
         success: false,
         error:
@@ -84,7 +93,9 @@ export async function loadSourceData(
       await fs.access(filePath);
       logger.info(`Zdrojový soubor existuje: ${filePath}`);
     } catch (error) {
-      logger.error(`Zdrojový soubor neexistuje: ${filePath}`);
+      logger.error(`Zdrojový soubor neexistuje: ${filePath}`, {
+        error: error instanceof Error ? error.message : 'Neznámá chyba'
+      });
 
       if (useTestData) {
         return {
@@ -109,6 +120,7 @@ export async function loadSourceData(
       const list2Exists = workbook.getWorksheet("List2") !== undefined;
 
       if (!list1Exists) {
+        logger.error("Soubor neobsahuje list 'List1', který je nezbytný pro pokročilé zpracování");
         return {
           success: false,
           error:
@@ -127,7 +139,7 @@ export async function loadSourceData(
       };
 
       logger.info(
-        `Soubor byl úspěšně načten, statistika: ${JSON.stringify(stats)}`
+        `Soubor byl úspěšně načten, statistika:`, stats
       );
 
       return {
@@ -136,14 +148,20 @@ export async function loadSourceData(
         sourceFile: path.basename(filePath),
       };
     } catch (error) {
-      logger.error(`Chyba při načítání souboru: ${error}`);
+      logger.error(`Chyba při načítání souboru: ${error}`, {
+        error: error instanceof Error ? error.message : 'Neznámá chyba',
+        stack: error instanceof Error ? error.stack : undefined
+      });
       return {
         success: false,
         error: `Chyba při načítání souboru: ${error instanceof Error ? error.message : "Neznámá chyba"}`,
       };
     }
   } catch (error) {
-    logger.error(`Neočekávaná chyba při načítání zdrojových dat: ${error}`);
+    logger.error(`Neočekávaná chyba při načítání zdrojových dat: ${error}`, {
+      error: error instanceof Error ? error.message : 'Neznámá chyba',
+      stack: error instanceof Error ? error.stack : undefined
+    });
     return {
       success: false,
       error: `Neočekávaná chyba: ${error instanceof Error ? error.message : "Neznámá chyba"}`,
@@ -165,8 +183,15 @@ export async function runAdvancedProcessing(
     detectConsecutiveShifts: boolean;
   }
 ): Promise<AdvancedProcessingResult> {
+  // Generujeme korelační ID pro sledování této operace
+  const correlationId = `process_${Date.now().toString(36)}_${Math.random().toString(36).substring(2, 7)}`;
+  logger.setCorrelationId(correlationId);
+  
   logger.info(
-    `Spouštím pokročilé zpracování souboru ${sourceFileName} s možnostmi: ${JSON.stringify(options)}`
+    `Spouštím pokročilé zpracování souboru ${sourceFileName} s možnostmi:`, {
+      sourceFile: sourceFileName,
+      options
+    }
   );
 
   try {
@@ -196,7 +221,9 @@ export async function runAdvancedProcessing(
       logger.info(`Zdrojový soubor pro zpracování existuje: ${sourceFilePath}`);
     } catch (error) {
       logger.error(
-        `Zdrojový soubor pro zpracování neexistuje: ${sourceFilePath}`
+        `Zdrojový soubor pro zpracování neexistuje: ${sourceFilePath}`, {
+          error: error instanceof Error ? error.message : 'Neznámá chyba'
+        }
       );
       return {
         success: false,
@@ -247,10 +274,12 @@ export async function runAdvancedProcessing(
         const nameResults = await nameComparisonService.compareAndFixNames();
 
         // Log o výsledcích
-        logger.info(`Porovnání dokončeno. Výsledky: Celkem=${nameResults.stats.total}, 
-                    Přesné=${nameResults.stats.exactMatches}, 
-                    Bezpečné=${nameResults.stats.safeMatches}, 
-                    Nenalezené=${nameResults.stats.noMatches}`);
+        logger.info(`Porovnání dokončeno. Výsledky:`, {
+          total: nameResults.stats.total,
+          exactMatches: nameResults.stats.exactMatches,
+          safeMatches: nameResults.stats.safeMatches,
+          noMatches: nameResults.stats.noMatches
+        });
 
         // Uložení výsledků pro report
         reportData.nameComparisonReport =
@@ -266,7 +295,10 @@ export async function runAdvancedProcessing(
           );
         }
       } catch (error) {
-        logger.error(`Chyba při porovnávání jmen: ${error}`);
+        logger.error(`Chyba při porovnávání jmen: ${error}`, {
+          error: error instanceof Error ? error.message : 'Neznámá chyba',
+          stack: error instanceof Error ? error.stack : undefined
+        });
         return {
           success: false,
           error: `Chyba při porovnávání jmen: ${error instanceof Error ? error.message : "Neznámá chyba"}`,
@@ -302,7 +334,10 @@ export async function runAdvancedProcessing(
         const clockRecords = extractClockRecordsFromList2(list2);
 
         logger.info(
-          `Extrahováno ${shifts.length} směn a ${clockRecords.length} čipovacích záznamů`
+          `Extrahováno ${shifts.length} směn a ${clockRecords.length} čipovacích záznamů`, {
+            shiftsCount: shifts.length,
+            recordsCount: clockRecords.length
+          }
         );
 
         // Detekce navazujících směn
@@ -315,7 +350,10 @@ export async function runAdvancedProcessing(
           consecutiveShifts = consecutiveResults.consecutiveShifts;
 
           logger.info(
-            `Detekováno ${consecutiveShifts.length} párů navazujících směn (${consecutiveResults.shiftsWithConsecutive} směn)`
+            `Detekováno ${consecutiveShifts.length} párů navazujících směn (${consecutiveResults.shiftsWithConsecutive} směn)`, {
+              pairsCount: consecutiveShifts.length,
+              shiftsCount: consecutiveResults.shiftsWithConsecutive
+            }
           );
 
           // Uložení počtu do reportu
@@ -338,7 +376,11 @@ export async function runAdvancedProcessing(
           );
 
           logger.info(
-            `Aktualizováno ${timeUpdateResults.updatedShifts} směn, nalezeno ${timeUpdateResults.entriesFound} příchodů a ${timeUpdateResults.exitsFound} odchodů`
+            `Aktualizováno ${timeUpdateResults.updatedShifts} směn, nalezeno ${timeUpdateResults.entriesFound} příchodů a ${timeUpdateResults.exitsFound} odchodů`, {
+              updatedShifts: timeUpdateResults.updatedShifts,
+              entriesFound: timeUpdateResults.entriesFound,
+              exitsFound: timeUpdateResults.exitsFound
+            }
           );
           // Informace o použitých řádcích
           logger.info(
@@ -348,9 +390,15 @@ export async function runAdvancedProcessing(
             `Mapa usedRowsEnd obsahuje ${timeUpdateResults.usedRowsEnd.size} položek`
           );
 
+          // Podrobné logování pro prvních 10 položek z mapy usedRowsStart
+          let count = 0;
           timeUpdateResults.usedRowsStart.forEach((list2Row, list1Row) => {
-            logger.info(`Příchod: List1 řádek ${list1Row} -> List2 řádek ${list2Row}`);
+            if (count < 10) {
+              logger.debug(`Příchod: List1 řádek ${list1Row} -> List2 řádek ${list2Row}`);
+              count++;
+            }
           });
+          
           // Generování reportu o aktualizaci časů
           reportData.timeUpdateReport =
             generateTimeUpdateReport(timeUpdateResults);
@@ -360,7 +408,10 @@ export async function runAdvancedProcessing(
         }
       } catch (error) {
         logger.error(
-          `Chyba při zpracování časů nebo navazujících směn: ${error}`
+          `Chyba při zpracování časů nebo navazujících směn: ${error}`, {
+            error: error instanceof Error ? error.message : 'Neznámá chyba',
+            stack: error instanceof Error ? error.stack : undefined
+          }
         );
         return {
           success: false,
@@ -403,6 +454,7 @@ export async function runAdvancedProcessing(
       };
     } else {
       // Pokud nedošlo k žádným změnám, vrátíme pouze reporty
+      logger.info("Pokročilé zpracování bylo dokončeno, ale nebyly provedeny žádné změny");
       return {
         success: true,
         message:
@@ -412,7 +464,10 @@ export async function runAdvancedProcessing(
       };
     }
   } catch (error) {
-    logger.error(`Chyba při pokročilém zpracování: ${error}`);
+    logger.error(`Chyba při pokročilém zpracování: ${error}`, {
+      error: error instanceof Error ? error.message : 'Neznámá chyba',
+      stack: error instanceof Error ? error.stack : undefined
+    });
     return {
       success: false,
       error: `Chyba při pokročilém zpracování: ${error instanceof Error ? error.message : "Neznámá chyba"}`,

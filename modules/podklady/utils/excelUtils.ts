@@ -3,9 +3,9 @@ import ExcelJS from "exceljs";
 import * as XLSX from "xlsx";
 import path from "path";
 import fs from "fs/promises";
-import { createLogger } from "@/modules/podklady/services/logger";
+import { StructuredLogger } from "../services/structuredLogger";
 
-const logger = createLogger("excel-utils");
+const logger = StructuredLogger.getInstance().getComponentLogger("excel-utils");
 
 /**
  * Funkce pro načítání Excel souboru pomocí ExcelJS
@@ -14,12 +14,12 @@ const logger = createLogger("excel-utils");
  */
 export async function loadExcelFile(filePath: string): Promise<ExcelJS.Workbook> {
   try {
-    logger.info(`Načítám Excel soubor: ${filePath}`);
+    logger.info(`Načítám Excel soubor`, { filePath });
     const workbook = new ExcelJS.Workbook();
     await workbook.xlsx.readFile(filePath);
     return workbook;
   } catch (error) {
-    logger.error(`Chyba při načítání Excel souboru: ${error}`);
+    logger.error(`Chyba při načítání Excel souboru`, { error, filePath });
     throw new Error(`Nepodařilo se načíst Excel soubor: ${error instanceof Error ? error.message : "Neznámá chyba"}`);
   }
 }
@@ -31,7 +31,7 @@ export async function loadExcelFile(filePath: string): Promise<ExcelJS.Workbook>
  */
 export async function loadExcelFromArrayBuffer(data: ArrayBuffer): Promise<ExcelJS.Workbook> {
   try {
-    logger.info(`Načítám Excel soubor z ArrayBuffer`);
+    logger.info(`Načítám Excel soubor z ArrayBuffer`, { size: data.byteLength });
     const workbook = new ExcelJS.Workbook();
     
     // Pro ArrayBuffer použijeme XLSX.js, který má lepší kompatibilitu s webovými API
@@ -57,7 +57,7 @@ export async function loadExcelFromArrayBuffer(data: ArrayBuffer): Promise<Excel
     
     return workbook;
   } catch (error) {
-    logger.error(`Chyba při načítání Excel souboru z ArrayBuffer: ${error}`);
+    logger.error(`Chyba při načítání Excel souboru z ArrayBuffer`, { error, size: data.byteLength });
     throw new Error(`Nepodařilo se načíst Excel soubor z ArrayBuffer: ${error instanceof Error ? error.message : "Neznámá chyba"}`);
   }
 }
@@ -69,14 +69,14 @@ export async function loadExcelFromArrayBuffer(data: ArrayBuffer): Promise<Excel
  */
 export async function loadExcelFromBuffer(data: any): Promise<ExcelJS.Workbook> {
   try {
-    logger.info(`Načítám Excel soubor z Buffer`);
+    logger.info(`Načítám Excel soubor z Buffer`, { size: data.length });
     const workbook = new ExcelJS.Workbook();
     
     // Pro Buffer použijeme standardní metodu a ignorujeme typové problémy
     // @ts-ignore
     return await workbook.xlsx.load(data);
   } catch (error) {
-    logger.error(`Chyba při načítání Excel souboru z Buffer: ${error}`);
+    logger.error(`Chyba při načítání Excel souboru z Buffer`, { error, size: data.length });
     throw new Error(`Nepodařilo se načíst Excel soubor z Buffer: ${error instanceof Error ? error.message : "Neznámá chyba"}`);
   }
 }
@@ -101,16 +101,16 @@ export async function loadExcelData(data: any): Promise<ExcelJS.Workbook> {
  */
 export async function saveExcelFile(workbook: ExcelJS.Workbook, filePath: string): Promise<void> {
   try {
-    logger.info(`Ukládám Excel soubor: ${filePath}`);
+    logger.info(`Ukládám Excel soubor`, { filePath });
     
     // Ujistíme se, že adresář existuje
     const dirPath = path.dirname(filePath);
     await fs.mkdir(dirPath, { recursive: true });
     
     await workbook.xlsx.writeFile(filePath);
-    logger.info(`Excel soubor byl úspěšně uložen: ${filePath}`);
+    logger.info(`Excel soubor byl úspěšně uložen`, { filePath });
   } catch (error) {
-    logger.error(`Chyba při ukládání Excel souboru: ${error}`);
+    logger.error(`Chyba při ukládání Excel souboru`, { error, filePath });
     throw new Error(`Nepodařilo se uložit Excel soubor: ${error instanceof Error ? error.message : "Neznámá chyba"}`);
   }
 }

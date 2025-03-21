@@ -2,10 +2,10 @@
 import { chromium } from "@playwright/test";
 import fs from "fs/promises";
 import path from "path";
-import { createLogger } from "./logger"; // Importujeme logovací službu
+import { StructuredLogger } from "./structuredLogger";
 
 const COOKIES_PATH = path.join(process.cwd(), "data", "avaris-cookies.json");
-const logger = createLogger("scraper"); // Vytvoříme logger pro tento modul
+const logger = StructuredLogger.getInstance().getComponentLogger("scraper");
 
 // Původní funkce (ponecháme je beze změny)
 export async function ensureDirectoryExists() {
@@ -29,7 +29,7 @@ export async function loadCookies(): Promise<any[] | null> {
     const data = await fs.readFile(COOKIES_PATH, "utf-8");
     return JSON.parse(data);
   } catch (error) {
-    console.log("Cookies file not found or invalid");
+    logger.debug("Cookies soubor nenalezen nebo neplatný", { error });
     return null;
   }
 }
@@ -107,9 +107,9 @@ async function performLogin(
       throw new Error(`Přihlášení se nezdařilo: ${errorMsg}`);
     }
 
-    logger.info("Přihlášení úspěšné, nová URL:", page.url());
+    logger.info("Přihlášení úspěšné", { url: page.url() });
   } catch (error) {
-    logger.error("Chyba při přihlašování:", error);
+    logger.error("Chyba při přihlašování", { error });
     throw error;
   }
 }
@@ -124,7 +124,12 @@ export async function captureAvarisData(
   dateTo: string = "07.03.2025"
 ): Promise<{ [key: string]: string }> {
   // Vraťme objekt s cestami ke staženým souborům podle objektů
-  logger.info(`Spouštím captureAvarisData pro ${objektNames.length} objektů`);
+  logger.info(`Spouštím captureAvarisData`, { 
+    objektCount: objektNames.length,
+    objektNames,
+    dateFrom,
+    dateTo
+  });
 
   // Dynamicky načteme playwright z testovací instance
   const browser = await chromium.launch({ headless: true }); // V produkci obvykle headless: true
@@ -141,10 +146,10 @@ export async function captureAvarisData(
   }
 
   // Přidání logerů pro browser konzoli
-  page.on("console", (msg) => logger.debug(`BROWSER CONSOLE: ${msg.text()}`));
-  page.on("pageerror", (err) => logger.error(`BROWSER ERROR: ${err.message}`));
+  page.on("console", (msg) => logger.debug(`BROWSER CONSOLE`, { message: msg.text() }));
+  page.on("pageerror", (err) => logger.error(`BROWSER ERROR`, { error: err.message }));
   page.on("requestfailed", (request) =>
-    logger.error(`REQUEST FAILED: ${request.url()}`)
+    logger.error(`REQUEST FAILED`, { url: request.url() })
   );
 
   // Objekt pro uchování všech stažených souborů
@@ -181,7 +186,7 @@ export async function captureAvarisData(
 
     // Iterujeme přes všechny objekty
     for (const objektName of objektNames) {
-      logger.info(`Zpracovávám objekt: ${objektName}`);
+      logger.info(`Zpracovávám objekt`, { objektName });
 
       try {
         // Navigace na stránku vyhodnocení snímačů
@@ -201,21 +206,21 @@ export async function captureAvarisData(
         const removeButtons = await page.$$(
           'table.table-vypis a[title="Odebrat"]'
         );
-        logger.info(`Nalezeno ${removeButtons.length} položek k odstranění`);
+        logger.info(`Nalezeno položek k odstranění`, { count: removeButtons.length });
 
         for (const button of removeButtons) {
           await button.click();
           // Zkrácená pauza po každém kliknutí na odebrat
-          await page.waitForTimeout(300);
+          await page.waitForTimeout(800);
         }
         logger.info("Všechny položky byly odebrány");
 
         // Zkrácená pauza po odebrání všech položek
-        await page.waitForTimeout(500);
+        await page.waitForTimeout(800);
 
         // 2. Nyní přidáme požadovaný objekt
         try {
-          logger.info(`Hledám checkbox pro objekt "${objektName}"`);
+          logger.info(`Hledám checkbox pro objekt`, { objektName });
 
           // Najdeme label s požadovaným textem
           const label = await page.locator(
@@ -226,33 +231,29 @@ export async function captureAvarisData(
           if (labelCount > 0) {
             // Získáme 'for' atribut
             const forAttr = await label.getAttribute("for");
-            logger.info(`Nalezen label s for="${forAttr}"`);
+            logger.info(`Nalezen label s atributem`, { forAttr });
 
             if (forAttr) {
               // Najdeme a označíme checkbox
               const checkbox = await page.locator(`#${forAttr}`);
               await checkbox.check();
-              logger.info(`Checkbox #${forAttr} byl zaškrtnut`);
+              logger.info(`Checkbox zaškrtnut`, { checkboxId: forAttr });
 
               // Klikneme na tlačítko Přidat >>
               logger.info('Klikám na tlačítko "Přidat"');
               await page.click("button >> text=Přidat");
 
               // Zkrácená pauza po kliknutí na "Přidat"
-              await page.waitForTimeout(1000);
+              await page.waitForTimeout(1500);
 
               // Pokusíme se ověřit, že se položka objevila v tabulce
               const itemInTable = await page
                 .locator(`table.table-vypis tr td:has-text("${objektName}")`)
                 .count();
               if (itemInTable > 0) {
-                logger.info(
-                  `Objekt "${objektName}" byl úspěšně přidán do tabulky`
-                );
+                logger.info(`Objekt byl úspěšně přidán do tabulky`, { objektName });
               } else {
-                logger.warn(
-                  `Objekt "${objektName}" nebyl nalezen v tabulce po přidání!`
-                );
+                logger.warn(`Objekt nebyl nalezen v tabulce po přidání`, { objektName });
               }
             } else {
               throw new Error(`Label pro "${objektName}" nemá atribut 'for'!`);
@@ -260,7 +261,7 @@ export async function captureAvarisData(
           } else {
             // Pokud nenajdeme label přesně podle textu, zkusíme vyhledat částečnou shodu
             logger.info(
-              `Přesný text nenalezen, zkouším částečnou shodu pro "${objektName}"`
+              `Přesný text nenalezen, zkouším částečnou shodu`, { objektName }
             );
             const labelPartial = await page.locator(
               `label.cursor-pointer:has-text("${objektName}")`
@@ -269,12 +270,12 @@ export async function captureAvarisData(
 
             if (labelPartialCount > 0) {
               const forAttr = await labelPartial.getAttribute("for");
-              logger.info(`Nalezen label s for="${forAttr}" (částečná shoda)`);
+              logger.info(`Nalezen label s atributem (částečná shoda)`, { forAttr });
 
               if (forAttr) {
                 const checkbox = await page.locator(`#${forAttr}`);
                 await checkbox.check();
-                logger.info(`Checkbox #${forAttr} byl zaškrtnut`);
+                logger.info(`Checkbox zaškrtnut (částečná shoda)`, { checkboxId: forAttr });
 
                 // Klikneme na tlačítko Přidat >>
                 await page.click("button >> text=Přidat");
@@ -292,7 +293,7 @@ export async function captureAvarisData(
           }
         } catch (error) {
           logger.error(
-            `Chyba při hledání a označení objektu ${objektName}: ${error}`
+            `Chyba při hledání a označení objektu`, { objektName, error }
           );
           // Pokračujeme s dalším objektem místo ukončení celého procesu
           continue;
@@ -314,15 +315,13 @@ export async function captureAvarisData(
             await page.waitForLoadState("domcontentloaded");
             logger.info("Ukládání dokončeno");
           } else {
-            logger.warn('Tlačítko "Uložit" nebylo nalezeno!');
+            logger.warn('Tlačítko "Uložit" nebylo nalezeno');
           }
         } catch (error) {
-          logger.error(`Chyba při ukládání změn: ${error}`);
+          logger.error(`Chyba při ukládání změn`, { error });
         }
         // Nový krok: Nastavení období na "Interval" a výběr požadovaných sloupců
-        logger.info(
-          'Nastavuji typ období na "Interval" a požadované sloupce pro výpis'
-        );
+        logger.info('Nastavuji typ období na "Interval" a požadované sloupce');
 
         try {
           // 1. Nastavení období na "Interval"
@@ -349,30 +348,27 @@ export async function captureAvarisData(
           const columnCheckboxes = await page.$$(
             'input[name="zaznam[tisk_sloupecky][]"]'
           );
-          logger.info(
-            `Nalezeno ${columnCheckboxes.length} checkboxů pro sloupce`
-          );
+          logger.info(`Nalezeno checkboxů pro sloupce`, { count: columnCheckboxes.length });
 
           // Odznačíme všechny checkboxy
           for (const checkbox of columnCheckboxes) {
             const isColumnChecked = await checkbox.isChecked();
             if (isColumnChecked) {
               await checkbox.uncheck();
-              logger.info("Odznačen checkbox pro sloupec");
+              logger.debug("Odznačen checkbox pro sloupec");
             }
           }
 
           // 3. Zaškrtneme požadované sloupce podle hodnot
           const columnsToCheck = ["1", "3", "4", "8"]; // hodnoty pro Čas, Název bodu, Typ, Strážný
+          logger.info(`Zaškrtávám požadované sloupce`, { columns: columnsToCheck });
 
           for (const columnValue of columnsToCheck) {
             const columnCheckbox = await page.locator(
               `input[name="zaznam[tisk_sloupecky][]"][value="${columnValue}"]`
             );
             await columnCheckbox.check();
-            logger.info(
-              `Zaškrtnut checkbox pro sloupec s hodnotou ${columnValue}`
-            );
+            logger.debug(`Zaškrtnut checkbox pro sloupec`, { columnValue });
           }
 
           // 4. Ověření, že požadované sloupce jsou zaškrtnuté
@@ -384,9 +380,7 @@ export async function captureAvarisData(
             const isChecked = await checkbox.isChecked();
 
             if (!isChecked) {
-              logger.warn(
-                `Checkbox pro sloupec s hodnotou ${columnValue} nebyl správně zaškrtnut`
-              );
+              logger.warn(`Checkbox pro sloupec nebyl správně zaškrtnut`, { columnValue });
               allChecked = false;
             }
           }
@@ -397,11 +391,11 @@ export async function captureAvarisData(
             logger.warn("Některé požadované sloupce se nepodařilo zaškrtnout");
           }
         } catch (error) {
-          logger.error(`Chyba při nastavování období a sloupců: ${error}`);
+          logger.error(`Chyba při nastavování období a sloupců`, { error });
           // Pokračujeme dál i přes chybu, aby se zpracování nezastavilo
         }
         // 4. Nyní nastavíme datumové vstupy
-        logger.info(`Nastavuji datumové rozmezí: ${dateFrom} - ${dateTo}`);
+        logger.info(`Nastavuji datumové rozmezí`, { dateFrom, dateTo });
 
         try {
           // Vyčistíme a nastavíme datum "od"
@@ -414,22 +408,18 @@ export async function captureAvarisData(
 
           logger.info("Datumové rozmezí bylo nastaveno");
         } catch (error) {
-          logger.error(`Chyba při nastavování datumů: ${error}`);
+          logger.error(`Chyba při nastavování datumů`, { error });
         }
 
         // 5. Klikneme na odkaz "Vyhodnotit" a budeme sledovat otevření nového okna/záložky
-        logger.info(
-          'Připravuji se na kliknutí na tlačítko "Vyhodnotit" a otevření nového okna'
-        );
+        logger.info('Připravuji se na kliknutí na tlačítko "Vyhodnotit"');
 
         // Nastavíme si poslech na otevření nového okna
         const popupPromise = context.waitForEvent("page");
 
         // Klikneme na odkaz "Vyhodnotit"
         await page.click("#vyhodnoceni-button");
-        logger.info(
-          'Tlačítko "Vyhodnotit" stisknuto, čekám na otevření nového okna'
-        );
+        logger.info('Tlačítko "Vyhodnotit" stisknuto, čekám na nové okno');
 
         // Počkáme na nově otevřené okno
         const popupPage = await popupPromise;
@@ -475,14 +465,12 @@ export async function captureAvarisData(
 
               // Uložíme soubor
               await download.saveAs(downloadPath);
-              logger.info(`CSV soubor byl stažen do: ${downloadPath}`);
+              logger.info(`CSV soubor byl stažen`, { path: downloadPath });
 
               // Uložíme cestu do výsledného objektu
               downloadedFiles[objektName] = `/downloads/${fileName}`;
             } else {
-              logger.warn(
-                "Nepodařilo se stáhnout CSV soubor po kliknutí na tlačítko"
-              );
+              logger.warn("Nepodařilo se stáhnout CSV soubor po kliknutí na tlačítko");
             }
           } else {
             logger.warn("Tlačítko CSV nebylo nalezeno v novém okně");
@@ -501,9 +489,7 @@ export async function captureAvarisData(
 
             if (buttonWithCsvExport) {
               await popupPage.click('button[onclick*="export=csv"]');
-              logger.info(
-                'Nalezeno a stisknuto tlačítko s onclick obsahujícím "export=csv"'
-              );
+              logger.info('Nalezeno a stisknuto tlačítko s onclick obsahujícím "export=csv"');
 
               // Počkáme na stažení souboru
               const download = await downloadPromise;
@@ -524,43 +510,39 @@ export async function captureAvarisData(
 
                 // Uložíme soubor
                 await download.saveAs(downloadPath);
-                logger.info(
-                  `CSV soubor byl stažen do: ${downloadPath} (pomocí tlačítka s onclick)`
-                );
+                logger.info(`CSV soubor byl stažen pomocí alternativního tlačítka`, { path: downloadPath });
 
                 // Uložíme cestu do výsledného objektu
                 downloadedFiles[objektName] = `/downloads/${fileName}`;
               }
             } else {
-              logger.error(
-                "Žádné tlačítko pro export CSV nebylo nalezeno ani pomocí onclick atributu"
-              );
+              logger.error("Žádné tlačítko pro export CSV nebylo nalezeno");
             }
           }
         } catch (error) {
-          logger.error(
-            `Chyba při práci s tlačítkem CSV pro objekt ${objektName}: ${error}`
-          );
+          logger.error(`Chyba při práci s tlačítkem CSV`, { objektName, error });
         }
 
         // Před zpracováním dalšího objektu zavřeme popup okno
         await popupPage.close();
-        logger.info(`Dokončeno zpracování objektu: ${objektName}`);
+        logger.info(`Dokončeno zpracování objektu`, { objektName });
       } catch (error) {
-        logger.error(`Chyba při zpracování objektu ${objektName}: ${error}`);
+        logger.error(`Chyba při zpracování objektu`, { objektName, error });
         // Pokračujeme s dalším objektem
       }
     }
 
     // Uložení aktualizovaných cookies
     await saveCookies(context);
-    logger.info(
-      `Celkem zpracováno ${Object.keys(downloadedFiles).length} objektů z ${objektNames.length}`
-    );
+    logger.info(`Zpracování dokončeno`, { 
+      processedCount: Object.keys(downloadedFiles).length, 
+      totalObjectsCount: objektNames.length,
+      downloadedFiles
+    });
 
     return downloadedFiles;
   } catch (error) {
-    logger.error("Chyba při scrapování:", error);
+    logger.error("Chyba při scrapování", { error });
     throw error;
   } finally {
     await browser.close();

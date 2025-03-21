@@ -30,3 +30,7 @@ export * from "./podklady/enhancedSheetProcessor"
 export * from "./podklady/processAvarisWithExcel"
 export * from "./podklady/advancedExcelProcessing"
 
+//logs
+export * from "./admin/logActions"
+
+

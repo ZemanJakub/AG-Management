@@ -1,8 +1,8 @@
 // modules/podklady/services/shiftTimeProcessor.ts
 import { ShiftData, ClockRecord } from "./excelDataExtractor";
-import { createLogger } from "./logger";
+import { StructuredLogger } from "./structuredLogger";
 
-const logger = createLogger("shift-time-processor");
+const logger = StructuredLogger.getInstance().getComponentLogger("shift-time-processor");
 
 export interface TimeUpdateResult {
   updatedShifts: number;
@@ -37,6 +37,7 @@ export function updateShiftTimes(
     const usedRowsStart = new Map<number, number>();
     const usedRowsEnd = new Map<number, number>();
     const timeWindowHours = options?.timeWindowHours || 3;
+    
     // Vytvoření mapy navazujících směn pro rychlejší vyhledávání
     const consecutiveMap = new Map<number, { isFirst: boolean; pair: { first: ShiftData; second: ShiftData } }>();
     for (const pair of consecutiveShifts) {
@@ -44,7 +45,7 @@ export function updateShiftTimes(
       consecutiveMap.set(pair.first.rowIndex, { isFirst: true, pair });
       consecutiveMap.set(pair.second.rowIndex, { isFirst: false, pair });
       
-      logger.info(`POSLEDNÍ KONTROLA navazujících směn: ${pair.first.name}`);
+      logger.info(`POSLEDNÍ KONTROLA navazujících směn`, { name: pair.first.name });
       
       // Vynucení správného času konce první směny
       if (pair.first.plannedEnd) {
@@ -56,7 +57,10 @@ export function updateShiftTimes(
         
         // Přepíšeme hodnotu bez ohledu na to, co tam bylo dříve
         pair.first.actualEnd = exactEndTime;
-        logger.info(`VYNUCENÍ konce první směny: ${formatTime(exactEndTime)} (řádek ${pair.first.rowIndex})`);
+        logger.info(`VYNUCENÍ konce první směny`, {
+          time: formatTime(exactEndTime),
+          rowIndex: pair.first.rowIndex
+        });
       }
       
       // Vynucení správného času začátku druhé směny
@@ -69,17 +73,23 @@ export function updateShiftTimes(
         
         // Přepíšeme hodnotu bez ohledu na to, co tam bylo dříve
         pair.second.actualStart = exactStartTime;
-        logger.info(`VYNUCENÍ začátku druhé směny: ${formatTime(exactStartTime)} (řádek ${pair.second.rowIndex})`);
+        logger.info(`VYNUCENÍ začátku druhé směny`, {
+          time: formatTime(exactStartTime),
+          rowIndex: pair.second.rowIndex
+        });
       }
     }
     
-    logger.info(`Začínám aktualizaci časů pro ${shifts.length} směn, z toho ${consecutiveShifts.length * 2} navazujících`);
+    logger.info(`Začínám aktualizaci časů`, {
+      shiftsCount: shifts.length,
+      navazujicichCount: consecutiveShifts.length * 2
+    });
     
     // === Část 1: Zpracování všech směn včetně hledání příchodů a odchodů pro navazující směny ===
     for (const shift of shifts) {
       // Přeskočíme směny, které nemají jméno nebo datum
       if (!shift.name || !shift.date) {
-        logger.debug(`Přeskakuji směnu bez jména nebo data (řádek ${shift.rowIndex})`);
+        logger.debug(`Přeskakuji směnu bez jména nebo data`, { rowIndex: shift.rowIndex });
         continue;
       }
       
@@ -96,22 +106,30 @@ export function updateShiftTimes(
             
             if (formatTimeForComparison(record.time) === formatTimeForComparison(shift.actualStart)) {
               usedRowsStart.set(shift.rowIndex, record.rowIndex);
-              logger.info(`Nalezena shoda pro existující příchod směny ${shift.name} (řádek ${shift.rowIndex}) s řádkem ${record.rowIndex} v List2`);
+              logger.info(`Nalezena shoda pro existující příchod směny`, {
+                name: shift.name,
+                rowIndex: shift.rowIndex,
+                list2RowIndex: record.rowIndex
+              });
             }
             
             if (formatTimeForComparison(record.time) === formatTimeForComparison(shift.actualEnd)) {
               usedRowsEnd.set(shift.rowIndex, record.rowIndex);
-              logger.info(`Nalezena shoda pro existující odchod směny ${shift.name} (řádek ${shift.rowIndex}) s řádkem ${record.rowIndex} v List2`);
+              logger.info(`Nalezena shoda pro existující odchod směny`, {
+                name: shift.name,
+                rowIndex: shift.rowIndex,
+                list2RowIndex: record.rowIndex
+              });
             }
           }
         }
-        logger.debug(`Přeskakuji směnu, která už má nastaveny oba časy (řádek ${shift.rowIndex})`);
+        logger.debug(`Přeskakuji směnu, která už má nastaveny oba časy`, { rowIndex: shift.rowIndex });
         continue;
       }
       
       // Kontrola, zda máme plánované časy
       if (!shift.plannedStart || !shift.plannedEnd) {
-        logger.debug(`Přeskakuji směnu bez plánovaných časů (řádek ${shift.rowIndex})`);
+        logger.debug(`Přeskakuji směnu bez plánovaných časů`, { rowIndex: shift.rowIndex });
         continue;
       }
       
@@ -140,7 +158,7 @@ export function updateShiftTimes(
       
       // Časová okna pro hledání čipovacích záznamů (±3 hodiny)
       const windowStartLower = new Date(plannedStartDateTime.getTime() - timeWindowHours * 60 * 60 * 1000);
-    const windowStartUpper = new Date(plannedStartDateTime.getTime() + timeWindowHours * 60 * 60 * 1000);
+      const windowStartUpper = new Date(plannedStartDateTime.getTime() + timeWindowHours * 60 * 60 * 1000);
    
       const windowEndLower = new Date(plannedEndDateTime.getTime() - timeWindowHours * 60 * 60 * 1000);
       const windowEndUpper = new Date(plannedEndDateTime.getTime() + timeWindowHours * 60 * 60 * 1000);
@@ -153,7 +171,12 @@ export function updateShiftTimes(
       
       // Pro navazující směny zpracujeme pouze relevantní čas
       if (consecutive) {
-        logger.info(`Zpracovávám navazující směnu pro ${shift.name} (řádek ${shift.rowIndex}): ${formatDateTime(shift.date, shift.plannedStart, shift.plannedEnd)}`);
+        logger.info(`Zpracovávám navazující směnu`, { 
+          name: shift.name, 
+          rowIndex: shift.rowIndex,
+          plannedDate: formatDateTime(shift.date, shift.plannedStart, shift.plannedEnd),
+          isFirst: consecutive.isFirst
+        });
         
         if (consecutive.isFirst) {
           // Pro první směnu z páru hledáme pouze čas příchodu
@@ -175,12 +198,21 @@ export function updateShiftTimes(
             shift.actualStart = new Date(bestStartRecord.combinedDateTime);
             usedRowsStart.set(shift.rowIndex, bestStartRecord.rowIndex);
             
-            logger.info(`Nalezen příchod pro první navazující směnu ${shift.name} (řádek ${shift.rowIndex}): ${formatTime(bestStartRecord.combinedDateTime)} (řádek List2: ${bestStartRecord.rowIndex})`);
+            logger.info(`Nalezen příchod pro první navazující směnu`, {
+              name: shift.name,
+              rowIndex: shift.rowIndex,
+              time: formatTime(bestStartRecord.combinedDateTime),
+              list2RowIndex: bestStartRecord.rowIndex
+            });
+            
             reportLines.push(`- Nalezen příchod pro první navazující směnu ${shift.name} (řádek ${shift.rowIndex}): ${formatTime(bestStartRecord.combinedDateTime)} (řádek List2: ${bestStartRecord.rowIndex})`);
             entriesFound++;
             shiftUpdated = true;
           } else {
-            logger.info(`Nenalezen příchod pro první navazující směnu ${shift.name} (řádek ${shift.rowIndex})`);
+            logger.info(`Nenalezen příchod pro první navazující směnu`, {
+              name: shift.name,
+              rowIndex: shift.rowIndex
+            });
           }
           
           // Čas odchodu pro první směnu už byl nastaven na přesný plánovaný čas
@@ -204,12 +236,21 @@ export function updateShiftTimes(
             shift.actualEnd = new Date(bestEndRecord.combinedDateTime);
             usedRowsEnd.set(shift.rowIndex, bestEndRecord.rowIndex);
             
-            logger.info(`Nalezen odchod pro druhou navazující směnu ${shift.name} (řádek ${shift.rowIndex}): ${formatTime(bestEndRecord.combinedDateTime)} (řádek List2: ${bestEndRecord.rowIndex})`);
+            logger.info(`Nalezen odchod pro druhou navazující směnu`, {
+              name: shift.name,
+              rowIndex: shift.rowIndex,
+              time: formatTime(bestEndRecord.combinedDateTime),
+              list2RowIndex: bestEndRecord.rowIndex
+            });
+            
             reportLines.push(`- Nalezen odchod pro druhou navazující směnu ${shift.name} (řádek ${shift.rowIndex}): ${formatTime(bestEndRecord.combinedDateTime)} (řádek List2: ${bestEndRecord.rowIndex})`);
             exitsFound++;
             shiftUpdated = true;
           } else {
-            logger.info(`Nenalezen odchod pro druhou navazující směnu ${shift.name} (řádek ${shift.rowIndex})`);
+            logger.info(`Nenalezen odchod pro druhou navazující směnu`, {
+              name: shift.name,
+              rowIndex: shift.rowIndex
+            });
           }
           
           // Čas příchodu pro druhou směnu už byl nastaven na přesný plánovaný čas
@@ -220,7 +261,11 @@ export function updateShiftTimes(
         }
       } else {
         // Běžné směny (původní kód)
-        logger.info(`Zpracovávám běžnou směnu pro ${shift.name} (řádek ${shift.rowIndex}): ${formatDateTime(shift.date, shift.plannedStart, shift.plannedEnd)}`);
+        logger.info(`Zpracovávám běžnou směnu`, { 
+          name: shift.name, 
+          rowIndex: shift.rowIndex,
+          plannedDate: formatDateTime(shift.date, shift.plannedStart, shift.plannedEnd)
+        });
         
         // Procházení čipovacích záznamů a hledání nejlepších kandidátů
         for (const record of clockRecords) {
@@ -249,13 +294,22 @@ export function updateShiftTimes(
           shift.actualStart = new Date(bestStartRecord.combinedDateTime);
           usedRowsStart.set(shift.rowIndex, bestStartRecord.rowIndex);
           
-          logger.info(`Nalezen příchod pro ${shift.name} (řádek ${shift.rowIndex}): ${formatTime(bestStartRecord.combinedDateTime)} (řádek List2: ${bestStartRecord.rowIndex})`);
+          logger.info(`Nalezen příchod pro běžnou směnu`, {
+            name: shift.name,
+            rowIndex: shift.rowIndex,
+            time: formatTime(bestStartRecord.combinedDateTime),
+            list2RowIndex: bestStartRecord.rowIndex
+          });
+          
           reportLines.push(`- Nalezen příchod pro ${shift.name} (řádek ${shift.rowIndex}): ${formatTime(bestStartRecord.combinedDateTime)} (řádek List2: ${bestStartRecord.rowIndex})`);
           entriesFound++;
           shiftUpdated = true;
         } else {
           shift.actualStart = undefined;
-          logger.info(`Nenalezen příchod pro ${shift.name} (řádek ${shift.rowIndex})`);
+          logger.info(`Nenalezen příchod pro běžnou směnu`, {
+            name: shift.name,
+            rowIndex: shift.rowIndex
+          });
         }
         
         // Nastavení času odchodu pro běžnou směnu
@@ -263,13 +317,22 @@ export function updateShiftTimes(
           shift.actualEnd = new Date(bestEndRecord.combinedDateTime);
           usedRowsEnd.set(shift.rowIndex, bestEndRecord.rowIndex);
           
-          logger.info(`Nalezen odchod pro ${shift.name} (řádek ${shift.rowIndex}): ${formatTime(bestEndRecord.combinedDateTime)} (řádek List2: ${bestEndRecord.rowIndex})`);
+          logger.info(`Nalezen odchod pro běžnou směnu`, {
+            name: shift.name,
+            rowIndex: shift.rowIndex,
+            time: formatTime(bestEndRecord.combinedDateTime),
+            list2RowIndex: bestEndRecord.rowIndex
+          });
+          
           reportLines.push(`- Nalezen odchod pro ${shift.name} (řádek ${shift.rowIndex}): ${formatTime(bestEndRecord.combinedDateTime)} (řádek List2: ${bestEndRecord.rowIndex})`);
           exitsFound++;
           shiftUpdated = true;
         } else {
           shift.actualEnd = undefined;
-          logger.info(`Nenalezen odchod pro ${shift.name} (řádek ${shift.rowIndex})`);
+          logger.info(`Nenalezen odchod pro běžnou směnu`, {
+            name: shift.name,
+            rowIndex: shift.rowIndex
+          });
         }
         
         if (shiftUpdated) {
@@ -278,20 +341,25 @@ export function updateShiftTimes(
       }
     }
     
-    logger.info(`Celkem aktualizováno ${updatedShifts} směn, nalezeno ${entriesFound} příchodů a ${exitsFound} odchodů`);
-    logger.info(`Mapa usedRowsStart obsahuje ${usedRowsStart.size} položek, usedRowsEnd obsahuje ${usedRowsEnd.size} položek`);
+    logger.info(`Celkové statistiky aktualizace časů`, {
+      updatedShifts,
+      entriesFound,
+      exitsFound,
+      usedRowsStartSize: usedRowsStart.size,
+      usedRowsEndSize: usedRowsEnd.size
+    });
     
     // Výpis všech prvků v usedRowsStart pro diagnostiku
     usedRowsStart.forEach((list2Row, shiftRow) => {
-      logger.info(`usedRowsStart: Směna řádek ${shiftRow} -> List2 řádek ${list2Row}`);
+      logger.info(`usedRowsStart mapping`, { shiftRow, list2Row });
     });
     
     // Výpis všech prvků v usedRowsEnd pro diagnostiku
     usedRowsEnd.forEach((list2Row, shiftRow) => {
-      logger.info(`usedRowsEnd: Směna řádek ${shiftRow} -> List2 řádek ${list2Row}`);
+      logger.info(`usedRowsEnd mapping`, { shiftRow, list2Row });
     });
     
-    return { updatedShifts, entriesFound, exitsFound, reportLines, usedRowsStart, usedRowsEnd };
+    return { updatedShifts, entriesFound, exitsFound, reportLines, usedRowsStart, usedRowsEnd, timeWindowHours };
   }
 
 /**

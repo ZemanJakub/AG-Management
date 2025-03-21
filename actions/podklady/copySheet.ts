@@ -3,10 +3,11 @@
 
 import ExcelJS from "exceljs";
 import path from "path";
-import { createLogger } from "@/modules/podklady/services/logger";
+import { StructuredLogger } from "@/modules/podklady/services/structuredLogger";
 import fs from "fs/promises";
 
-const logger = createLogger("excel-utils");
+// Inicializace StructuredLogger
+const logger = StructuredLogger.getInstance().getComponentLogger("excel-utils");
 
 type CopySheetResult = {
   success: boolean;
@@ -25,9 +26,16 @@ export async function copySheet(
   sourceFileName: string,
   targetFileName: string
 ): Promise<CopySheetResult> {
+  // Generujeme korelační ID pro sledování této operace
+  const correlationId = `copy_${Date.now().toString(36)}_${Math.random().toString(36).substring(2, 7)}`;
+  logger.setCorrelationId(correlationId);
+
   try {
     logger.info(
-      `Přidávám data z ${sourceFileName} do souboru ${targetFileName} jako nový list`
+      `Přidávám data z ${sourceFileName} do souboru ${targetFileName} jako nový list`, {
+        sourceFile: sourceFileName,
+        targetFile: targetFileName
+      }
     );
 
     // Cesty k souborům
@@ -49,7 +57,9 @@ export async function copySheet(
       await fs.access(sourceFilePath);
       logger.info(`Zdrojový soubor existuje: ${sourceFilePath}`);
     } catch (error) {
-      logger.error(`Zdrojový soubor neexistuje: ${sourceFilePath}`);
+      logger.error(`Zdrojový soubor neexistuje: ${sourceFilePath}`, {
+        error: error instanceof Error ? error.message : 'Neznámá chyba'
+      });
       return {
         success: false,
         error: `Zdrojový soubor neexistuje: ${sourceFileName}`,
@@ -60,7 +70,9 @@ export async function copySheet(
       await fs.access(targetFilePath);
       logger.info(`Cílový soubor existuje: ${targetFilePath}`);
     } catch (error) {
-      logger.error(`Cílový soubor neexistuje: ${targetFilePath}`);
+      logger.error(`Cílový soubor neexistuje: ${targetFilePath}`, {
+        error: error instanceof Error ? error.message : 'Neznámá chyba'
+      });
       return {
         success: false,
         error: `Cílový soubor neexistuje: ${targetFileName}`,
@@ -125,7 +137,7 @@ export async function copySheet(
       for (let j = 1; j <= Math.min(5, sourceSheet.columnCount); j++) {
         values.push(row.getCell(j).value);
       }
-      logger.info(`Řádek ${i}: ${JSON.stringify(values)}`);
+      logger.debug(`Řádek ${i}: ${JSON.stringify(values)}`);
     }
 
     // Načteme data ze zdrojového listu - vylepšená logika
@@ -147,8 +159,9 @@ export async function copySheet(
             cellValue.includes("Den")) {
           headerFound = true;
           dataStartRow = rowIndex + 1; // Data začínají na následujícím řádku
-          logger.info(`Nalezen řádek s hlavičkami: ${rowIndex}, data začínají od řádku ${dataStartRow}`);
-          logger.info(`Hlavičky: ${JSON.stringify(cellValues)}`);
+          logger.info(`Nalezen řádek s hlavičkami: ${rowIndex}, data začínají od řádku ${dataStartRow}`, {
+            headers: cellValues
+          });
           break;
         }
       }
@@ -218,16 +231,19 @@ export async function copySheet(
         sourceData.push([dayValue, timeValue, placeValue]);
         // Debug log pro prvních několik řádků
         if (sourceData.length <= 5) {
-          logger.info(`Přidávám řádek dat: Den=${dayValue}, Čas=${timeValue}, Místo=${placeValue}`);
+          logger.debug(`Přidávám řádek dat: Den=${dayValue}, Čas=${timeValue}, Místo=${placeValue}`);
         }
       }
     }
 
-    logger.info(`Celkem nalezeno a zpracováno ${totalRows} řádků dat`);
+    logger.info(`Celkem nalezeno a zpracováno ${totalRows} řádků dat`, {
+      totalRows,
+      extractedRows: sourceData.length
+    });
     if (sourceData.length > 0) {
-      logger.info(`První řádek dat: ${JSON.stringify(sourceData[0])}`);
+      logger.debug(`První řádek dat: ${JSON.stringify(sourceData[0])}`);
       if (sourceData.length > 1) {
-        logger.info(`Poslední řádek dat: ${JSON.stringify(sourceData[sourceData.length - 1])}`);
+        logger.debug(`Poslední řádek dat: ${JSON.stringify(sourceData[sourceData.length - 1])}`);
       }
     } else {
       logger.warn(`Žádná data nebyla nalezena!`);
@@ -267,7 +283,10 @@ export async function copySheet(
               cell.numFmt = "h:mm"; // Formát "0:00"
             }
           } catch (error) {
-            logger.error(`Chyba při zpracování času ${timeStr}: ${error}`);
+            logger.error(`Chyba při zpracování času ${timeStr}: ${error}`, {
+              timeString: timeStr,
+              error: error instanceof Error ? error.message : 'Neznámá chyba'
+            });
           }
         }
       }
@@ -338,7 +357,7 @@ export async function copySheet(
     ];
 
     // Pro kontrolu vypíšeme nastavené šířky sloupců
-    logger.info(`Nastavené šířky sloupců: A=${newSheet.getColumn(1).width}, B=${newSheet.getColumn(2).width}, C=${newSheet.getColumn(3).width}, D=${newSheet.getColumn(4).width}`);
+    logger.debug(`Nastavené šířky sloupců: A=${newSheet.getColumn(1).width}, B=${newSheet.getColumn(2).width}, C=${newSheet.getColumn(3).width}, D=${newSheet.getColumn(4).width}`);
     
     // Uložíme změny do cílového souboru
     logger.info(`Ukládám změny do souboru: ${targetFilePath}`);
@@ -354,7 +373,10 @@ export async function copySheet(
       newSheetName,
     };
   } catch (error) {
-    logger.error(`Chyba při vytváření nového listu: ${error}`);
+    logger.error(`Chyba při vytváření nového listu: ${error}`, {
+      error: error instanceof Error ? error.message : 'Neznámá chyba',
+      stack: error instanceof Error ? error.stack : undefined
+    });
     return {
       success: false,
       error: error instanceof Error ? error.message : "Neznámá chyba",

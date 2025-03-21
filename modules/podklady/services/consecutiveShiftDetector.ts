@@ -1,8 +1,8 @@
 // modules/podklady/services/consecutiveShiftDetector.ts
 import { ShiftData } from "./excelDataExtractor";
-import { createLogger } from "./logger";
+import { StructuredLogger } from "./structuredLogger";
 
-const logger = createLogger("consecutive-shift-detector");
+const logger = StructuredLogger.getInstance().getComponentLogger("consecutive-shift-detector");
 
 /**
  * Funkce pro detekci navazujících směn - implementuje přesnou logiku Excel makra
@@ -13,7 +13,9 @@ export function detectConsecutiveShifts(shifts: ShiftData[]): {
   consecutiveShifts: { first: ShiftData; second: ShiftData }[];
   shiftsWithConsecutive: number;
 } {
-  logger.info("Detekuji navazující směny podle logiky Excel makra");
+  logger.info("Detekuji navazující směny podle logiky Excel makra", {
+    totalShifts: shifts.length
+  });
   
   const consecutiveShifts: { first: ShiftData; second: ShiftData }[] = [];
   let shiftsWithConsecutive = 0;
@@ -27,13 +29,23 @@ export function detectConsecutiveShifts(shifts: ShiftData[]): {
     employeeShifts.get(shift.name)!.push(shift);
   }
   
+  logger.info("Směny seskupeny podle zaměstnanců", {
+    uniqueEmployees: employeeShifts.size
+  });
+  
   // Práh pro navazující směny (30 minut) - stejné jako v Excel makru
   const threshold = 30 * 60 * 1000; // 30 minut v milisekundách
   
   // 2. Procházení směn pro každého zaměstnance
   for (const [employeeName, employeeShiftList] of Array.from(employeeShifts.entries())) {
     // Pokud zaměstnanec má pouze jednu směnu, přeskočit
-    if (employeeShiftList.length <= 1) continue;
+    if (employeeShiftList.length <= 1) {
+      logger.debug(`Zaměstnanec má pouze jednu směnu, přeskakuji`, {
+        employee: employeeName,
+        shiftsCount: employeeShiftList.length
+      });
+      continue;
+    }
     
     // Seřazení směn podle plánovaného začátku (přesně jako v Excel makru)
     employeeShiftList.sort((a, b) => {
@@ -52,13 +64,25 @@ export function detectConsecutiveShifts(shifts: ShiftData[]): {
       return aDateTime.getTime() - bDateTime.getTime();
     });
     
+    logger.debug(`Směny zaměstnance seřazeny`, {
+      employee: employeeName,
+      shiftsCount: employeeShiftList.length
+    });
+    
     // Kontrola navazujících směn
     for (let i = 0; i < employeeShiftList.length - 1; i++) {
       const current = employeeShiftList[i];
       const next = employeeShiftList[i + 1];
       
       // Přeskočit směny bez plánovaných časů
-      if (!current.plannedEnd || !next.plannedStart) continue;
+      if (!current.plannedEnd || !next.plannedStart) {
+        logger.debug(`Směny nemají plánované časy, přeskakuji`, {
+          employee: employeeName,
+          currentShiftRowIndex: current.rowIndex,
+          nextShiftRowIndex: next.rowIndex
+        });
+        continue;
+      }
       
       // Výpočet koncového času první směny
       let endDateTime = new Date(current.date);
@@ -69,6 +93,12 @@ export function detectConsecutiveShifts(shifts: ShiftData[]): {
       // Pokud jde o noční směnu (konec je dříve než začátek), přidáme 1 den
       if (current.plannedStart && current.plannedEnd.getHours() < current.plannedStart.getHours()) {
         endDateTime.setDate(endDateTime.getDate() + 1);
+        logger.debug(`Úprava koncového času pro noční směnu`, {
+          employee: employeeName,
+          shiftIndex: i,
+          rowIndex: current.rowIndex,
+          adjustedEndTime: formatDateTime(endDateTime)
+        });
       }
       
       // Výpočet začátku druhé směny
@@ -89,19 +119,48 @@ export function detectConsecutiveShifts(shifts: ShiftData[]): {
         consecutiveShifts.push({ first: current, second: next });
         shiftsWithConsecutive += 2;
         
-        logger.info(`Detekována navazující směna: ${employeeName}, první směna (řádek ${current.rowIndex}): ${formatDateTime(current)}, druhá směna (řádek ${next.rowIndex}): ${formatDateTime(next)}`);
+        logger.info(`Detekována navazující směna`, { 
+          employee: employeeName, 
+          firstShiftRowIndex: current.rowIndex, 
+          firstShiftTime: formatDateTime(current), 
+          secondShiftRowIndex: next.rowIndex, 
+          secondShiftTime: formatDateTime(next),
+          timeDiffMinutes: Math.round(timeDiff / 60000) // převod na minuty pro lepší čitelnost
+        });
+      } else {
+        logger.debug(`Směny nejsou navazující`, {
+          employee: employeeName,
+          timeDiffMinutes: Math.round(timeDiff / 60000),
+          threshold: threshold / 60000, // v minutách
+          firstShiftRowIndex: current.rowIndex,
+          secondShiftRowIndex: next.rowIndex
+        });
       }
     }
   }
   
-  logger.info(`Celkem nalezeno ${consecutiveShifts.length} párů navazujících směn (${shiftsWithConsecutive} směn)`);
+  logger.info(`Detekce navazujících směn dokončena`, { 
+    consecutivePairsCount: consecutiveShifts.length, 
+    shiftsWithConsecutive
+  });
+  
   return { consecutiveShifts, shiftsWithConsecutive };
 }
 
 /**
  * Pomocná funkce pro formátovaný výpis směny
  */
-function formatDateTime(shift: ShiftData): string {
+function formatDateTime(shift: ShiftData | Date): string {
+  if (shift instanceof Date) {
+    return shift.toLocaleString('cs-CZ', { 
+      year: 'numeric', 
+      month: 'numeric', 
+      day: 'numeric',
+      hour: '2-digit', 
+      minute: '2-digit' 
+    });
+  }
+  
   const dateStr = shift.date.toLocaleDateString('cs-CZ');
   const startStr = shift.plannedStart ? shift.plannedStart.toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' }) : 'N/A';
   const endStr = shift.plannedEnd ? shift.plannedEnd.toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' }) : 'N/A';
@@ -140,6 +199,10 @@ export function generateConsecutiveShiftsReport(
       secondStart: formatTime(second.plannedStart),
       secondEnd: formatTime(second.plannedEnd)
     };
+  });
+
+  logger.info("Generuji HTML report navazujících směn", {
+    pairsCount: consecutiveShifts.length
   });
 
   // Generování HTML

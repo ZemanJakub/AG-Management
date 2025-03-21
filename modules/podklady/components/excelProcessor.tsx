@@ -1,10 +1,9 @@
-// modules/avaris/components/excel-processor.tsx
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
 import { Button, Card, CardBody, CardHeader, Alert, Tabs, Tab, Spinner } from '@heroui/react';
 import { DocumentDrop } from '@/modules/podklady/components/document-drop';
-import { processExcelFile, processNameComparison, processTimeUpdate, getExcelReport } from '@/actions';
+import { processExcelFile } from '@/actions';
 import Link from 'next/link';
 
 export const ExcelProcessor = () => {
@@ -12,7 +11,7 @@ export const ExcelProcessor = () => {
   const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
   const [processedFile, setProcessedFile] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [reportHtml, setReportHtml] = useState<{ nameReport?: string, timeReport?: string } | null>(null);
+  const [reportHtml, setReportHtml] = useState<{ nameReport?: string, timeReport?: string, consecutiveShiftsReport?: string } | null>(null);
   const [activeTab, setActiveTab] = useState<'all' | 'names' | 'times'>('all');
   const [previewMode, setPreviewMode] = useState(false);
 
@@ -81,27 +80,12 @@ export const ExcelProcessor = () => {
         // Přidáme soubor do FormData
         formData.append('file', file);
         
-        // Nyní můžeme pokračovat se zpracováním
-        let result;
+        // Přidáme další parametry podle aktivní záložky
+        formData.append('mode', activeTab);
+        formData.append('preview', previewMode.toString());
         
-        if (previewMode) {
-          // Pouze náhled reportu bez uložení souboru
-          result = await getExcelReport(formData);
-        } else {
-          // Zpracování podle vybrané záložky
-          switch (activeTab) {
-            case 'names':
-              result = await processNameComparison(formData);
-              break;
-            case 'times':
-              result = await processTimeUpdate(formData);
-              break;
-            case 'all':
-            default:
-              result = await processExcelFile(formData);
-              break;
-          }
-        }
+        // Zpracování souboru pomocí nové server action
+        const result = await processExcelFile(formData);
 
         if (result.success) {
           if (!previewMode && result.filePath) {
@@ -111,7 +95,8 @@ export const ExcelProcessor = () => {
           // Nastavení HTML reportu pro náhled
           setReportHtml({
             nameReport: result.nameReport,
-            timeReport: result.timeReport
+            timeReport: result.timeReport,
+            consecutiveShiftsReport: result.consecutiveShiftsReport
           });
         } else {
           setError(result.error || 'Chyba při zpracování souboru');
@@ -225,7 +210,7 @@ export const ExcelProcessor = () => {
         )}
         
         {/* Náhled reportu */}
-        {reportHtml && (reportHtml.nameReport || reportHtml.timeReport) && (
+        {reportHtml && (reportHtml.nameReport || reportHtml.timeReport || reportHtml.consecutiveShiftsReport) && (
           <div className="mt-6 border rounded-md p-4">
             <h3 className="text-lg font-semibold mb-4">Náhled reportu</h3>
             
@@ -244,6 +229,15 @@ export const ExcelProcessor = () => {
                   <div 
                     className="p-4 overflow-auto max-h-96" 
                     dangerouslySetInnerHTML={{ __html: reportHtml.timeReport }} 
+                  />
+                </Tab>
+              )}
+              
+              {reportHtml.consecutiveShiftsReport && (
+                <Tab key="consecutiveReport" title="Navazující směny">
+                  <div 
+                    className="p-4 overflow-auto max-h-96" 
+                    dangerouslySetInnerHTML={{ __html: reportHtml.consecutiveShiftsReport }} 
                   />
                 </Tab>
               )}

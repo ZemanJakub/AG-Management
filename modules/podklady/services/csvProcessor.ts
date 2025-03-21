@@ -2,9 +2,10 @@
 import fs from 'fs/promises';
 import path from 'path';
 import * as XLSX from 'xlsx';
-import { createLogger } from './logger';
+import { StructuredLogger } from '@/modules/podklady/services/structuredLogger';
 
-const logger = createLogger('csv-processor');
+// Inicializace StructuredLogger místo starého createLogger
+const logger = StructuredLogger.getInstance().getComponentLogger('csv-processor');
 
 // Interface pro záznam dat
 export interface AvarisRecord {
@@ -198,7 +199,10 @@ async function processAvarisCSV(filePath: string): Promise<{
       nonStRecords
     };
   } catch (error) {
-    logger.error(`Chyba při čtení a parsování CSV souboru: ${error}`);
+    logger.error(`Chyba při čtení a parsování CSV souboru: ${error}`, {
+      error: error instanceof Error ? error.message : 'Neznámá chyba',
+      filePath
+    });
     throw error;
   }
 }
@@ -225,7 +229,10 @@ function excelTimeValue(timeStr: string): number {
     // Výpočet excel časové hodnoty (hodiny/24 + minuty/1440 + sekundy/86400)
     return hours / 24 + minutes / 1440 + seconds / 86400;
   } catch (error) {
-    logger.error(`Chyba při konverzi času na excel časovou hodnotu: ${error}`);
+    logger.error(`Chyba při konverzi času na excel časovou hodnotu: ${error}`, {
+      timeString: timeStr,
+      error: error instanceof Error ? error.message : 'Neznámá chyba'
+    });
     return 0;
   }
 }
@@ -340,7 +347,11 @@ async function saveFilteredXLSX(originalFilePath: string, records: AvarisRecord[
     // Vrátíme URL cestu pro použití v prohlížeči
     return `/downloads/${newFileName}`;
   } catch (error) {
-    logger.error(`Chyba při ukládání filtrovaného XLSX: ${error}`);
+    logger.error(`Chyba při ukládání filtrovaného XLSX: ${error}`, {
+      originalFilePath,
+      recordCount: records.length,
+      error: error instanceof Error ? error.message : 'Neznámá chyba'
+    });
     throw error;
   }
 }
@@ -391,13 +402,18 @@ async function cleanupFiles(xlsxPath: string): Promise<void> {
         await fs.unlink(absoluteXlsxPath);
         logger.info(`Soubor ${absoluteXlsxPath} byl smazán`);
       } catch (error) {
-        logger.error(`Chyba při mazání souboru ${absoluteXlsxPath}: ${error}`);
+        logger.error(`Chyba při mazání souboru ${absoluteXlsxPath}: ${error}`, {
+          filePath: absoluteXlsxPath,
+          error: error instanceof Error ? error.message : 'Neznámá chyba'
+        });
       }
     }, 300000);
     
     logger.info(`Nastaveno smazání souboru ${absoluteXlsxPath} po 5 minutách`);
   } catch (error) {
-    logger.error(`Chyba při nastavování smazání souborů: ${error}`);
+    logger.error(`Chyba při nastavování smazání souborů: ${error}`, {
+      error: error instanceof Error ? error.message : 'Neznámá chyba'
+    });
   }
 }
 
@@ -453,7 +469,10 @@ export async function processAvarisData(filePath: string): Promise<ProcessingRes
       xlsxFilePath
     };
   } catch (error) {
-    logger.error(`Chyba při zpracování Avaris dat: ${error}`);
+    logger.error(`Chyba při zpracování Avaris dat: ${error}`, {
+      filePath,
+      error: error instanceof Error ? error.message : 'Neznámá chyba'
+    });
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Neznámá chyba při zpracování dat',
@@ -466,7 +485,9 @@ export async function processAvarisData(filePath: string): Promise<ProcessingRes
  * Funkce pro dávkové zpracování více CSV souborů
  */
 export async function batchProcessAvarisData(filePaths: { [key: string]: string }): Promise<{ [key: string]: ProcessingResult }> {
-  logger.info(`Začínám dávkové zpracování ${Object.keys(filePaths).length} souborů`);
+  logger.info(`Začínám dávkové zpracování ${Object.keys(filePaths).length} souborů`, {
+    fileCount: Object.keys(filePaths).length
+  });
   
   const results: { [key: string]: ProcessingResult } = {};
   
@@ -476,7 +497,11 @@ export async function batchProcessAvarisData(filePaths: { [key: string]: string 
     try {
       results[objektName] = await processAvarisData(filePath);
     } catch (error) {
-      logger.error(`Chyba při zpracování dat pro objekt ${objektName}: ${error}`);
+      logger.error(`Chyba při zpracování dat pro objekt ${objektName}: ${error}`, {
+        objektName,
+        filePath,
+        error: error instanceof Error ? error.message : 'Neznámá chyba'
+      });
       results[objektName] = {
         success: false,
         error: error instanceof Error ? error.message : 'Neznámá chyba',

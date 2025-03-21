@@ -1,7 +1,7 @@
 // app/actions/podklady/processAvarisWithExcel.ts
 "use server";
 
-import { createLogger } from "@/modules/podklady/services/logger";
+import { StructuredLogger } from "@/modules/podklady/services/structuredLogger";
 import { captureAvarisData } from "@/modules/podklady/services/scraper";
 import { processAvarisData } from "@/modules/podklady/services/csvProcessor";
 import { writeFile, mkdir, readFile, access } from "fs/promises";
@@ -10,7 +10,8 @@ import { processExcelSheet } from "./enhancedSheetProcessor";
 import { runAdvancedProcessing } from "./advancedExcelProcessing";
 import ExcelJS from "exceljs";
 
-const logger = createLogger("avaris-excel-action");
+// Inicializace StructuredLogger místo starého createLogger
+const logger = StructuredLogger.getInstance().getComponentLogger('avaris-excel-action');
 
 export type AvarisExcelResult = {
   success: boolean;
@@ -67,9 +68,15 @@ export async function processAvarisWithExcel(
   formData: FormData,
   options: ProcessingOptions = {}
 ): Promise<AvarisExcelResult> {
+  // Generujeme korelační ID pro sledování této operace
+  const correlationId = `process_${Date.now().toString(36)}_${Math.random().toString(36).substring(2, 7)}`;
+  logger.setCorrelationId(correlationId);
+  
   try {
     logger.info(
-      "Zpracovávám požadavek na integraci Avaris dat do Excel souboru"
+      "Zpracovávám požadavek na integraci Avaris dat do Excel souboru", {
+        formDataEntries: Array.from(formData.keys())
+      }
     );
 
     // Výchozí možnosti zpracování, pokud nejsou explicitně stanoveny
@@ -90,11 +97,14 @@ export async function processAvarisWithExcel(
           processingOptions.detectConsecutiveShifts = parsedOptions.detectConsecutiveShifts !== undefined ? parsedOptions.detectConsecutiveShifts : processingOptions.detectConsecutiveShifts;
         }
       } catch (error) {
-        logger.warn(`Chyba při parsování možností zpracování: ${error}. Používám výchozí hodnoty.`);
+        logger.warn(`Chyba při parsování možností zpracování: ${error}. Používám výchozí hodnoty.`, {
+          optionsString: optionsFromForm,
+          error: error instanceof Error ? error.message : 'Neznámá chyba'
+        });
       }
     }
 
-    logger.info(`Možnosti zpracování: ${JSON.stringify(processingOptions)}`);
+    logger.info(`Možnosti zpracování: ${JSON.stringify(processingOptions)}`, { processingOptions });
 
     // Krok 1: Načtení parametrů z formuláře
     // Použití proměnných prostředí pro přihlašovací údaje, s fallback hodnotami
@@ -106,6 +116,7 @@ export async function processAvarisWithExcel(
     const fileName = formData.get("fileName") as string;
 
     if (!fileName) {
+      logger.warn("Nebyl nahrán žádný soubor");
       return {
         success: false,
         error: "Nebyl nahrán žádný soubor",
@@ -142,8 +153,14 @@ export async function processAvarisWithExcel(
     const dateFrom = formatDateString(formData.get("dateFrom") as string) || defaultDateFrom;
     const dateTo = formatDateString(formData.get("dateTo") as string) || defaultDateTo;
 
-    logger.info(`Zpracování pro období od ${dateFrom} do ${dateTo}`);
-    logger.info(`Zvolené objekty: ${objektNames.join(", ")}`);
+    logger.info(`Zpracování pro období od ${dateFrom} do ${dateTo}`, {
+      dateFrom,
+      dateTo
+    });
+    logger.info(`Zvolené objekty: ${objektNames.join(", ")}`, { 
+      objektNames, 
+      objektCount: objektNames.length 
+    });
     logger.info(`Nahraný soubor: ${fileName}`);
 
     // Kontrola existence uživatelova souboru
@@ -166,7 +183,10 @@ export async function processAvarisWithExcel(
 
     // Krok 2: Získání dat z Avarisu
     logger.info(
-      `Spouštím captureAvarisData pro objekty: ${objektNames.join(", ")}`
+      `Spouštím captureAvarisData pro objekty: ${objektNames.join(", ")}`, {
+        objektCount: objektNames.length,
+        dateRange: { from: dateFrom, to: dateTo }
+      }
     );
 
     const downloadedFiles = await captureAvarisData(
@@ -209,16 +229,24 @@ export async function processAvarisWithExcel(
           
           allAvarisRecords = [...allAvarisRecords, ...recordsForExcel];
         } else {
-          logger.warn(`Objekt ${objektName} zpracován s chybou: ${result.error}`);
+          logger.warn(`Objekt ${objektName} zpracován s chybou: ${result.error}`, {
+            objektName,
+            error: result.error
+          });
         }
       } catch (error) {
         logger.error(
-          `Chyba při zpracování dat pro objekt ${objektName}: ${error}`
+          `Chyba při zpracování dat pro objekt ${objektName}: ${error}`, {
+            objektName,
+            error: error instanceof Error ? error.message : 'Neznámá chyba',
+            stack: error instanceof Error ? error.stack : undefined
+          }
         );
       }
     }
     
     if (allAvarisRecords.length === 0) {
+      logger.warn("Nepodařilo se získat žádná data z Avarisu");
       return {
         success: false,
         error: "Nepodařilo se získat žádná data z Avarisu",
@@ -231,6 +259,7 @@ export async function processAvarisWithExcel(
     const sheetResult = await processExcelSheet(fileName, allAvarisRecords);
     
     if (!sheetResult.success) {
+      logger.error(`Chyba při zpracování Excel souboru: ${sheetResult.error}`);
       return {
         success: false,
         error: sheetResult.error || "Chyba při zpracování Excel souboru",
@@ -258,7 +287,9 @@ export async function processAvarisWithExcel(
       );
       
       if (!advancedResult.success) {
-        logger.warn(`Pokročilé zpracování nebylo úspěšné: ${advancedResult.error}`);
+        logger.warn(`Pokročilé zpracování nebylo úspěšné: ${advancedResult.error}`, {
+          error: advancedResult.error
+        });
         // Pokračujeme v běhu, protože základní zpracování již bylo úspěšně dokončeno
       } else {
         logger.info(`Pokročilé zpracování dokončeno úspěšně`);
@@ -273,6 +304,7 @@ export async function processAvarisWithExcel(
         
         // Použít nový výstupní soubor, pokud byl vytvořen
         if (advancedResult.outputFile) {
+          logger.info(`Používám nový výstupní soubor: ${advancedResult.outputFile}`);
           return {
             success: true,
             reportData,
@@ -307,14 +339,20 @@ export async function processAvarisWithExcel(
         finalFilePath,
       };
     } catch (error) {
-      logger.error(`Chyba při vytváření výstupního souboru: ${error}`);
+      logger.error(`Chyba při vytváření výstupního souboru: ${error}`, {
+        error: error instanceof Error ? error.message : 'Neznámá chyba',
+        stack: error instanceof Error ? error.stack : undefined
+      });
       return {
         success: false,
         error: `Chyba při vytváření výstupního souboru: ${error instanceof Error ? error.message : "Neznámá chyba"}`,
       };
     }
   } catch (error) {
-    logger.error("Chyba v server action:", error);
+    logger.error("Chyba v server action:", {
+      error: error instanceof Error ? error.message : 'Neznámá chyba',
+      stack: error instanceof Error ? error.stack : undefined
+    });
     return {
       success: false,
       error: error instanceof Error ? error.message : "Neznámá chyba",
@@ -424,6 +462,7 @@ async function processWithTestData(
     );
     
     if (!result.success) {
+      logger.error(`Chyba při pokročilém zpracování v testovacím režimu: ${result.error}`);
       return {
         success: false,
         error: result.error || "Chyba při pokročilém zpracování v testovacím režimu"
@@ -431,6 +470,7 @@ async function processWithTestData(
     }
     
     // Připravit výsledek
+    logger.info(`Testovací režim dokončen úspěšně, výsledky: ${JSON.stringify(result.reportData || {})}`);
     return {
       success: true,
       reportData: {
@@ -443,7 +483,10 @@ async function processWithTestData(
       finalFilePath: result.outputFile ? `/processed/${result.outputFile}` : undefined
     };
   } catch (error) {
-    logger.error(`Chyba v testovacím režimu: ${error}`);
+    logger.error(`Chyba v testovacím režimu: ${error}`, {
+      error: error instanceof Error ? error.message : 'Neznámá chyba',
+      stack: error instanceof Error ? error.stack : undefined
+    });
     return {
       success: false,
       error: `Chyba v testovacím režimu: ${error instanceof Error ? error.message : "Neznámá chyba"}`
